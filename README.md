@@ -1,2 +1,3 @@
 # qx-osparc-theme
-A material-inspired theme for qooxdoo
+
+A material-inspired theme for qooxdoo. Used in the oSparc project.

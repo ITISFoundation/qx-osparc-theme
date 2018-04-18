@@ -1,4 +1,4 @@
-# A Qooxdoo Theme for OSpac
+# A Qooxdoo Theme for OSparc
 
 > These instructions assume that you are using the new [qooxdoo-comiler](https://github.com/qooxdoo/qooxdoo-compiler)
 > for building your application.

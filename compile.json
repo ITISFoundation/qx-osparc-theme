@@ -29,7 +29,7 @@
     {
       "class": "widgetbrowser.Application",
       "theme": "qx.theme.Classic",
-      "name": "OSparc Theme Demo Widgetbrowser",
+      "name": "widgetbrowser",
       "writeIndexHtmlToRoot": true,
       "include": [
         "qx.theme.Indigo",

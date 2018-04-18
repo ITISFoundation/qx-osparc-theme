@@ -1027,7 +1027,7 @@ qx.Theme.define("osparc.theme.osparcdark.Appearance",
           decorator : decorator,
           padding   : padding,
           textColor : textColor,
-          backgroundColor : states.disabled ? "background-disabled" : "white"
+          backgroundColor : states.disabled ? "background-disabled" : "background"
         };
       }
     },
@@ -2371,7 +2371,7 @@ qx.Theme.define("osparc.theme.osparcdark.Appearance",
         return {
           zIndex : states.checked ? 10 : 5,
           decorator : decorator,
-          textColor : states.disabled ? "text-disabled" : states.checked ? null : "link",
+          textColor : states.disabled ? "text-disabled" : states.checked ? "text-selected" : "text",
           padding : padding,
           cursor: "pointer"
         };

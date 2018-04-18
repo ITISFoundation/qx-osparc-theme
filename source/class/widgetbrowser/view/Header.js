@@ -45,6 +45,7 @@ qx.Class.define("widgetbrowser.view.Header", {
         version.setAppearance("app-header-label");
 
         // Build select-box
+        var hashTheme = window.location.hash.substr(1);
         var select = new qx.ui.form.SelectBox("Theme");
         var themes = qx.Theme.getAll();
         var currentThemeItem;
@@ -54,26 +55,15 @@ qx.Class.define("widgetbrowser.view.Header", {
                 var item = new qx.ui.form.ListItem(theme.name);
                 item.setUserData("value", theme.name);
                 select.add(item);
-                if (theme.name == qx.core.Environment.get("qx.theme")) {
+                if (! currentThemeItem 
+                    && hashTheme && theme.name.match(hashTheme)){
                     currentThemeItem = item;
                 }
             }
         }
 
         select.setFont("default");
-
-        // Find current theme from URL search param
-        var currThemeItem = select.getSelectables().filter(function (item) {
-            if (window.location.search) {
-                return window.location.search.match(item.getUserData("value"));
-            }
-        })[0];
-        if (currThemeItem) {
-            currentThemeItem = currThemeItem;
-        }
-
-        select.setTextColor("black");
-
+        
         select.addListener("changeSelection", function (evt) {
             var selected = evt.getData()[0].getUserData("value");
             var theme = qx.Theme.getByName(selected);
@@ -83,7 +73,14 @@ qx.Class.define("widgetbrowser.view.Header", {
         });
 
         // Set current theme
-        select.setSelection([currentThemeItem]);
+        if (currentThemeItem){
+            select.setSelection([currentThemeItem]);
+            qx.theme.manager.Meta.getInstance().setTheme(
+                qx.Theme.getByName(
+                    currentThemeItem.getUserData("value")
+                )
+            );
+        }
 
         // Finally assemble header
         this.add(title);

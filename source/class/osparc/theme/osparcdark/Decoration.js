@@ -93,11 +93,11 @@ qx.Theme.define("osparc.theme.osparcdark.Decoration",
     {
       style :
       {
-        radius : 3,
+        radius : 1,
         width : 1,
         color : "button-border",
-        gradientStart : ["button-box-bright", 40],
-        gradientEnd : ["button-box-dark", 70],
+        //gradientStart : ["button-box-bright", 40],
+        //gradientEnd : ["button-box-dark", 70],
         backgroundColor : "button-box-bright"
       }
     },
@@ -108,8 +108,8 @@ qx.Theme.define("osparc.theme.osparcdark.Decoration",
 
       style :
       {
-        gradientStart : ["button-box-bright-pressed", 40],
-        gradientEnd : ["button-box-dark-pressed", 70],
+       // gradientStart : ["button-box-bright-pressed", 40],
+       // gradientEnd : ["button-box-dark-pressed", 70],
         backgroundColor : "button-box-bright-pressed"
       }
     },
@@ -206,7 +206,7 @@ qx.Theme.define("osparc.theme.osparcdark.Decoration",
 
       style :
       {
-        radius : [0, 3, 3, 0]
+        radius : [0, 1, 1, 0]
       }
     },
 
@@ -216,7 +216,7 @@ qx.Theme.define("osparc.theme.osparcdark.Decoration",
 
       style :
       {
-        radius : [0, 3, 3, 0]
+        radius : [0, 1, 1, 0]
       }
     },
 
@@ -226,7 +226,7 @@ qx.Theme.define("osparc.theme.osparcdark.Decoration",
 
       style :
       {
-        radius : [0, 3, 3, 0]
+        radius : [0, 1, 1, 0]
       }
     },
 
@@ -236,7 +236,7 @@ qx.Theme.define("osparc.theme.osparcdark.Decoration",
 
       style :
       {
-        radius : [0, 3, 3, 0]
+        radius : [0, 1, 1, 0]
       }
     },
 
@@ -246,7 +246,7 @@ qx.Theme.define("osparc.theme.osparcdark.Decoration",
 
       style :
       {
-        radius : [0, 3, 3, 0]
+        radius : [0, 1, 1, 0]
       }
     },
 
@@ -256,7 +256,7 @@ qx.Theme.define("osparc.theme.osparcdark.Decoration",
 
       style :
       {
-        radius : [0, 3, 3, 0]
+        radius : [0, 1, 1, 0]
       }
     },
 
@@ -266,7 +266,7 @@ qx.Theme.define("osparc.theme.osparcdark.Decoration",
 
       style :
       {
-        radius : [0, 3, 3, 0]
+        radius : [0, 1, 1, 0]
       }
     },
 
@@ -276,7 +276,7 @@ qx.Theme.define("osparc.theme.osparcdark.Decoration",
 
       style :
       {
-        radius : [0, 3, 3, 0]
+        radius : [0, 1, 1, 0]
       }
     },
 
@@ -292,7 +292,7 @@ qx.Theme.define("osparc.theme.osparcdark.Decoration",
 
       style :
       {
-        radius : [0, 3, 3, 0],
+        radius : [0, 1, 1, 0],
         width: [1, 1, 1, 0]
       }
     },
@@ -303,7 +303,7 @@ qx.Theme.define("osparc.theme.osparcdark.Decoration",
 
       style :
       {
-        radius : [0, 3, 3, 0],
+        radius : [0, 1, 1, 0],
         width: [1, 1, 1, 0]
       }
     },
@@ -314,7 +314,7 @@ qx.Theme.define("osparc.theme.osparcdark.Decoration",
 
       style :
       {
-        radius : [0, 3, 3, 0],
+        radius : [0, 1, 1, 0],
         width: [1, 1, 1, 0]
       }
     },
@@ -325,7 +325,7 @@ qx.Theme.define("osparc.theme.osparcdark.Decoration",
 
       style :
       {
-        radius : [0, 3, 3, 0],
+        radius : [0, 1, 1, 0],
         width: [1, 1, 1, 0]
       }
     },
@@ -342,7 +342,7 @@ qx.Theme.define("osparc.theme.osparcdark.Decoration",
 
       style :
       {
-        radius : [0, 3, 0, 0],
+        radius : [0, 1, 0, 0],
         width: [1, 1, 1, 0]
       }
     },
@@ -353,7 +353,7 @@ qx.Theme.define("osparc.theme.osparcdark.Decoration",
 
       style :
       {
-        radius : [0, 3, 0, 0],
+        radius : [0, 1, 0, 0],
         width: [1, 1, 1, 0]
       }
     },
@@ -364,7 +364,7 @@ qx.Theme.define("osparc.theme.osparcdark.Decoration",
 
       style :
       {
-        radius : [0, 3, 0, 0],
+        radius : [0, 1, 0, 0],
         width: [1, 1, 1, 0]
       }
     },
@@ -375,7 +375,7 @@ qx.Theme.define("osparc.theme.osparcdark.Decoration",
 
       style :
       {
-        radius : [0, 3, 0, 0],
+        radius : [0, 1, 0, 0],
         width: [1, 1, 1, 0]
       }
     },
@@ -392,7 +392,7 @@ qx.Theme.define("osparc.theme.osparcdark.Decoration",
 
       style :
       {
-        radius : [0, 0, 3, 0],
+        radius : [0, 0, 1, 0],
         width : [0, 1, 1, 0]
       }
     },
@@ -403,7 +403,7 @@ qx.Theme.define("osparc.theme.osparcdark.Decoration",
 
       style :
       {
-        radius : [0, 0, 3, 0],
+        radius : [0, 0, 1, 0],
         width : [0, 1, 1, 0]
       }
     },
@@ -414,7 +414,7 @@ qx.Theme.define("osparc.theme.osparcdark.Decoration",
 
       style :
       {
-        radius : [0, 0, 3, 0],
+        radius : [0, 0, 1, 0],
         width : [0, 1, 1, 0]
       }
     },
@@ -425,7 +425,7 @@ qx.Theme.define("osparc.theme.osparcdark.Decoration",
 
       style :
       {
-        radius : [0, 0, 3, 0],
+        radius : [0, 0, 1, 0],
         width : [0, 1, 1, 0]
       }
     },
@@ -442,7 +442,7 @@ qx.Theme.define("osparc.theme.osparcdark.Decoration",
 
       style :
       {
-        radius : [0, 0, 0, 3],
+        radius : [0, 0, 0, 1],
         width : [0, 0, 1, 1]
       }
     },
@@ -453,7 +453,7 @@ qx.Theme.define("osparc.theme.osparcdark.Decoration",
 
       style :
       {
-        radius : [0, 0, 0, 3],
+        radius : [0, 0, 0, 1],
         width : [0, 0, 1, 1]
       }
     },
@@ -464,7 +464,7 @@ qx.Theme.define("osparc.theme.osparcdark.Decoration",
 
       style :
       {
-        radius : [0, 0, 0, 3],
+        radius : [0, 0, 0, 1],
         width : [0, 0, 1, 1]
       }
     },
@@ -475,7 +475,7 @@ qx.Theme.define("osparc.theme.osparcdark.Decoration",
 
       style :
       {
-        radius : [0, 0, 0, 3],
+        radius : [0, 0, 0, 1],
         width : [0, 0, 1, 1]
       }
     },
@@ -492,7 +492,7 @@ qx.Theme.define("osparc.theme.osparcdark.Decoration",
 
       style :
       {
-        radius : [3, 0, 0, 0],
+        radius : [1, 0, 0, 0],
         width : [1, 0, 0, 1]
       }
     },
@@ -503,7 +503,7 @@ qx.Theme.define("osparc.theme.osparcdark.Decoration",
 
       style :
       {
-        radius : [3, 0, 0, 0],
+        radius : [1, 0, 0, 0],
         width : [1, 0, 0, 1]
       }
     },
@@ -514,7 +514,7 @@ qx.Theme.define("osparc.theme.osparcdark.Decoration",
 
       style :
       {
-        radius : [3, 0, 0, 0],
+        radius : [1, 0, 0, 0],
         width : [1, 0, 0, 1]
       }
     },
@@ -525,7 +525,7 @@ qx.Theme.define("osparc.theme.osparcdark.Decoration",
 
       style :
       {
-        radius : [3, 0, 0, 0],
+        radius : [1, 0, 0, 0],
         width : [1, 0, 0, 1]
       }
     },
@@ -592,7 +592,7 @@ qx.Theme.define("osparc.theme.osparcdark.Decoration",
 
       style :
       {
-        radius : [3, 0, 0, 3],
+        radius : [1, 0, 0, 1],
         width : [1, 0, 1, 1]
       }
     },
@@ -603,7 +603,7 @@ qx.Theme.define("osparc.theme.osparcdark.Decoration",
 
       style :
       {
-        radius : [3, 0, 0, 3],
+        radius : [1, 0, 0, 1],
         width : [1, 0, 1, 1]
       }
     },
@@ -614,7 +614,7 @@ qx.Theme.define("osparc.theme.osparcdark.Decoration",
 
       style :
       {
-        radius : [3, 0, 0, 3],
+        radius : [1, 0, 0, 1],
         width : [1, 0, 1, 1]
       }
     },
@@ -625,7 +625,7 @@ qx.Theme.define("osparc.theme.osparcdark.Decoration",
 
       style :
       {
-        radius : [3, 0, 0, 3],
+        radius : [1, 0, 0, 1],
         width : [1, 0, 1, 1]
       }
     },
@@ -636,7 +636,7 @@ qx.Theme.define("osparc.theme.osparcdark.Decoration",
 
       style :
       {
-        radius : [3, 0, 0, 3],
+        radius : [1, 0, 0, 1],
         width : [1, 0, 1, 1]
       }
     },
@@ -647,7 +647,7 @@ qx.Theme.define("osparc.theme.osparcdark.Decoration",
 
       style :
       {
-        radius : [3, 0, 0, 3],
+        radius : [1, 0, 0, 1],
         width : [1, 0, 1, 1]
       }
     },
@@ -658,7 +658,7 @@ qx.Theme.define("osparc.theme.osparcdark.Decoration",
 
       style :
       {
-        radius : [3, 0, 0, 3],
+        radius : [1, 0, 0, 1],
         width : [1, 0, 1, 1]
       }
     },
@@ -669,7 +669,7 @@ qx.Theme.define("osparc.theme.osparcdark.Decoration",
 
       style :
       {
-        radius : [3, 0, 0, 3],
+        radius : [1, 0, 0, 1],
         width : [1, 0, 1, 1]
       }
     },
@@ -709,7 +709,7 @@ qx.Theme.define("osparc.theme.osparcdark.Decoration",
     {
       style :
       {
-        radius : 3,
+        radius : 1,
         width : 1,
         color : "button-border",
         backgroundColor : "scrollbar-bright"
@@ -756,7 +756,7 @@ qx.Theme.define("osparc.theme.osparcdark.Decoration",
       style :
       {
         backgroundColor : "button",
-        radius : 3
+        radius : 1
       }
     },
 
@@ -807,19 +807,16 @@ qx.Theme.define("osparc.theme.osparcdark.Decoration",
       GROUP BOX
     ---------------------------------------------------------------------------
     */
-    "white-box" :
-    {
-      style :
-      {
-        width: 1,
-        color: "white-box-border",
-        shadowBlurRadius : 2,
-        shadowColor : "#999999",
-        radius: 7,
-        backgroundColor : "white",
-        shadowLength: 0
-      }
-    },
+   
+   "white-box" :
+   {
+     style :
+     {
+       width: 1,
+       color: "white-box-border",
+       backgroundColor : "background",
+     }
+   },
 
 
     /*
@@ -832,7 +829,7 @@ qx.Theme.define("osparc.theme.osparcdark.Decoration",
       style :
       {
         width : 1,
-        color : ["border-light-shadow", "border-light", "border-light", "border-light"]
+        color : "border-light"
       }
     },
 
@@ -849,7 +846,7 @@ qx.Theme.define("osparc.theme.osparcdark.Decoration",
     {
       style :
       {
-        width : 2,
+        width : 1,
         color : "invalid"
       }
     },
@@ -946,7 +943,7 @@ qx.Theme.define("osparc.theme.osparcdark.Decoration",
       {
         width : 1,
         color : "border-main",
-        radius : 3,
+        radius : 1,
         backgroundColor : "white"
       }
     },
@@ -958,7 +955,7 @@ qx.Theme.define("osparc.theme.osparcdark.Decoration",
 
       style :
       {
-        radius : [3, 3, 0, 0],
+        radius : [1, 1, 0, 0],
         width : [1, 1, 0, 1]
       }
     },
@@ -1030,7 +1027,7 @@ qx.Theme.define("osparc.theme.osparcdark.Decoration",
         width : [1, 1, 0, 1],
         backgroundColor: "background",
         color : "border-main",
-        radius : [3, 3, 0, 0]
+        radius : [1, 1, 0, 0]
       }
     },
 
@@ -1039,7 +1036,7 @@ qx.Theme.define("osparc.theme.osparcdark.Decoration",
 
       style :
       {
-        radius : [0, 0, 3, 3],
+        radius : [0, 0, 1, 1],
         width : [0, 1, 1, 1]
       }
     },
@@ -1049,7 +1046,7 @@ qx.Theme.define("osparc.theme.osparcdark.Decoration",
 
       style :
       {
-        radius : [3, 0, 0, 3],
+        radius : [1, 0, 0, 1],
         width : [1, 0, 1, 1]
       }
     },
@@ -1059,7 +1056,7 @@ qx.Theme.define("osparc.theme.osparcdark.Decoration",
 
       style :
       {
-        radius : [0, 3, 3, 0],
+        radius : [0, 1, 1, 0],
         width : [1, 1, 1, 0]
       }
     },
@@ -1176,7 +1173,7 @@ qx.Theme.define("osparc.theme.osparcdark.Decoration",
     {
       style :
       {
-        radius : 10,
+        radius : 12,
         width : 1,
         color : "button-border",
         innerColor: "background",

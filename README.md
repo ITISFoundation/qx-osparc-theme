@@ -1,21 +1,52 @@
-# qx-osparc-theme
+# A Qooxdoo Theme for OSpac
 
-Environment for playing with the osparc qooxdoo theme.
+> These instructions assume that you are using the new [qooxdoo-comiler](https://github.com/qooxdoo/qooxdoo-compiler)
+> for building your application.
 
-Example of usage with `docker-compose` cli
+## Using the Theme in your Application
 
-## build docker image
+To use the OSparc Theme in your application, go into the application root directory
+and install the theme into your project:
+
 ```console
-$ docker-compose build
+$ qx contrib update
+$ qx contrib list
+$ qx contrib install ITISFoundation/qx-osparc-theme
 ```
 
-## run build server
-```console
-$ docker-compose up
+now you just have to modify your `Manifest.json` to enable the theme:
+
+```json5
+"applications": [
+  {
+    ...
+    "theme": "osparc.theme.OSparcDark",
+    ...
+  }
+],
 ```
 
-### run another command
+## Running the Demo App
+
+This contrib also comes with a demo application. To make it really simple to test
+it comes with 'docker-batteries' included.
+
+The setup is prepared for runnig with docker. You don't
+need a local qooxdoo install or anyting to get started. Just install docker
+and give this a whirl.
+
+* build the docker image
+  ```console
+  $ docker-compose build
+  ```
+
+* run the demo server
+   ```console
+   $ docker-compose up
+   ```
+
+If you want to run a different qx command, you can do this too
+
 ```console
 $ docker-compose run qx lint
 ```
-

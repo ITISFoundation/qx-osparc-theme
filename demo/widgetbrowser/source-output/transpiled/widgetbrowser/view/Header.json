@@ -1,0 +1,64 @@
+{
+  "className": "widgetbrowser.view.Header",
+  "packageName": "widgetbrowser.view",
+  "name": "Header",
+  "superClass": "qx.ui.container.Composite",
+  "interfaces": [],
+  "mixins": [],
+  "clazz": {
+    "location": {
+      "start": {
+        "line": 23,
+        "column": 0
+      },
+      "end": {
+        "line": 112,
+        "column": 5
+      }
+    },
+    "jsdoc": {
+      "@description": [
+        {
+          "name": "@description",
+          "body": "***********************************************************************\n\nqooxdoo - the new era of web development\n\nhttp://qooxdoo.org\n\nCopyright:\n2004-2008 1&1 Internet AG, Germany, http://www.1und1.de\n\nLicense:\nMIT: https://opensource.org/licenses/MIT\nSee the LICENSE file in the project's top-level directory for details.\n\nAuthors:\nJonathan Weiß (jonathan_rass)\nTristan Koch (tristankoch)\n\n***********************************************************************"
+        },
+        {
+          "name": "@description",
+          "body": "The Application's header"
+        }
+      ]
+    }
+  },
+  "type": "class",
+  "construct": {
+    "location": {
+      "start": {
+        "line": 36,
+        "column": 4
+      },
+      "end": {
+        "line": 111,
+        "column": 5
+      }
+    },
+    "jsdoc": {
+      "@description": [
+        {
+          "name": "@description",
+          "body": "****************************************************************************\nCONSTRUCTOR\n****************************************************************************"
+        },
+        {
+          "name": "@description",
+          "body": ""
+        }
+      ],
+      "@ignore": [
+        {
+          "name": "@ignore",
+          "body": "qxc"
+        }
+      ]
+    }
+  },
+  "descendants": []
+}

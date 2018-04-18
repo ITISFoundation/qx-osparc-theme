@@ -1,0 +1,1340 @@
+{
+  "className": "qx.ui.tree.core.AbstractItem",
+  "packageName": "qx.ui.tree.core",
+  "name": "AbstractItem",
+  "superClass": "qx.ui.core.Widget",
+  "interfaces": [
+    "qx.ui.form.IModel"
+  ],
+  "mixins": [
+    "qx.ui.form.MModelProperty"
+  ],
+  "clazz": {
+    "location": {
+      "start": {
+        "line": 31,
+        "column": 0
+      },
+      "end": {
+        "line": 512,
+        "column": 3
+      }
+    },
+    "jsdoc": {
+      "@description": [
+        {
+          "name": "@description",
+          "body": "***********************************************************************\n\nqooxdoo - the new era of web development\n\nhttp://qooxdoo.org\n\nCopyright:\n2004-2011 1&1 Internet AG, Germany, http://www.1und1.de\n\nLicense:\nMIT: https://opensource.org/licenses/MIT\nSee the LICENSE file in the project's top-level directory for details.\n\nAuthors:\nFabian Jakobs (fjakobs)\nSebastian Werner (wpbasti)\nAndreas Ecker (ecker)\nDerrell Lipman (derrell)\nChristian Hagendorn (chris_schmidt)\n\n***********************************************************************"
+        },
+        {
+          "name": "@description",
+          "body": "The AbstractItem serves as a common superclass for the {@link\nqx.ui.tree.core.AbstractTreeItem} and {@link qx.ui.tree.VirtualTreeItem} classes."
+        }
+      ],
+      "@childControl": [
+        {
+          "name": "@childControl",
+          "body": "label {qx.ui.basic.Label} label of the tree item"
+        },
+        {
+          "name": "@childControl",
+          "body": "icon {qx.ui.basic.Image} icon of the tree item"
+        },
+        {
+          "name": "@childControl",
+          "body": "open {qx.ui.tree.core.FolderOpenButton} button to open/close a subtree"
+        }
+      ]
+    }
+  },
+  "type": "class",
+  "construct": {
+    "location": {
+      "start": {
+        "line": 42,
+        "column": 2
+      },
+      "end": {
+        "line": 54,
+        "column": 3
+      }
+    },
+    "jsdoc": {
+      "@description": [
+        {
+          "name": "@description",
+          "body": ""
+        }
+      ],
+      "@param": [
+        {
+          "name": "@param",
+          "body": "label {String?null} The tree item's caption text",
+          "paramName": "label",
+          "description": " The tree item's caption text",
+          "optional": true,
+          "defaultValue": "null",
+          "type": "String"
+        }
+      ]
+    }
+  },
+  "properties": {
+    "open": {
+      "location": {
+        "start": {
+          "line": 62,
+          "column": 4
+        },
+        "end": {
+          "line": 68,
+          "column": 5
+        }
+      },
+      "jsdoc": {
+        "@description": [
+          {
+            "name": "@description",
+            "body": "Whether the tree item is opened."
+          }
+        ]
+      },
+      "name": "open",
+      "propertyType": "new",
+      "event": "changeOpen",
+      "apply": "_applyOpen",
+      "check": "Boolean",
+      "defaultValue": false
+    },
+    "openSymbolMode": {
+      "location": {
+        "start": {
+          "line": 75,
+          "column": 4
+        },
+        "end": {
+          "line": 81,
+          "column": 5
+        }
+      },
+      "jsdoc": {
+        "@description": [
+          {
+            "name": "@description",
+            "body": "Controls, when to show the open symbol. If the mode is \"auto\" , the open\nsymbol is shown only if the item has child items."
+          }
+        ]
+      },
+      "name": "openSymbolMode",
+      "propertyType": "new",
+      "event": "changeOpenSymbolMode",
+      "apply": "_applyOpenSymbolMode",
+      "possibleValues": [
+        "always",
+        "never",
+        "auto"
+      ],
+      "defaultValue": "auto"
+    },
+    "indent": {
+      "location": {
+        "start": {
+          "line": 87,
+          "column": 4
+        },
+        "end": {
+          "line": 94,
+          "column": 5
+        }
+      },
+      "jsdoc": {
+        "@description": [
+          {
+            "name": "@description",
+            "body": "The number of pixel to indent the tree item for each level."
+          }
+        ]
+      },
+      "name": "indent",
+      "propertyType": "new",
+      "themeable": true,
+      "event": "changeIndent",
+      "apply": "_applyIndent",
+      "check": "Integer",
+      "defaultValue": 19
+    },
+    "icon": {
+      "location": {
+        "start": {
+          "line": 100,
+          "column": 4
+        },
+        "end": {
+          "line": 107,
+          "column": 5
+        }
+      },
+      "jsdoc": {
+        "@description": [
+          {
+            "name": "@description",
+            "body": "URI of \"closed\" icon. Can be any URI String supported by qx.ui.basic.Image."
+          }
+        ]
+      },
+      "name": "icon",
+      "propertyType": "new",
+      "themeable": true,
+      "event": "changeIcon",
+      "apply": "_applyIcon",
+      "allowNull": true,
+      "check": "String"
+    },
+    "iconOpened": {
+      "location": {
+        "start": {
+          "line": 113,
+          "column": 4
+        },
+        "end": {
+          "line": 120,
+          "column": 5
+        }
+      },
+      "jsdoc": {
+        "@description": [
+          {
+            "name": "@description",
+            "body": "URI of \"opened\" icon. Can be any URI String supported by qx.ui.basic.Image."
+          }
+        ]
+      },
+      "name": "iconOpened",
+      "propertyType": "new",
+      "themeable": true,
+      "event": "changeIconOpened",
+      "apply": "_applyIconOpened",
+      "allowNull": true,
+      "check": "String"
+    },
+    "label": {
+      "location": {
+        "start": {
+          "line": 126,
+          "column": 4
+        },
+        "end": {
+          "line": 132,
+          "column": 5
+        }
+      },
+      "jsdoc": {
+        "@description": [
+          {
+            "name": "@description",
+            "body": "The label/caption/text"
+          }
+        ]
+      },
+      "name": "label",
+      "propertyType": "new",
+      "event": "changeLabel",
+      "apply": "_applyLabel",
+      "check": "String",
+      "defaultValue": ""
+    },
+    "model": {
+      "type": "property",
+      "name": "model",
+      "abstract": false,
+      "mixin": true,
+      "access": "public",
+      "overriddenFrom": "qx.ui.form.MModelProperty"
+    }
+  },
+  "members": {
+    "__labelAdded": {
+      "location": {
+        "start": {
+          "line": 138,
+          "column": 4
+        },
+        "end": {
+          "line": 138,
+          "column": 23
+        }
+      },
+      "type": "variable",
+      "access": "private"
+    },
+    "__iconAdded": {
+      "location": {
+        "start": {
+          "line": 139,
+          "column": 4
+        },
+        "end": {
+          "line": 139,
+          "column": 22
+        }
+      },
+      "type": "variable",
+      "access": "private"
+    },
+    "__spacer": {
+      "location": {
+        "start": {
+          "line": 140,
+          "column": 4
+        },
+        "end": {
+          "line": 140,
+          "column": 19
+        }
+      },
+      "type": "variable",
+      "access": "private"
+    },
+    "_addWidgets": {
+      "location": {
+        "start": {
+          "line": 149,
+          "column": 4
+        },
+        "end": {
+          "line": 151,
+          "column": 5
+        }
+      },
+      "jsdoc": {
+        "@description": [
+          {
+            "name": "@description",
+            "body": "This method configures the tree item by adding its sub widgets like\nlabel, icon, open symbol, ...\n\nThis method must be overridden by sub classes."
+          }
+        ]
+      },
+      "type": "function",
+      "access": "protected"
+    },
+    "_createChildControlImpl": {
+      "location": {
+        "start": {
+          "line": 155,
+          "column": 4
+        },
+        "end": {
+          "line": 187,
+          "column": 5
+        }
+      },
+      "jsdoc": {
+        "@description": [
+          {
+            "name": "@description",
+            "body": "overridden"
+          }
+        ],
+        "@param": [
+          {
+            "name": "@param",
+            "body": "id {String} ID of the child control. If a # is used, the id is\nthe part in front of the #.",
+            "paramName": "id",
+            "description": " ID of the child control. If a # is used, the id is\nthe part in front of the #.",
+            "type": "String"
+          },
+          {
+            "name": "@param",
+            "body": "hash {String?undefined} If a child control name contains a #,\nall text following the # will be the hash argument.",
+            "paramName": "hash",
+            "description": " If a child control name contains a #,\nall text following the # will be the hash argument.",
+            "optional": true,
+            "defaultValue": "undefined",
+            "type": "String"
+          }
+        ],
+        "@return": [
+          {
+            "name": "@return",
+            "body": "{qx.ui.core.Widget} The created control or <code>null</code>",
+            "type": "qx.ui.core.Widget",
+            "desc": " The created control or <code>null</code>"
+          }
+        ]
+      },
+      "type": "function",
+      "access": "protected",
+      "overriddenFrom": "qx.ui.core.Widget",
+      "appearsIn": [
+        "qx.ui.core.Widget"
+      ]
+    },
+    "addWidget": {
+      "location": {
+        "start": {
+          "line": 202,
+          "column": 4
+        },
+        "end": {
+          "line": 204,
+          "column": 5
+        }
+      },
+      "jsdoc": {
+        "@description": [
+          {
+            "name": "@description",
+            "body": "---------------------------------------------------------------------------\nTREE ITEM CONFIGURATION\n---------------------------------------------------------------------------"
+          },
+          {
+            "name": "@description",
+            "body": "Adds a sub widget to the tree item's horizontal box layout."
+          }
+        ],
+        "@param": [
+          {
+            "name": "@param",
+            "body": "widget {qx.ui.core.Widget} The widget to add",
+            "paramName": "widget",
+            "description": " The widget to add",
+            "type": "qx.ui.core.Widget"
+          },
+          {
+            "name": "@param",
+            "body": "options {Map?null} The (optional) layout options to use for the widget",
+            "paramName": "options",
+            "description": " The (optional) layout options to use for the widget",
+            "optional": true,
+            "defaultValue": "null",
+            "type": "Map"
+          }
+        ]
+      },
+      "type": "function",
+      "access": "public"
+    },
+    "addSpacer": {
+      "location": {
+        "start": {
+          "line": 212,
+          "column": 4
+        },
+        "end": {
+          "line": 221,
+          "column": 5
+        }
+      },
+      "jsdoc": {
+        "@description": [
+          {
+            "name": "@description",
+            "body": "Adds the spacer used to render the indentation to the item's horizontal\nbox layout. If the spacer has been added before, it is removed from its\nold position and added to the end of the layout."
+          }
+        ]
+      },
+      "type": "function",
+      "access": "public"
+    },
+    "addOpenButton": {
+      "location": {
+        "start": {
+          "line": 229,
+          "column": 4
+        },
+        "end": {
+          "line": 231,
+          "column": 5
+        }
+      },
+      "jsdoc": {
+        "@description": [
+          {
+            "name": "@description",
+            "body": "Adds the open button to the item's horizontal box layout. If the open\nbutton has been added before, it is removed from its old position and\nadded to the end of the layout."
+          }
+        ]
+      },
+      "type": "function",
+      "access": "public"
+    },
+    "_onChangeOpen": {
+      "location": {
+        "start": {
+          "line": 239,
+          "column": 4
+        },
+        "end": {
+          "line": 244,
+          "column": 5
+        }
+      },
+      "jsdoc": {
+        "@description": [
+          {
+            "name": "@description",
+            "body": "Event handler, which listens to open state changes of the open button"
+          }
+        ],
+        "@param": [
+          {
+            "name": "@param",
+            "body": "e {qx.event.type.Data} The event object",
+            "paramName": "e",
+            "description": " The event object",
+            "type": "qx.event.type.Data"
+          }
+        ]
+      },
+      "type": "function",
+      "access": "protected"
+    },
+    "addIcon": {
+      "location": {
+        "start": {
+          "line": 252,
+          "column": 4
+        },
+        "end": {
+          "line": 262,
+          "column": 5
+        }
+      },
+      "jsdoc": {
+        "@description": [
+          {
+            "name": "@description",
+            "body": "Adds the icon widget to the item's horizontal box layout. If the icon\nwidget has been added before, it is removed from its old position and\nadded to the end of the layout."
+          }
+        ]
+      },
+      "type": "function",
+      "access": "public"
+    },
+    "addLabel": {
+      "location": {
+        "start": {
+          "line": 272,
+          "column": 4
+        },
+        "end": {
+          "line": 288,
+          "column": 5
+        }
+      },
+      "jsdoc": {
+        "@description": [
+          {
+            "name": "@description",
+            "body": "Adds the label to the item's horizontal box layout. If the label\nhas been added before, it is removed from its old position and\nadded to the end of the layout."
+          }
+        ],
+        "@param": [
+          {
+            "name": "@param",
+            "body": "text {String?0} The label's contents",
+            "paramName": "text",
+            "description": " The label's contents",
+            "optional": true,
+            "defaultValue": "0",
+            "type": "String"
+          }
+        ]
+      },
+      "type": "function",
+      "access": "public"
+    },
+    "_applyIcon": {
+      "location": {
+        "start": {
+          "line": 298,
+          "column": 4
+        },
+        "end": {
+          "line": 310,
+          "column": 5
+        }
+      },
+      "jsdoc": {
+        "@description": [
+          {
+            "name": "@description",
+            "body": "---------------------------------------------------------------------------\nPROPERTY APPLY\n---------------------------------------------------------------------------"
+          },
+          {
+            "name": "@description",
+            "body": "property apply"
+          }
+        ]
+      },
+      "type": "function",
+      "access": "protected"
+    },
+    "_applyIconOpened": {
+      "location": {
+        "start": {
+          "line": 314,
+          "column": 4
+        },
+        "end": {
+          "line": 330,
+          "column": 5
+        }
+      },
+      "jsdoc": {
+        "@description": [
+          {
+            "name": "@description",
+            "body": "property apply"
+          }
+        ]
+      },
+      "type": "function",
+      "access": "protected"
+    },
+    "_applyLabel": {
+      "location": {
+        "start": {
+          "line": 334,
+          "column": 4
+        },
+        "end": {
+          "line": 340,
+          "column": 5
+        }
+      },
+      "jsdoc": {
+        "@description": [
+          {
+            "name": "@description",
+            "body": "property apply"
+          }
+        ]
+      },
+      "type": "function",
+      "access": "protected"
+    },
+    "_applyOpen": {
+      "location": {
+        "start": {
+          "line": 343,
+          "column": 4
+        },
+        "end": {
+          "line": 372,
+          "column": 5
+        }
+      },
+      "jsdoc": {
+        "@description": [
+          {
+            "name": "@description",
+            "body": "property apply"
+          }
+        ]
+      },
+      "type": "function",
+      "access": "protected"
+    },
+    "__getUserValueIcon": {
+      "location": {
+        "start": {
+          "line": 379,
+          "column": 4
+        },
+        "end": {
+          "line": 381,
+          "column": 5
+        }
+      },
+      "jsdoc": {
+        "@description": [
+          {
+            "name": "@description",
+            "body": "Get user-defined value of \"icon\" property"
+          }
+        ],
+        "@return": [
+          {
+            "name": "@return",
+            "body": "{var} The user value of the property \"icon\"",
+            "type": "var",
+            "desc": " The user value of the property \"icon\""
+          }
+        ]
+      },
+      "type": "function",
+      "access": "private"
+    },
+    "__getUserValueIconOpened": {
+      "location": {
+        "start": {
+          "line": 388,
+          "column": 4
+        },
+        "end": {
+          "line": 390,
+          "column": 5
+        }
+      },
+      "jsdoc": {
+        "@description": [
+          {
+            "name": "@description",
+            "body": "Get user-defined value of \"iconOpened\" property"
+          }
+        ],
+        "@return": [
+          {
+            "name": "@return",
+            "body": "{var} The user value of the property \"iconOpened\"",
+            "type": "var",
+            "desc": " The user value of the property \"iconOpened\""
+          }
+        ]
+      },
+      "type": "function",
+      "access": "private"
+    },
+    "__setIconSource": {
+      "location": {
+        "start": {
+          "line": 397,
+          "column": 4
+        },
+        "end": {
+          "line": 402,
+          "column": 5
+        }
+      },
+      "jsdoc": {
+        "@description": [
+          {
+            "name": "@description",
+            "body": "Set source of icon child control"
+          }
+        ],
+        "@param": [
+          {
+            "name": "@param",
+            "body": "url {String} The URL of the icon",
+            "paramName": "url",
+            "description": " The URL of the icon",
+            "type": "String"
+          }
+        ]
+      },
+      "type": "function",
+      "access": "private"
+    },
+    "isOpenable": {
+      "location": {
+        "start": {
+          "line": 416,
+          "column": 4
+        },
+        "end": {
+          "line": 423,
+          "column": 5
+        }
+      },
+      "jsdoc": {
+        "@description": [
+          {
+            "name": "@description",
+            "body": "---------------------------------------------------------------------------\nINDENT HANDLING\n---------------------------------------------------------------------------"
+          },
+          {
+            "name": "@description",
+            "body": "Whether the tree item can be opened."
+          }
+        ],
+        "@return": [
+          {
+            "name": "@return",
+            "body": "{Boolean} Whether the tree item can be opened.",
+            "type": "Boolean",
+            "desc": " Whether the tree item can be opened."
+          }
+        ]
+      },
+      "type": "function",
+      "access": "public"
+    },
+    "_shouldShowOpenSymbol": {
+      "location": {
+        "start": {
+          "line": 431,
+          "column": 4
+        },
+        "end": {
+          "line": 433,
+          "column": 5
+        }
+      },
+      "jsdoc": {
+        "@description": [
+          {
+            "name": "@description",
+            "body": "Whether the open symbol should be shown"
+          }
+        ],
+        "@return": [
+          {
+            "name": "@return",
+            "body": "{Boolean} Whether the open symbol should be shown.",
+            "type": "Boolean",
+            "desc": " Whether the open symbol should be shown."
+          }
+        ]
+      },
+      "type": "function",
+      "access": "protected"
+    },
+    "_applyOpenSymbolMode": {
+      "location": {
+        "start": {
+          "line": 437,
+          "column": 4
+        },
+        "end": {
+          "line": 439,
+          "column": 5
+        }
+      },
+      "jsdoc": {
+        "@description": [
+          {
+            "name": "@description",
+            "body": "property apply"
+          }
+        ]
+      },
+      "type": "function",
+      "access": "protected"
+    },
+    "_updateIndent": {
+      "location": {
+        "start": {
+          "line": 445,
+          "column": 4
+        },
+        "end": {
+          "line": 472,
+          "column": 5
+        }
+      },
+      "jsdoc": {
+        "@description": [
+          {
+            "name": "@description",
+            "body": "Update the indentation of the tree item."
+          }
+        ]
+      },
+      "type": "function",
+      "access": "protected"
+    },
+    "_applyIndent": {
+      "location": {
+        "start": {
+          "line": 476,
+          "column": 4
+        },
+        "end": {
+          "line": 478,
+          "column": 5
+        }
+      },
+      "jsdoc": {
+        "@description": [
+          {
+            "name": "@description",
+            "body": "property apply"
+          }
+        ]
+      },
+      "type": "function",
+      "access": "protected"
+    },
+    "getLevel": {
+      "location": {
+        "start": {
+          "line": 487,
+          "column": 4
+        },
+        "end": {
+          "line": 489,
+          "column": 5
+        }
+      },
+      "jsdoc": {
+        "@description": [
+          {
+            "name": "@description",
+            "body": "Computes the item's nesting level. If the item is not part of a tree\nthis function will return <code>null</code>."
+          }
+        ],
+        "@return": [
+          {
+            "name": "@return",
+            "body": "{Integer|null} The item's nesting level or <code>null</code>.",
+            "type": "Integer|null",
+            "desc": " The item's nesting level or <code>null</code>."
+          }
+        ]
+      },
+      "type": "function",
+      "access": "public"
+    },
+    "syncWidget": {
+      "location": {
+        "start": {
+          "line": 493,
+          "column": 4
+        },
+        "end": {
+          "line": 495,
+          "column": 5
+        }
+      },
+      "jsdoc": {
+        "@description": [
+          {
+            "name": "@description",
+            "body": "overridden"
+          }
+        ],
+        "@param": [
+          {
+            "name": "@param",
+            "body": "jobs {Map} A map of jobs.",
+            "paramName": "jobs",
+            "description": " A map of jobs.",
+            "type": "Map"
+          }
+        ]
+      },
+      "type": "function",
+      "access": "public",
+      "overriddenFrom": "qx.ui.core.Widget",
+      "appearsIn": [
+        "qx.ui.core.Widget"
+      ]
+    },
+    "hasChildren": {
+      "location": {
+        "start": {
+          "line": 503,
+          "column": 4
+        },
+        "end": {
+          "line": 505,
+          "column": 5
+        }
+      },
+      "jsdoc": {
+        "@description": [
+          {
+            "name": "@description",
+            "body": "Whether the item has any children"
+          }
+        ],
+        "@return": [
+          {
+            "name": "@return",
+            "body": "{Boolean} Whether the item has any children.",
+            "type": "Boolean",
+            "desc": " Whether the item has any children."
+          }
+        ]
+      },
+      "type": "function",
+      "access": "public"
+    },
+    "setModel": {
+      "type": "function",
+      "name": "setModel",
+      "abstract": false,
+      "mixin": true,
+      "inherited": true,
+      "access": "public",
+      "overriddenFrom": "qx.ui.form.IModel",
+      "jsdoc": {
+        "@description": [
+          {
+            "name": "@description",
+            "body": "Set the representative data for the item."
+          }
+        ],
+        "@param": [
+          {
+            "name": "@param",
+            "body": "value {var} The data.",
+            "paramName": "value",
+            "description": " The data.",
+            "type": "var"
+          }
+        ]
+      }
+    },
+    "getModel": {
+      "type": "function",
+      "name": "getModel",
+      "abstract": false,
+      "mixin": true,
+      "inherited": true,
+      "access": "public",
+      "overriddenFrom": "qx.ui.form.IModel",
+      "jsdoc": {
+        "@description": [
+          {
+            "name": "@description",
+            "body": "Returns the representative data for the item"
+          }
+        ],
+        "@return": [
+          {
+            "name": "@return",
+            "body": "{var} The data.",
+            "type": "var",
+            "desc": " The data."
+          }
+        ]
+      }
+    },
+    "resetModel": {
+      "type": "function",
+      "name": "resetModel",
+      "abstract": false,
+      "mixin": true,
+      "inherited": true,
+      "access": "public",
+      "overriddenFrom": "qx.ui.form.IModel"
+    },
+    "_applyModel": {
+      "type": "function",
+      "name": "_applyModel",
+      "abstract": false,
+      "mixin": true,
+      "inherited": true,
+      "access": "protected",
+      "overriddenFrom": "qx.ui.form.MModelProperty"
+    },
+    "getOpen": {
+      "type": "function",
+      "name": "getOpen",
+      "abstract": false,
+      "mixin": false,
+      "inherited": false,
+      "access": "public",
+      "property": "get",
+      "jsdoc": {
+        "@return": [
+          {
+            "name": "@return",
+            "type": "Boolean",
+            "desc": "Returns the value for undefined"
+          }
+        ]
+      }
+    },
+    "isOpen": {
+      "type": "function",
+      "name": "isOpen",
+      "abstract": false,
+      "mixin": false,
+      "inherited": false,
+      "access": "public",
+      "property": "is",
+      "jsdoc": {
+        "@return": [
+          {
+            "name": "@return",
+            "type": "Boolean",
+            "desc": "Returns the value for undefined"
+          }
+        ]
+      }
+    },
+    "setOpen": {
+      "type": "function",
+      "name": "setOpen",
+      "abstract": false,
+      "mixin": false,
+      "inherited": false,
+      "access": "public",
+      "property": "set",
+      "jsdoc": {
+        "@param": [
+          {
+            "name": "@param",
+            "type": "Boolean",
+            "paramName": "value",
+            "desc": "Value for undefined"
+          }
+        ]
+      }
+    },
+    "resetOpen": {
+      "type": "function",
+      "name": "resetOpen",
+      "abstract": false,
+      "mixin": false,
+      "inherited": false,
+      "access": "public",
+      "property": "reset",
+      "jsdoc": {}
+    },
+    "getOpenSymbolMode": {
+      "type": "function",
+      "name": "getOpenSymbolMode",
+      "abstract": false,
+      "mixin": false,
+      "inherited": false,
+      "access": "public",
+      "property": "get",
+      "jsdoc": {
+        "@return": [
+          {
+            "name": "@return",
+            "type": "any",
+            "desc": "Returns the value for undefined"
+          }
+        ]
+      }
+    },
+    "setOpenSymbolMode": {
+      "type": "function",
+      "name": "setOpenSymbolMode",
+      "abstract": false,
+      "mixin": false,
+      "inherited": false,
+      "access": "public",
+      "property": "set",
+      "jsdoc": {
+        "@param": [
+          {
+            "name": "@param",
+            "type": "any",
+            "paramName": "value",
+            "desc": "Value for undefined"
+          }
+        ]
+      }
+    },
+    "resetOpenSymbolMode": {
+      "type": "function",
+      "name": "resetOpenSymbolMode",
+      "abstract": false,
+      "mixin": false,
+      "inherited": false,
+      "access": "public",
+      "property": "reset",
+      "jsdoc": {}
+    },
+    "getIndent": {
+      "type": "function",
+      "name": "getIndent",
+      "abstract": false,
+      "mixin": false,
+      "inherited": false,
+      "access": "public",
+      "property": "get",
+      "jsdoc": {
+        "@return": [
+          {
+            "name": "@return",
+            "type": "Integer",
+            "desc": "Returns the value for undefined"
+          }
+        ]
+      }
+    },
+    "setIndent": {
+      "type": "function",
+      "name": "setIndent",
+      "abstract": false,
+      "mixin": false,
+      "inherited": false,
+      "access": "public",
+      "property": "set",
+      "jsdoc": {
+        "@param": [
+          {
+            "name": "@param",
+            "type": "Integer",
+            "paramName": "value",
+            "desc": "Value for undefined"
+          }
+        ]
+      }
+    },
+    "resetIndent": {
+      "type": "function",
+      "name": "resetIndent",
+      "abstract": false,
+      "mixin": false,
+      "inherited": false,
+      "access": "public",
+      "property": "reset",
+      "jsdoc": {}
+    },
+    "getIcon": {
+      "type": "function",
+      "name": "getIcon",
+      "abstract": false,
+      "mixin": false,
+      "inherited": false,
+      "access": "public",
+      "property": "get",
+      "jsdoc": {
+        "@return": [
+          {
+            "name": "@return",
+            "type": "String",
+            "desc": "Returns the value for undefined"
+          }
+        ]
+      }
+    },
+    "setIcon": {
+      "type": "function",
+      "name": "setIcon",
+      "abstract": false,
+      "mixin": false,
+      "inherited": false,
+      "access": "public",
+      "property": "set",
+      "jsdoc": {
+        "@param": [
+          {
+            "name": "@param",
+            "type": "String",
+            "paramName": "value",
+            "desc": "Value for undefined"
+          }
+        ]
+      }
+    },
+    "resetIcon": {
+      "type": "function",
+      "name": "resetIcon",
+      "abstract": false,
+      "mixin": false,
+      "inherited": false,
+      "access": "public",
+      "property": "reset",
+      "jsdoc": {}
+    },
+    "getIconOpened": {
+      "type": "function",
+      "name": "getIconOpened",
+      "abstract": false,
+      "mixin": false,
+      "inherited": false,
+      "access": "public",
+      "property": "get",
+      "jsdoc": {
+        "@return": [
+          {
+            "name": "@return",
+            "type": "String",
+            "desc": "Returns the value for undefined"
+          }
+        ]
+      }
+    },
+    "setIconOpened": {
+      "type": "function",
+      "name": "setIconOpened",
+      "abstract": false,
+      "mixin": false,
+      "inherited": false,
+      "access": "public",
+      "property": "set",
+      "jsdoc": {
+        "@param": [
+          {
+            "name": "@param",
+            "type": "String",
+            "paramName": "value",
+            "desc": "Value for undefined"
+          }
+        ]
+      }
+    },
+    "resetIconOpened": {
+      "type": "function",
+      "name": "resetIconOpened",
+      "abstract": false,
+      "mixin": false,
+      "inherited": false,
+      "access": "public",
+      "property": "reset",
+      "jsdoc": {}
+    },
+    "getLabel": {
+      "type": "function",
+      "name": "getLabel",
+      "abstract": false,
+      "mixin": false,
+      "inherited": false,
+      "access": "public",
+      "property": "get",
+      "jsdoc": {
+        "@return": [
+          {
+            "name": "@return",
+            "type": "String",
+            "desc": "Returns the value for undefined"
+          }
+        ]
+      }
+    },
+    "setLabel": {
+      "type": "function",
+      "name": "setLabel",
+      "abstract": false,
+      "mixin": false,
+      "inherited": false,
+      "access": "public",
+      "property": "set",
+      "jsdoc": {
+        "@param": [
+          {
+            "name": "@param",
+            "type": "String",
+            "paramName": "value",
+            "desc": "Value for undefined"
+          }
+        ]
+      }
+    },
+    "resetLabel": {
+      "type": "function",
+      "name": "resetLabel",
+      "abstract": false,
+      "mixin": false,
+      "inherited": false,
+      "access": "public",
+      "property": "reset",
+      "jsdoc": {}
+    }
+  },
+  "destruct": {
+    "location": {
+      "start": {
+        "line": 509,
+        "column": 2
+      },
+      "end": {
+        "line": 511,
+        "column": 3
+      }
+    }
+  },
+  "descendants": [
+    "qx.ui.tree.core.AbstractTreeItem",
+    "qx.ui.tree.VirtualTreeItem"
+  ]
+}

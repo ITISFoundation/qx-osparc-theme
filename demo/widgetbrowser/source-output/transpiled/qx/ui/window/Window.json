@@ -1,0 +1,4509 @@
+{
+  "className": "qx.ui.window.Window",
+  "packageName": "qx.ui.window",
+  "name": "Window",
+  "superClass": "qx.ui.core.Widget",
+  "interfaces": [],
+  "mixins": [
+    "qx.ui.core.MRemoteChildrenHandling",
+    "qx.ui.core.MRemoteLayoutHandling",
+    "qx.ui.core.MResizable",
+    "qx.ui.core.MMovable",
+    "qx.ui.core.MContentPadding"
+  ],
+  "clazz": {
+    "location": {
+      "start": {
+        "line": 38,
+        "column": 0
+      },
+      "end": {
+        "line": 1200,
+        "column": 3
+      }
+    },
+    "jsdoc": {
+      "@description": [
+        {
+          "name": "@description",
+          "body": "***********************************************************************\n\nqooxdoo - the new era of web development\n\nhttp://qooxdoo.org\n\nCopyright:\n2004-2008 1&1 Internet AG, Germany, http://www.1und1.de\n\nLicense:\nMIT: https://opensource.org/licenses/MIT\nSee the LICENSE file in the project's top-level directory for details.\n\nAuthors:\nSebastian Werner (wpbasti)\nAndreas Ecker (ecker)\nFabian Jakobs (fjakobs)\nChristian Hagendorn (chris_schmidt)\n\n***********************************************************************"
+        },
+        {
+          "name": "@description",
+          "body": "A window widget\n\nMore information can be found in the package description {@link qx.ui.window}."
+        }
+      ],
+      "@childControl": [
+        {
+          "name": "@childControl",
+          "body": "statusbar {qx.ui.container.Composite} statusbar container which shows the statusbar text"
+        },
+        {
+          "name": "@childControl",
+          "body": "statusbar-text {qx.ui.basic.Label} text of the statusbar"
+        },
+        {
+          "name": "@childControl",
+          "body": "pane {qx.ui.container.Composite} window pane which holds the content"
+        },
+        {
+          "name": "@childControl",
+          "body": "captionbar {qx.ui.container.Composite} Container for all widgets inside the captionbar"
+        },
+        {
+          "name": "@childControl",
+          "body": "icon {qx.ui.basic.Image} icon at the left of the captionbar"
+        },
+        {
+          "name": "@childControl",
+          "body": "title {qx.ui.basic.Label} caption of the window"
+        },
+        {
+          "name": "@childControl",
+          "body": "minimize-button {qx.ui.form.Button} button to minimize the window"
+        },
+        {
+          "name": "@childControl",
+          "body": "restore-button {qx.ui.form.Button} button to restore the window"
+        },
+        {
+          "name": "@childControl",
+          "body": "maximize-button {qx.ui.form.Button} button to maximize the window"
+        },
+        {
+          "name": "@childControl",
+          "body": "close-button {qx.ui.form.Button} button to close the window"
+        }
+      ]
+    }
+  },
+  "type": "class",
+  "construct": {
+    "location": {
+      "start": {
+        "line": 65,
+        "column": 2
+      },
+      "end": {
+        "line": 105,
+        "column": 3
+      }
+    },
+    "jsdoc": {
+      "@description": [
+        {
+          "name": "@description",
+          "body": "****************************************************************************\nCONSTRUCTOR\n****************************************************************************"
+        },
+        {
+          "name": "@description",
+          "body": ""
+        }
+      ],
+      "@param": [
+        {
+          "name": "@param",
+          "body": "caption {String} The caption text",
+          "paramName": "caption",
+          "description": " The caption text",
+          "type": "String"
+        },
+        {
+          "name": "@param",
+          "body": "icon {String} The URL of the caption bar icon",
+          "paramName": "icon",
+          "description": " The URL of the caption bar icon",
+          "type": "String"
+        }
+      ]
+    }
+  },
+  "properties": {
+    "appearance": {
+      "location": {
+        "start": {
+          "line": 197,
+          "column": 4
+        },
+        "end": {
+          "line": 201,
+          "column": 5
+        }
+      },
+      "jsdoc": {
+        "@description": [
+          {
+            "name": "@description",
+            "body": "---------------------------------------------------------------------------\nINTERNAL OPTIONS\n---------------------------------------------------------------------------"
+          },
+          {
+            "name": "@description",
+            "body": "overridden"
+          }
+        ]
+      },
+      "name": "appearance",
+      "propertyType": "new",
+      "refine": true,
+      "defaultValue": "window",
+      "overriddenFrom": "qx.ui.core.Widget",
+      "appearsIn": {
+        "qx.ui.core.Widget": "class"
+      }
+    },
+    "visibility": {
+      "location": {
+        "start": {
+          "line": 205,
+          "column": 4
+        },
+        "end": {
+          "line": 209,
+          "column": 5
+        }
+      },
+      "jsdoc": {
+        "@description": [
+          {
+            "name": "@description",
+            "body": "overridden"
+          }
+        ]
+      },
+      "name": "visibility",
+      "propertyType": "new",
+      "refine": true,
+      "defaultValue": "excluded",
+      "overriddenFrom": "qx.ui.core.Widget",
+      "appearsIn": {
+        "qx.ui.core.Widget": "class"
+      }
+    },
+    "focusable": {
+      "location": {
+        "start": {
+          "line": 213,
+          "column": 4
+        },
+        "end": {
+          "line": 217,
+          "column": 5
+        }
+      },
+      "jsdoc": {
+        "@description": [
+          {
+            "name": "@description",
+            "body": "overridden"
+          }
+        ]
+      },
+      "name": "focusable",
+      "propertyType": "new",
+      "refine": true,
+      "defaultValue": true,
+      "overriddenFrom": "qx.ui.core.Widget",
+      "appearsIn": {
+        "qx.ui.core.Widget": "class"
+      }
+    },
+    "active": {
+      "location": {
+        "start": {
+          "line": 224,
+          "column": 4
+        },
+        "end": {
+          "line": 230,
+          "column": 5
+        }
+      },
+      "jsdoc": {
+        "@description": [
+          {
+            "name": "@description",
+            "body": "If the window is active, only one window in a single qx.ui.window.Manager could\nhave set this to true at the same time."
+          }
+        ]
+      },
+      "name": "active",
+      "propertyType": "new",
+      "event": "changeActive",
+      "apply": "_applyActive",
+      "check": "Boolean",
+      "defaultValue": false
+    },
+    "alwaysOnTop": {
+      "location": {
+        "start": {
+          "line": 241,
+          "column": 4
+        },
+        "end": {
+          "line": 246,
+          "column": 5
+        }
+      },
+      "jsdoc": {
+        "@description": [
+          {
+            "name": "@description",
+            "body": "---------------------------------------------------------------------------\nBASIC OPTIONS\n---------------------------------------------------------------------------"
+          },
+          {
+            "name": "@description",
+            "body": "Should the window be always on top"
+          }
+        ]
+      },
+      "name": "alwaysOnTop",
+      "propertyType": "new",
+      "event": "changeAlwaysOnTop",
+      "check": "Boolean",
+      "defaultValue": false
+    },
+    "modal": {
+      "location": {
+        "start": {
+          "line": 249,
+          "column": 4
+        },
+        "end": {
+          "line": 255,
+          "column": 5
+        }
+      },
+      "jsdoc": {
+        "@description": [
+          {
+            "name": "@description",
+            "body": "Should the window be modal (this disables minimize and maximize buttons)"
+          }
+        ]
+      },
+      "name": "modal",
+      "propertyType": "new",
+      "event": "changeModal",
+      "apply": "_applyModal",
+      "check": "Boolean",
+      "defaultValue": false
+    },
+    "caption": {
+      "location": {
+        "start": {
+          "line": 259,
+          "column": 4
+        },
+        "end": {
+          "line": 264,
+          "column": 5
+        }
+      },
+      "jsdoc": {
+        "@description": [
+          {
+            "name": "@description",
+            "body": "The text of the caption"
+          }
+        ]
+      },
+      "name": "caption",
+      "propertyType": "new",
+      "event": "changeCaption",
+      "apply": "_applyCaptionBarChange",
+      "allowNull": true
+    },
+    "icon": {
+      "location": {
+        "start": {
+          "line": 268,
+          "column": 4
+        },
+        "end": {
+          "line": 275,
+          "column": 5
+        }
+      },
+      "jsdoc": {
+        "@description": [
+          {
+            "name": "@description",
+            "body": "The icon of the caption"
+          }
+        ]
+      },
+      "name": "icon",
+      "propertyType": "new",
+      "themeable": true,
+      "event": "changeIcon",
+      "apply": "_applyCaptionBarChange",
+      "allowNull": true,
+      "check": "String"
+    },
+    "status": {
+      "location": {
+        "start": {
+          "line": 279,
+          "column": 4
+        },
+        "end": {
+          "line": 285,
+          "column": 5
+        }
+      },
+      "jsdoc": {
+        "@description": [
+          {
+            "name": "@description",
+            "body": "The text of the statusbar"
+          }
+        ]
+      },
+      "name": "status",
+      "propertyType": "new",
+      "event": "changeStatus",
+      "apply": "_applyStatus",
+      "allowNull": true,
+      "check": "String"
+    },
+    "showClose": {
+      "location": {
+        "start": {
+          "line": 297,
+          "column": 4
+        },
+        "end": {
+          "line": 303,
+          "column": 5
+        }
+      },
+      "jsdoc": {
+        "@description": [
+          {
+            "name": "@description",
+            "body": "---------------------------------------------------------------------------\nHIDE CAPTIONBAR FEATURES\n---------------------------------------------------------------------------"
+          },
+          {
+            "name": "@description",
+            "body": "Should the close button be shown"
+          }
+        ]
+      },
+      "name": "showClose",
+      "propertyType": "new",
+      "themeable": true,
+      "apply": "_applyCaptionBarChange",
+      "check": "Boolean",
+      "defaultValue": true
+    },
+    "showMaximize": {
+      "location": {
+        "start": {
+          "line": 307,
+          "column": 4
+        },
+        "end": {
+          "line": 313,
+          "column": 5
+        }
+      },
+      "jsdoc": {
+        "@description": [
+          {
+            "name": "@description",
+            "body": "Should the maximize button be shown"
+          }
+        ]
+      },
+      "name": "showMaximize",
+      "propertyType": "new",
+      "themeable": true,
+      "apply": "_applyCaptionBarChange",
+      "check": "Boolean",
+      "defaultValue": true
+    },
+    "showMinimize": {
+      "location": {
+        "start": {
+          "line": 317,
+          "column": 4
+        },
+        "end": {
+          "line": 323,
+          "column": 5
+        }
+      },
+      "jsdoc": {
+        "@description": [
+          {
+            "name": "@description",
+            "body": "Should the minimize button be shown"
+          }
+        ]
+      },
+      "name": "showMinimize",
+      "propertyType": "new",
+      "themeable": true,
+      "apply": "_applyCaptionBarChange",
+      "check": "Boolean",
+      "defaultValue": true
+    },
+    "allowClose": {
+      "location": {
+        "start": {
+          "line": 335,
+          "column": 4
+        },
+        "end": {
+          "line": 340,
+          "column": 5
+        }
+      },
+      "jsdoc": {
+        "@description": [
+          {
+            "name": "@description",
+            "body": "---------------------------------------------------------------------------\nDISABLE CAPTIONBAR FEATURES\n---------------------------------------------------------------------------"
+          },
+          {
+            "name": "@description",
+            "body": "Should the user have the ability to close the window"
+          }
+        ]
+      },
+      "name": "allowClose",
+      "propertyType": "new",
+      "apply": "_applyCaptionBarChange",
+      "check": "Boolean",
+      "defaultValue": true
+    },
+    "allowMaximize": {
+      "location": {
+        "start": {
+          "line": 344,
+          "column": 4
+        },
+        "end": {
+          "line": 349,
+          "column": 5
+        }
+      },
+      "jsdoc": {
+        "@description": [
+          {
+            "name": "@description",
+            "body": "Should the user have the ability to maximize the window"
+          }
+        ]
+      },
+      "name": "allowMaximize",
+      "propertyType": "new",
+      "apply": "_applyCaptionBarChange",
+      "check": "Boolean",
+      "defaultValue": true
+    },
+    "allowMinimize": {
+      "location": {
+        "start": {
+          "line": 353,
+          "column": 4
+        },
+        "end": {
+          "line": 358,
+          "column": 5
+        }
+      },
+      "jsdoc": {
+        "@description": [
+          {
+            "name": "@description",
+            "body": "Should the user have the ability to minimize the window"
+          }
+        ]
+      },
+      "name": "allowMinimize",
+      "propertyType": "new",
+      "apply": "_applyCaptionBarChange",
+      "check": "Boolean",
+      "defaultValue": true
+    },
+    "showStatusbar": {
+      "location": {
+        "start": {
+          "line": 370,
+          "column": 4
+        },
+        "end": {
+          "line": 375,
+          "column": 5
+        }
+      },
+      "jsdoc": {
+        "@description": [
+          {
+            "name": "@description",
+            "body": "---------------------------------------------------------------------------\nSTATUSBAR CONFIG\n---------------------------------------------------------------------------"
+          },
+          {
+            "name": "@description",
+            "body": "Should the statusbar be shown"
+          }
+        ]
+      },
+      "name": "showStatusbar",
+      "propertyType": "new",
+      "apply": "_applyShowStatusbar",
+      "check": "Boolean",
+      "defaultValue": false
+    },
+    "centerOnAppear": {
+      "location": {
+        "start": {
+          "line": 387,
+          "column": 4
+        },
+        "end": {
+          "line": 392,
+          "column": 5
+        }
+      },
+      "jsdoc": {
+        "@description": [
+          {
+            "name": "@description",
+            "body": "---------------------------------------------------------------------------\nWHEN TO AUTOMATICALY CENTER\n---------------------------------------------------------------------------"
+          },
+          {
+            "name": "@description",
+            "body": "Whether this window should be automatically centered when it appears"
+          }
+        ]
+      },
+      "name": "centerOnAppear",
+      "propertyType": "new",
+      "apply": "_applyCenterOnAppear",
+      "check": "Boolean",
+      "defaultValue": false
+    },
+    "centerOnContainerResize": {
+      "location": {
+        "start": {
+          "line": 398,
+          "column": 4
+        },
+        "end": {
+          "line": 403,
+          "column": 5
+        }
+      },
+      "jsdoc": {
+        "@description": [
+          {
+            "name": "@description",
+            "body": "Whether this window should be automatically centered when its container\nis resized."
+          }
+        ]
+      },
+      "name": "centerOnContainerResize",
+      "propertyType": "new",
+      "apply": "_applyCenterOnContainerResize",
+      "check": "Boolean",
+      "defaultValue": false
+    },
+    "autoDestroy": {
+      "location": {
+        "start": {
+          "line": 426,
+          "column": 4
+        },
+        "end": {
+          "line": 430,
+          "column": 5
+        }
+      },
+      "jsdoc": {
+        "@description": [
+          {
+            "name": "@description",
+            "body": "---------------------------------------------------------------------------\nCLOSE BEHAVIOR\n---------------------------------------------------------------------------"
+          },
+          {
+            "name": "@description",
+            "body": "Should the window be automatically destroyed when it is closed.\n\nWhen false, closing the window behaves like hiding the window.\n\nWhen true, the window is removed from its container (the root), all\nlisteners are removed, the window's widgets are removed, and the window\nis destroyed.\n\nNOTE: If any widgets that were added to this window require special\nclean-up, you should listen on the 'close' event and remove and clean\nup those widgets there."
+          }
+        ]
+      },
+      "name": "autoDestroy",
+      "propertyType": "new",
+      "check": "Boolean",
+      "defaultValue": false
+    },
+    "resizableTop": {
+      "type": "property",
+      "name": "resizableTop",
+      "abstract": false,
+      "mixin": true,
+      "access": "public",
+      "overriddenFrom": "qx.ui.core.MResizable"
+    },
+    "resizableRight": {
+      "type": "property",
+      "name": "resizableRight",
+      "abstract": false,
+      "mixin": true,
+      "access": "public",
+      "overriddenFrom": "qx.ui.core.MResizable"
+    },
+    "resizableBottom": {
+      "type": "property",
+      "name": "resizableBottom",
+      "abstract": false,
+      "mixin": true,
+      "access": "public",
+      "overriddenFrom": "qx.ui.core.MResizable"
+    },
+    "resizableLeft": {
+      "type": "property",
+      "name": "resizableLeft",
+      "abstract": false,
+      "mixin": true,
+      "access": "public",
+      "overriddenFrom": "qx.ui.core.MResizable"
+    },
+    "resizable": {
+      "type": "property",
+      "name": "resizable",
+      "abstract": false,
+      "mixin": true,
+      "access": "public",
+      "overriddenFrom": "qx.ui.core.MResizable"
+    },
+    "resizeSensitivity": {
+      "type": "property",
+      "name": "resizeSensitivity",
+      "abstract": false,
+      "mixin": true,
+      "access": "public",
+      "overriddenFrom": "qx.ui.core.MResizable"
+    },
+    "useResizeFrame": {
+      "type": "property",
+      "name": "useResizeFrame",
+      "abstract": false,
+      "mixin": true,
+      "access": "public",
+      "overriddenFrom": "qx.ui.core.MResizable"
+    },
+    "movable": {
+      "type": "property",
+      "name": "movable",
+      "abstract": false,
+      "mixin": true,
+      "access": "public",
+      "overriddenFrom": "qx.ui.core.MMovable"
+    },
+    "useMoveFrame": {
+      "type": "property",
+      "name": "useMoveFrame",
+      "abstract": false,
+      "mixin": true,
+      "access": "public",
+      "overriddenFrom": "qx.ui.core.MMovable"
+    },
+    "contentPaddingTop": {
+      "type": "property",
+      "name": "contentPaddingTop",
+      "abstract": false,
+      "mixin": true,
+      "access": "public",
+      "overriddenFrom": "qx.ui.core.MContentPadding"
+    },
+    "contentPaddingRight": {
+      "type": "property",
+      "name": "contentPaddingRight",
+      "abstract": false,
+      "mixin": true,
+      "access": "public",
+      "overriddenFrom": "qx.ui.core.MContentPadding"
+    },
+    "contentPaddingBottom": {
+      "type": "property",
+      "name": "contentPaddingBottom",
+      "abstract": false,
+      "mixin": true,
+      "access": "public",
+      "overriddenFrom": "qx.ui.core.MContentPadding"
+    },
+    "contentPaddingLeft": {
+      "type": "property",
+      "name": "contentPaddingLeft",
+      "abstract": false,
+      "mixin": true,
+      "access": "public",
+      "overriddenFrom": "qx.ui.core.MContentPadding"
+    },
+    "contentPadding": {
+      "type": "property",
+      "name": "contentPadding",
+      "abstract": false,
+      "mixin": true,
+      "access": "public",
+      "overriddenFrom": "qx.ui.core.MContentPadding"
+    }
+  },
+  "members": {
+    "__restoredTop": {
+      "location": {
+        "start": {
+          "line": 445,
+          "column": 4
+        },
+        "end": {
+          "line": 445,
+          "column": 24
+        }
+      },
+      "jsdoc": {
+        "@description": [
+          {
+            "name": "@description",
+            "body": ""
+          }
+        ],
+        "@type": [
+          {
+            "name": "@type",
+            "body": "{Integer} Original top value before maximation had occurred"
+          }
+        ]
+      },
+      "type": "variable",
+      "access": "private"
+    },
+    "__restoredLeft": {
+      "location": {
+        "start": {
+          "line": 448,
+          "column": 4
+        },
+        "end": {
+          "line": 448,
+          "column": 25
+        }
+      },
+      "jsdoc": {
+        "@description": [
+          {
+            "name": "@description",
+            "body": ""
+          }
+        ],
+        "@type": [
+          {
+            "name": "@type",
+            "body": "{Integer} Original left value before maximation had occurred"
+          }
+        ]
+      },
+      "type": "variable",
+      "access": "private"
+    },
+    "__centeringAppearId": {
+      "location": {
+        "start": {
+          "line": 451,
+          "column": 4
+        },
+        "end": {
+          "line": 451,
+          "column": 30
+        }
+      },
+      "jsdoc": {
+        "@description": [
+          {
+            "name": "@description",
+            "body": ""
+          }
+        ],
+        "@type": [
+          {
+            "name": "@type",
+            "body": "{Integer} Listener ID for centering on appear"
+          }
+        ]
+      },
+      "type": "variable",
+      "access": "private"
+    },
+    "__centeringResizeId": {
+      "location": {
+        "start": {
+          "line": 454,
+          "column": 4
+        },
+        "end": {
+          "line": 454,
+          "column": 30
+        }
+      },
+      "jsdoc": {
+        "@description": [
+          {
+            "name": "@description",
+            "body": ""
+          }
+        ],
+        "@type": [
+          {
+            "name": "@type",
+            "body": "{Integer} Listener ID for centering on resize"
+          }
+        ]
+      },
+      "type": "variable",
+      "access": "private"
+    },
+    "getChildrenContainer": {
+      "location": {
+        "start": {
+          "line": 469,
+          "column": 4
+        },
+        "end": {
+          "line": 471,
+          "column": 5
+        }
+      },
+      "jsdoc": {
+        "@description": [
+          {
+            "name": "@description",
+            "body": "---------------------------------------------------------------------------\nWIDGET API\n---------------------------------------------------------------------------"
+          },
+          {
+            "name": "@description",
+            "body": "The children container needed by the {@link qx.ui.core.MRemoteChildrenHandling}\nmixin"
+          }
+        ],
+        "@return": [
+          {
+            "name": "@return",
+            "body": "{qx.ui.container.Composite} pane sub widget",
+            "type": "qx.ui.container.Composite",
+            "desc": " pane sub widget"
+          }
+        ]
+      },
+      "type": "function",
+      "access": "public",
+      "overriddenFrom": "qx.ui.core.Widget",
+      "appearsIn": [
+        "qx.ui.core.Widget"
+      ]
+    },
+    "_forwardStates": {
+      "location": {
+        "start": {
+          "line": 478,
+          "column": 4
+        },
+        "end": {
+          "line": 484,
+          "column": 5
+        }
+      },
+      "jsdoc": {
+        "@description": [
+          {
+            "name": "@description",
+            "body": "overridden"
+          },
+          {
+            "name": "@description",
+            "body": ""
+          }
+        ],
+        "@lint": [
+          {
+            "name": "@lint",
+            "body": "ignoreReferenceField(_forwardStates)"
+          }
+        ]
+      },
+      "type": "variable",
+      "access": "protected"
+    },
+    "setLayoutParent": {
+      "location": {
+        "start": {
+          "line": 488,
+          "column": 4
+        },
+        "end": {
+          "line": 518,
+          "column": 5
+        }
+      },
+      "jsdoc": {
+        "@description": [
+          {
+            "name": "@description",
+            "body": "overridden"
+          }
+        ],
+        "@param": [
+          {
+            "name": "@param",
+            "body": "parent {qx.ui.core.Widget|null} The new parent.",
+            "paramName": "parent",
+            "description": " The new parent.",
+            "type": [
+              "qx.ui.core.Widget",
+              "null"
+            ]
+          }
+        ]
+      },
+      "type": "function",
+      "access": "public",
+      "overriddenFrom": "qx.ui.core.Widget",
+      "appearsIn": [
+        "qx.ui.core.Widget",
+        "qx.ui.core.LayoutItem"
+      ]
+    },
+    "_createChildControlImpl": {
+      "location": {
+        "start": {
+          "line": 522,
+          "column": 4
+        },
+        "end": {
+          "line": 607,
+          "column": 5
+        }
+      },
+      "jsdoc": {
+        "@description": [
+          {
+            "name": "@description",
+            "body": "overridden"
+          }
+        ],
+        "@param": [
+          {
+            "name": "@param",
+            "body": "id {String} ID of the child control. If a # is used, the id is\nthe part in front of the #.",
+            "paramName": "id",
+            "description": " ID of the child control. If a # is used, the id is\nthe part in front of the #.",
+            "type": "String"
+          },
+          {
+            "name": "@param",
+            "body": "hash {String?undefined} If a child control name contains a #,\nall text following the # will be the hash argument.",
+            "paramName": "hash",
+            "description": " If a child control name contains a #,\nall text following the # will be the hash argument.",
+            "optional": true,
+            "defaultValue": "undefined",
+            "type": "String"
+          }
+        ],
+        "@return": [
+          {
+            "name": "@return",
+            "body": "{qx.ui.core.Widget} The created control or <code>null</code>",
+            "type": "qx.ui.core.Widget",
+            "desc": " The created control or <code>null</code>"
+          }
+        ]
+      },
+      "type": "function",
+      "access": "protected",
+      "overriddenFrom": "qx.ui.core.Widget",
+      "appearsIn": [
+        "qx.ui.core.Widget"
+      ]
+    },
+    "_updateCaptionBar": {
+      "location": {
+        "start": {
+          "line": 622,
+          "column": 4
+        },
+        "end": {
+          "line": 687,
+          "column": 5
+        }
+      },
+      "jsdoc": {
+        "@description": [
+          {
+            "name": "@description",
+            "body": "---------------------------------------------------------------------------\nCAPTIONBAR INTERNALS\n---------------------------------------------------------------------------"
+          },
+          {
+            "name": "@description",
+            "body": "Updates the status and the visibility of each element of the captionbar."
+          }
+        ]
+      },
+      "type": "function",
+      "access": "protected"
+    },
+    "close": {
+      "location": {
+        "start": {
+          "line": 706,
+          "column": 4
+        },
+        "end": {
+          "line": 726,
+          "column": 5
+        }
+      },
+      "jsdoc": {
+        "@description": [
+          {
+            "name": "@description",
+            "body": "---------------------------------------------------------------------------\nUSER API\n---------------------------------------------------------------------------"
+          },
+          {
+            "name": "@description",
+            "body": "Close the current window instance.\n\nSimply calls the {@link qx.ui.core.Widget#hide} method if the\n{@link qx.ui.win.Window#autoDestroy} property is false; otherwise\nremoves and destroys the window."
+          }
+        ]
+      },
+      "type": "function",
+      "access": "public"
+    },
+    "open": {
+      "location": {
+        "start": {
+          "line": 732,
+          "column": 4
+        },
+        "end": {
+          "line": 737,
+          "column": 5
+        }
+      },
+      "jsdoc": {
+        "@description": [
+          {
+            "name": "@description",
+            "body": "Open the window."
+          }
+        ]
+      },
+      "type": "function",
+      "access": "public"
+    },
+    "center": {
+      "location": {
+        "start": {
+          "line": 750,
+          "column": 4
+        },
+        "end": {
+          "line": 777,
+          "column": 5
+        }
+      },
+      "jsdoc": {
+        "@description": [
+          {
+            "name": "@description",
+            "body": "Centers the window to the parent.\n\nThis call works with the size of the parent widget and the size of\nthe window as calculated in the last layout flush. It is best to call\nthis method just after rendering the window in the \"resize\" event:\n<pre class='javascript'>\nwin.addListenerOnce(\"resize\", this.center, this);\n</pre>"
+          }
+        ]
+      },
+      "type": "function",
+      "access": "public"
+    },
+    "maximize": {
+      "location": {
+        "start": {
+          "line": 783,
+          "column": 4
+        },
+        "end": {
+          "line": 823,
+          "column": 5
+        }
+      },
+      "jsdoc": {
+        "@description": [
+          {
+            "name": "@description",
+            "body": "Maximize the window."
+          }
+        ]
+      },
+      "type": "function",
+      "access": "public"
+    },
+    "minimize": {
+      "location": {
+        "start": {
+          "line": 829,
+          "column": 4
+        },
+        "end": {
+          "line": 846,
+          "column": 5
+        }
+      },
+      "jsdoc": {
+        "@description": [
+          {
+            "name": "@description",
+            "body": "Minimized the window."
+          }
+        ]
+      },
+      "type": "function",
+      "access": "public"
+    },
+    "restore": {
+      "location": {
+        "start": {
+          "line": 853,
+          "column": 4
+        },
+        "end": {
+          "line": 884,
+          "column": 5
+        }
+      },
+      "jsdoc": {
+        "@description": [
+          {
+            "name": "@description",
+            "body": "Restore the window to <code>\"normal\"</code>, if it is\n<code>\"maximized\"</code> or <code>\"minimized\"</code>."
+          }
+        ]
+      },
+      "type": "function",
+      "access": "public"
+    },
+    "moveTo": {
+      "location": {
+        "start": {
+          "line": 893,
+          "column": 4
+        },
+        "end": {
+          "line": 903,
+          "column": 5
+        }
+      },
+      "jsdoc": {
+        "@description": [
+          {
+            "name": "@description",
+            "body": "Set the window's position relative to its parent"
+          }
+        ],
+        "@param": [
+          {
+            "name": "@param",
+            "body": "left {Integer} The left position",
+            "paramName": "left",
+            "description": " The left position",
+            "type": "Integer"
+          },
+          {
+            "name": "@param",
+            "body": "top {Integer} The top position",
+            "paramName": "top",
+            "description": " The top position",
+            "type": "Integer"
+          }
+        ]
+      },
+      "type": "function",
+      "access": "public"
+    },
+    "isMaximized": {
+      "location": {
+        "start": {
+          "line": 914,
+          "column": 4
+        },
+        "end": {
+          "line": 917,
+          "column": 5
+        }
+      },
+      "jsdoc": {
+        "@description": [
+          {
+            "name": "@description",
+            "body": "Return <code>true</code> if the window is in maximized state,\nbut note that the window in maximized state could also be invisible, this\nis equivalent to minimized. So use the {@link qx.ui.window.Window#getMode}\nto get the window mode."
+          }
+        ],
+        "@return": [
+          {
+            "name": "@return",
+            "body": "{Boolean} <code>true</code> if the window is maximized,\n<code>false</code> otherwise.",
+            "type": "Boolean",
+            "desc": " <code>true</code> if the window is maximized,\n<code>false</code> otherwise."
+          }
+        ]
+      },
+      "type": "function",
+      "access": "public"
+    },
+    "getMode": {
+      "location": {
+        "start": {
+          "line": 925,
+          "column": 4
+        },
+        "end": {
+          "line": 936,
+          "column": 5
+        }
+      },
+      "jsdoc": {
+        "@description": [
+          {
+            "name": "@description",
+            "body": "Return the window mode as <code>String</code>:\n<code>\"maximized\"</code>, <code>\"normal\"</code> or <code>\"minimized\"</code>."
+          }
+        ],
+        "@return": [
+          {
+            "name": "@return",
+            "body": "{String} The window mode as <code>String</code> value.",
+            "type": "String",
+            "desc": " The window mode as <code>String</code> value."
+          }
+        ]
+      },
+      "type": "function",
+      "access": "public"
+    },
+    "_applyActive": {
+      "location": {
+        "start": {
+          "line": 945,
+          "column": 4
+        },
+        "end": {
+          "line": 952,
+          "column": 5
+        }
+      },
+      "jsdoc": {
+        "@description": [
+          {
+            "name": "@description",
+            "body": "---------------------------------------------------------------------------\nPROPERTY APPLY ROUTINES\n---------------------------------------------------------------------------"
+          },
+          {
+            "name": "@description",
+            "body": "property apply"
+          }
+        ]
+      },
+      "type": "function",
+      "access": "protected"
+    },
+    "_applyModal": {
+      "location": {
+        "start": {
+          "line": 956,
+          "column": 4
+        },
+        "end": {
+          "line": 963,
+          "column": 5
+        }
+      },
+      "jsdoc": {
+        "@description": [
+          {
+            "name": "@description",
+            "body": "property apply"
+          }
+        ]
+      },
+      "type": "function",
+      "access": "protected"
+    },
+    "_getContentPaddingTarget": {
+      "location": {
+        "start": {
+          "line": 971,
+          "column": 4
+        },
+        "end": {
+          "line": 973,
+          "column": 5
+        }
+      },
+      "jsdoc": {
+        "@description": [
+          {
+            "name": "@description",
+            "body": "Returns the element, to which the content padding should be applied."
+          }
+        ],
+        "@return": [
+          {
+            "name": "@return",
+            "body": "{qx.ui.core.Widget} The content padding target.",
+            "type": "qx.ui.core.Widget",
+            "desc": " The content padding target."
+          }
+        ]
+      },
+      "type": "function",
+      "access": "protected"
+    },
+    "_applyShowStatusbar": {
+      "location": {
+        "start": {
+          "line": 977,
+          "column": 4
+        },
+        "end": {
+          "line": 994,
+          "column": 5
+        }
+      },
+      "jsdoc": {
+        "@description": [
+          {
+            "name": "@description",
+            "body": "property apply"
+          }
+        ]
+      },
+      "type": "function",
+      "access": "protected"
+    },
+    "_applyCaptionBarChange": {
+      "location": {
+        "start": {
+          "line": 998,
+          "column": 4
+        },
+        "end": {
+          "line": 1000,
+          "column": 5
+        }
+      },
+      "jsdoc": {
+        "@description": [
+          {
+            "name": "@description",
+            "body": "property apply"
+          }
+        ]
+      },
+      "type": "function",
+      "access": "protected"
+    },
+    "_applyStatus": {
+      "location": {
+        "start": {
+          "line": 1004,
+          "column": 4
+        },
+        "end": {
+          "line": 1010,
+          "column": 5
+        }
+      },
+      "jsdoc": {
+        "@description": [
+          {
+            "name": "@description",
+            "body": "property apply"
+          }
+        ]
+      },
+      "type": "function",
+      "access": "protected"
+    },
+    "_applyFocusable": {
+      "location": {
+        "start": {
+          "line": 1014,
+          "column": 4
+        },
+        "end": {
+          "line": 1021,
+          "column": 5
+        }
+      },
+      "jsdoc": {
+        "@description": [
+          {
+            "name": "@description",
+            "body": "overridden"
+          }
+        ]
+      },
+      "type": "function",
+      "access": "protected",
+      "overriddenFrom": "qx.ui.core.Widget",
+      "appearsIn": [
+        "qx.ui.core.Widget"
+      ]
+    },
+    "_applyCenterOnAppear": {
+      "location": {
+        "start": {
+          "line": 1023,
+          "column": 4
+        },
+        "end": {
+          "line": 1036,
+          "column": 5
+        }
+      },
+      "type": "function",
+      "access": "protected"
+    },
+    "_applyCenterOnContainerResize": {
+      "location": {
+        "start": {
+          "line": 1038,
+          "column": 4
+        },
+        "end": {
+          "line": 1056,
+          "column": 5
+        }
+      },
+      "type": "function",
+      "access": "protected"
+    },
+    "_onWindowEventStop": {
+      "location": {
+        "start": {
+          "line": 1070,
+          "column": 4
+        },
+        "end": {
+          "line": 1072,
+          "column": 5
+        }
+      },
+      "jsdoc": {
+        "@description": [
+          {
+            "name": "@description",
+            "body": "---------------------------------------------------------------------------\nBASIC EVENT HANDLERS\n---------------------------------------------------------------------------"
+          },
+          {
+            "name": "@description",
+            "body": "Stops every event"
+          }
+        ],
+        "@param": [
+          {
+            "name": "@param",
+            "body": "e {qx.event.type.Event} any event",
+            "paramName": "e",
+            "description": " any event",
+            "type": "qx.event.type.Event"
+          }
+        ]
+      },
+      "type": "function",
+      "access": "protected"
+    },
+    "_onWindowPointerDown": {
+      "location": {
+        "start": {
+          "line": 1080,
+          "column": 4
+        },
+        "end": {
+          "line": 1082,
+          "column": 5
+        }
+      },
+      "jsdoc": {
+        "@description": [
+          {
+            "name": "@description",
+            "body": "Focuses the window instance."
+          }
+        ],
+        "@param": [
+          {
+            "name": "@param",
+            "body": "e {qx.event.type.Pointer} pointer down event",
+            "paramName": "e",
+            "description": " pointer down event",
+            "type": "qx.event.type.Pointer"
+          }
+        ]
+      },
+      "type": "function",
+      "access": "protected"
+    },
+    "_onWindowFocusOut": {
+      "location": {
+        "start": {
+          "line": 1091,
+          "column": 4
+        },
+        "end": {
+          "line": 1104,
+          "column": 5
+        }
+      },
+      "jsdoc": {
+        "@description": [
+          {
+            "name": "@description",
+            "body": "Listens to the \"focusout\" event to deactivate the window (if the\ncurrently focused widget is not a child of the window)"
+          }
+        ],
+        "@param": [
+          {
+            "name": "@param",
+            "body": "e {qx.event.type.Focus} focus event",
+            "paramName": "e",
+            "description": " focus event",
+            "type": "qx.event.type.Focus"
+          }
+        ]
+      },
+      "type": "function",
+      "access": "protected"
+    },
+    "_onCaptionPointerDblTap": {
+      "location": {
+        "start": {
+          "line": 1113,
+          "column": 4
+        },
+        "end": {
+          "line": 1118,
+          "column": 5
+        }
+      },
+      "jsdoc": {
+        "@description": [
+          {
+            "name": "@description",
+            "body": "Maximizes the window or restores it if it is already\nmaximized."
+          }
+        ],
+        "@param": [
+          {
+            "name": "@param",
+            "body": "e {qx.event.type.Pointer} double tap event",
+            "paramName": "e",
+            "description": " double tap event",
+            "type": "qx.event.type.Pointer"
+          }
+        ]
+      },
+      "type": "function",
+      "access": "protected"
+    },
+    "_onMinimizeButtonTap": {
+      "location": {
+        "start": {
+          "line": 1135,
+          "column": 4
+        },
+        "end": {
+          "line": 1139,
+          "column": 5
+        }
+      },
+      "jsdoc": {
+        "@description": [
+          {
+            "name": "@description",
+            "body": "---------------------------------------------------------------------------\nEVENTS FOR CAPTIONBAR BUTTONS\n---------------------------------------------------------------------------"
+          },
+          {
+            "name": "@description",
+            "body": "Minimizes the window, removes all states from the minimize button and\nstops the further propagation of the event (calling {@link qx.event.type.Event#stopPropagation})."
+          }
+        ],
+        "@param": [
+          {
+            "name": "@param",
+            "body": "e {qx.event.type.Pointer} pointer tap event",
+            "paramName": "e",
+            "description": " pointer tap event",
+            "type": "qx.event.type.Pointer"
+          }
+        ]
+      },
+      "type": "function",
+      "access": "protected"
+    },
+    "_onRestoreButtonTap": {
+      "location": {
+        "start": {
+          "line": 1148,
+          "column": 4
+        },
+        "end": {
+          "line": 1152,
+          "column": 5
+        }
+      },
+      "jsdoc": {
+        "@description": [
+          {
+            "name": "@description",
+            "body": "Restores the window, removes all states from the restore button and\nstops the further propagation of the event (calling {@link qx.event.type.Event#stopPropagation})."
+          }
+        ],
+        "@param": [
+          {
+            "name": "@param",
+            "body": "e {qx.event.type.Pointer} pointer pointer event",
+            "paramName": "e",
+            "description": " pointer pointer event",
+            "type": "qx.event.type.Pointer"
+          }
+        ]
+      },
+      "type": "function",
+      "access": "protected"
+    },
+    "_onMaximizeButtonTap": {
+      "location": {
+        "start": {
+          "line": 1161,
+          "column": 4
+        },
+        "end": {
+          "line": 1165,
+          "column": 5
+        }
+      },
+      "jsdoc": {
+        "@description": [
+          {
+            "name": "@description",
+            "body": "Maximizes the window, removes all states from the maximize button and\nstops the further propagation of the event (calling {@link qx.event.type.Event#stopPropagation})."
+          }
+        ],
+        "@param": [
+          {
+            "name": "@param",
+            "body": "e {qx.event.type.Pointer} pointer pointer event",
+            "paramName": "e",
+            "description": " pointer pointer event",
+            "type": "qx.event.type.Pointer"
+          }
+        ]
+      },
+      "type": "function",
+      "access": "protected"
+    },
+    "_onCloseButtonTap": {
+      "location": {
+        "start": {
+          "line": 1174,
+          "column": 4
+        },
+        "end": {
+          "line": 1178,
+          "column": 5
+        }
+      },
+      "jsdoc": {
+        "@description": [
+          {
+            "name": "@description",
+            "body": "Closes the window, removes all states from the close button and\nstops the further propagation of the event (calling {@link qx.event.type.Event#stopPropagation})."
+          }
+        ],
+        "@param": [
+          {
+            "name": "@param",
+            "body": "e {qx.event.type.Pointer} pointer pointer event",
+            "paramName": "e",
+            "description": " pointer pointer event",
+            "type": "qx.event.type.Pointer"
+          }
+        ]
+      },
+      "type": "function",
+      "access": "protected"
+    },
+    "__forward": {
+      "type": "function",
+      "name": "__forward",
+      "abstract": false,
+      "mixin": true,
+      "inherited": true,
+      "access": "private",
+      "overriddenFrom": "qx.ui.core.MRemoteChildrenHandling",
+      "jsdoc": {
+        "@description": [
+          {
+            "name": "@description",
+            "body": "Forward the call with the given function name to the children container"
+          }
+        ],
+        "@param": [
+          {
+            "name": "@param",
+            "body": "functionName {String} name of the method to forward",
+            "paramName": "functionName",
+            "description": " name of the method to forward",
+            "type": "String"
+          },
+          {
+            "name": "@param",
+            "body": "a1 {var} first argument of the method to call",
+            "paramName": "a1",
+            "description": " first argument of the method to call",
+            "type": "var"
+          },
+          {
+            "name": "@param",
+            "body": "a2 {var} second argument of the method to call",
+            "paramName": "a2",
+            "description": " second argument of the method to call",
+            "type": "var"
+          },
+          {
+            "name": "@param",
+            "body": "a3 {var} third argument of the method to call",
+            "paramName": "a3",
+            "description": " third argument of the method to call",
+            "type": "var"
+          }
+        ],
+        "@return": [
+          {
+            "name": "@return",
+            "body": "{var} The return value of the forward method",
+            "type": "var",
+            "desc": " The return value of the forward method"
+          }
+        ]
+      }
+    },
+    "getChildren": {
+      "type": "function",
+      "name": "getChildren",
+      "abstract": false,
+      "mixin": true,
+      "inherited": true,
+      "access": "public",
+      "overriddenFrom": "qx.ui.core.MRemoteChildrenHandling",
+      "jsdoc": {
+        "@description": [
+          {
+            "name": "@description",
+            "body": "Returns the children list"
+          }
+        ],
+        "@return": [
+          {
+            "name": "@return",
+            "body": "{LayoutItem[]} The children array (Arrays are\nreference types, please do not modify them in-place)",
+            "type": "LayoutItem[]",
+            "desc": " The children array (Arrays are\nreference types, please do not modify them in-place)"
+          }
+        ]
+      }
+    },
+    "hasChildren": {
+      "type": "function",
+      "name": "hasChildren",
+      "abstract": false,
+      "mixin": true,
+      "inherited": true,
+      "access": "public",
+      "overriddenFrom": "qx.ui.core.MRemoteChildrenHandling",
+      "jsdoc": {
+        "@description": [
+          {
+            "name": "@description",
+            "body": "Whether the widget contains children."
+          }
+        ],
+        "@return": [
+          {
+            "name": "@return",
+            "body": "{Boolean} Returns <code>true</code> when the widget has children.",
+            "type": "Boolean",
+            "desc": " Returns <code>true</code> when the widget has children."
+          }
+        ]
+      }
+    },
+    "add": {
+      "type": "function",
+      "name": "add",
+      "abstract": false,
+      "mixin": true,
+      "inherited": true,
+      "access": "public",
+      "overriddenFrom": "qx.ui.core.MRemoteChildrenHandling",
+      "jsdoc": {
+        "@description": [
+          {
+            "name": "@description",
+            "body": "Adds a new child widget.\n\nThe supported keys of the layout options map depend on the layout manager\nused to position the widget. The options are documented in the class\ndocumentation of each layout manager {@link qx.ui.layout}."
+          }
+        ],
+        "@param": [
+          {
+            "name": "@param",
+            "body": "child {LayoutItem} the item to add.",
+            "paramName": "child",
+            "description": " the item to add.",
+            "type": "qx.ui.core.LayoutItem"
+          },
+          {
+            "name": "@param",
+            "body": "options {Map?null} Optional layout data for item.",
+            "paramName": "options",
+            "description": " Optional layout data for item.",
+            "optional": true,
+            "defaultValue": "null",
+            "type": "Map"
+          }
+        ],
+        "@return": [
+          {
+            "name": "@return",
+            "body": "{Widget} This object (for chaining support)",
+            "type": "qx.ui.core.Widget",
+            "desc": " This object (for chaining support)"
+          }
+        ]
+      }
+    },
+    "remove": {
+      "type": "function",
+      "name": "remove",
+      "abstract": false,
+      "mixin": true,
+      "inherited": true,
+      "access": "public",
+      "overriddenFrom": "qx.ui.core.MRemoteChildrenHandling",
+      "jsdoc": {
+        "@description": [
+          {
+            "name": "@description",
+            "body": "Remove the given child item."
+          }
+        ],
+        "@param": [
+          {
+            "name": "@param",
+            "body": "child {LayoutItem} the item to remove",
+            "paramName": "child",
+            "description": " the item to remove",
+            "type": "qx.ui.core.LayoutItem"
+          }
+        ],
+        "@return": [
+          {
+            "name": "@return",
+            "body": "{Widget} This object (for chaining support)",
+            "type": "qx.ui.core.Widget",
+            "desc": " This object (for chaining support)"
+          }
+        ]
+      }
+    },
+    "removeAll": {
+      "type": "function",
+      "name": "removeAll",
+      "abstract": false,
+      "mixin": true,
+      "inherited": true,
+      "access": "public",
+      "overriddenFrom": "qx.ui.core.MRemoteChildrenHandling",
+      "jsdoc": {
+        "@description": [
+          {
+            "name": "@description",
+            "body": "Remove all children."
+          }
+        ],
+        "@return": [
+          {
+            "name": "@return",
+            "body": "{Array} An array containing the removed children.",
+            "type": "Array",
+            "desc": " An array containing the removed children."
+          }
+        ]
+      }
+    },
+    "indexOf": {
+      "type": "function",
+      "name": "indexOf",
+      "abstract": false,
+      "mixin": true,
+      "inherited": true,
+      "access": "public",
+      "overriddenFrom": "qx.ui.core.MRemoteChildrenHandling",
+      "jsdoc": {
+        "@description": [
+          {
+            "name": "@description",
+            "body": "Returns the index position of the given item if it is\na child item. Otherwise it returns <code>-1</code>.\n\nThis method works on the widget's children list. Some layout managers\n(e.g. {@link qx.ui.layout.HBox}) use the children order as additional\nlayout information. Other layout manager (e.g. {@link qx.ui.layout.Grid})\nignore the children order for the layout process."
+          }
+        ],
+        "@param": [
+          {
+            "name": "@param",
+            "body": "child {LayoutItem} the item to query for",
+            "paramName": "child",
+            "description": " the item to query for",
+            "type": "qx.ui.core.LayoutItem"
+          }
+        ],
+        "@return": [
+          {
+            "name": "@return",
+            "body": "{Integer} The index position or <code>-1</code> when\nthe given item is no child of this layout.",
+            "type": "Integer",
+            "desc": " The index position or <code>-1</code> when\nthe given item is no child of this layout."
+          }
+        ]
+      }
+    },
+    "addAt": {
+      "type": "function",
+      "name": "addAt",
+      "abstract": false,
+      "mixin": true,
+      "inherited": true,
+      "access": "public",
+      "overriddenFrom": "qx.ui.core.MRemoteChildrenHandling",
+      "jsdoc": {
+        "@description": [
+          {
+            "name": "@description",
+            "body": "Add a child at the specified index\n\nThis method works on the widget's children list. Some layout managers\n(e.g. {@link qx.ui.layout.HBox}) use the children order as additional\nlayout information. Other layout manager (e.g. {@link qx.ui.layout.Grid})\nignore the children order for the layout process."
+          }
+        ],
+        "@param": [
+          {
+            "name": "@param",
+            "body": "child {LayoutItem} item to add",
+            "paramName": "child",
+            "description": " item to add",
+            "type": "qx.ui.core.LayoutItem"
+          },
+          {
+            "name": "@param",
+            "body": "index {Integer} Index, at which the item will be inserted",
+            "paramName": "index",
+            "description": " Index, at which the item will be inserted",
+            "type": "Integer"
+          },
+          {
+            "name": "@param",
+            "body": "options {Map?null} Optional layout data for item.",
+            "paramName": "options",
+            "description": " Optional layout data for item.",
+            "optional": true,
+            "defaultValue": "null",
+            "type": "Map"
+          }
+        ]
+      }
+    },
+    "addBefore": {
+      "type": "function",
+      "name": "addBefore",
+      "abstract": false,
+      "mixin": true,
+      "inherited": true,
+      "access": "public",
+      "overriddenFrom": "qx.ui.core.MRemoteChildrenHandling",
+      "jsdoc": {
+        "@description": [
+          {
+            "name": "@description",
+            "body": "Add an item before another already inserted item\n\nThis method works on the widget's children list. Some layout managers\n(e.g. {@link qx.ui.layout.HBox}) use the children order as additional\nlayout information. Other layout manager (e.g. {@link qx.ui.layout.Grid})\nignore the children order for the layout process."
+          }
+        ],
+        "@param": [
+          {
+            "name": "@param",
+            "body": "child {LayoutItem} item to add",
+            "paramName": "child",
+            "description": " item to add",
+            "type": "qx.ui.core.LayoutItem"
+          },
+          {
+            "name": "@param",
+            "body": "before {LayoutItem} item before the new item will be inserted.",
+            "paramName": "before",
+            "description": " item before the new item will be inserted.",
+            "type": "qx.ui.core.LayoutItem"
+          },
+          {
+            "name": "@param",
+            "body": "options {Map?null} Optional layout data for item.",
+            "paramName": "options",
+            "description": " Optional layout data for item.",
+            "optional": true,
+            "defaultValue": "null",
+            "type": "Map"
+          }
+        ]
+      }
+    },
+    "addAfter": {
+      "type": "function",
+      "name": "addAfter",
+      "abstract": false,
+      "mixin": true,
+      "inherited": true,
+      "access": "public",
+      "overriddenFrom": "qx.ui.core.MRemoteChildrenHandling",
+      "jsdoc": {
+        "@description": [
+          {
+            "name": "@description",
+            "body": "Add an item after another already inserted item\n\nThis method works on the widget's children list. Some layout managers\n(e.g. {@link qx.ui.layout.HBox}) use the children order as additional\nlayout information. Other layout manager (e.g. {@link qx.ui.layout.Grid})\nignore the children order for the layout process."
+          }
+        ],
+        "@param": [
+          {
+            "name": "@param",
+            "body": "child {LayoutItem} item to add",
+            "paramName": "child",
+            "description": " item to add",
+            "type": "qx.ui.core.LayoutItem"
+          },
+          {
+            "name": "@param",
+            "body": "after {LayoutItem} item, after which the new item will be inserted",
+            "paramName": "after",
+            "description": " item, after which the new item will be inserted",
+            "type": "qx.ui.core.LayoutItem"
+          },
+          {
+            "name": "@param",
+            "body": "options {Map?null} Optional layout data for item.",
+            "paramName": "options",
+            "description": " Optional layout data for item.",
+            "optional": true,
+            "defaultValue": "null",
+            "type": "Map"
+          }
+        ]
+      }
+    },
+    "removeAt": {
+      "type": "function",
+      "name": "removeAt",
+      "abstract": false,
+      "mixin": true,
+      "inherited": true,
+      "access": "public",
+      "overriddenFrom": "qx.ui.core.MRemoteChildrenHandling",
+      "jsdoc": {
+        "@description": [
+          {
+            "name": "@description",
+            "body": "Remove the item at the specified index.\n\nThis method works on the widget's children list. Some layout managers\n(e.g. {@link qx.ui.layout.HBox}) use the children order as additional\nlayout information. Other layout manager (e.g. {@link qx.ui.layout.Grid})\nignore the children order for the layout process."
+          }
+        ],
+        "@param": [
+          {
+            "name": "@param",
+            "body": "index {Integer} Index of the item to remove.",
+            "paramName": "index",
+            "description": " Index of the item to remove.",
+            "type": "Integer"
+          }
+        ],
+        "@return": [
+          {
+            "name": "@return",
+            "body": "{qx.ui.core.LayoutItem} The removed item",
+            "type": "qx.ui.core.LayoutItem",
+            "desc": " The removed item"
+          }
+        ]
+      }
+    },
+    "setLayout": {
+      "type": "function",
+      "name": "setLayout",
+      "abstract": false,
+      "mixin": true,
+      "inherited": true,
+      "access": "public",
+      "overriddenFrom": "qx.ui.core.MRemoteLayoutHandling",
+      "jsdoc": {
+        "@description": [
+          {
+            "name": "@description",
+            "body": "Set a layout manager for the widget. A a layout manager can only be connected\nwith one widget. Reset the connection with a previous widget first, if you\nlike to use it in another widget instead."
+          }
+        ],
+        "@param": [
+          {
+            "name": "@param",
+            "body": "layout {qx.ui.layout.Abstract} The new layout or\n<code>null</code> to reset the layout.",
+            "paramName": "layout",
+            "description": " The new layout or\n<code>null</code> to reset the layout.",
+            "type": "qx.ui.layout.Abstract"
+          }
+        ]
+      }
+    },
+    "getLayout": {
+      "type": "function",
+      "name": "getLayout",
+      "abstract": false,
+      "mixin": true,
+      "inherited": true,
+      "access": "public",
+      "overriddenFrom": "qx.ui.core.MRemoteLayoutHandling",
+      "jsdoc": {
+        "@description": [
+          {
+            "name": "@description",
+            "body": "Get the widget's layout manager."
+          }
+        ],
+        "@return": [
+          {
+            "name": "@return",
+            "body": "{qx.ui.layout.Abstract} The widget's layout manager",
+            "type": "qx.ui.layout.Abstract",
+            "desc": " The widget's layout manager"
+          }
+        ]
+      }
+    },
+    "_getResizeFrame": {
+      "type": "function",
+      "name": "_getResizeFrame",
+      "abstract": false,
+      "mixin": true,
+      "inherited": true,
+      "access": "protected",
+      "overriddenFrom": "qx.ui.core.MResizable",
+      "jsdoc": {
+        "@description": [
+          {
+            "name": "@description",
+            "body": "---------------------------------------------------------------------------\nCORE FEATURES\n---------------------------------------------------------------------------"
+          },
+          {
+            "name": "@description",
+            "body": "Get the widget, which draws the resize/move frame. The resize frame is\nshared by all widgets and is added to the root widget."
+          }
+        ],
+        "@return": [
+          {
+            "name": "@return",
+            "body": "{qx.ui.core.Widget} The resize frame",
+            "type": "qx.ui.core.Widget",
+            "desc": " The resize frame"
+          }
+        ]
+      }
+    },
+    "__showResizeFrame": {
+      "type": "function",
+      "name": "__showResizeFrame",
+      "abstract": false,
+      "mixin": true,
+      "inherited": true,
+      "access": "private",
+      "overriddenFrom": "qx.ui.core.MResizable"
+    },
+    "__computeResizeResult": {
+      "type": "function",
+      "name": "__computeResizeResult",
+      "abstract": false,
+      "mixin": true,
+      "inherited": true,
+      "access": "private",
+      "overriddenFrom": "qx.ui.core.MResizable",
+      "jsdoc": {
+        "@description": [
+          {
+            "name": "@description",
+            "body": "---------------------------------------------------------------------------\nRESIZE SUPPORT\n---------------------------------------------------------------------------"
+          },
+          {
+            "name": "@description",
+            "body": "Computes the new boundaries at each interval\nof the resize sequence."
+          }
+        ],
+        "@param": [
+          {
+            "name": "@param",
+            "body": "e {qx.event.type.Pointer} Last pointer event",
+            "paramName": "e",
+            "description": " Last pointer event",
+            "type": "qx.event.type.Pointer"
+          }
+        ],
+        "@return": [
+          {
+            "name": "@return",
+            "body": "{Map} A map with the computed boundaries",
+            "type": "Map",
+            "desc": " A map with the computed boundaries"
+          }
+        ]
+      }
+    },
+    "__computeResizeMode": {
+      "type": "function",
+      "name": "__computeResizeMode",
+      "abstract": false,
+      "mixin": true,
+      "inherited": true,
+      "access": "private",
+      "overriddenFrom": "qx.ui.core.MResizable",
+      "jsdoc": {
+        "@description": [
+          {
+            "name": "@description",
+            "body": "Updates the internally stored resize mode"
+          }
+        ],
+        "@param": [
+          {
+            "name": "@param",
+            "body": "e {qx.event.type.Pointer} Last pointer event",
+            "paramName": "e",
+            "description": " Last pointer event",
+            "type": "qx.event.type.Pointer"
+          }
+        ]
+      }
+    },
+    "__computeResizeActive": {
+      "type": "function",
+      "name": "__computeResizeActive",
+      "abstract": false,
+      "mixin": true,
+      "inherited": true,
+      "access": "private",
+      "overriddenFrom": "qx.ui.core.MResizable",
+      "jsdoc": {
+        "@description": [
+          {
+            "name": "@description",
+            "body": "Internal helper for computing the proper resize action based on the\ngiven parameters."
+          }
+        ],
+        "@param": [
+          {
+            "name": "@param",
+            "body": "location {Map} The current location of the widget.",
+            "paramName": "location",
+            "description": " The current location of the widget.",
+            "type": "Map"
+          },
+          {
+            "name": "@param",
+            "body": "pointerLeft {Integer} The left position of the pointer.",
+            "paramName": "pointerLeft",
+            "description": " The left position of the pointer.",
+            "type": "Integer"
+          },
+          {
+            "name": "@param",
+            "body": "pointerTop {Integer} The top position of the pointer.",
+            "paramName": "pointerTop",
+            "description": " The top position of the pointer.",
+            "type": "Integer"
+          },
+          {
+            "name": "@param",
+            "body": "pointerTolerance {Integer} The desired distance to the edge.",
+            "paramName": "pointerTolerance",
+            "description": " The desired distance to the edge.",
+            "type": "Integer"
+          }
+        ],
+        "@return": [
+          {
+            "name": "@return",
+            "body": "{Integer} The resize active number.",
+            "type": "Integer",
+            "desc": " The resize active number."
+          }
+        ]
+      }
+    },
+    "__onResizePointerDown": {
+      "type": "function",
+      "name": "__onResizePointerDown",
+      "abstract": false,
+      "mixin": true,
+      "inherited": true,
+      "access": "private",
+      "overriddenFrom": "qx.ui.core.MResizable",
+      "jsdoc": {
+        "@description": [
+          {
+            "name": "@description",
+            "body": "---------------------------------------------------------------------------\nRESIZE EVENT HANDLERS\n---------------------------------------------------------------------------"
+          },
+          {
+            "name": "@description",
+            "body": "Event handler for the pointer down event"
+          }
+        ],
+        "@param": [
+          {
+            "name": "@param",
+            "body": "e {qx.event.type.Pointer} The pointer event instance",
+            "paramName": "e",
+            "description": " The pointer event instance",
+            "type": "qx.event.type.Pointer"
+          }
+        ]
+      }
+    },
+    "__onResizePointerUp": {
+      "type": "function",
+      "name": "__onResizePointerUp",
+      "abstract": false,
+      "mixin": true,
+      "inherited": true,
+      "access": "private",
+      "overriddenFrom": "qx.ui.core.MResizable",
+      "jsdoc": {
+        "@description": [
+          {
+            "name": "@description",
+            "body": "Event handler for the pointer up event"
+          }
+        ],
+        "@param": [
+          {
+            "name": "@param",
+            "body": "e {qx.event.type.Pointer} The pointer event instance",
+            "paramName": "e",
+            "description": " The pointer event instance",
+            "type": "qx.event.type.Pointer"
+          }
+        ]
+      }
+    },
+    "__onResizeLoseCapture": {
+      "type": "function",
+      "name": "__onResizeLoseCapture",
+      "abstract": false,
+      "mixin": true,
+      "inherited": true,
+      "access": "private",
+      "overriddenFrom": "qx.ui.core.MResizable",
+      "jsdoc": {
+        "@description": [
+          {
+            "name": "@description",
+            "body": "Event listener for <code>losecapture</code> event."
+          }
+        ],
+        "@param": [
+          {
+            "name": "@param",
+            "body": "e {qx.event.type.Event} Lose capture event",
+            "paramName": "e",
+            "description": " Lose capture event",
+            "type": "qx.event.type.Event"
+          }
+        ]
+      }
+    },
+    "__onResizePointerMove": {
+      "type": "function",
+      "name": "__onResizePointerMove",
+      "abstract": false,
+      "mixin": true,
+      "inherited": true,
+      "access": "private",
+      "overriddenFrom": "qx.ui.core.MResizable",
+      "jsdoc": {
+        "@description": [
+          {
+            "name": "@description",
+            "body": "Event handler for the pointer move event"
+          }
+        ],
+        "@param": [
+          {
+            "name": "@param",
+            "body": "e {qx.event.type.Pointer} The pointer event instance",
+            "paramName": "e",
+            "description": " The pointer event instance",
+            "type": "qx.event.type.Pointer"
+          }
+        ]
+      }
+    },
+    "__onResizePointerOut": {
+      "type": "function",
+      "name": "__onResizePointerOut",
+      "abstract": false,
+      "mixin": true,
+      "inherited": true,
+      "access": "private",
+      "overriddenFrom": "qx.ui.core.MResizable",
+      "jsdoc": {
+        "@description": [
+          {
+            "name": "@description",
+            "body": "Event handler for the pointer out event"
+          }
+        ],
+        "@param": [
+          {
+            "name": "@param",
+            "body": "e {qx.event.type.Pointer} The pointer event instance",
+            "paramName": "e",
+            "description": " The pointer event instance",
+            "type": "qx.event.type.Pointer"
+          }
+        ]
+      }
+    },
+    "getResizableTop": {
+      "type": "function",
+      "name": "getResizableTop",
+      "abstract": false,
+      "mixin": false,
+      "inherited": true,
+      "access": "public",
+      "property": "get",
+      "jsdoc": {
+        "@return": [
+          {
+            "name": "@return",
+            "type": "Boolean",
+            "desc": "Returns the value for undefined"
+          }
+        ]
+      }
+    },
+    "isResizableTop": {
+      "type": "function",
+      "name": "isResizableTop",
+      "abstract": false,
+      "mixin": false,
+      "inherited": true,
+      "access": "public",
+      "property": "is",
+      "jsdoc": {
+        "@return": [
+          {
+            "name": "@return",
+            "type": "Boolean",
+            "desc": "Returns the value for undefined"
+          }
+        ]
+      }
+    },
+    "setResizableTop": {
+      "type": "function",
+      "name": "setResizableTop",
+      "abstract": false,
+      "mixin": false,
+      "inherited": true,
+      "access": "public",
+      "property": "set",
+      "jsdoc": {
+        "@param": [
+          {
+            "name": "@param",
+            "type": "Boolean",
+            "paramName": "value",
+            "desc": "Value for undefined"
+          }
+        ]
+      }
+    },
+    "resetResizableTop": {
+      "type": "function",
+      "name": "resetResizableTop",
+      "abstract": false,
+      "mixin": false,
+      "inherited": true,
+      "access": "public",
+      "property": "reset",
+      "jsdoc": {}
+    },
+    "getResizableRight": {
+      "type": "function",
+      "name": "getResizableRight",
+      "abstract": false,
+      "mixin": false,
+      "inherited": true,
+      "access": "public",
+      "property": "get",
+      "jsdoc": {
+        "@return": [
+          {
+            "name": "@return",
+            "type": "Boolean",
+            "desc": "Returns the value for undefined"
+          }
+        ]
+      }
+    },
+    "isResizableRight": {
+      "type": "function",
+      "name": "isResizableRight",
+      "abstract": false,
+      "mixin": false,
+      "inherited": true,
+      "access": "public",
+      "property": "is",
+      "jsdoc": {
+        "@return": [
+          {
+            "name": "@return",
+            "type": "Boolean",
+            "desc": "Returns the value for undefined"
+          }
+        ]
+      }
+    },
+    "setResizableRight": {
+      "type": "function",
+      "name": "setResizableRight",
+      "abstract": false,
+      "mixin": false,
+      "inherited": true,
+      "access": "public",
+      "property": "set",
+      "jsdoc": {
+        "@param": [
+          {
+            "name": "@param",
+            "type": "Boolean",
+            "paramName": "value",
+            "desc": "Value for undefined"
+          }
+        ]
+      }
+    },
+    "resetResizableRight": {
+      "type": "function",
+      "name": "resetResizableRight",
+      "abstract": false,
+      "mixin": false,
+      "inherited": true,
+      "access": "public",
+      "property": "reset",
+      "jsdoc": {}
+    },
+    "getResizableBottom": {
+      "type": "function",
+      "name": "getResizableBottom",
+      "abstract": false,
+      "mixin": false,
+      "inherited": true,
+      "access": "public",
+      "property": "get",
+      "jsdoc": {
+        "@return": [
+          {
+            "name": "@return",
+            "type": "Boolean",
+            "desc": "Returns the value for undefined"
+          }
+        ]
+      }
+    },
+    "isResizableBottom": {
+      "type": "function",
+      "name": "isResizableBottom",
+      "abstract": false,
+      "mixin": false,
+      "inherited": true,
+      "access": "public",
+      "property": "is",
+      "jsdoc": {
+        "@return": [
+          {
+            "name": "@return",
+            "type": "Boolean",
+            "desc": "Returns the value for undefined"
+          }
+        ]
+      }
+    },
+    "setResizableBottom": {
+      "type": "function",
+      "name": "setResizableBottom",
+      "abstract": false,
+      "mixin": false,
+      "inherited": true,
+      "access": "public",
+      "property": "set",
+      "jsdoc": {
+        "@param": [
+          {
+            "name": "@param",
+            "type": "Boolean",
+            "paramName": "value",
+            "desc": "Value for undefined"
+          }
+        ]
+      }
+    },
+    "resetResizableBottom": {
+      "type": "function",
+      "name": "resetResizableBottom",
+      "abstract": false,
+      "mixin": false,
+      "inherited": true,
+      "access": "public",
+      "property": "reset",
+      "jsdoc": {}
+    },
+    "getResizableLeft": {
+      "type": "function",
+      "name": "getResizableLeft",
+      "abstract": false,
+      "mixin": false,
+      "inherited": true,
+      "access": "public",
+      "property": "get",
+      "jsdoc": {
+        "@return": [
+          {
+            "name": "@return",
+            "type": "Boolean",
+            "desc": "Returns the value for undefined"
+          }
+        ]
+      }
+    },
+    "isResizableLeft": {
+      "type": "function",
+      "name": "isResizableLeft",
+      "abstract": false,
+      "mixin": false,
+      "inherited": true,
+      "access": "public",
+      "property": "is",
+      "jsdoc": {
+        "@return": [
+          {
+            "name": "@return",
+            "type": "Boolean",
+            "desc": "Returns the value for undefined"
+          }
+        ]
+      }
+    },
+    "setResizableLeft": {
+      "type": "function",
+      "name": "setResizableLeft",
+      "abstract": false,
+      "mixin": false,
+      "inherited": true,
+      "access": "public",
+      "property": "set",
+      "jsdoc": {
+        "@param": [
+          {
+            "name": "@param",
+            "type": "Boolean",
+            "paramName": "value",
+            "desc": "Value for undefined"
+          }
+        ]
+      }
+    },
+    "resetResizableLeft": {
+      "type": "function",
+      "name": "resetResizableLeft",
+      "abstract": false,
+      "mixin": false,
+      "inherited": true,
+      "access": "public",
+      "property": "reset",
+      "jsdoc": {}
+    },
+    "getResizable": {
+      "type": "function",
+      "name": "getResizable",
+      "abstract": false,
+      "mixin": false,
+      "inherited": true,
+      "access": "public",
+      "property": "get",
+      "jsdoc": {
+        "@return": [
+          {
+            "name": "@return",
+            "type": "any",
+            "desc": "Returns the value for undefined"
+          }
+        ]
+      }
+    },
+    "setResizable": {
+      "type": "function",
+      "name": "setResizable",
+      "abstract": false,
+      "mixin": false,
+      "inherited": true,
+      "access": "public",
+      "property": "set",
+      "jsdoc": {
+        "@param": [
+          {
+            "name": "@param",
+            "type": "any",
+            "paramName": "value",
+            "desc": "Value for undefined"
+          }
+        ]
+      }
+    },
+    "resetResizable": {
+      "type": "function",
+      "name": "resetResizable",
+      "abstract": false,
+      "mixin": false,
+      "inherited": true,
+      "access": "public",
+      "property": "reset",
+      "jsdoc": {}
+    },
+    "getResizeSensitivity": {
+      "type": "function",
+      "name": "getResizeSensitivity",
+      "abstract": false,
+      "mixin": false,
+      "inherited": true,
+      "access": "public",
+      "property": "get",
+      "jsdoc": {
+        "@return": [
+          {
+            "name": "@return",
+            "type": "Integer",
+            "desc": "Returns the value for undefined"
+          }
+        ]
+      }
+    },
+    "setResizeSensitivity": {
+      "type": "function",
+      "name": "setResizeSensitivity",
+      "abstract": false,
+      "mixin": false,
+      "inherited": true,
+      "access": "public",
+      "property": "set",
+      "jsdoc": {
+        "@param": [
+          {
+            "name": "@param",
+            "type": "Integer",
+            "paramName": "value",
+            "desc": "Value for undefined"
+          }
+        ]
+      }
+    },
+    "resetResizeSensitivity": {
+      "type": "function",
+      "name": "resetResizeSensitivity",
+      "abstract": false,
+      "mixin": false,
+      "inherited": true,
+      "access": "public",
+      "property": "reset",
+      "jsdoc": {}
+    },
+    "getUseResizeFrame": {
+      "type": "function",
+      "name": "getUseResizeFrame",
+      "abstract": false,
+      "mixin": false,
+      "inherited": true,
+      "access": "public",
+      "property": "get",
+      "jsdoc": {
+        "@return": [
+          {
+            "name": "@return",
+            "type": "Boolean",
+            "desc": "Returns the value for undefined"
+          }
+        ]
+      }
+    },
+    "isUseResizeFrame": {
+      "type": "function",
+      "name": "isUseResizeFrame",
+      "abstract": false,
+      "mixin": false,
+      "inherited": true,
+      "access": "public",
+      "property": "is",
+      "jsdoc": {
+        "@return": [
+          {
+            "name": "@return",
+            "type": "Boolean",
+            "desc": "Returns the value for undefined"
+          }
+        ]
+      }
+    },
+    "setUseResizeFrame": {
+      "type": "function",
+      "name": "setUseResizeFrame",
+      "abstract": false,
+      "mixin": false,
+      "inherited": true,
+      "access": "public",
+      "property": "set",
+      "jsdoc": {
+        "@param": [
+          {
+            "name": "@param",
+            "type": "Boolean",
+            "paramName": "value",
+            "desc": "Value for undefined"
+          }
+        ]
+      }
+    },
+    "resetUseResizeFrame": {
+      "type": "function",
+      "name": "resetUseResizeFrame",
+      "abstract": false,
+      "mixin": false,
+      "inherited": true,
+      "access": "public",
+      "property": "reset",
+      "jsdoc": {}
+    },
+    "_activateMoveHandle": {
+      "type": "function",
+      "name": "_activateMoveHandle",
+      "abstract": false,
+      "mixin": true,
+      "inherited": true,
+      "access": "protected",
+      "overriddenFrom": "qx.ui.core.MMovable",
+      "jsdoc": {
+        "@description": [
+          {
+            "name": "@description",
+            "body": "---------------------------------------------------------------------------\nCORE FEATURES\n---------------------------------------------------------------------------"
+          },
+          {
+            "name": "@description",
+            "body": "Configures the given widget as a move handle"
+          }
+        ],
+        "@param": [
+          {
+            "name": "@param",
+            "body": "widget {qx.ui.core.Widget} Widget to activate as move handle",
+            "paramName": "widget",
+            "description": " Widget to activate as move handle",
+            "type": "qx.ui.core.Widget"
+          }
+        ]
+      }
+    },
+    "__getMoveFrame": {
+      "type": "function",
+      "name": "__getMoveFrame",
+      "abstract": false,
+      "mixin": true,
+      "inherited": true,
+      "access": "private",
+      "overriddenFrom": "qx.ui.core.MMovable",
+      "jsdoc": {
+        "@description": [
+          {
+            "name": "@description",
+            "body": "Get the widget, which draws the resize/move frame."
+          }
+        ],
+        "@return": [
+          {
+            "name": "@return",
+            "body": "{qx.ui.core.Widget} The resize frame",
+            "type": "qx.ui.core.Widget",
+            "desc": " The resize frame"
+          }
+        ]
+      }
+    },
+    "__showMoveFrame": {
+      "type": "function",
+      "name": "__showMoveFrame",
+      "abstract": false,
+      "mixin": true,
+      "inherited": true,
+      "access": "private",
+      "overriddenFrom": "qx.ui.core.MMovable"
+    },
+    "__computeMoveCoordinates": {
+      "type": "function",
+      "name": "__computeMoveCoordinates",
+      "abstract": false,
+      "mixin": true,
+      "inherited": true,
+      "access": "private",
+      "overriddenFrom": "qx.ui.core.MMovable",
+      "jsdoc": {
+        "@description": [
+          {
+            "name": "@description",
+            "body": "---------------------------------------------------------------------------\nMOVE SUPPORT\n---------------------------------------------------------------------------"
+          },
+          {
+            "name": "@description",
+            "body": "Computes the new drag coordinates"
+          }
+        ],
+        "@param": [
+          {
+            "name": "@param",
+            "body": "e {qx.event.type.Pointer} Pointer event",
+            "paramName": "e",
+            "description": " Pointer event",
+            "type": "qx.event.type.Pointer"
+          }
+        ],
+        "@return": [
+          {
+            "name": "@return",
+            "body": "{Map} A map with the computed drag coordinates",
+            "type": "Map",
+            "desc": " A map with the computed drag coordinates"
+          }
+        ]
+      }
+    },
+    "_onMoveRoll": {
+      "type": "function",
+      "name": "_onMoveRoll",
+      "abstract": false,
+      "mixin": true,
+      "inherited": true,
+      "access": "protected",
+      "overriddenFrom": "qx.ui.core.MMovable",
+      "jsdoc": {
+        "@description": [
+          {
+            "name": "@description",
+            "body": "---------------------------------------------------------------------------\nMOVE EVENT HANDLERS\n---------------------------------------------------------------------------"
+          },
+          {
+            "name": "@description",
+            "body": "Roll handler which prevents the scrolling via tap & move on parent widgets\nduring the move of the widget."
+          }
+        ],
+        "@param": [
+          {
+            "name": "@param",
+            "body": "e {qx.event.type.Roll} The roll event",
+            "paramName": "e",
+            "description": " The roll event",
+            "type": "qx.event.type.Roll"
+          }
+        ]
+      }
+    },
+    "_onMovePointerDown": {
+      "type": "function",
+      "name": "_onMovePointerDown",
+      "abstract": false,
+      "mixin": true,
+      "inherited": true,
+      "access": "protected",
+      "overriddenFrom": "qx.ui.core.MMovable",
+      "jsdoc": {
+        "@description": [
+          {
+            "name": "@description",
+            "body": "Enables the capturing of the caption bar and prepares the drag session and the\nappearance (translucent, frame or opaque) for the moving of the window."
+          }
+        ],
+        "@param": [
+          {
+            "name": "@param",
+            "body": "e {qx.event.type.Pointer} pointer down event",
+            "paramName": "e",
+            "description": " pointer down event",
+            "type": "qx.event.type.Pointer"
+          }
+        ]
+      }
+    },
+    "_onMovePointerMove": {
+      "type": "function",
+      "name": "_onMovePointerMove",
+      "abstract": false,
+      "mixin": true,
+      "inherited": true,
+      "access": "protected",
+      "overriddenFrom": "qx.ui.core.MMovable",
+      "jsdoc": {
+        "@description": [
+          {
+            "name": "@description",
+            "body": "Does the moving of the window by rendering the position\nof the window (or frame) at runtime using direct dom methods."
+          }
+        ],
+        "@param": [
+          {
+            "name": "@param",
+            "body": "e {qx.event.type.Pointer} pointer move event",
+            "paramName": "e",
+            "description": " pointer move event",
+            "type": "qx.event.type.Pointer"
+          }
+        ]
+      }
+    },
+    "_onMovePointerUp": {
+      "type": "function",
+      "name": "_onMovePointerUp",
+      "abstract": false,
+      "mixin": true,
+      "inherited": true,
+      "access": "protected",
+      "overriddenFrom": "qx.ui.core.MMovable",
+      "jsdoc": {
+        "@description": [
+          {
+            "name": "@description",
+            "body": "Disables the capturing of the caption bar and moves the window\nto the last position of the drag session. Also restores the appearance\nof the window."
+          }
+        ],
+        "@param": [
+          {
+            "name": "@param",
+            "body": "e {qx.event.type.Pointer} pointer up event",
+            "paramName": "e",
+            "description": " pointer up event",
+            "type": "qx.event.type.Pointer"
+          }
+        ]
+      }
+    },
+    "__onMoveLoseCapture": {
+      "type": "function",
+      "name": "__onMoveLoseCapture",
+      "abstract": false,
+      "mixin": true,
+      "inherited": true,
+      "access": "private",
+      "overriddenFrom": "qx.ui.core.MMovable",
+      "jsdoc": {
+        "@description": [
+          {
+            "name": "@description",
+            "body": "Event listener for <code>losecapture</code> event."
+          }
+        ],
+        "@param": [
+          {
+            "name": "@param",
+            "body": "e {qx.event.type.Event} Lose capture event",
+            "paramName": "e",
+            "description": " Lose capture event",
+            "type": "qx.event.type.Event"
+          }
+        ]
+      }
+    },
+    "getMovable": {
+      "type": "function",
+      "name": "getMovable",
+      "abstract": false,
+      "mixin": false,
+      "inherited": true,
+      "access": "public",
+      "property": "get",
+      "jsdoc": {
+        "@return": [
+          {
+            "name": "@return",
+            "type": "Boolean",
+            "desc": "Returns the value for undefined"
+          }
+        ]
+      }
+    },
+    "isMovable": {
+      "type": "function",
+      "name": "isMovable",
+      "abstract": false,
+      "mixin": false,
+      "inherited": true,
+      "access": "public",
+      "property": "is",
+      "jsdoc": {
+        "@return": [
+          {
+            "name": "@return",
+            "type": "Boolean",
+            "desc": "Returns the value for undefined"
+          }
+        ]
+      }
+    },
+    "setMovable": {
+      "type": "function",
+      "name": "setMovable",
+      "abstract": false,
+      "mixin": false,
+      "inherited": true,
+      "access": "public",
+      "property": "set",
+      "jsdoc": {
+        "@param": [
+          {
+            "name": "@param",
+            "type": "Boolean",
+            "paramName": "value",
+            "desc": "Value for undefined"
+          }
+        ]
+      }
+    },
+    "resetMovable": {
+      "type": "function",
+      "name": "resetMovable",
+      "abstract": false,
+      "mixin": false,
+      "inherited": true,
+      "access": "public",
+      "property": "reset",
+      "jsdoc": {}
+    },
+    "getUseMoveFrame": {
+      "type": "function",
+      "name": "getUseMoveFrame",
+      "abstract": false,
+      "mixin": false,
+      "inherited": true,
+      "access": "public",
+      "property": "get",
+      "jsdoc": {
+        "@return": [
+          {
+            "name": "@return",
+            "type": "Boolean",
+            "desc": "Returns the value for undefined"
+          }
+        ]
+      }
+    },
+    "isUseMoveFrame": {
+      "type": "function",
+      "name": "isUseMoveFrame",
+      "abstract": false,
+      "mixin": false,
+      "inherited": true,
+      "access": "public",
+      "property": "is",
+      "jsdoc": {
+        "@return": [
+          {
+            "name": "@return",
+            "type": "Boolean",
+            "desc": "Returns the value for undefined"
+          }
+        ]
+      }
+    },
+    "setUseMoveFrame": {
+      "type": "function",
+      "name": "setUseMoveFrame",
+      "abstract": false,
+      "mixin": false,
+      "inherited": true,
+      "access": "public",
+      "property": "set",
+      "jsdoc": {
+        "@param": [
+          {
+            "name": "@param",
+            "type": "Boolean",
+            "paramName": "value",
+            "desc": "Value for undefined"
+          }
+        ]
+      }
+    },
+    "resetUseMoveFrame": {
+      "type": "function",
+      "name": "resetUseMoveFrame",
+      "abstract": false,
+      "mixin": false,
+      "inherited": true,
+      "access": "public",
+      "property": "reset",
+      "jsdoc": {}
+    },
+    "_applyContentPadding": {
+      "type": "function",
+      "name": "_applyContentPadding",
+      "abstract": false,
+      "mixin": true,
+      "inherited": true,
+      "access": "protected",
+      "overriddenFrom": "qx.ui.core.MContentPadding"
+    },
+    "getContentPaddingTop": {
+      "type": "function",
+      "name": "getContentPaddingTop",
+      "abstract": false,
+      "mixin": true,
+      "inherited": true,
+      "access": "public",
+      "overriddenFrom": "qx.ui.core.MContentPadding",
+      "jsdoc": {
+        "@return": [
+          {
+            "name": "@return",
+            "type": "Integer",
+            "desc": "Returns the value for undefined"
+          }
+        ]
+      }
+    },
+    "setContentPaddingTop": {
+      "type": "function",
+      "name": "setContentPaddingTop",
+      "abstract": false,
+      "mixin": true,
+      "inherited": true,
+      "access": "public",
+      "overriddenFrom": "qx.ui.core.MContentPadding",
+      "jsdoc": {
+        "@param": [
+          {
+            "name": "@param",
+            "type": "Integer",
+            "paramName": "value",
+            "desc": "Value for undefined"
+          }
+        ]
+      }
+    },
+    "resetContentPaddingTop": {
+      "type": "function",
+      "name": "resetContentPaddingTop",
+      "abstract": false,
+      "mixin": true,
+      "inherited": true,
+      "access": "public",
+      "overriddenFrom": "qx.ui.core.MContentPadding"
+    },
+    "getContentPaddingRight": {
+      "type": "function",
+      "name": "getContentPaddingRight",
+      "abstract": false,
+      "mixin": true,
+      "inherited": true,
+      "access": "public",
+      "overriddenFrom": "qx.ui.core.MContentPadding",
+      "jsdoc": {
+        "@return": [
+          {
+            "name": "@return",
+            "type": "Integer",
+            "desc": "Returns the value for undefined"
+          }
+        ]
+      }
+    },
+    "setContentPaddingRight": {
+      "type": "function",
+      "name": "setContentPaddingRight",
+      "abstract": false,
+      "mixin": true,
+      "inherited": true,
+      "access": "public",
+      "overriddenFrom": "qx.ui.core.MContentPadding",
+      "jsdoc": {
+        "@param": [
+          {
+            "name": "@param",
+            "type": "Integer",
+            "paramName": "value",
+            "desc": "Value for undefined"
+          }
+        ]
+      }
+    },
+    "resetContentPaddingRight": {
+      "type": "function",
+      "name": "resetContentPaddingRight",
+      "abstract": false,
+      "mixin": true,
+      "inherited": true,
+      "access": "public",
+      "overriddenFrom": "qx.ui.core.MContentPadding"
+    },
+    "getContentPaddingBottom": {
+      "type": "function",
+      "name": "getContentPaddingBottom",
+      "abstract": false,
+      "mixin": true,
+      "inherited": true,
+      "access": "public",
+      "overriddenFrom": "qx.ui.core.MContentPadding",
+      "jsdoc": {
+        "@return": [
+          {
+            "name": "@return",
+            "type": "Integer",
+            "desc": "Returns the value for undefined"
+          }
+        ]
+      }
+    },
+    "setContentPaddingBottom": {
+      "type": "function",
+      "name": "setContentPaddingBottom",
+      "abstract": false,
+      "mixin": true,
+      "inherited": true,
+      "access": "public",
+      "overriddenFrom": "qx.ui.core.MContentPadding",
+      "jsdoc": {
+        "@param": [
+          {
+            "name": "@param",
+            "type": "Integer",
+            "paramName": "value",
+            "desc": "Value for undefined"
+          }
+        ]
+      }
+    },
+    "resetContentPaddingBottom": {
+      "type": "function",
+      "name": "resetContentPaddingBottom",
+      "abstract": false,
+      "mixin": true,
+      "inherited": true,
+      "access": "public",
+      "overriddenFrom": "qx.ui.core.MContentPadding"
+    },
+    "getContentPaddingLeft": {
+      "type": "function",
+      "name": "getContentPaddingLeft",
+      "abstract": false,
+      "mixin": true,
+      "inherited": true,
+      "access": "public",
+      "overriddenFrom": "qx.ui.core.MContentPadding",
+      "jsdoc": {
+        "@return": [
+          {
+            "name": "@return",
+            "type": "Integer",
+            "desc": "Returns the value for undefined"
+          }
+        ]
+      }
+    },
+    "setContentPaddingLeft": {
+      "type": "function",
+      "name": "setContentPaddingLeft",
+      "abstract": false,
+      "mixin": true,
+      "inherited": true,
+      "access": "public",
+      "overriddenFrom": "qx.ui.core.MContentPadding",
+      "jsdoc": {
+        "@param": [
+          {
+            "name": "@param",
+            "type": "Integer",
+            "paramName": "value",
+            "desc": "Value for undefined"
+          }
+        ]
+      }
+    },
+    "resetContentPaddingLeft": {
+      "type": "function",
+      "name": "resetContentPaddingLeft",
+      "abstract": false,
+      "mixin": true,
+      "inherited": true,
+      "access": "public",
+      "overriddenFrom": "qx.ui.core.MContentPadding"
+    },
+    "getContentPadding": {
+      "type": "function",
+      "name": "getContentPadding",
+      "abstract": false,
+      "mixin": true,
+      "inherited": true,
+      "access": "public",
+      "overriddenFrom": "qx.ui.core.MContentPadding",
+      "jsdoc": {
+        "@return": [
+          {
+            "name": "@return",
+            "type": "any",
+            "desc": "Returns the value for undefined"
+          }
+        ]
+      }
+    },
+    "setContentPadding": {
+      "type": "function",
+      "name": "setContentPadding",
+      "abstract": false,
+      "mixin": true,
+      "inherited": true,
+      "access": "public",
+      "overriddenFrom": "qx.ui.core.MContentPadding",
+      "jsdoc": {
+        "@param": [
+          {
+            "name": "@param",
+            "type": "any",
+            "paramName": "value",
+            "desc": "Value for undefined"
+          }
+        ]
+      }
+    },
+    "resetContentPadding": {
+      "type": "function",
+      "name": "resetContentPadding",
+      "abstract": false,
+      "mixin": true,
+      "inherited": true,
+      "access": "public",
+      "overriddenFrom": "qx.ui.core.MContentPadding"
+    },
+    "getActive": {
+      "type": "function",
+      "name": "getActive",
+      "abstract": false,
+      "mixin": false,
+      "inherited": false,
+      "access": "public",
+      "property": "get",
+      "jsdoc": {
+        "@return": [
+          {
+            "name": "@return",
+            "type": "Boolean",
+            "desc": "Returns the value for undefined"
+          }
+        ]
+      }
+    },
+    "isActive": {
+      "type": "function",
+      "name": "isActive",
+      "abstract": false,
+      "mixin": false,
+      "inherited": false,
+      "access": "public",
+      "property": "is",
+      "jsdoc": {
+        "@return": [
+          {
+            "name": "@return",
+            "type": "Boolean",
+            "desc": "Returns the value for undefined"
+          }
+        ]
+      }
+    },
+    "setActive": {
+      "type": "function",
+      "name": "setActive",
+      "abstract": false,
+      "mixin": false,
+      "inherited": false,
+      "access": "public",
+      "property": "set",
+      "jsdoc": {
+        "@param": [
+          {
+            "name": "@param",
+            "type": "Boolean",
+            "paramName": "value",
+            "desc": "Value for undefined"
+          }
+        ]
+      }
+    },
+    "resetActive": {
+      "type": "function",
+      "name": "resetActive",
+      "abstract": false,
+      "mixin": false,
+      "inherited": false,
+      "access": "public",
+      "property": "reset",
+      "jsdoc": {}
+    },
+    "getAlwaysOnTop": {
+      "type": "function",
+      "name": "getAlwaysOnTop",
+      "abstract": false,
+      "mixin": false,
+      "inherited": false,
+      "access": "public",
+      "property": "get",
+      "jsdoc": {
+        "@return": [
+          {
+            "name": "@return",
+            "type": "Boolean",
+            "desc": "Returns the value for undefined"
+          }
+        ]
+      }
+    },
+    "isAlwaysOnTop": {
+      "type": "function",
+      "name": "isAlwaysOnTop",
+      "abstract": false,
+      "mixin": false,
+      "inherited": false,
+      "access": "public",
+      "property": "is",
+      "jsdoc": {
+        "@return": [
+          {
+            "name": "@return",
+            "type": "Boolean",
+            "desc": "Returns the value for undefined"
+          }
+        ]
+      }
+    },
+    "setAlwaysOnTop": {
+      "type": "function",
+      "name": "setAlwaysOnTop",
+      "abstract": false,
+      "mixin": false,
+      "inherited": false,
+      "access": "public",
+      "property": "set",
+      "jsdoc": {
+        "@param": [
+          {
+            "name": "@param",
+            "type": "Boolean",
+            "paramName": "value",
+            "desc": "Value for undefined"
+          }
+        ]
+      }
+    },
+    "resetAlwaysOnTop": {
+      "type": "function",
+      "name": "resetAlwaysOnTop",
+      "abstract": false,
+      "mixin": false,
+      "inherited": false,
+      "access": "public",
+      "property": "reset",
+      "jsdoc": {}
+    },
+    "getModal": {
+      "type": "function",
+      "name": "getModal",
+      "abstract": false,
+      "mixin": false,
+      "inherited": false,
+      "access": "public",
+      "property": "get",
+      "jsdoc": {
+        "@return": [
+          {
+            "name": "@return",
+            "type": "Boolean",
+            "desc": "Returns the value for undefined"
+          }
+        ]
+      }
+    },
+    "isModal": {
+      "type": "function",
+      "name": "isModal",
+      "abstract": false,
+      "mixin": false,
+      "inherited": false,
+      "access": "public",
+      "property": "is",
+      "jsdoc": {
+        "@return": [
+          {
+            "name": "@return",
+            "type": "Boolean",
+            "desc": "Returns the value for undefined"
+          }
+        ]
+      }
+    },
+    "setModal": {
+      "type": "function",
+      "name": "setModal",
+      "abstract": false,
+      "mixin": false,
+      "inherited": false,
+      "access": "public",
+      "property": "set",
+      "jsdoc": {
+        "@param": [
+          {
+            "name": "@param",
+            "type": "Boolean",
+            "paramName": "value",
+            "desc": "Value for undefined"
+          }
+        ]
+      }
+    },
+    "resetModal": {
+      "type": "function",
+      "name": "resetModal",
+      "abstract": false,
+      "mixin": false,
+      "inherited": false,
+      "access": "public",
+      "property": "reset",
+      "jsdoc": {}
+    },
+    "getCaption": {
+      "type": "function",
+      "name": "getCaption",
+      "abstract": false,
+      "mixin": false,
+      "inherited": false,
+      "access": "public",
+      "property": "get",
+      "jsdoc": {
+        "@return": [
+          {
+            "name": "@return",
+            "type": "any",
+            "desc": "Returns the value for undefined"
+          }
+        ]
+      }
+    },
+    "setCaption": {
+      "type": "function",
+      "name": "setCaption",
+      "abstract": false,
+      "mixin": false,
+      "inherited": false,
+      "access": "public",
+      "property": "set",
+      "jsdoc": {
+        "@param": [
+          {
+            "name": "@param",
+            "type": "any",
+            "paramName": "value",
+            "desc": "Value for undefined"
+          }
+        ]
+      }
+    },
+    "resetCaption": {
+      "type": "function",
+      "name": "resetCaption",
+      "abstract": false,
+      "mixin": false,
+      "inherited": false,
+      "access": "public",
+      "property": "reset",
+      "jsdoc": {}
+    },
+    "getIcon": {
+      "type": "function",
+      "name": "getIcon",
+      "abstract": false,
+      "mixin": false,
+      "inherited": false,
+      "access": "public",
+      "property": "get",
+      "jsdoc": {
+        "@return": [
+          {
+            "name": "@return",
+            "type": "String",
+            "desc": "Returns the value for undefined"
+          }
+        ]
+      }
+    },
+    "setIcon": {
+      "type": "function",
+      "name": "setIcon",
+      "abstract": false,
+      "mixin": false,
+      "inherited": false,
+      "access": "public",
+      "property": "set",
+      "jsdoc": {
+        "@param": [
+          {
+            "name": "@param",
+            "type": "String",
+            "paramName": "value",
+            "desc": "Value for undefined"
+          }
+        ]
+      }
+    },
+    "resetIcon": {
+      "type": "function",
+      "name": "resetIcon",
+      "abstract": false,
+      "mixin": false,
+      "inherited": false,
+      "access": "public",
+      "property": "reset",
+      "jsdoc": {}
+    },
+    "getStatus": {
+      "type": "function",
+      "name": "getStatus",
+      "abstract": false,
+      "mixin": false,
+      "inherited": false,
+      "access": "public",
+      "property": "get",
+      "jsdoc": {
+        "@return": [
+          {
+            "name": "@return",
+            "type": "String",
+            "desc": "Returns the value for undefined"
+          }
+        ]
+      }
+    },
+    "setStatus": {
+      "type": "function",
+      "name": "setStatus",
+      "abstract": false,
+      "mixin": false,
+      "inherited": false,
+      "access": "public",
+      "property": "set",
+      "jsdoc": {
+        "@param": [
+          {
+            "name": "@param",
+            "type": "String",
+            "paramName": "value",
+            "desc": "Value for undefined"
+          }
+        ]
+      }
+    },
+    "resetStatus": {
+      "type": "function",
+      "name": "resetStatus",
+      "abstract": false,
+      "mixin": false,
+      "inherited": false,
+      "access": "public",
+      "property": "reset",
+      "jsdoc": {}
+    },
+    "getShowClose": {
+      "type": "function",
+      "name": "getShowClose",
+      "abstract": false,
+      "mixin": false,
+      "inherited": false,
+      "access": "public",
+      "property": "get",
+      "jsdoc": {
+        "@return": [
+          {
+            "name": "@return",
+            "type": "Boolean",
+            "desc": "Returns the value for undefined"
+          }
+        ]
+      }
+    },
+    "isShowClose": {
+      "type": "function",
+      "name": "isShowClose",
+      "abstract": false,
+      "mixin": false,
+      "inherited": false,
+      "access": "public",
+      "property": "is",
+      "jsdoc": {
+        "@return": [
+          {
+            "name": "@return",
+            "type": "Boolean",
+            "desc": "Returns the value for undefined"
+          }
+        ]
+      }
+    },
+    "setShowClose": {
+      "type": "function",
+      "name": "setShowClose",
+      "abstract": false,
+      "mixin": false,
+      "inherited": false,
+      "access": "public",
+      "property": "set",
+      "jsdoc": {
+        "@param": [
+          {
+            "name": "@param",
+            "type": "Boolean",
+            "paramName": "value",
+            "desc": "Value for undefined"
+          }
+        ]
+      }
+    },
+    "resetShowClose": {
+      "type": "function",
+      "name": "resetShowClose",
+      "abstract": false,
+      "mixin": false,
+      "inherited": false,
+      "access": "public",
+      "property": "reset",
+      "jsdoc": {}
+    },
+    "getShowMaximize": {
+      "type": "function",
+      "name": "getShowMaximize",
+      "abstract": false,
+      "mixin": false,
+      "inherited": false,
+      "access": "public",
+      "property": "get",
+      "jsdoc": {
+        "@return": [
+          {
+            "name": "@return",
+            "type": "Boolean",
+            "desc": "Returns the value for undefined"
+          }
+        ]
+      }
+    },
+    "isShowMaximize": {
+      "type": "function",
+      "name": "isShowMaximize",
+      "abstract": false,
+      "mixin": false,
+      "inherited": false,
+      "access": "public",
+      "property": "is",
+      "jsdoc": {
+        "@return": [
+          {
+            "name": "@return",
+            "type": "Boolean",
+            "desc": "Returns the value for undefined"
+          }
+        ]
+      }
+    },
+    "setShowMaximize": {
+      "type": "function",
+      "name": "setShowMaximize",
+      "abstract": false,
+      "mixin": false,
+      "inherited": false,
+      "access": "public",
+      "property": "set",
+      "jsdoc": {
+        "@param": [
+          {
+            "name": "@param",
+            "type": "Boolean",
+            "paramName": "value",
+            "desc": "Value for undefined"
+          }
+        ]
+      }
+    },
+    "resetShowMaximize": {
+      "type": "function",
+      "name": "resetShowMaximize",
+      "abstract": false,
+      "mixin": false,
+      "inherited": false,
+      "access": "public",
+      "property": "reset",
+      "jsdoc": {}
+    },
+    "getShowMinimize": {
+      "type": "function",
+      "name": "getShowMinimize",
+      "abstract": false,
+      "mixin": false,
+      "inherited": false,
+      "access": "public",
+      "property": "get",
+      "jsdoc": {
+        "@return": [
+          {
+            "name": "@return",
+            "type": "Boolean",
+            "desc": "Returns the value for undefined"
+          }
+        ]
+      }
+    },
+    "isShowMinimize": {
+      "type": "function",
+      "name": "isShowMinimize",
+      "abstract": false,
+      "mixin": false,
+      "inherited": false,
+      "access": "public",
+      "property": "is",
+      "jsdoc": {
+        "@return": [
+          {
+            "name": "@return",
+            "type": "Boolean",
+            "desc": "Returns the value for undefined"
+          }
+        ]
+      }
+    },
+    "setShowMinimize": {
+      "type": "function",
+      "name": "setShowMinimize",
+      "abstract": false,
+      "mixin": false,
+      "inherited": false,
+      "access": "public",
+      "property": "set",
+      "jsdoc": {
+        "@param": [
+          {
+            "name": "@param",
+            "type": "Boolean",
+            "paramName": "value",
+            "desc": "Value for undefined"
+          }
+        ]
+      }
+    },
+    "resetShowMinimize": {
+      "type": "function",
+      "name": "resetShowMinimize",
+      "abstract": false,
+      "mixin": false,
+      "inherited": false,
+      "access": "public",
+      "property": "reset",
+      "jsdoc": {}
+    },
+    "getAllowClose": {
+      "type": "function",
+      "name": "getAllowClose",
+      "abstract": false,
+      "mixin": false,
+      "inherited": false,
+      "access": "public",
+      "property": "get",
+      "jsdoc": {
+        "@return": [
+          {
+            "name": "@return",
+            "type": "Boolean",
+            "desc": "Returns the value for undefined"
+          }
+        ]
+      }
+    },
+    "isAllowClose": {
+      "type": "function",
+      "name": "isAllowClose",
+      "abstract": false,
+      "mixin": false,
+      "inherited": false,
+      "access": "public",
+      "property": "is",
+      "jsdoc": {
+        "@return": [
+          {
+            "name": "@return",
+            "type": "Boolean",
+            "desc": "Returns the value for undefined"
+          }
+        ]
+      }
+    },
+    "setAllowClose": {
+      "type": "function",
+      "name": "setAllowClose",
+      "abstract": false,
+      "mixin": false,
+      "inherited": false,
+      "access": "public",
+      "property": "set",
+      "jsdoc": {
+        "@param": [
+          {
+            "name": "@param",
+            "type": "Boolean",
+            "paramName": "value",
+            "desc": "Value for undefined"
+          }
+        ]
+      }
+    },
+    "resetAllowClose": {
+      "type": "function",
+      "name": "resetAllowClose",
+      "abstract": false,
+      "mixin": false,
+      "inherited": false,
+      "access": "public",
+      "property": "reset",
+      "jsdoc": {}
+    },
+    "getAllowMaximize": {
+      "type": "function",
+      "name": "getAllowMaximize",
+      "abstract": false,
+      "mixin": false,
+      "inherited": false,
+      "access": "public",
+      "property": "get",
+      "jsdoc": {
+        "@return": [
+          {
+            "name": "@return",
+            "type": "Boolean",
+            "desc": "Returns the value for undefined"
+          }
+        ]
+      }
+    },
+    "isAllowMaximize": {
+      "type": "function",
+      "name": "isAllowMaximize",
+      "abstract": false,
+      "mixin": false,
+      "inherited": false,
+      "access": "public",
+      "property": "is",
+      "jsdoc": {
+        "@return": [
+          {
+            "name": "@return",
+            "type": "Boolean",
+            "desc": "Returns the value for undefined"
+          }
+        ]
+      }
+    },
+    "setAllowMaximize": {
+      "type": "function",
+      "name": "setAllowMaximize",
+      "abstract": false,
+      "mixin": false,
+      "inherited": false,
+      "access": "public",
+      "property": "set",
+      "jsdoc": {
+        "@param": [
+          {
+            "name": "@param",
+            "type": "Boolean",
+            "paramName": "value",
+            "desc": "Value for undefined"
+          }
+        ]
+      }
+    },
+    "resetAllowMaximize": {
+      "type": "function",
+      "name": "resetAllowMaximize",
+      "abstract": false,
+      "mixin": false,
+      "inherited": false,
+      "access": "public",
+      "property": "reset",
+      "jsdoc": {}
+    },
+    "getAllowMinimize": {
+      "type": "function",
+      "name": "getAllowMinimize",
+      "abstract": false,
+      "mixin": false,
+      "inherited": false,
+      "access": "public",
+      "property": "get",
+      "jsdoc": {
+        "@return": [
+          {
+            "name": "@return",
+            "type": "Boolean",
+            "desc": "Returns the value for undefined"
+          }
+        ]
+      }
+    },
+    "isAllowMinimize": {
+      "type": "function",
+      "name": "isAllowMinimize",
+      "abstract": false,
+      "mixin": false,
+      "inherited": false,
+      "access": "public",
+      "property": "is",
+      "jsdoc": {
+        "@return": [
+          {
+            "name": "@return",
+            "type": "Boolean",
+            "desc": "Returns the value for undefined"
+          }
+        ]
+      }
+    },
+    "setAllowMinimize": {
+      "type": "function",
+      "name": "setAllowMinimize",
+      "abstract": false,
+      "mixin": false,
+      "inherited": false,
+      "access": "public",
+      "property": "set",
+      "jsdoc": {
+        "@param": [
+          {
+            "name": "@param",
+            "type": "Boolean",
+            "paramName": "value",
+            "desc": "Value for undefined"
+          }
+        ]
+      }
+    },
+    "resetAllowMinimize": {
+      "type": "function",
+      "name": "resetAllowMinimize",
+      "abstract": false,
+      "mixin": false,
+      "inherited": false,
+      "access": "public",
+      "property": "reset",
+      "jsdoc": {}
+    },
+    "getShowStatusbar": {
+      "type": "function",
+      "name": "getShowStatusbar",
+      "abstract": false,
+      "mixin": false,
+      "inherited": false,
+      "access": "public",
+      "property": "get",
+      "jsdoc": {
+        "@return": [
+          {
+            "name": "@return",
+            "type": "Boolean",
+            "desc": "Returns the value for undefined"
+          }
+        ]
+      }
+    },
+    "isShowStatusbar": {
+      "type": "function",
+      "name": "isShowStatusbar",
+      "abstract": false,
+      "mixin": false,
+      "inherited": false,
+      "access": "public",
+      "property": "is",
+      "jsdoc": {
+        "@return": [
+          {
+            "name": "@return",
+            "type": "Boolean",
+            "desc": "Returns the value for undefined"
+          }
+        ]
+      }
+    },
+    "setShowStatusbar": {
+      "type": "function",
+      "name": "setShowStatusbar",
+      "abstract": false,
+      "mixin": false,
+      "inherited": false,
+      "access": "public",
+      "property": "set",
+      "jsdoc": {
+        "@param": [
+          {
+            "name": "@param",
+            "type": "Boolean",
+            "paramName": "value",
+            "desc": "Value for undefined"
+          }
+        ]
+      }
+    },
+    "resetShowStatusbar": {
+      "type": "function",
+      "name": "resetShowStatusbar",
+      "abstract": false,
+      "mixin": false,
+      "inherited": false,
+      "access": "public",
+      "property": "reset",
+      "jsdoc": {}
+    },
+    "getCenterOnAppear": {
+      "type": "function",
+      "name": "getCenterOnAppear",
+      "abstract": false,
+      "mixin": false,
+      "inherited": false,
+      "access": "public",
+      "property": "get",
+      "jsdoc": {
+        "@return": [
+          {
+            "name": "@return",
+            "type": "Boolean",
+            "desc": "Returns the value for undefined"
+          }
+        ]
+      }
+    },
+    "isCenterOnAppear": {
+      "type": "function",
+      "name": "isCenterOnAppear",
+      "abstract": false,
+      "mixin": false,
+      "inherited": false,
+      "access": "public",
+      "property": "is",
+      "jsdoc": {
+        "@return": [
+          {
+            "name": "@return",
+            "type": "Boolean",
+            "desc": "Returns the value for undefined"
+          }
+        ]
+      }
+    },
+    "setCenterOnAppear": {
+      "type": "function",
+      "name": "setCenterOnAppear",
+      "abstract": false,
+      "mixin": false,
+      "inherited": false,
+      "access": "public",
+      "property": "set",
+      "jsdoc": {
+        "@param": [
+          {
+            "name": "@param",
+            "type": "Boolean",
+            "paramName": "value",
+            "desc": "Value for undefined"
+          }
+        ]
+      }
+    },
+    "resetCenterOnAppear": {
+      "type": "function",
+      "name": "resetCenterOnAppear",
+      "abstract": false,
+      "mixin": false,
+      "inherited": false,
+      "access": "public",
+      "property": "reset",
+      "jsdoc": {}
+    },
+    "getCenterOnContainerResize": {
+      "type": "function",
+      "name": "getCenterOnContainerResize",
+      "abstract": false,
+      "mixin": false,
+      "inherited": false,
+      "access": "public",
+      "property": "get",
+      "jsdoc": {
+        "@return": [
+          {
+            "name": "@return",
+            "type": "Boolean",
+            "desc": "Returns the value for undefined"
+          }
+        ]
+      }
+    },
+    "isCenterOnContainerResize": {
+      "type": "function",
+      "name": "isCenterOnContainerResize",
+      "abstract": false,
+      "mixin": false,
+      "inherited": false,
+      "access": "public",
+      "property": "is",
+      "jsdoc": {
+        "@return": [
+          {
+            "name": "@return",
+            "type": "Boolean",
+            "desc": "Returns the value for undefined"
+          }
+        ]
+      }
+    },
+    "setCenterOnContainerResize": {
+      "type": "function",
+      "name": "setCenterOnContainerResize",
+      "abstract": false,
+      "mixin": false,
+      "inherited": false,
+      "access": "public",
+      "property": "set",
+      "jsdoc": {
+        "@param": [
+          {
+            "name": "@param",
+            "type": "Boolean",
+            "paramName": "value",
+            "desc": "Value for undefined"
+          }
+        ]
+      }
+    },
+    "resetCenterOnContainerResize": {
+      "type": "function",
+      "name": "resetCenterOnContainerResize",
+      "abstract": false,
+      "mixin": false,
+      "inherited": false,
+      "access": "public",
+      "property": "reset",
+      "jsdoc": {}
+    },
+    "getAutoDestroy": {
+      "type": "function",
+      "name": "getAutoDestroy",
+      "abstract": false,
+      "mixin": false,
+      "inherited": false,
+      "access": "public",
+      "property": "get",
+      "jsdoc": {
+        "@return": [
+          {
+            "name": "@return",
+            "type": "Boolean",
+            "desc": "Returns the value for undefined"
+          }
+        ]
+      }
+    },
+    "isAutoDestroy": {
+      "type": "function",
+      "name": "isAutoDestroy",
+      "abstract": false,
+      "mixin": false,
+      "inherited": false,
+      "access": "public",
+      "property": "is",
+      "jsdoc": {
+        "@return": [
+          {
+            "name": "@return",
+            "type": "Boolean",
+            "desc": "Returns the value for undefined"
+          }
+        ]
+      }
+    },
+    "setAutoDestroy": {
+      "type": "function",
+      "name": "setAutoDestroy",
+      "abstract": false,
+      "mixin": false,
+      "inherited": false,
+      "access": "public",
+      "property": "set",
+      "jsdoc": {
+        "@param": [
+          {
+            "name": "@param",
+            "type": "Boolean",
+            "paramName": "value",
+            "desc": "Value for undefined"
+          }
+        ]
+      }
+    },
+    "resetAutoDestroy": {
+      "type": "function",
+      "name": "resetAutoDestroy",
+      "abstract": false,
+      "mixin": false,
+      "inherited": false,
+      "access": "public",
+      "property": "reset",
+      "jsdoc": {}
+    }
+  },
+  "destruct": {
+    "location": {
+      "start": {
+        "line": 1181,
+        "column": 2
+      },
+      "end": {
+        "line": 1199,
+        "column": 3
+      }
+    }
+  },
+  "descendants": []
+}

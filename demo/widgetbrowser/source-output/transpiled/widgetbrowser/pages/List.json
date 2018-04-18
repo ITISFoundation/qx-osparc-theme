@@ -1,0 +1,156 @@
+{
+  "className": "widgetbrowser.pages.List",
+  "packageName": "widgetbrowser.pages",
+  "name": "List",
+  "superClass": "widgetbrowser.pages.AbstractPage",
+  "interfaces": [],
+  "mixins": [],
+  "clazz": {
+    "location": {
+      "start": {
+        "line": 33,
+        "column": 0
+      },
+      "end": {
+        "line": 147,
+        "column": 5
+      }
+    },
+    "jsdoc": {
+      "@description": [
+        {
+          "name": "@description",
+          "body": "***********************************************************************\n\nqooxdoo - the new era of web development\n\nhttp://qooxdoo.org\n\nCopyright:\n2004-2010 1&1 Internet AG, Germany, http://www.1und1.de\n\nLicense:\nMIT: https://opensource.org/licenses/MIT\nSee the LICENSE file in the project's top-level directory for details.\n\nAuthors:\nTristan Koch (tristankoch)\n\n***********************************************************************"
+        },
+        {
+          "name": "@description",
+          "body": "***********************************************************************\n\n\n***********************************************************************"
+        },
+        {
+          "name": "@description",
+          "body": "Demonstrates qx.ui.list(...):\n\nList"
+        }
+      ],
+      "@asset": [
+        {
+          "name": "@asset",
+          "body": "widgetbrowser/people.json"
+        }
+      ]
+    }
+  },
+  "type": "class",
+  "construct": {
+    "location": {
+      "start": {
+        "line": 37,
+        "column": 4
+      },
+      "end": {
+        "line": 45,
+        "column": 5
+      }
+    }
+  },
+  "members": {
+    "__grid": {
+      "location": {
+        "start": {
+          "line": 50,
+          "column": 4
+        },
+        "end": {
+          "line": 50,
+          "column": 17
+        }
+      },
+      "type": "variable",
+      "access": "private"
+    },
+    "__listUrl": {
+      "location": {
+        "start": {
+          "line": 51,
+          "column": 4
+        },
+        "end": {
+          "line": 51,
+          "column": 20
+        }
+      },
+      "type": "variable",
+      "access": "private"
+    },
+    "initWidgets": {
+      "location": {
+        "start": {
+          "line": 53,
+          "column": 4
+        },
+        "end": {
+          "line": 79,
+          "column": 5
+        }
+      },
+      "type": "function",
+      "access": "public"
+    },
+    "__getList": {
+      "location": {
+        "start": {
+          "line": 81,
+          "column": 4
+        },
+        "end": {
+          "line": 98,
+          "column": 5
+        }
+      },
+      "type": "function",
+      "access": "private"
+    },
+    "__getVirtualList": {
+      "location": {
+        "start": {
+          "line": 100,
+          "column": 4
+        },
+        "end": {
+          "line": 115,
+          "column": 5
+        }
+      },
+      "type": "function",
+      "access": "private"
+    },
+    "__getGroupedVirtualList": {
+      "location": {
+        "start": {
+          "line": 117,
+          "column": 4
+        },
+        "end": {
+          "line": 140,
+          "column": 5
+        }
+      },
+      "type": "function",
+      "access": "private"
+    },
+    "__attachStore": {
+      "location": {
+        "start": {
+          "line": 142,
+          "column": 4
+        },
+        "end": {
+          "line": 145,
+          "column": 5
+        }
+      },
+      "type": "function",
+      "access": "private"
+    }
+  },
+  "descendants": []
+}

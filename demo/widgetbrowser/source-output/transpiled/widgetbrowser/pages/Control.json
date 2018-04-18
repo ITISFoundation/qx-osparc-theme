@@ -1,0 +1,76 @@
+{
+  "className": "widgetbrowser.pages.Control",
+  "packageName": "widgetbrowser.pages",
+  "name": "Control",
+  "superClass": "widgetbrowser.pages.AbstractPage",
+  "interfaces": [],
+  "mixins": [],
+  "clazz": {
+    "location": {
+      "start": {
+        "line": 28,
+        "column": 0
+      },
+      "end": {
+        "line": 78,
+        "column": 5
+      }
+    },
+    "jsdoc": {
+      "@description": [
+        {
+          "name": "@description",
+          "body": "***********************************************************************\n\nqooxdoo - the new era of web development\n\nhttp://qooxdoo.org\n\nCopyright:\n2004-2010 1&1 Internet AG, Germany, http://www.1und1.de\n\nLicense:\nMIT: https://opensource.org/licenses/MIT\nSee the LICENSE file in the project's top-level directory for details.\n\nAuthors:\nTristan Koch (tristankoch)\n\n***********************************************************************"
+        },
+        {
+          "name": "@description",
+          "body": "Demonstrates qx.ui.control(...):\n\nColorSelector\nColorPopup\nDateChooser"
+        }
+      ]
+    }
+  },
+  "type": "class",
+  "construct": {
+    "location": {
+      "start": {
+        "line": 32,
+        "column": 4
+      },
+      "end": {
+        "line": 39,
+        "column": 5
+      }
+    }
+  },
+  "members": {
+    "__vbox": {
+      "location": {
+        "start": {
+          "line": 43,
+          "column": 4
+        },
+        "end": {
+          "line": 43,
+          "column": 16
+        }
+      },
+      "type": "variable",
+      "access": "private"
+    },
+    "initWidgets": {
+      "location": {
+        "start": {
+          "line": 45,
+          "column": 4
+        },
+        "end": {
+          "line": 76,
+          "column": 5
+        }
+      },
+      "type": "function",
+      "access": "public"
+    }
+  },
+  "descendants": []
+}

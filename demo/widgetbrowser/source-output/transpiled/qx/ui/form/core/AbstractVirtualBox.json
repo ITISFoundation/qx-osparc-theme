@@ -1,0 +1,1798 @@
+{
+  "className": "qx.ui.form.core.AbstractVirtualBox",
+  "packageName": "qx.ui.form.core",
+  "name": "AbstractVirtualBox",
+  "superClass": "qx.ui.core.Widget",
+  "interfaces": [
+    "qx.ui.form.IForm"
+  ],
+  "mixins": [
+    "qx.ui.form.MForm"
+  ],
+  "clazz": {
+    "location": {
+      "start": {
+        "line": 26,
+        "column": 0
+      },
+      "end": {
+        "line": 495,
+        "column": 3
+      }
+    },
+    "jsdoc": {
+      "@description": [
+        {
+          "name": "@description",
+          "body": "***********************************************************************\n\nqooxdoo - the new era of web development\n\nhttp://qooxdoo.org\n\nCopyright:\n2011 1&1 Internet AG, Germany, http://www.1und1.de\n\nLicense:\nMIT: https://opensource.org/licenses/MIT\nSee the LICENSE file in the project's top-level directory for details.\n\nAuthors:\nChristian Hagendorn (chris_schmidt)\n\n***********************************************************************"
+        },
+        {
+          "name": "@description",
+          "body": "Basic class for widgets which need a virtual list as popup for example a\nSelectBox. It's basically supports a drop-down as popup with a virtual list\nand the whole children management."
+        }
+      ],
+      "@childControl": [
+        {
+          "name": "@childControl",
+          "body": "dropdown {qx.ui.form.core.VirtualDropDownList} The drop-down list."
+        }
+      ]
+    }
+  },
+  "type": "class",
+  "construct": {
+    "location": {
+      "start": {
+        "line": 37,
+        "column": 2
+      },
+      "end": {
+        "line": 60,
+        "column": 3
+      }
+    },
+    "jsdoc": {
+      "@description": [
+        {
+          "name": "@description",
+          "body": ""
+        }
+      ],
+      "@param": [
+        {
+          "name": "@param",
+          "body": "model {qx.data.Array?null} The model data for the widget.",
+          "paramName": "model",
+          "description": " The model data for the widget.",
+          "optional": true,
+          "defaultValue": "null",
+          "type": "qx.data.Array"
+        }
+      ]
+    }
+  },
+  "properties": {
+    "focusable": {
+      "location": {
+        "start": {
+          "line": 66,
+          "column": 4
+        },
+        "end": {
+          "line": 70,
+          "column": 5
+        }
+      },
+      "jsdoc": {
+        "@description": [
+          {
+            "name": "@description",
+            "body": "overridden"
+          }
+        ]
+      },
+      "name": "focusable",
+      "propertyType": "new",
+      "refine": true,
+      "defaultValue": true,
+      "overriddenFrom": "qx.ui.core.Widget",
+      "appearsIn": {
+        "qx.ui.core.Widget": "class"
+      }
+    },
+    "width": {
+      "location": {
+        "start": {
+          "line": 74,
+          "column": 4
+        },
+        "end": {
+          "line": 78,
+          "column": 5
+        }
+      },
+      "jsdoc": {
+        "@description": [
+          {
+            "name": "@description",
+            "body": "overridden"
+          }
+        ]
+      },
+      "name": "width",
+      "propertyType": "new",
+      "refine": true,
+      "defaultValue": 120,
+      "overriddenFrom": "qx.ui.core.LayoutItem",
+      "appearsIn": {
+        "qx.ui.core.LayoutItem": "class"
+      }
+    },
+    "model": {
+      "location": {
+        "start": {
+          "line": 82,
+          "column": 4
+        },
+        "end": {
+          "line": 89,
+          "column": 5
+        }
+      },
+      "jsdoc": {
+        "@description": [
+          {
+            "name": "@description",
+            "body": "Data array containing the data which should be shown in the drop-down."
+          }
+        ]
+      },
+      "name": "model",
+      "propertyType": "new",
+      "event": "changeModel",
+      "apply": "_applyModel",
+      "allowNull": false,
+      "check": "qx.data.Array"
+    },
+    "delegate": {
+      "location": {
+        "start": {
+          "line": 96,
+          "column": 4
+        },
+        "end": {
+          "line": 102,
+          "column": 5
+        }
+      },
+      "jsdoc": {
+        "@description": [
+          {
+            "name": "@description",
+            "body": "Delegation object which can have one or more functions defined by the\n{@link qx.ui.list.core.IListDelegate} interface."
+          }
+        ]
+      },
+      "name": "delegate",
+      "propertyType": "new",
+      "event": "changeDelegate",
+      "apply": "_applyDelegate",
+      "allowNull": true
+    },
+    "labelPath": {
+      "location": {
+        "start": {
+          "line": 110,
+          "column": 4
+        },
+        "end": {
+          "line": 116,
+          "column": 5
+        }
+      },
+      "jsdoc": {
+        "@description": [
+          {
+            "name": "@description",
+            "body": "The path to the property which holds the information that should be\ndisplayed as a label. This is only needed if objects are stored in the\nmodel."
+          }
+        ]
+      },
+      "name": "labelPath",
+      "propertyType": "new",
+      "event": "changeLabelPath",
+      "apply": "_applyLabelPath",
+      "allowNull": true,
+      "check": "String"
+    },
+    "labelOptions": {
+      "location": {
+        "start": {
+          "line": 123,
+          "column": 4
+        },
+        "end": {
+          "line": 128,
+          "column": 5
+        }
+      },
+      "jsdoc": {
+        "@description": [
+          {
+            "name": "@description",
+            "body": "A map containing the options for the label binding. The possible keys\ncan be found in the {@link qx.data.SingleValueBinding} documentation."
+          }
+        ]
+      },
+      "name": "labelOptions",
+      "propertyType": "new",
+      "event": "changeLabelOptions",
+      "apply": "_applyLabelOptions",
+      "allowNull": true
+    },
+    "iconPath": {
+      "location": {
+        "start": {
+          "line": 136,
+          "column": 4
+        },
+        "end": {
+          "line": 142,
+          "column": 5
+        }
+      },
+      "jsdoc": {
+        "@description": [
+          {
+            "name": "@description",
+            "body": "The path to the property which holds the information that should be\ndisplayed as an icon. This is only needed if objects are stored in the\nmodel and icons should be displayed."
+          }
+        ]
+      },
+      "name": "iconPath",
+      "propertyType": "new",
+      "event": "changeIconPath",
+      "apply": "_applyIconPath",
+      "allowNull": true,
+      "check": "String"
+    },
+    "iconOptions": {
+      "location": {
+        "start": {
+          "line": 149,
+          "column": 4
+        },
+        "end": {
+          "line": 154,
+          "column": 5
+        }
+      },
+      "jsdoc": {
+        "@description": [
+          {
+            "name": "@description",
+            "body": "A map containing the options for the icon binding. The possible keys\ncan be found in the {@link qx.data.SingleValueBinding} documentation."
+          }
+        ]
+      },
+      "name": "iconOptions",
+      "propertyType": "new",
+      "event": "changeIconOptions",
+      "apply": "_applyIconOptions",
+      "allowNull": true
+    },
+    "itemHeight": {
+      "location": {
+        "start": {
+          "line": 158,
+          "column": 4
+        },
+        "end": {
+          "line": 164,
+          "column": 5
+        }
+      },
+      "jsdoc": {
+        "@description": [
+          {
+            "name": "@description",
+            "body": "Default item height."
+          }
+        ]
+      },
+      "name": "itemHeight",
+      "propertyType": "new",
+      "themeable": true,
+      "apply": "_applyRowHeight",
+      "check": "Integer",
+      "defaultValue": 25
+    },
+    "maxListHeight": {
+      "location": {
+        "start": {
+          "line": 171,
+          "column": 4
+        },
+        "end": {
+          "line": 177,
+          "column": 5
+        }
+      },
+      "jsdoc": {
+        "@description": [
+          {
+            "name": "@description",
+            "body": "The maximum height of the drop-down list. Setting this value to\n<code>null</code> will set cause the list to be auto-sized."
+          }
+        ]
+      },
+      "name": "maxListHeight",
+      "propertyType": "new",
+      "apply": "_applyMaxListHeight",
+      "allowNull": true,
+      "check": "Number",
+      "defaultValue": 200
+    },
+    "valid": {
+      "type": "property",
+      "name": "valid",
+      "abstract": false,
+      "mixin": true,
+      "access": "public",
+      "overriddenFrom": "qx.ui.form.MForm"
+    },
+    "required": {
+      "type": "property",
+      "name": "required",
+      "abstract": false,
+      "mixin": true,
+      "access": "public",
+      "overriddenFrom": "qx.ui.form.MForm"
+    },
+    "invalidMessage": {
+      "type": "property",
+      "name": "invalidMessage",
+      "abstract": false,
+      "mixin": true,
+      "access": "public",
+      "overriddenFrom": "qx.ui.form.MForm"
+    },
+    "requiredInvalidMessage": {
+      "type": "property",
+      "name": "requiredInvalidMessage",
+      "abstract": false,
+      "mixin": true,
+      "access": "public",
+      "overriddenFrom": "qx.ui.form.MForm"
+    }
+  },
+  "members": {
+    "__defaultModel": {
+      "location": {
+        "start": {
+          "line": 183,
+          "column": 4
+        },
+        "end": {
+          "line": 183,
+          "column": 25
+        }
+      },
+      "type": "variable",
+      "access": "private"
+    },
+    "_forwardStates": {
+      "location": {
+        "start": {
+          "line": 188,
+          "column": 4
+        },
+        "end": {
+          "line": 191,
+          "column": 5
+        }
+      },
+      "jsdoc": {
+        "@description": [
+          {
+            "name": "@description",
+            "body": ""
+          }
+        ],
+        "@lint": [
+          {
+            "name": "@lint",
+            "body": "ignoreReferenceField(_forwardStates)"
+          }
+        ]
+      },
+      "type": "variable",
+      "access": "protected"
+    },
+    "refresh": {
+      "location": {
+        "start": {
+          "line": 204,
+          "column": 4
+        },
+        "end": {
+          "line": 208,
+          "column": 5
+        }
+      },
+      "jsdoc": {
+        "@description": [
+          {
+            "name": "@description",
+            "body": "---------------------------------------------------------------------------\nPUBLIC API\n---------------------------------------------------------------------------"
+          },
+          {
+            "name": "@description",
+            "body": "Trigger a rebuild from the internal data structure."
+          }
+        ]
+      },
+      "type": "function",
+      "access": "public"
+    },
+    "open": {
+      "location": {
+        "start": {
+          "line": 214,
+          "column": 4
+        },
+        "end": {
+          "line": 217,
+          "column": 5
+        }
+      },
+      "jsdoc": {
+        "@description": [
+          {
+            "name": "@description",
+            "body": "Shows the drop-down."
+          }
+        ]
+      },
+      "type": "function",
+      "access": "public"
+    },
+    "close": {
+      "location": {
+        "start": {
+          "line": 223,
+          "column": 4
+        },
+        "end": {
+          "line": 226,
+          "column": 5
+        }
+      },
+      "jsdoc": {
+        "@description": [
+          {
+            "name": "@description",
+            "body": "Hides the drop-down."
+          }
+        ]
+      },
+      "type": "function",
+      "access": "public"
+    },
+    "toggle": {
+      "location": {
+        "start": {
+          "line": 232,
+          "column": 4
+        },
+        "end": {
+          "line": 240,
+          "column": 5
+        }
+      },
+      "jsdoc": {
+        "@description": [
+          {
+            "name": "@description",
+            "body": "Toggles the drop-down visibility."
+          }
+        ]
+      },
+      "type": "function",
+      "access": "public"
+    },
+    "_createChildControlImpl": {
+      "location": {
+        "start": {
+          "line": 251,
+          "column": 4
+        },
+        "end": {
+          "line": 264,
+          "column": 5
+        }
+      },
+      "jsdoc": {
+        "@description": [
+          {
+            "name": "@description",
+            "body": "---------------------------------------------------------------------------\nINTERNAL API\n---------------------------------------------------------------------------"
+          },
+          {
+            "name": "@description",
+            "body": "overridden"
+          }
+        ],
+        "@param": [
+          {
+            "name": "@param",
+            "body": "id {String} ID of the child control. If a # is used, the id is\nthe part in front of the #.",
+            "paramName": "id",
+            "description": " ID of the child control. If a # is used, the id is\nthe part in front of the #.",
+            "type": "String"
+          },
+          {
+            "name": "@param",
+            "body": "hash {String?undefined} If a child control name contains a #,\nall text following the # will be the hash argument.",
+            "paramName": "hash",
+            "description": " If a child control name contains a #,\nall text following the # will be the hash argument.",
+            "optional": true,
+            "defaultValue": "undefined",
+            "type": "String"
+          }
+        ],
+        "@return": [
+          {
+            "name": "@return",
+            "body": "{qx.ui.core.Widget} The created control or <code>null</code>",
+            "type": "qx.ui.core.Widget",
+            "desc": " The created control or <code>null</code>"
+          }
+        ]
+      },
+      "type": "function",
+      "access": "protected",
+      "overriddenFrom": "qx.ui.core.Widget",
+      "appearsIn": [
+        "qx.ui.core.Widget"
+      ]
+    },
+    "_beforeOpen": {
+      "location": {
+        "start": {
+          "line": 270,
+          "column": 4
+        },
+        "end": {
+          "line": 270,
+          "column": 30
+        }
+      },
+      "jsdoc": {
+        "@description": [
+          {
+            "name": "@description",
+            "body": "This method is called before the drop-down is opened."
+          }
+        ]
+      },
+      "type": "function",
+      "access": "protected"
+    },
+    "_beforeClose": {
+      "location": {
+        "start": {
+          "line": 276,
+          "column": 4
+        },
+        "end": {
+          "line": 276,
+          "column": 31
+        }
+      },
+      "jsdoc": {
+        "@description": [
+          {
+            "name": "@description",
+            "body": "This method is called before the drop-down is closed."
+          }
+        ]
+      },
+      "type": "function",
+      "access": "protected"
+    },
+    "_getAction": {
+      "location": {
+        "start": {
+          "line": 287,
+          "column": 4
+        },
+        "end": {
+          "line": 305,
+          "column": 5
+        }
+      },
+      "jsdoc": {
+        "@description": [
+          {
+            "name": "@description",
+            "body": "Returns the action dependent on the user interaction: e. q. <code>open</code>,\nor <code>close</code>."
+          }
+        ],
+        "@param": [
+          {
+            "name": "@param",
+            "body": "event {qx.event.type.KeySequence} The keyboard event.",
+            "paramName": "event",
+            "description": " The keyboard event.",
+            "type": "qx.event.type.KeySequence"
+          }
+        ],
+        "@return": [
+          {
+            "name": "@return",
+            "body": "{String|null} The action or <code>null</code> when interaction\ndoesn't hit any action.",
+            "type": "String|null",
+            "desc": " The action or <code>null</code> when interaction\ndoesn't hit any action."
+          }
+        ]
+      },
+      "type": "function",
+      "access": "protected"
+    },
+    "_getBindPath": {
+      "location": {
+        "start": {
+          "line": 315,
+          "column": 4
+        },
+        "end": {
+          "line": 324,
+          "column": 5
+        }
+      },
+      "jsdoc": {
+        "@description": [
+          {
+            "name": "@description",
+            "body": "Helper Method to create bind path depended on the passed path."
+          }
+        ],
+        "@param": [
+          {
+            "name": "@param",
+            "body": "source {String} The path to the selection.",
+            "paramName": "source",
+            "description": " The path to the selection.",
+            "type": "String"
+          },
+          {
+            "name": "@param",
+            "body": "path {String?null} The path to the item's property.",
+            "paramName": "path",
+            "description": " The path to the item's property.",
+            "optional": true,
+            "defaultValue": "null",
+            "type": "String"
+          }
+        ],
+        "@return": [
+          {
+            "name": "@return",
+            "body": "{String} The created path.",
+            "type": "String",
+            "desc": " The created path."
+          }
+        ]
+      },
+      "type": "function",
+      "access": "protected"
+    },
+    "_isModifierPressed": {
+      "location": {
+        "start": {
+          "line": 335,
+          "column": 4
+        },
+        "end": {
+          "line": 344,
+          "column": 5
+        }
+      },
+      "jsdoc": {
+        "@description": [
+          {
+            "name": "@description",
+            "body": "Helper method to check if one modifier key is pressed. e.q.\n<code>Control</code>, <code>Shift</code>, <code>Meta</code> or\n<code>Alt</code>."
+          }
+        ],
+        "@param": [
+          {
+            "name": "@param",
+            "body": "event {qx.event.type.KeySequence} The keyboard event.",
+            "paramName": "event",
+            "description": " The keyboard event.",
+            "type": "qx.event.type.KeySequence"
+          }
+        ],
+        "@return": [
+          {
+            "name": "@return",
+            "body": "{Boolean} <code>True</code> when a modifier key is pressed,\n<code>false</code> otherwise.",
+            "type": "Boolean",
+            "desc": " <code>True</code> when a modifier key is pressed,\n<code>false</code> otherwise."
+          }
+        ]
+      },
+      "type": "function",
+      "access": "protected"
+    },
+    "_onBlur": {
+      "location": {
+        "start": {
+          "line": 359,
+          "column": 4
+        },
+        "end": {
+          "line": 361,
+          "column": 5
+        }
+      },
+      "jsdoc": {
+        "@description": [
+          {
+            "name": "@description",
+            "body": "---------------------------------------------------------------------------\nEVENT LISTENERS\n---------------------------------------------------------------------------"
+          },
+          {
+            "name": "@description",
+            "body": "Handler for the blur event of the current widget."
+          }
+        ],
+        "@param": [
+          {
+            "name": "@param",
+            "body": "event {qx.event.type.Focus} The blur event.",
+            "paramName": "event",
+            "description": " The blur event.",
+            "type": "qx.event.type.Focus"
+          }
+        ]
+      },
+      "type": "function",
+      "access": "protected"
+    },
+    "_handleKeyboard": {
+      "location": {
+        "start": {
+          "line": 371,
+          "column": 4
+        },
+        "end": {
+          "line": 392,
+          "column": 5
+        }
+      },
+      "jsdoc": {
+        "@description": [
+          {
+            "name": "@description",
+            "body": "Handles the complete keyboard events for user interaction. If there is\nno defined user interaction {@link #_getAction}, the event is delegated\nto the {@link qx.ui.form.core.VirtualDropDownList#_handleKeyboard} method."
+          }
+        ],
+        "@param": [
+          {
+            "name": "@param",
+            "body": "event {qx.event.type.KeySequence} The keyboard event.",
+            "paramName": "event",
+            "description": " The keyboard event.",
+            "type": "qx.event.type.KeySequence"
+          }
+        ]
+      },
+      "type": "function",
+      "access": "protected"
+    },
+    "_handlePointer": {
+      "location": {
+        "start": {
+          "line": 400,
+          "column": 4
+        },
+        "end": {
+          "line": 400,
+          "column": 39
+        }
+      },
+      "jsdoc": {
+        "@description": [
+          {
+            "name": "@description",
+            "body": "Handles all pointer events dispatched on the widget."
+          }
+        ],
+        "@param": [
+          {
+            "name": "@param",
+            "body": "event {qx.event.type.Pointer|qx.event.type.Roll} The pointer event.",
+            "paramName": "event",
+            "description": " The pointer event.",
+            "type": [
+              "qx.event.type.Pointer",
+              "qx.event.type.Roll"
+            ]
+          }
+        ]
+      },
+      "type": "function",
+      "access": "protected"
+    },
+    "_onResize": {
+      "location": {
+        "start": {
+          "line": 408,
+          "column": 4
+        },
+        "end": {
+          "line": 410,
+          "column": 5
+        }
+      },
+      "jsdoc": {
+        "@description": [
+          {
+            "name": "@description",
+            "body": "Updates drop-down minimum size."
+          }
+        ],
+        "@param": [
+          {
+            "name": "@param",
+            "body": "event {qx.event.type.Data} Data event.",
+            "paramName": "event",
+            "description": " Data event.",
+            "type": "qx.event.type.Data"
+          }
+        ]
+      },
+      "type": "function",
+      "access": "protected"
+    },
+    "_onPopupChangeVisibility": {
+      "location": {
+        "start": {
+          "line": 418,
+          "column": 4
+        },
+        "end": {
+          "line": 421,
+          "column": 5
+        }
+      },
+      "jsdoc": {
+        "@description": [
+          {
+            "name": "@description",
+            "body": "Adds/removes the state 'popupOpen' depending on the visibility of the popup"
+          }
+        ],
+        "@param": [
+          {
+            "name": "@param",
+            "body": "event {qx.event.type.Data} Data event",
+            "paramName": "event",
+            "description": " Data event",
+            "type": "qx.event.type.Data"
+          }
+        ]
+      },
+      "type": "function",
+      "access": "protected"
+    },
+    "_applyModel": {
+      "location": {
+        "start": {
+          "line": 432,
+          "column": 4
+        },
+        "end": {
+          "line": 436,
+          "column": 5
+        }
+      },
+      "jsdoc": {
+        "@description": [
+          {
+            "name": "@description",
+            "body": "---------------------------------------------------------------------------\nAPPLY ROUTINES\n---------------------------------------------------------------------------"
+          },
+          {
+            "name": "@description",
+            "body": "property apply"
+          }
+        ]
+      },
+      "type": "function",
+      "access": "protected"
+    },
+    "_applyDelegate": {
+      "location": {
+        "start": {
+          "line": 440,
+          "column": 4
+        },
+        "end": {
+          "line": 442,
+          "column": 5
+        }
+      },
+      "jsdoc": {
+        "@description": [
+          {
+            "name": "@description",
+            "body": "property apply"
+          }
+        ]
+      },
+      "type": "function",
+      "access": "protected"
+    },
+    "_applyLabelPath": {
+      "location": {
+        "start": {
+          "line": 446,
+          "column": 4
+        },
+        "end": {
+          "line": 450,
+          "column": 5
+        }
+      },
+      "jsdoc": {
+        "@description": [
+          {
+            "name": "@description",
+            "body": "property apply"
+          }
+        ]
+      },
+      "type": "function",
+      "access": "protected"
+    },
+    "_applyLabelOptions": {
+      "location": {
+        "start": {
+          "line": 454,
+          "column": 4
+        },
+        "end": {
+          "line": 458,
+          "column": 5
+        }
+      },
+      "jsdoc": {
+        "@description": [
+          {
+            "name": "@description",
+            "body": "property apply"
+          }
+        ]
+      },
+      "type": "function",
+      "access": "protected"
+    },
+    "_applyIconPath": {
+      "location": {
+        "start": {
+          "line": 462,
+          "column": 4
+        },
+        "end": {
+          "line": 466,
+          "column": 5
+        }
+      },
+      "jsdoc": {
+        "@description": [
+          {
+            "name": "@description",
+            "body": "property apply"
+          }
+        ]
+      },
+      "type": "function",
+      "access": "protected"
+    },
+    "_applyIconOptions": {
+      "location": {
+        "start": {
+          "line": 470,
+          "column": 4
+        },
+        "end": {
+          "line": 474,
+          "column": 5
+        }
+      },
+      "jsdoc": {
+        "@description": [
+          {
+            "name": "@description",
+            "body": "property apply"
+          }
+        ]
+      },
+      "type": "function",
+      "access": "protected"
+    },
+    "_applyRowHeight": {
+      "location": {
+        "start": {
+          "line": 478,
+          "column": 4
+        },
+        "end": {
+          "line": 480,
+          "column": 5
+        }
+      },
+      "jsdoc": {
+        "@description": [
+          {
+            "name": "@description",
+            "body": "property apply"
+          }
+        ]
+      },
+      "type": "function",
+      "access": "protected"
+    },
+    "_applyMaxListHeight": {
+      "location": {
+        "start": {
+          "line": 484,
+          "column": 4
+        },
+        "end": {
+          "line": 486,
+          "column": 5
+        }
+      },
+      "jsdoc": {
+        "@description": [
+          {
+            "name": "@description",
+            "body": "property apply"
+          }
+        ]
+      },
+      "type": "function",
+      "access": "protected"
+    },
+    "setRequired": {
+      "type": "function",
+      "name": "setRequired",
+      "abstract": false,
+      "mixin": true,
+      "inherited": true,
+      "access": "public",
+      "overriddenFrom": "qx.ui.form.IForm",
+      "jsdoc": {
+        "@description": [
+          {
+            "name": "@description",
+            "body": "---------------------------------------------------------------------------\nREQUIRED PROPERTY\n---------------------------------------------------------------------------"
+          },
+          {
+            "name": "@description",
+            "body": "Sets the required state of a widget."
+          }
+        ],
+        "@param": [
+          {
+            "name": "@param",
+            "body": "required {Boolean} A flag signaling if the widget is required.",
+            "paramName": "required",
+            "description": " A flag signaling if the widget is required.",
+            "type": "Boolean"
+          }
+        ]
+      }
+    },
+    "getRequired": {
+      "type": "function",
+      "name": "getRequired",
+      "abstract": false,
+      "mixin": true,
+      "inherited": true,
+      "access": "public",
+      "overriddenFrom": "qx.ui.form.IForm",
+      "jsdoc": {
+        "@description": [
+          {
+            "name": "@description",
+            "body": "Return the current required state of the widget."
+          }
+        ],
+        "@return": [
+          {
+            "name": "@return",
+            "body": "{Boolean} True, if the widget is required.",
+            "type": "Boolean",
+            "desc": " True, if the widget is required."
+          }
+        ]
+      }
+    },
+    "setValid": {
+      "type": "function",
+      "name": "setValid",
+      "abstract": false,
+      "mixin": true,
+      "inherited": true,
+      "access": "public",
+      "overriddenFrom": "qx.ui.form.IForm",
+      "jsdoc": {
+        "@description": [
+          {
+            "name": "@description",
+            "body": "---------------------------------------------------------------------------\nVALID PROPERTY\n---------------------------------------------------------------------------"
+          },
+          {
+            "name": "@description",
+            "body": "Sets the valid state of the widget."
+          }
+        ],
+        "@param": [
+          {
+            "name": "@param",
+            "body": "valid {Boolean} The valid state of the widget.",
+            "paramName": "valid",
+            "description": " The valid state of the widget.",
+            "type": "Boolean"
+          }
+        ]
+      }
+    },
+    "getValid": {
+      "type": "function",
+      "name": "getValid",
+      "abstract": false,
+      "mixin": true,
+      "inherited": true,
+      "access": "public",
+      "overriddenFrom": "qx.ui.form.IForm",
+      "jsdoc": {
+        "@description": [
+          {
+            "name": "@description",
+            "body": "Returns the valid state of the widget."
+          }
+        ],
+        "@return": [
+          {
+            "name": "@return",
+            "body": "{Boolean} If the state of the widget is valid.",
+            "type": "Boolean",
+            "desc": " If the state of the widget is valid."
+          }
+        ]
+      }
+    },
+    "setInvalidMessage": {
+      "type": "function",
+      "name": "setInvalidMessage",
+      "abstract": false,
+      "mixin": true,
+      "inherited": true,
+      "access": "public",
+      "overriddenFrom": "qx.ui.form.IForm",
+      "jsdoc": {
+        "@description": [
+          {
+            "name": "@description",
+            "body": "---------------------------------------------------------------------------\nINVALID MESSAGE PROPERTY\n---------------------------------------------------------------------------"
+          },
+          {
+            "name": "@description",
+            "body": "Sets the invalid message of the widget."
+          }
+        ],
+        "@param": [
+          {
+            "name": "@param",
+            "body": "message {String} The invalid message.",
+            "paramName": "message",
+            "description": " The invalid message.",
+            "type": "String"
+          }
+        ]
+      }
+    },
+    "getInvalidMessage": {
+      "type": "function",
+      "name": "getInvalidMessage",
+      "abstract": false,
+      "mixin": true,
+      "inherited": true,
+      "access": "public",
+      "overriddenFrom": "qx.ui.form.IForm",
+      "jsdoc": {
+        "@description": [
+          {
+            "name": "@description",
+            "body": "Returns the invalid message of the widget."
+          }
+        ],
+        "@return": [
+          {
+            "name": "@return",
+            "body": "{String} The current set message.",
+            "type": "String",
+            "desc": " The current set message."
+          }
+        ]
+      }
+    },
+    "setRequiredInvalidMessage": {
+      "type": "function",
+      "name": "setRequiredInvalidMessage",
+      "abstract": false,
+      "mixin": true,
+      "inherited": true,
+      "access": "public",
+      "overriddenFrom": "qx.ui.form.IForm",
+      "jsdoc": {
+        "@description": [
+          {
+            "name": "@description",
+            "body": "---------------------------------------------------------------------------\nREQUIRED INVALID MESSAGE PROPERTY\n---------------------------------------------------------------------------"
+          },
+          {
+            "name": "@description",
+            "body": "Sets the invalid message if required of the widget."
+          }
+        ],
+        "@param": [
+          {
+            "name": "@param",
+            "body": "message {String} The invalid message.",
+            "paramName": "message",
+            "description": " The invalid message.",
+            "type": "String"
+          }
+        ]
+      }
+    },
+    "getRequiredInvalidMessage": {
+      "type": "function",
+      "name": "getRequiredInvalidMessage",
+      "abstract": false,
+      "mixin": true,
+      "inherited": true,
+      "access": "public",
+      "overriddenFrom": "qx.ui.form.IForm",
+      "jsdoc": {
+        "@description": [
+          {
+            "name": "@description",
+            "body": "Returns the invalid message if required of the widget."
+          }
+        ],
+        "@return": [
+          {
+            "name": "@return",
+            "body": "{String} The current set message.",
+            "type": "String",
+            "desc": " The current set message."
+          }
+        ]
+      }
+    },
+    "_applyValid": {
+      "type": "function",
+      "name": "_applyValid",
+      "abstract": false,
+      "mixin": true,
+      "inherited": true,
+      "access": "protected",
+      "overriddenFrom": "qx.ui.form.MForm"
+    },
+    "__onChangeLocale": {
+      "type": "function",
+      "name": "__onChangeLocale",
+      "abstract": false,
+      "mixin": true,
+      "inherited": true,
+      "access": "private",
+      "overriddenFrom": "qx.ui.form.MForm",
+      "jsdoc": {
+        "@description": [
+          {
+            "name": "@description",
+            "body": "Locale change event handler"
+          }
+        ],
+        "@signature": [
+          {
+            "name": "@signature",
+            "body": "function(e)"
+          }
+        ],
+        "@param": [
+          {
+            "name": "@param",
+            "body": "e {Event} the change event",
+            "paramName": "e",
+            "description": " the change event",
+            "type": "Event"
+          }
+        ]
+      }
+    },
+    "isValid": {
+      "type": "function",
+      "name": "isValid",
+      "abstract": false,
+      "mixin": true,
+      "inherited": true,
+      "access": "public",
+      "overriddenFrom": "qx.ui.form.MForm",
+      "jsdoc": {
+        "@return": [
+          {
+            "name": "@return",
+            "type": "Boolean",
+            "desc": "Returns the value for undefined"
+          }
+        ]
+      }
+    },
+    "resetValid": {
+      "type": "function",
+      "name": "resetValid",
+      "abstract": false,
+      "mixin": true,
+      "inherited": true,
+      "access": "public",
+      "overriddenFrom": "qx.ui.form.MForm"
+    },
+    "isRequired": {
+      "type": "function",
+      "name": "isRequired",
+      "abstract": false,
+      "mixin": true,
+      "inherited": true,
+      "access": "public",
+      "overriddenFrom": "qx.ui.form.MForm",
+      "jsdoc": {
+        "@return": [
+          {
+            "name": "@return",
+            "type": "Boolean",
+            "desc": "Returns the value for undefined"
+          }
+        ]
+      }
+    },
+    "resetRequired": {
+      "type": "function",
+      "name": "resetRequired",
+      "abstract": false,
+      "mixin": true,
+      "inherited": true,
+      "access": "public",
+      "overriddenFrom": "qx.ui.form.MForm"
+    },
+    "resetInvalidMessage": {
+      "type": "function",
+      "name": "resetInvalidMessage",
+      "abstract": false,
+      "mixin": true,
+      "inherited": true,
+      "access": "public",
+      "overriddenFrom": "qx.ui.form.MForm"
+    },
+    "resetRequiredInvalidMessage": {
+      "type": "function",
+      "name": "resetRequiredInvalidMessage",
+      "abstract": false,
+      "mixin": true,
+      "inherited": true,
+      "access": "public",
+      "overriddenFrom": "qx.ui.form.MForm"
+    },
+    "getModel": {
+      "type": "function",
+      "name": "getModel",
+      "abstract": false,
+      "mixin": false,
+      "inherited": false,
+      "access": "public",
+      "property": "get",
+      "jsdoc": {
+        "@return": [
+          {
+            "name": "@return",
+            "type": "qx.data.Array",
+            "desc": "Returns the value for undefined"
+          }
+        ]
+      }
+    },
+    "setModel": {
+      "type": "function",
+      "name": "setModel",
+      "abstract": false,
+      "mixin": false,
+      "inherited": false,
+      "access": "public",
+      "property": "set",
+      "jsdoc": {
+        "@param": [
+          {
+            "name": "@param",
+            "type": "qx.data.Array",
+            "paramName": "value",
+            "desc": "Value for undefined"
+          }
+        ]
+      }
+    },
+    "resetModel": {
+      "type": "function",
+      "name": "resetModel",
+      "abstract": false,
+      "mixin": false,
+      "inherited": false,
+      "access": "public",
+      "property": "reset",
+      "jsdoc": {}
+    },
+    "getDelegate": {
+      "type": "function",
+      "name": "getDelegate",
+      "abstract": false,
+      "mixin": false,
+      "inherited": false,
+      "access": "public",
+      "property": "get",
+      "jsdoc": {
+        "@return": [
+          {
+            "name": "@return",
+            "type": "any",
+            "desc": "Returns the value for undefined"
+          }
+        ]
+      }
+    },
+    "setDelegate": {
+      "type": "function",
+      "name": "setDelegate",
+      "abstract": false,
+      "mixin": false,
+      "inherited": false,
+      "access": "public",
+      "property": "set",
+      "jsdoc": {
+        "@param": [
+          {
+            "name": "@param",
+            "type": "any",
+            "paramName": "value",
+            "desc": "Value for undefined"
+          }
+        ]
+      }
+    },
+    "resetDelegate": {
+      "type": "function",
+      "name": "resetDelegate",
+      "abstract": false,
+      "mixin": false,
+      "inherited": false,
+      "access": "public",
+      "property": "reset",
+      "jsdoc": {}
+    },
+    "getLabelPath": {
+      "type": "function",
+      "name": "getLabelPath",
+      "abstract": false,
+      "mixin": false,
+      "inherited": false,
+      "access": "public",
+      "property": "get",
+      "jsdoc": {
+        "@return": [
+          {
+            "name": "@return",
+            "type": "String",
+            "desc": "Returns the value for undefined"
+          }
+        ]
+      }
+    },
+    "setLabelPath": {
+      "type": "function",
+      "name": "setLabelPath",
+      "abstract": false,
+      "mixin": false,
+      "inherited": false,
+      "access": "public",
+      "property": "set",
+      "jsdoc": {
+        "@param": [
+          {
+            "name": "@param",
+            "type": "String",
+            "paramName": "value",
+            "desc": "Value for undefined"
+          }
+        ]
+      }
+    },
+    "resetLabelPath": {
+      "type": "function",
+      "name": "resetLabelPath",
+      "abstract": false,
+      "mixin": false,
+      "inherited": false,
+      "access": "public",
+      "property": "reset",
+      "jsdoc": {}
+    },
+    "getLabelOptions": {
+      "type": "function",
+      "name": "getLabelOptions",
+      "abstract": false,
+      "mixin": false,
+      "inherited": false,
+      "access": "public",
+      "property": "get",
+      "jsdoc": {
+        "@return": [
+          {
+            "name": "@return",
+            "type": "any",
+            "desc": "Returns the value for undefined"
+          }
+        ]
+      }
+    },
+    "setLabelOptions": {
+      "type": "function",
+      "name": "setLabelOptions",
+      "abstract": false,
+      "mixin": false,
+      "inherited": false,
+      "access": "public",
+      "property": "set",
+      "jsdoc": {
+        "@param": [
+          {
+            "name": "@param",
+            "type": "any",
+            "paramName": "value",
+            "desc": "Value for undefined"
+          }
+        ]
+      }
+    },
+    "resetLabelOptions": {
+      "type": "function",
+      "name": "resetLabelOptions",
+      "abstract": false,
+      "mixin": false,
+      "inherited": false,
+      "access": "public",
+      "property": "reset",
+      "jsdoc": {}
+    },
+    "getIconPath": {
+      "type": "function",
+      "name": "getIconPath",
+      "abstract": false,
+      "mixin": false,
+      "inherited": false,
+      "access": "public",
+      "property": "get",
+      "jsdoc": {
+        "@return": [
+          {
+            "name": "@return",
+            "type": "String",
+            "desc": "Returns the value for undefined"
+          }
+        ]
+      }
+    },
+    "setIconPath": {
+      "type": "function",
+      "name": "setIconPath",
+      "abstract": false,
+      "mixin": false,
+      "inherited": false,
+      "access": "public",
+      "property": "set",
+      "jsdoc": {
+        "@param": [
+          {
+            "name": "@param",
+            "type": "String",
+            "paramName": "value",
+            "desc": "Value for undefined"
+          }
+        ]
+      }
+    },
+    "resetIconPath": {
+      "type": "function",
+      "name": "resetIconPath",
+      "abstract": false,
+      "mixin": false,
+      "inherited": false,
+      "access": "public",
+      "property": "reset",
+      "jsdoc": {}
+    },
+    "getIconOptions": {
+      "type": "function",
+      "name": "getIconOptions",
+      "abstract": false,
+      "mixin": false,
+      "inherited": false,
+      "access": "public",
+      "property": "get",
+      "jsdoc": {
+        "@return": [
+          {
+            "name": "@return",
+            "type": "any",
+            "desc": "Returns the value for undefined"
+          }
+        ]
+      }
+    },
+    "setIconOptions": {
+      "type": "function",
+      "name": "setIconOptions",
+      "abstract": false,
+      "mixin": false,
+      "inherited": false,
+      "access": "public",
+      "property": "set",
+      "jsdoc": {
+        "@param": [
+          {
+            "name": "@param",
+            "type": "any",
+            "paramName": "value",
+            "desc": "Value for undefined"
+          }
+        ]
+      }
+    },
+    "resetIconOptions": {
+      "type": "function",
+      "name": "resetIconOptions",
+      "abstract": false,
+      "mixin": false,
+      "inherited": false,
+      "access": "public",
+      "property": "reset",
+      "jsdoc": {}
+    },
+    "getItemHeight": {
+      "type": "function",
+      "name": "getItemHeight",
+      "abstract": false,
+      "mixin": false,
+      "inherited": false,
+      "access": "public",
+      "property": "get",
+      "jsdoc": {
+        "@return": [
+          {
+            "name": "@return",
+            "type": "Integer",
+            "desc": "Returns the value for undefined"
+          }
+        ]
+      }
+    },
+    "setItemHeight": {
+      "type": "function",
+      "name": "setItemHeight",
+      "abstract": false,
+      "mixin": false,
+      "inherited": false,
+      "access": "public",
+      "property": "set",
+      "jsdoc": {
+        "@param": [
+          {
+            "name": "@param",
+            "type": "Integer",
+            "paramName": "value",
+            "desc": "Value for undefined"
+          }
+        ]
+      }
+    },
+    "resetItemHeight": {
+      "type": "function",
+      "name": "resetItemHeight",
+      "abstract": false,
+      "mixin": false,
+      "inherited": false,
+      "access": "public",
+      "property": "reset",
+      "jsdoc": {}
+    },
+    "getMaxListHeight": {
+      "type": "function",
+      "name": "getMaxListHeight",
+      "abstract": false,
+      "mixin": false,
+      "inherited": false,
+      "access": "public",
+      "property": "get",
+      "jsdoc": {
+        "@return": [
+          {
+            "name": "@return",
+            "type": "Number",
+            "desc": "Returns the value for undefined"
+          }
+        ]
+      }
+    },
+    "setMaxListHeight": {
+      "type": "function",
+      "name": "setMaxListHeight",
+      "abstract": false,
+      "mixin": false,
+      "inherited": false,
+      "access": "public",
+      "property": "set",
+      "jsdoc": {
+        "@param": [
+          {
+            "name": "@param",
+            "type": "Number",
+            "paramName": "value",
+            "desc": "Value for undefined"
+          }
+        ]
+      }
+    },
+    "resetMaxListHeight": {
+      "type": "function",
+      "name": "resetMaxListHeight",
+      "abstract": false,
+      "mixin": false,
+      "inherited": false,
+      "access": "public",
+      "property": "reset",
+      "jsdoc": {}
+    }
+  },
+  "destruct": {
+    "location": {
+      "start": {
+        "line": 489,
+        "column": 2
+      },
+      "end": {
+        "line": 494,
+        "column": 3
+      }
+    }
+  },
+  "descendants": [
+    "qx.ui.form.VirtualComboBox",
+    "qx.ui.form.VirtualSelectBox"
+  ]
+}

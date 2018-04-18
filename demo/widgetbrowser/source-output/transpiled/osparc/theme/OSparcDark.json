@@ -1,0 +1,53 @@
+{
+  "className": "osparc.theme.OSparcDark",
+  "packageName": "osparc.theme",
+  "name": "OSparcDark",
+  "superClass": null,
+  "interfaces": [],
+  "mixins": [],
+  "clazz": {
+    "location": {
+      "start": {
+        "line": 22,
+        "column": 0
+      },
+      "end": {
+        "line": 31,
+        "column": 3
+      }
+    },
+    "jsdoc": {
+      "@description": [
+        {
+          "name": "@description",
+          "body": "***********************************************************************\n\nOSparc Dark Theme for Qooxdoo\n\nCopyright:\n2018 IT'IS Foundation\n\nLicense:\nMIT: https://opensource.org/licenses/MIT\nSee the LICENSE file in the project's top-level directory for details.\n\nAuthors:\nTobias Oetiker (oetiker)\n\nOrigin:\nThis theme is based in large parts on the the Simple\ntheme included with Qooxdoo.\n***********************************************************************"
+        },
+        {
+          "name": "@description",
+          "body": "Simple Theme"
+        }
+      ]
+    }
+  },
+  "type": "theme",
+  "themeMeta": {
+    "location": {
+      "start": {
+        "line": 24,
+        "column": 2
+      },
+      "end": {
+        "line": 30,
+        "column": 3
+      }
+    },
+    "themeMetaMap": {
+      "color": "osparc.theme.osparcdark.Color",
+      "decoration": "osparc.theme.osparcdark.Decoration",
+      "font": "osparc.theme.osparcdark.Font",
+      "appearance": "osparc.theme.osparcdark.Appearance",
+      "icon": "qx.theme.icon.Tango"
+    }
+  },
+  "descendants": []
+}

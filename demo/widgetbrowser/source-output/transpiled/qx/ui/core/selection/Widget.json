@@ -1,0 +1,1074 @@
+{
+  "className": "qx.ui.core.selection.Widget",
+  "packageName": "qx.ui.core.selection",
+  "name": "Widget",
+  "superClass": "qx.ui.core.selection.Abstract",
+  "interfaces": [],
+  "mixins": [],
+  "clazz": {
+    "location": {
+      "start": {
+        "line": 22,
+        "column": 0
+      },
+      "end": {
+        "line": 367,
+        "column": 3
+      }
+    },
+    "jsdoc": {
+      "@description": [
+        {
+          "name": "@description",
+          "body": "***********************************************************************\n\nqooxdoo - the new era of web development\n\nhttp://qooxdoo.org\n\nCopyright:\n2008 1&1 Internet AG, Germany, http://www.1und1.de\n\nLicense:\nMIT: https://opensource.org/licenses/MIT\nSee the LICENSE file in the project's top-level directory for details.\n\nAuthors:\nSebastian Werner (wpbasti)\n\n***********************************************************************"
+        },
+        {
+          "name": "@description",
+          "body": "A selection manager, which handles the selection in widgets."
+        }
+      ]
+    }
+  },
+  "type": "class",
+  "construct": {
+    "location": {
+      "start": {
+        "line": 37,
+        "column": 2
+      },
+      "end": {
+        "line": 42,
+        "column": 3
+      }
+    },
+    "jsdoc": {
+      "@description": [
+        {
+          "name": "@description",
+          "body": "****************************************************************************\nCONSTRUCTOR\n****************************************************************************"
+        },
+        {
+          "name": "@description",
+          "body": ""
+        }
+      ],
+      "@param": [
+        {
+          "name": "@param",
+          "body": "widget {qx.ui.core.Widget} The widget to connect to",
+          "paramName": "widget",
+          "description": " The widget to connect to",
+          "type": "qx.ui.core.Widget"
+        }
+      ]
+    }
+  },
+  "members": {
+    "__widget": {
+      "location": {
+        "start": {
+          "line": 57,
+          "column": 4
+        },
+        "end": {
+          "line": 57,
+          "column": 19
+        }
+      },
+      "type": "variable",
+      "access": "private"
+    },
+    "_isSelectable": {
+      "location": {
+        "start": {
+          "line": 66,
+          "column": 4
+        },
+        "end": {
+          "line": 68,
+          "column": 5
+        }
+      },
+      "jsdoc": {
+        "@description": [
+          {
+            "name": "@description",
+            "body": "---------------------------------------------------------------------------\nBASIC SUPPORT\n---------------------------------------------------------------------------"
+          },
+          {
+            "name": "@description",
+            "body": "overridden"
+          }
+        ],
+        "@param": [
+          {
+            "name": "@param",
+            "body": "item {var} Any item",
+            "paramName": "item",
+            "description": " Any item",
+            "type": "var"
+          }
+        ],
+        "@return": [
+          {
+            "name": "@return",
+            "body": "{Boolean} <code>true</code> when the item is selectable",
+            "type": "Boolean",
+            "desc": " <code>true</code> when the item is selectable"
+          }
+        ]
+      },
+      "type": "function",
+      "access": "protected",
+      "overriddenFrom": "qx.ui.core.selection.Abstract",
+      "appearsIn": [
+        "qx.ui.core.selection.Abstract"
+      ]
+    },
+    "_selectableToHashCode": {
+      "location": {
+        "start": {
+          "line": 72,
+          "column": 4
+        },
+        "end": {
+          "line": 74,
+          "column": 5
+        }
+      },
+      "jsdoc": {
+        "@description": [
+          {
+            "name": "@description",
+            "body": "overridden"
+          }
+        ],
+        "@param": [
+          {
+            "name": "@param",
+            "body": "item {var} Any item",
+            "paramName": "item",
+            "description": " Any item",
+            "type": "var"
+          }
+        ],
+        "@return": [
+          {
+            "name": "@return",
+            "body": "{String} A valid hashcode",
+            "type": "String",
+            "desc": " A valid hashcode"
+          }
+        ]
+      },
+      "type": "function",
+      "access": "protected",
+      "overriddenFrom": "qx.ui.core.selection.Abstract",
+      "appearsIn": [
+        "qx.ui.core.selection.Abstract"
+      ]
+    },
+    "_styleSelectable": {
+      "location": {
+        "start": {
+          "line": 78,
+          "column": 4
+        },
+        "end": {
+          "line": 80,
+          "column": 5
+        }
+      },
+      "jsdoc": {
+        "@description": [
+          {
+            "name": "@description",
+            "body": "overridden"
+          }
+        ],
+        "@param": [
+          {
+            "name": "@param",
+            "body": "item {var} Item to modify",
+            "paramName": "item",
+            "description": " Item to modify",
+            "type": "var"
+          },
+          {
+            "name": "@param",
+            "body": "type {String} Any of <code>selected</code>, <code>anchor</code> or <code>lead</code>",
+            "paramName": "type",
+            "description": " Any of <code>selected</code>, <code>anchor</code> or <code>lead</code>",
+            "type": "String"
+          },
+          {
+            "name": "@param",
+            "body": "enabled {Boolean} Whether the given style should be added or removed.",
+            "paramName": "enabled",
+            "description": " Whether the given style should be added or removed.",
+            "type": "Boolean"
+          }
+        ]
+      },
+      "type": "function",
+      "access": "protected",
+      "overriddenFrom": "qx.ui.core.selection.Abstract",
+      "appearsIn": [
+        "qx.ui.core.selection.Abstract"
+      ]
+    },
+    "_capture": {
+      "location": {
+        "start": {
+          "line": 84,
+          "column": 4
+        },
+        "end": {
+          "line": 86,
+          "column": 5
+        }
+      },
+      "jsdoc": {
+        "@description": [
+          {
+            "name": "@description",
+            "body": "overridden"
+          }
+        ]
+      },
+      "type": "function",
+      "access": "protected",
+      "overriddenFrom": "qx.ui.core.selection.Abstract",
+      "appearsIn": [
+        "qx.ui.core.selection.Abstract"
+      ]
+    },
+    "_releaseCapture": {
+      "location": {
+        "start": {
+          "line": 90,
+          "column": 4
+        },
+        "end": {
+          "line": 92,
+          "column": 5
+        }
+      },
+      "jsdoc": {
+        "@description": [
+          {
+            "name": "@description",
+            "body": "overridden"
+          }
+        ]
+      },
+      "type": "function",
+      "access": "protected",
+      "overriddenFrom": "qx.ui.core.selection.Abstract",
+      "appearsIn": [
+        "qx.ui.core.selection.Abstract"
+      ]
+    },
+    "_isItemSelectable": {
+      "location": {
+        "start": {
+          "line": 102,
+          "column": 4
+        },
+        "end": {
+          "line": 108,
+          "column": 5
+        }
+      },
+      "jsdoc": {
+        "@description": [
+          {
+            "name": "@description",
+            "body": "Helper to return the selectability of the item concerning the\nuser interaction."
+          }
+        ],
+        "@param": [
+          {
+            "name": "@param",
+            "body": "item {qx.ui.core.Widget} The item to check.",
+            "paramName": "item",
+            "description": " The item to check.",
+            "type": "qx.ui.core.Widget"
+          }
+        ],
+        "@return": [
+          {
+            "name": "@return",
+            "body": "{Boolean} true, if the item is selectable.",
+            "type": "Boolean",
+            "desc": " true, if the item is selectable."
+          }
+        ]
+      },
+      "type": "function",
+      "access": "protected"
+    },
+    "_getWidget": {
+      "location": {
+        "start": {
+          "line": 115,
+          "column": 4
+        },
+        "end": {
+          "line": 117,
+          "column": 5
+        }
+      },
+      "jsdoc": {
+        "@description": [
+          {
+            "name": "@description",
+            "body": "Returns the connected widget."
+          }
+        ],
+        "@return": [
+          {
+            "name": "@return",
+            "body": "{qx.ui.core.Widget} The widget",
+            "type": "qx.ui.core.Widget",
+            "desc": " The widget"
+          }
+        ]
+      },
+      "type": "function",
+      "access": "protected"
+    },
+    "_getLocation": {
+      "location": {
+        "start": {
+          "line": 129,
+          "column": 4
+        },
+        "end": {
+          "line": 133,
+          "column": 5
+        }
+      },
+      "jsdoc": {
+        "@description": [
+          {
+            "name": "@description",
+            "body": "---------------------------------------------------------------------------\nDIMENSION AND LOCATION\n---------------------------------------------------------------------------"
+          },
+          {
+            "name": "@description",
+            "body": "overridden"
+          }
+        ],
+        "@return": [
+          {
+            "name": "@return",
+            "body": "{Map} Map with the keys <code>top</code>, <code>right</code>,\n<code>bottom</code> and <code>left</code>.",
+            "type": "Map",
+            "desc": " Map with the keys <code>top</code>, <code>right</code>,\n<code>bottom</code> and <code>left</code>."
+          }
+        ]
+      },
+      "type": "function",
+      "access": "protected",
+      "overriddenFrom": "qx.ui.core.selection.Abstract",
+      "appearsIn": [
+        "qx.ui.core.selection.Abstract"
+      ]
+    },
+    "_getDimension": {
+      "location": {
+        "start": {
+          "line": 137,
+          "column": 4
+        },
+        "end": {
+          "line": 139,
+          "column": 5
+        }
+      },
+      "jsdoc": {
+        "@description": [
+          {
+            "name": "@description",
+            "body": "overridden"
+          }
+        ],
+        "@return": [
+          {
+            "name": "@return",
+            "body": "{Map} Map with the keys <code>width</code> and <code>height</code>.",
+            "type": "Map",
+            "desc": " Map with the keys <code>width</code> and <code>height</code>."
+          }
+        ]
+      },
+      "type": "function",
+      "access": "protected",
+      "overriddenFrom": "qx.ui.core.selection.Abstract",
+      "appearsIn": [
+        "qx.ui.core.selection.Abstract"
+      ]
+    },
+    "_getSelectableLocationX": {
+      "location": {
+        "start": {
+          "line": 143,
+          "column": 4
+        },
+        "end": {
+          "line": 153,
+          "column": 5
+        }
+      },
+      "jsdoc": {
+        "@description": [
+          {
+            "name": "@description",
+            "body": "overridden"
+          }
+        ],
+        "@param": [
+          {
+            "name": "@param",
+            "body": "item {var} Any item",
+            "paramName": "item",
+            "description": " Any item",
+            "type": "var"
+          }
+        ],
+        "@return": [
+          {
+            "name": "@return",
+            "body": "{Map} A map with the keys <code>left</code> and <code>right</code>.",
+            "type": "Map",
+            "desc": " A map with the keys <code>left</code> and <code>right</code>."
+          }
+        ]
+      },
+      "type": "function",
+      "access": "protected",
+      "overriddenFrom": "qx.ui.core.selection.Abstract",
+      "appearsIn": [
+        "qx.ui.core.selection.Abstract"
+      ]
+    },
+    "_getSelectableLocationY": {
+      "location": {
+        "start": {
+          "line": 157,
+          "column": 4
+        },
+        "end": {
+          "line": 167,
+          "column": 5
+        }
+      },
+      "jsdoc": {
+        "@description": [
+          {
+            "name": "@description",
+            "body": "overridden"
+          }
+        ],
+        "@param": [
+          {
+            "name": "@param",
+            "body": "item {var} Any item",
+            "paramName": "item",
+            "description": " Any item",
+            "type": "var"
+          }
+        ],
+        "@return": [
+          {
+            "name": "@return",
+            "body": "{Map} A map with the keys <code>top</code> and <code>bottom</code>.",
+            "type": "Map",
+            "desc": " A map with the keys <code>top</code> and <code>bottom</code>."
+          }
+        ]
+      },
+      "type": "function",
+      "access": "protected",
+      "overriddenFrom": "qx.ui.core.selection.Abstract",
+      "appearsIn": [
+        "qx.ui.core.selection.Abstract"
+      ]
+    },
+    "_getScroll": {
+      "location": {
+        "start": {
+          "line": 181,
+          "column": 4
+        },
+        "end": {
+          "line": 187,
+          "column": 5
+        }
+      },
+      "jsdoc": {
+        "@description": [
+          {
+            "name": "@description",
+            "body": "---------------------------------------------------------------------------\nSCROLL SUPPORT\n---------------------------------------------------------------------------"
+          },
+          {
+            "name": "@description",
+            "body": "overridden"
+          }
+        ],
+        "@return": [
+          {
+            "name": "@return",
+            "body": "{Map} Map with the keys <code>left</code> and <code>top</code>.",
+            "type": "Map",
+            "desc": " Map with the keys <code>left</code> and <code>top</code>."
+          }
+        ]
+      },
+      "type": "function",
+      "access": "protected",
+      "overriddenFrom": "qx.ui.core.selection.Abstract",
+      "appearsIn": [
+        "qx.ui.core.selection.Abstract"
+      ]
+    },
+    "_scrollBy": {
+      "location": {
+        "start": {
+          "line": 191,
+          "column": 4
+        },
+        "end": {
+          "line": 193,
+          "column": 5
+        }
+      },
+      "jsdoc": {
+        "@description": [
+          {
+            "name": "@description",
+            "body": "overridden"
+          }
+        ],
+        "@param": [
+          {
+            "name": "@param",
+            "body": "xoff {Integer} Horizontal offset to scroll by",
+            "paramName": "xoff",
+            "description": " Horizontal offset to scroll by",
+            "type": "Integer"
+          },
+          {
+            "name": "@param",
+            "body": "yoff {Integer} Vertical offset to scroll by",
+            "paramName": "yoff",
+            "description": " Vertical offset to scroll by",
+            "type": "Integer"
+          }
+        ]
+      },
+      "type": "function",
+      "access": "protected",
+      "overriddenFrom": "qx.ui.core.selection.Abstract",
+      "appearsIn": [
+        "qx.ui.core.selection.Abstract"
+      ]
+    },
+    "_scrollItemIntoView": {
+      "location": {
+        "start": {
+          "line": 197,
+          "column": 4
+        },
+        "end": {
+          "line": 199,
+          "column": 5
+        }
+      },
+      "jsdoc": {
+        "@description": [
+          {
+            "name": "@description",
+            "body": "overridden"
+          }
+        ],
+        "@param": [
+          {
+            "name": "@param",
+            "body": "item {var} Any item",
+            "paramName": "item",
+            "description": " Any item",
+            "type": "var"
+          }
+        ]
+      },
+      "type": "function",
+      "access": "protected",
+      "overriddenFrom": "qx.ui.core.selection.Abstract",
+      "appearsIn": [
+        "qx.ui.core.selection.Abstract"
+      ]
+    },
+    "getSelectables": {
+      "location": {
+        "start": {
+          "line": 213,
+          "column": 4
+        },
+        "end": {
+          "line": 237,
+          "column": 5
+        }
+      },
+      "jsdoc": {
+        "@description": [
+          {
+            "name": "@description",
+            "body": "---------------------------------------------------------------------------\nQUERY SUPPORT\n---------------------------------------------------------------------------"
+          },
+          {
+            "name": "@description",
+            "body": "overridden"
+          }
+        ],
+        "@param": [
+          {
+            "name": "@param",
+            "body": "all {Boolean} true for all selectables, false for the\nselectables the user can interactively select",
+            "paramName": "all",
+            "description": " true for all selectables, false for the\nselectables the user can interactively select",
+            "type": "Boolean"
+          }
+        ],
+        "@return": [
+          {
+            "name": "@return",
+            "body": "{Array} A list of items",
+            "type": "Array",
+            "desc": " A list of items"
+          }
+        ]
+      },
+      "type": "function",
+      "access": "public",
+      "overriddenFrom": "qx.ui.core.selection.Abstract",
+      "appearsIn": [
+        "qx.ui.core.selection.Abstract"
+      ]
+    },
+    "_getSelectableRange": {
+      "location": {
+        "start": {
+          "line": 241,
+          "column": 4
+        },
+        "end": {
+          "line": 278,
+          "column": 5
+        }
+      },
+      "jsdoc": {
+        "@description": [
+          {
+            "name": "@description",
+            "body": "overridden"
+          }
+        ],
+        "@param": [
+          {
+            "name": "@param",
+            "body": "item1 {var} First item",
+            "paramName": "item1",
+            "description": " First item",
+            "type": "var"
+          },
+          {
+            "name": "@param",
+            "body": "item2 {var} Second item",
+            "paramName": "item2",
+            "description": " Second item",
+            "type": "var"
+          }
+        ],
+        "@return": [
+          {
+            "name": "@return",
+            "body": "{Array} List of items",
+            "type": "Array",
+            "desc": " List of items"
+          }
+        ]
+      },
+      "type": "function",
+      "access": "protected",
+      "overriddenFrom": "qx.ui.core.selection.Abstract",
+      "appearsIn": [
+        "qx.ui.core.selection.Abstract"
+      ]
+    },
+    "_getFirstSelectable": {
+      "location": {
+        "start": {
+          "line": 282,
+          "column": 4
+        },
+        "end": {
+          "line": 293,
+          "column": 5
+        }
+      },
+      "jsdoc": {
+        "@description": [
+          {
+            "name": "@description",
+            "body": "overridden"
+          }
+        ],
+        "@return": [
+          {
+            "name": "@return",
+            "body": "{var} The first selectable item",
+            "type": "var",
+            "desc": " The first selectable item"
+          }
+        ]
+      },
+      "type": "function",
+      "access": "protected",
+      "overriddenFrom": "qx.ui.core.selection.Abstract",
+      "appearsIn": [
+        "qx.ui.core.selection.Abstract"
+      ]
+    },
+    "_getLastSelectable": {
+      "location": {
+        "start": {
+          "line": 297,
+          "column": 4
+        },
+        "end": {
+          "line": 308,
+          "column": 5
+        }
+      },
+      "jsdoc": {
+        "@description": [
+          {
+            "name": "@description",
+            "body": "overridden"
+          }
+        ],
+        "@return": [
+          {
+            "name": "@return",
+            "body": "{var} The last selectable item",
+            "type": "var",
+            "desc": " The last selectable item"
+          }
+        ]
+      },
+      "type": "function",
+      "access": "protected",
+      "overriddenFrom": "qx.ui.core.selection.Abstract",
+      "appearsIn": [
+        "qx.ui.core.selection.Abstract"
+      ]
+    },
+    "_getRelatedSelectable": {
+      "location": {
+        "start": {
+          "line": 312,
+          "column": 4
+        },
+        "end": {
+          "line": 341,
+          "column": 5
+        }
+      },
+      "jsdoc": {
+        "@description": [
+          {
+            "name": "@description",
+            "body": "overridden"
+          }
+        ],
+        "@param": [
+          {
+            "name": "@param",
+            "body": "item {var} Any item",
+            "paramName": "item",
+            "description": " Any item",
+            "type": "var"
+          },
+          {
+            "name": "@param",
+            "body": "relation {String} A valid relation: <code>above</code>,\n<code>right</code>, <code>under</code> or <code>left</code>",
+            "paramName": "relation",
+            "description": " A valid relation: <code>above</code>,\n<code>right</code>, <code>under</code> or <code>left</code>",
+            "type": "String"
+          }
+        ],
+        "@return": [
+          {
+            "name": "@return",
+            "body": "{var} The related item",
+            "type": "var",
+            "desc": " The related item"
+          }
+        ]
+      },
+      "type": "function",
+      "access": "protected",
+      "overriddenFrom": "qx.ui.core.selection.Abstract",
+      "appearsIn": [
+        "qx.ui.core.selection.Abstract"
+      ]
+    },
+    "_getPage": {
+      "location": {
+        "start": {
+          "line": 345,
+          "column": 4
+        },
+        "end": {
+          "line": 352,
+          "column": 5
+        }
+      },
+      "jsdoc": {
+        "@description": [
+          {
+            "name": "@description",
+            "body": "overridden"
+          }
+        ],
+        "@param": [
+          {
+            "name": "@param",
+            "body": "lead {var} The current lead item",
+            "paramName": "lead",
+            "description": " The current lead item",
+            "type": "var"
+          },
+          {
+            "name": "@param",
+            "body": "up {Boolean?false} Which page key was pressed:\n<code>up</code> or <code>down</code>.",
+            "paramName": "up",
+            "description": " Which page key was pressed:\n<code>up</code> or <code>down</code>.",
+            "optional": true,
+            "defaultValue": "false",
+            "type": "Boolean"
+          }
+        ]
+      },
+      "type": "function",
+      "access": "protected",
+      "overriddenFrom": "qx.ui.core.selection.Abstract",
+      "appearsIn": [
+        "qx.ui.core.selection.Abstract"
+      ]
+    },
+    "getMode": {
+      "type": "function",
+      "name": "getMode",
+      "abstract": false,
+      "mixin": false,
+      "inherited": true,
+      "access": "public",
+      "property": "get",
+      "jsdoc": {
+        "@return": [
+          {
+            "name": "@return",
+            "type": "any",
+            "desc": "Returns the value for undefined"
+          }
+        ]
+      }
+    },
+    "setMode": {
+      "type": "function",
+      "name": "setMode",
+      "abstract": false,
+      "mixin": false,
+      "inherited": true,
+      "access": "public",
+      "property": "set",
+      "jsdoc": {
+        "@param": [
+          {
+            "name": "@param",
+            "type": "any",
+            "paramName": "value",
+            "desc": "Value for undefined"
+          }
+        ]
+      }
+    },
+    "resetMode": {
+      "type": "function",
+      "name": "resetMode",
+      "abstract": false,
+      "mixin": false,
+      "inherited": true,
+      "access": "public",
+      "property": "reset",
+      "jsdoc": {}
+    },
+    "getDrag": {
+      "type": "function",
+      "name": "getDrag",
+      "abstract": false,
+      "mixin": false,
+      "inherited": true,
+      "access": "public",
+      "property": "get",
+      "jsdoc": {
+        "@return": [
+          {
+            "name": "@return",
+            "type": "Boolean",
+            "desc": "Returns the value for undefined"
+          }
+        ]
+      }
+    },
+    "isDrag": {
+      "type": "function",
+      "name": "isDrag",
+      "abstract": false,
+      "mixin": false,
+      "inherited": true,
+      "access": "public",
+      "property": "is",
+      "jsdoc": {
+        "@return": [
+          {
+            "name": "@return",
+            "type": "Boolean",
+            "desc": "Returns the value for undefined"
+          }
+        ]
+      }
+    },
+    "setDrag": {
+      "type": "function",
+      "name": "setDrag",
+      "abstract": false,
+      "mixin": false,
+      "inherited": true,
+      "access": "public",
+      "property": "set",
+      "jsdoc": {
+        "@param": [
+          {
+            "name": "@param",
+            "type": "Boolean",
+            "paramName": "value",
+            "desc": "Value for undefined"
+          }
+        ]
+      }
+    },
+    "resetDrag": {
+      "type": "function",
+      "name": "resetDrag",
+      "abstract": false,
+      "mixin": false,
+      "inherited": true,
+      "access": "public",
+      "property": "reset",
+      "jsdoc": {}
+    },
+    "getQuick": {
+      "type": "function",
+      "name": "getQuick",
+      "abstract": false,
+      "mixin": false,
+      "inherited": true,
+      "access": "public",
+      "property": "get",
+      "jsdoc": {
+        "@return": [
+          {
+            "name": "@return",
+            "type": "Boolean",
+            "desc": "Returns the value for undefined"
+          }
+        ]
+      }
+    },
+    "isQuick": {
+      "type": "function",
+      "name": "isQuick",
+      "abstract": false,
+      "mixin": false,
+      "inherited": true,
+      "access": "public",
+      "property": "is",
+      "jsdoc": {
+        "@return": [
+          {
+            "name": "@return",
+            "type": "Boolean",
+            "desc": "Returns the value for undefined"
+          }
+        ]
+      }
+    },
+    "setQuick": {
+      "type": "function",
+      "name": "setQuick",
+      "abstract": false,
+      "mixin": false,
+      "inherited": true,
+      "access": "public",
+      "property": "set",
+      "jsdoc": {
+        "@param": [
+          {
+            "name": "@param",
+            "type": "Boolean",
+            "paramName": "value",
+            "desc": "Value for undefined"
+          }
+        ]
+      }
+    },
+    "resetQuick": {
+      "type": "function",
+      "name": "resetQuick",
+      "abstract": false,
+      "mixin": false,
+      "inherited": true,
+      "access": "public",
+      "property": "reset",
+      "jsdoc": {}
+    }
+  },
+  "destruct": {
+    "location": {
+      "start": {
+        "line": 364,
+        "column": 2
+      },
+      "end": {
+        "line": 366,
+        "column": 3
+      }
+    },
+    "jsdoc": {
+      "@description": [
+        {
+          "name": "@description",
+          "body": "****************************************************************************\nDESTRUCTOR\n****************************************************************************"
+        }
+      ]
+    }
+  },
+  "descendants": [
+    "qx.ui.core.selection.ScrollArea"
+  ]
+}

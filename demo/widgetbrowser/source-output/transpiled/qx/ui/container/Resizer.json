@@ -1,0 +1,826 @@
+{
+  "className": "qx.ui.container.Resizer",
+  "packageName": "qx.ui.container",
+  "name": "Resizer",
+  "superClass": "qx.ui.container.Composite",
+  "interfaces": [],
+  "mixins": [
+    "qx.ui.core.MResizable"
+  ],
+  "clazz": {
+    "location": {
+      "start": {
+        "line": 52,
+        "column": 0
+      },
+      "end": {
+        "line": 72,
+        "column": 3
+      }
+    },
+    "jsdoc": {
+      "@description": [
+        {
+          "name": "@description",
+          "body": "***********************************************************************\n\nqooxdoo - the new era of web development\n\nhttp://qooxdoo.org\n\nCopyright:\n2004-2008 1&1 Internet AG, Germany, http://www.1und1.de\n\nLicense:\nMIT: https://opensource.org/licenses/MIT\nSee the LICENSE file in the project's top-level directory for details.\n\nAuthors:\nSebastian Werner (wpbasti)\nAndreas Ecker (ecker)\nDavid Perez (david-perez)\n\n***********************************************************************"
+        },
+        {
+          "name": "@description",
+          "body": "The Resizer is a resizable container widget.\n\nIt allows to be resized (not moved), normally in\nthe right and/or bottom directions. It is an alternative to splitters.\n\n*Example*\n\nHere is a little example of how to use the widget.\n\n<pre class='javascript'>\nvar resizer = new qx.ui.container.Resizer().set({\nwidth: 200,\nheight: 100\n});\n\nresizer.setLayout(new qx.ui.layout.Canvas());\nvar text = new qx.ui.form.TextArea(\"Resize me\\nI'm resizable\");\nresizer.add(text, {edge: 0});\n\nthis.getRoot().add(resizer);\n</pre>\n\nThis example creates a resizer, configures it with a canvas layout and\nadds a text area to it.\n\n*External Documentation*\n\n<a href='http://manual.qooxdoo.org/${qxversion}/pages/widget/resizer.html' target='_blank'>\nDocumentation of this widget in the qooxdoo manual.</a>"
+        }
+      ]
+    }
+  },
+  "type": "class",
+  "properties": {
+    "appearance": {
+      "location": {
+        "start": {
+          "line": 66,
+          "column": 4
+        },
+        "end": {
+          "line": 70,
+          "column": 5
+        }
+      },
+      "name": "appearance",
+      "propertyType": "new",
+      "refine": true,
+      "defaultValue": "resizer",
+      "overriddenFrom": "qx.ui.core.Widget",
+      "appearsIn": {
+        "qx.ui.core.Widget": "class"
+      }
+    },
+    "resizableTop": {
+      "type": "property",
+      "name": "resizableTop",
+      "abstract": false,
+      "mixin": true,
+      "access": "public",
+      "overriddenFrom": "qx.ui.core.MResizable"
+    },
+    "resizableRight": {
+      "type": "property",
+      "name": "resizableRight",
+      "abstract": false,
+      "mixin": true,
+      "access": "public",
+      "overriddenFrom": "qx.ui.core.MResizable"
+    },
+    "resizableBottom": {
+      "type": "property",
+      "name": "resizableBottom",
+      "abstract": false,
+      "mixin": true,
+      "access": "public",
+      "overriddenFrom": "qx.ui.core.MResizable"
+    },
+    "resizableLeft": {
+      "type": "property",
+      "name": "resizableLeft",
+      "abstract": false,
+      "mixin": true,
+      "access": "public",
+      "overriddenFrom": "qx.ui.core.MResizable"
+    },
+    "resizable": {
+      "type": "property",
+      "name": "resizable",
+      "abstract": false,
+      "mixin": true,
+      "access": "public",
+      "overriddenFrom": "qx.ui.core.MResizable"
+    },
+    "resizeSensitivity": {
+      "type": "property",
+      "name": "resizeSensitivity",
+      "abstract": false,
+      "mixin": true,
+      "access": "public",
+      "overriddenFrom": "qx.ui.core.MResizable"
+    },
+    "useResizeFrame": {
+      "type": "property",
+      "name": "useResizeFrame",
+      "abstract": false,
+      "mixin": true,
+      "access": "public",
+      "overriddenFrom": "qx.ui.core.MResizable"
+    }
+  },
+  "members": {
+    "_getResizeFrame": {
+      "type": "function",
+      "name": "_getResizeFrame",
+      "abstract": false,
+      "mixin": true,
+      "inherited": true,
+      "access": "protected",
+      "overriddenFrom": "qx.ui.core.MResizable",
+      "jsdoc": {
+        "@description": [
+          {
+            "name": "@description",
+            "body": "---------------------------------------------------------------------------\nCORE FEATURES\n---------------------------------------------------------------------------"
+          },
+          {
+            "name": "@description",
+            "body": "Get the widget, which draws the resize/move frame. The resize frame is\nshared by all widgets and is added to the root widget."
+          }
+        ],
+        "@return": [
+          {
+            "name": "@return",
+            "body": "{qx.ui.core.Widget} The resize frame",
+            "type": "qx.ui.core.Widget",
+            "desc": " The resize frame"
+          }
+        ]
+      }
+    },
+    "__showResizeFrame": {
+      "type": "function",
+      "name": "__showResizeFrame",
+      "abstract": false,
+      "mixin": true,
+      "inherited": true,
+      "access": "private",
+      "overriddenFrom": "qx.ui.core.MResizable"
+    },
+    "__computeResizeResult": {
+      "type": "function",
+      "name": "__computeResizeResult",
+      "abstract": false,
+      "mixin": true,
+      "inherited": true,
+      "access": "private",
+      "overriddenFrom": "qx.ui.core.MResizable",
+      "jsdoc": {
+        "@description": [
+          {
+            "name": "@description",
+            "body": "---------------------------------------------------------------------------\nRESIZE SUPPORT\n---------------------------------------------------------------------------"
+          },
+          {
+            "name": "@description",
+            "body": "Computes the new boundaries at each interval\nof the resize sequence."
+          }
+        ],
+        "@param": [
+          {
+            "name": "@param",
+            "body": "e {qx.event.type.Pointer} Last pointer event",
+            "paramName": "e",
+            "description": " Last pointer event",
+            "type": "qx.event.type.Pointer"
+          }
+        ],
+        "@return": [
+          {
+            "name": "@return",
+            "body": "{Map} A map with the computed boundaries",
+            "type": "Map",
+            "desc": " A map with the computed boundaries"
+          }
+        ]
+      }
+    },
+    "__computeResizeMode": {
+      "type": "function",
+      "name": "__computeResizeMode",
+      "abstract": false,
+      "mixin": true,
+      "inherited": true,
+      "access": "private",
+      "overriddenFrom": "qx.ui.core.MResizable",
+      "jsdoc": {
+        "@description": [
+          {
+            "name": "@description",
+            "body": "Updates the internally stored resize mode"
+          }
+        ],
+        "@param": [
+          {
+            "name": "@param",
+            "body": "e {qx.event.type.Pointer} Last pointer event",
+            "paramName": "e",
+            "description": " Last pointer event",
+            "type": "qx.event.type.Pointer"
+          }
+        ]
+      }
+    },
+    "__computeResizeActive": {
+      "type": "function",
+      "name": "__computeResizeActive",
+      "abstract": false,
+      "mixin": true,
+      "inherited": true,
+      "access": "private",
+      "overriddenFrom": "qx.ui.core.MResizable",
+      "jsdoc": {
+        "@description": [
+          {
+            "name": "@description",
+            "body": "Internal helper for computing the proper resize action based on the\ngiven parameters."
+          }
+        ],
+        "@param": [
+          {
+            "name": "@param",
+            "body": "location {Map} The current location of the widget.",
+            "paramName": "location",
+            "description": " The current location of the widget.",
+            "type": "Map"
+          },
+          {
+            "name": "@param",
+            "body": "pointerLeft {Integer} The left position of the pointer.",
+            "paramName": "pointerLeft",
+            "description": " The left position of the pointer.",
+            "type": "Integer"
+          },
+          {
+            "name": "@param",
+            "body": "pointerTop {Integer} The top position of the pointer.",
+            "paramName": "pointerTop",
+            "description": " The top position of the pointer.",
+            "type": "Integer"
+          },
+          {
+            "name": "@param",
+            "body": "pointerTolerance {Integer} The desired distance to the edge.",
+            "paramName": "pointerTolerance",
+            "description": " The desired distance to the edge.",
+            "type": "Integer"
+          }
+        ],
+        "@return": [
+          {
+            "name": "@return",
+            "body": "{Integer} The resize active number.",
+            "type": "Integer",
+            "desc": " The resize active number."
+          }
+        ]
+      }
+    },
+    "__onResizePointerDown": {
+      "type": "function",
+      "name": "__onResizePointerDown",
+      "abstract": false,
+      "mixin": true,
+      "inherited": true,
+      "access": "private",
+      "overriddenFrom": "qx.ui.core.MResizable",
+      "jsdoc": {
+        "@description": [
+          {
+            "name": "@description",
+            "body": "---------------------------------------------------------------------------\nRESIZE EVENT HANDLERS\n---------------------------------------------------------------------------"
+          },
+          {
+            "name": "@description",
+            "body": "Event handler for the pointer down event"
+          }
+        ],
+        "@param": [
+          {
+            "name": "@param",
+            "body": "e {qx.event.type.Pointer} The pointer event instance",
+            "paramName": "e",
+            "description": " The pointer event instance",
+            "type": "qx.event.type.Pointer"
+          }
+        ]
+      }
+    },
+    "__onResizePointerUp": {
+      "type": "function",
+      "name": "__onResizePointerUp",
+      "abstract": false,
+      "mixin": true,
+      "inherited": true,
+      "access": "private",
+      "overriddenFrom": "qx.ui.core.MResizable",
+      "jsdoc": {
+        "@description": [
+          {
+            "name": "@description",
+            "body": "Event handler for the pointer up event"
+          }
+        ],
+        "@param": [
+          {
+            "name": "@param",
+            "body": "e {qx.event.type.Pointer} The pointer event instance",
+            "paramName": "e",
+            "description": " The pointer event instance",
+            "type": "qx.event.type.Pointer"
+          }
+        ]
+      }
+    },
+    "__onResizeLoseCapture": {
+      "type": "function",
+      "name": "__onResizeLoseCapture",
+      "abstract": false,
+      "mixin": true,
+      "inherited": true,
+      "access": "private",
+      "overriddenFrom": "qx.ui.core.MResizable",
+      "jsdoc": {
+        "@description": [
+          {
+            "name": "@description",
+            "body": "Event listener for <code>losecapture</code> event."
+          }
+        ],
+        "@param": [
+          {
+            "name": "@param",
+            "body": "e {qx.event.type.Event} Lose capture event",
+            "paramName": "e",
+            "description": " Lose capture event",
+            "type": "qx.event.type.Event"
+          }
+        ]
+      }
+    },
+    "__onResizePointerMove": {
+      "type": "function",
+      "name": "__onResizePointerMove",
+      "abstract": false,
+      "mixin": true,
+      "inherited": true,
+      "access": "private",
+      "overriddenFrom": "qx.ui.core.MResizable",
+      "jsdoc": {
+        "@description": [
+          {
+            "name": "@description",
+            "body": "Event handler for the pointer move event"
+          }
+        ],
+        "@param": [
+          {
+            "name": "@param",
+            "body": "e {qx.event.type.Pointer} The pointer event instance",
+            "paramName": "e",
+            "description": " The pointer event instance",
+            "type": "qx.event.type.Pointer"
+          }
+        ]
+      }
+    },
+    "__onResizePointerOut": {
+      "type": "function",
+      "name": "__onResizePointerOut",
+      "abstract": false,
+      "mixin": true,
+      "inherited": true,
+      "access": "private",
+      "overriddenFrom": "qx.ui.core.MResizable",
+      "jsdoc": {
+        "@description": [
+          {
+            "name": "@description",
+            "body": "Event handler for the pointer out event"
+          }
+        ],
+        "@param": [
+          {
+            "name": "@param",
+            "body": "e {qx.event.type.Pointer} The pointer event instance",
+            "paramName": "e",
+            "description": " The pointer event instance",
+            "type": "qx.event.type.Pointer"
+          }
+        ]
+      }
+    },
+    "getResizableTop": {
+      "type": "function",
+      "name": "getResizableTop",
+      "abstract": false,
+      "mixin": false,
+      "inherited": true,
+      "access": "public",
+      "property": "get",
+      "jsdoc": {
+        "@return": [
+          {
+            "name": "@return",
+            "type": "Boolean",
+            "desc": "Returns the value for undefined"
+          }
+        ]
+      }
+    },
+    "isResizableTop": {
+      "type": "function",
+      "name": "isResizableTop",
+      "abstract": false,
+      "mixin": false,
+      "inherited": true,
+      "access": "public",
+      "property": "is",
+      "jsdoc": {
+        "@return": [
+          {
+            "name": "@return",
+            "type": "Boolean",
+            "desc": "Returns the value for undefined"
+          }
+        ]
+      }
+    },
+    "setResizableTop": {
+      "type": "function",
+      "name": "setResizableTop",
+      "abstract": false,
+      "mixin": false,
+      "inherited": true,
+      "access": "public",
+      "property": "set",
+      "jsdoc": {
+        "@param": [
+          {
+            "name": "@param",
+            "type": "Boolean",
+            "paramName": "value",
+            "desc": "Value for undefined"
+          }
+        ]
+      }
+    },
+    "resetResizableTop": {
+      "type": "function",
+      "name": "resetResizableTop",
+      "abstract": false,
+      "mixin": false,
+      "inherited": true,
+      "access": "public",
+      "property": "reset",
+      "jsdoc": {}
+    },
+    "getResizableRight": {
+      "type": "function",
+      "name": "getResizableRight",
+      "abstract": false,
+      "mixin": false,
+      "inherited": true,
+      "access": "public",
+      "property": "get",
+      "jsdoc": {
+        "@return": [
+          {
+            "name": "@return",
+            "type": "Boolean",
+            "desc": "Returns the value for undefined"
+          }
+        ]
+      }
+    },
+    "isResizableRight": {
+      "type": "function",
+      "name": "isResizableRight",
+      "abstract": false,
+      "mixin": false,
+      "inherited": true,
+      "access": "public",
+      "property": "is",
+      "jsdoc": {
+        "@return": [
+          {
+            "name": "@return",
+            "type": "Boolean",
+            "desc": "Returns the value for undefined"
+          }
+        ]
+      }
+    },
+    "setResizableRight": {
+      "type": "function",
+      "name": "setResizableRight",
+      "abstract": false,
+      "mixin": false,
+      "inherited": true,
+      "access": "public",
+      "property": "set",
+      "jsdoc": {
+        "@param": [
+          {
+            "name": "@param",
+            "type": "Boolean",
+            "paramName": "value",
+            "desc": "Value for undefined"
+          }
+        ]
+      }
+    },
+    "resetResizableRight": {
+      "type": "function",
+      "name": "resetResizableRight",
+      "abstract": false,
+      "mixin": false,
+      "inherited": true,
+      "access": "public",
+      "property": "reset",
+      "jsdoc": {}
+    },
+    "getResizableBottom": {
+      "type": "function",
+      "name": "getResizableBottom",
+      "abstract": false,
+      "mixin": false,
+      "inherited": true,
+      "access": "public",
+      "property": "get",
+      "jsdoc": {
+        "@return": [
+          {
+            "name": "@return",
+            "type": "Boolean",
+            "desc": "Returns the value for undefined"
+          }
+        ]
+      }
+    },
+    "isResizableBottom": {
+      "type": "function",
+      "name": "isResizableBottom",
+      "abstract": false,
+      "mixin": false,
+      "inherited": true,
+      "access": "public",
+      "property": "is",
+      "jsdoc": {
+        "@return": [
+          {
+            "name": "@return",
+            "type": "Boolean",
+            "desc": "Returns the value for undefined"
+          }
+        ]
+      }
+    },
+    "setResizableBottom": {
+      "type": "function",
+      "name": "setResizableBottom",
+      "abstract": false,
+      "mixin": false,
+      "inherited": true,
+      "access": "public",
+      "property": "set",
+      "jsdoc": {
+        "@param": [
+          {
+            "name": "@param",
+            "type": "Boolean",
+            "paramName": "value",
+            "desc": "Value for undefined"
+          }
+        ]
+      }
+    },
+    "resetResizableBottom": {
+      "type": "function",
+      "name": "resetResizableBottom",
+      "abstract": false,
+      "mixin": false,
+      "inherited": true,
+      "access": "public",
+      "property": "reset",
+      "jsdoc": {}
+    },
+    "getResizableLeft": {
+      "type": "function",
+      "name": "getResizableLeft",
+      "abstract": false,
+      "mixin": false,
+      "inherited": true,
+      "access": "public",
+      "property": "get",
+      "jsdoc": {
+        "@return": [
+          {
+            "name": "@return",
+            "type": "Boolean",
+            "desc": "Returns the value for undefined"
+          }
+        ]
+      }
+    },
+    "isResizableLeft": {
+      "type": "function",
+      "name": "isResizableLeft",
+      "abstract": false,
+      "mixin": false,
+      "inherited": true,
+      "access": "public",
+      "property": "is",
+      "jsdoc": {
+        "@return": [
+          {
+            "name": "@return",
+            "type": "Boolean",
+            "desc": "Returns the value for undefined"
+          }
+        ]
+      }
+    },
+    "setResizableLeft": {
+      "type": "function",
+      "name": "setResizableLeft",
+      "abstract": false,
+      "mixin": false,
+      "inherited": true,
+      "access": "public",
+      "property": "set",
+      "jsdoc": {
+        "@param": [
+          {
+            "name": "@param",
+            "type": "Boolean",
+            "paramName": "value",
+            "desc": "Value for undefined"
+          }
+        ]
+      }
+    },
+    "resetResizableLeft": {
+      "type": "function",
+      "name": "resetResizableLeft",
+      "abstract": false,
+      "mixin": false,
+      "inherited": true,
+      "access": "public",
+      "property": "reset",
+      "jsdoc": {}
+    },
+    "getResizable": {
+      "type": "function",
+      "name": "getResizable",
+      "abstract": false,
+      "mixin": false,
+      "inherited": true,
+      "access": "public",
+      "property": "get",
+      "jsdoc": {
+        "@return": [
+          {
+            "name": "@return",
+            "type": "any",
+            "desc": "Returns the value for undefined"
+          }
+        ]
+      }
+    },
+    "setResizable": {
+      "type": "function",
+      "name": "setResizable",
+      "abstract": false,
+      "mixin": false,
+      "inherited": true,
+      "access": "public",
+      "property": "set",
+      "jsdoc": {
+        "@param": [
+          {
+            "name": "@param",
+            "type": "any",
+            "paramName": "value",
+            "desc": "Value for undefined"
+          }
+        ]
+      }
+    },
+    "resetResizable": {
+      "type": "function",
+      "name": "resetResizable",
+      "abstract": false,
+      "mixin": false,
+      "inherited": true,
+      "access": "public",
+      "property": "reset",
+      "jsdoc": {}
+    },
+    "getResizeSensitivity": {
+      "type": "function",
+      "name": "getResizeSensitivity",
+      "abstract": false,
+      "mixin": false,
+      "inherited": true,
+      "access": "public",
+      "property": "get",
+      "jsdoc": {
+        "@return": [
+          {
+            "name": "@return",
+            "type": "Integer",
+            "desc": "Returns the value for undefined"
+          }
+        ]
+      }
+    },
+    "setResizeSensitivity": {
+      "type": "function",
+      "name": "setResizeSensitivity",
+      "abstract": false,
+      "mixin": false,
+      "inherited": true,
+      "access": "public",
+      "property": "set",
+      "jsdoc": {
+        "@param": [
+          {
+            "name": "@param",
+            "type": "Integer",
+            "paramName": "value",
+            "desc": "Value for undefined"
+          }
+        ]
+      }
+    },
+    "resetResizeSensitivity": {
+      "type": "function",
+      "name": "resetResizeSensitivity",
+      "abstract": false,
+      "mixin": false,
+      "inherited": true,
+      "access": "public",
+      "property": "reset",
+      "jsdoc": {}
+    },
+    "getUseResizeFrame": {
+      "type": "function",
+      "name": "getUseResizeFrame",
+      "abstract": false,
+      "mixin": false,
+      "inherited": true,
+      "access": "public",
+      "property": "get",
+      "jsdoc": {
+        "@return": [
+          {
+            "name": "@return",
+            "type": "Boolean",
+            "desc": "Returns the value for undefined"
+          }
+        ]
+      }
+    },
+    "isUseResizeFrame": {
+      "type": "function",
+      "name": "isUseResizeFrame",
+      "abstract": false,
+      "mixin": false,
+      "inherited": true,
+      "access": "public",
+      "property": "is",
+      "jsdoc": {
+        "@return": [
+          {
+            "name": "@return",
+            "type": "Boolean",
+            "desc": "Returns the value for undefined"
+          }
+        ]
+      }
+    },
+    "setUseResizeFrame": {
+      "type": "function",
+      "name": "setUseResizeFrame",
+      "abstract": false,
+      "mixin": false,
+      "inherited": true,
+      "access": "public",
+      "property": "set",
+      "jsdoc": {
+        "@param": [
+          {
+            "name": "@param",
+            "type": "Boolean",
+            "paramName": "value",
+            "desc": "Value for undefined"
+          }
+        ]
+      }
+    },
+    "resetUseResizeFrame": {
+      "type": "function",
+      "name": "resetUseResizeFrame",
+      "abstract": false,
+      "mixin": false,
+      "inherited": true,
+      "access": "public",
+      "property": "reset",
+      "jsdoc": {}
+    }
+  },
+  "descendants": []
+}

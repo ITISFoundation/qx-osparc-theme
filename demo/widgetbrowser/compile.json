@@ -1,0 +1,132 @@
+{
+  "targets": [
+    {
+      "type": "source",
+      "outputPath": "source-output"
+    },
+    {
+      "type": "hybrid",
+      "outputPath": "hybrid-output"
+    },
+    {
+      "type": "build",
+      "outputPath": "build-output"
+    }
+  ],
+  "defaultTarget": "source",
+  "locales": [
+    "en",
+    "de",
+    "fr"
+  ],
+  "environment": {
+    "qx.icontheme": "Tango",
+    "widgetbrowser.themes": "qx.theme.Classic qx.theme.Indigo qx.theme.Modern qx.theme.Simple osparc.theme.OSparcDark"
+  },
+  "applications": [
+    {
+      "class": "widgetbrowser.Application",
+      "theme": "osparc.theme.OSparcDark",
+      "name": "widgetbrowser",
+      "writeIndexHtmlToRoot": true
+    }
+  ],
+  "parts": {
+    "boot": {
+      "include": [
+        "widgetbrowser.Application",
+        "qx.theme.Classic",
+        "widgetbrowser.view.Header",
+        "qxc.ui.versionlabel.VersionLabel",
+        "qxc.application.formdemo.FormItems"
+      ]
+    },
+    "tree": {
+      "include": [
+        "widgetbrowser.pages.Tree"
+      ]
+    },
+    "list": {
+      "include": [
+        "widgetbrowser.pages.List"
+      ]
+    },
+    "table": {
+      "include": [
+        "widgetbrowser.pages.Table"
+      ]
+    },
+    "form": {
+      "include": [
+        "widgetbrowser.pages.Form"
+      ]
+    },
+    "toolbar": {
+      "include": [
+        "widgetbrowser.pages.ToolBar"
+      ]
+    },
+    "window": {
+      "include": [
+        "widgetbrowser.pages.Window"
+      ]
+    },
+    "tab": {
+      "include": [
+        "widgetbrowser.pages.Tab"
+      ]
+    },
+    "control": {
+      "include": [
+        "widgetbrowser.pages.Control"
+      ]
+    },
+    "embed": {
+      "include": [
+        "widgetbrowser.pages.Embed"
+      ]
+    },
+    "embedframe": {
+      "include": [
+        "widgetbrowser.pages.EmbedFrame"
+      ]
+    },
+    "basic": {
+      "include": [
+        "widgetbrowser.pages.Basic"
+      ]
+    },
+    "misc": {
+      "include": [
+        "widgetbrowser.pages.Misc"
+      ]
+    },
+    "modern": {
+      "include": [
+        "qx.theme.Modern"
+      ]
+    },
+    "simple": {
+      "include": [
+        "qx.theme.Simple"
+      ]
+    },
+    "indigo": {
+      "include": [
+        "qx.theme.Indigo"
+      ]
+    },
+    "classic": {
+      "include": [
+          "qx.theme.Classic"
+      ]
+    }
+  },
+  "libraries": [
+    "/home/node/.npm-global/lib/node_modules/qxcompiler/node_modules/qooxdoo-sdk/framework",
+    "./components/versionlabel",
+    "./components/formdemo",
+    "../..",
+    "."
+  ]
+}

@@ -1,0 +1,36 @@
+{
+  "info" : 
+  {
+    "name" : "widgetbrowser",
+
+    "summary" : "show of widgets and themes",
+    "description" : "",
+    
+    "homepage" : "",
+
+    "license" : "MIT license",
+    "authors" : [
+  {
+    "name": "Tobi Oetiker",
+    "email": "(oetiker)"
+  },
+  {
+    "name": "",
+    "email": "tobi@itis.ethz.ch"
+  }
+],
+
+    "version" : "0.0.1",
+    "qooxdoo-range": "6.0.0-alpha"
+  },
+  
+  "provides" : 
+  {
+    "namespace"   : "widgetbrowser",
+    "encoding"    : "utf-8",
+    "class"       : "source/class",
+    "resource"    : "source/resource",
+    "translation" : "source/translation",
+    "type"        : "application"
+  }
+}

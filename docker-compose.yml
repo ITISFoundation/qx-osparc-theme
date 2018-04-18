@@ -1,0 +1,14 @@
+version: '3'
+services:
+  qx:
+    image: "itisfoundation/qx-osparc-theme"
+    build:
+      context: .
+      dockerfile: Dockerfile
+    working_dir: /home/node/src/demo/widgetbrowser
+    volumes:
+      - '.:/home/node/src'
+    ports:
+      - '8080:8080'
+    command: serve
+    

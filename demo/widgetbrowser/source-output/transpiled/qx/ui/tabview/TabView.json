@@ -1,0 +1,1363 @@
+{
+  "className": "qx.ui.tabview.TabView",
+  "packageName": "qx.ui.tabview",
+  "name": "TabView",
+  "superClass": "qx.ui.core.Widget",
+  "interfaces": [
+    "qx.ui.core.ISingleSelection"
+  ],
+  "mixins": [
+    "qx.ui.core.MContentPadding"
+  ],
+  "clazz": {
+    "location": {
+      "start": {
+        "line": 36,
+        "column": 0
+      },
+      "end": {
+        "line": 697,
+        "column": 3
+      }
+    },
+    "jsdoc": {
+      "@description": [
+        {
+          "name": "@description",
+          "body": "***********************************************************************\n\nqooxdoo - the new era of web development\n\nhttp://qooxdoo.org\n\nCopyright:\n2004-2008 1&1 Internet AG, Germany, http://www.1und1.de\n\nLicense:\nMIT: https://opensource.org/licenses/MIT\nSee the LICENSE file in the project's top-level directory for details.\n\nAuthors:\nSebastian Werner (wpbasti)\nAndreas Ecker (ecker)\nMartin Wittemann (martinwittemann)\nJonathan Weiß (jonathan_rass)\nChristian Hagendorn (chris_schmidt)\n\n***********************************************************************"
+        },
+        {
+          "name": "@description",
+          "body": "A tab view is a multi page view where only one page is visible\nat each moment. It is possible to switch the pages using the\nbuttons rendered by each page.\n\nNote that prior to v6.0, when changing the currently selected tab via code\n(ie changing the selection property) TabView would automatically set the\nfocus to that tab; this is undesirable (and inconsistent with other parts\nof the framework) and is no longer done automatically."
+        }
+      ],
+      "@childControl": [
+        {
+          "name": "@childControl",
+          "body": "bar {qx.ui.container.SlideBar} slidebar for all tab buttons"
+        },
+        {
+          "name": "@childControl",
+          "body": "pane {qx.ui.container.Stack} stack container to show one tab page"
+        }
+      ]
+    }
+  },
+  "type": "class",
+  "construct": {
+    "location": {
+      "start": {
+        "line": 53,
+        "column": 2
+      },
+      "end": {
+        "line": 78,
+        "column": 3
+      }
+    },
+    "jsdoc": {
+      "@description": [
+        {
+          "name": "@description",
+          "body": "****************************************************************************\nCONSTRUCTOR\n****************************************************************************"
+        },
+        {
+          "name": "@description",
+          "body": ""
+        }
+      ],
+      "@param": [
+        {
+          "name": "@param",
+          "body": "barPosition {String} Initial bar position ({@link #barPosition})",
+          "paramName": "barPosition",
+          "description": " Initial bar position ({@link #barPosition})",
+          "type": "String"
+        }
+      ]
+    }
+  },
+  "properties": {
+    "appearance": {
+      "location": {
+        "start": {
+          "line": 108,
+          "column": 4
+        },
+        "end": {
+          "line": 112,
+          "column": 5
+        }
+      },
+      "jsdoc": {
+        "@description": [
+          {
+            "name": "@description",
+            "body": "overridden"
+          }
+        ]
+      },
+      "name": "appearance",
+      "propertyType": "new",
+      "refine": true,
+      "defaultValue": "tabview",
+      "overriddenFrom": "qx.ui.core.Widget",
+      "appearsIn": {
+        "qx.ui.core.Widget": "class"
+      }
+    },
+    "barPosition": {
+      "location": {
+        "start": {
+          "line": 117,
+          "column": 4
+        },
+        "end": {
+          "line": 122,
+          "column": 5
+        }
+      },
+      "jsdoc": {
+        "@description": [
+          {
+            "name": "@description",
+            "body": "This property defines on which side of the TabView the bar should be positioned."
+          }
+        ]
+      },
+      "name": "barPosition",
+      "propertyType": "new",
+      "apply": "_applyBarPosition",
+      "possibleValues": [
+        "left",
+        "right",
+        "top",
+        "bottom"
+      ],
+      "defaultValue": "top"
+    },
+    "contentPaddingTop": {
+      "type": "property",
+      "name": "contentPaddingTop",
+      "abstract": false,
+      "mixin": true,
+      "access": "public",
+      "overriddenFrom": "qx.ui.core.MContentPadding"
+    },
+    "contentPaddingRight": {
+      "type": "property",
+      "name": "contentPaddingRight",
+      "abstract": false,
+      "mixin": true,
+      "access": "public",
+      "overriddenFrom": "qx.ui.core.MContentPadding"
+    },
+    "contentPaddingBottom": {
+      "type": "property",
+      "name": "contentPaddingBottom",
+      "abstract": false,
+      "mixin": true,
+      "access": "public",
+      "overriddenFrom": "qx.ui.core.MContentPadding"
+    },
+    "contentPaddingLeft": {
+      "type": "property",
+      "name": "contentPaddingLeft",
+      "abstract": false,
+      "mixin": true,
+      "access": "public",
+      "overriddenFrom": "qx.ui.core.MContentPadding"
+    },
+    "contentPadding": {
+      "type": "property",
+      "name": "contentPadding",
+      "abstract": false,
+      "mixin": true,
+      "access": "public",
+      "overriddenFrom": "qx.ui.core.MContentPadding"
+    }
+  },
+  "members": {
+    "__radioGroup": {
+      "location": {
+        "start": {
+          "line": 136,
+          "column": 4
+        },
+        "end": {
+          "line": 136,
+          "column": 23
+        }
+      },
+      "jsdoc": {
+        "@description": [
+          {
+            "name": "@description",
+            "body": ""
+          }
+        ],
+        "@type": [
+          {
+            "name": "@type",
+            "body": "{qx.ui.form.RadioGroup} instance containing the radio group"
+          }
+        ]
+      },
+      "type": "variable",
+      "access": "private"
+    },
+    "setValue": {
+      "location": {
+        "start": {
+          "line": 145,
+          "column": 4
+        },
+        "end": {
+          "line": 158,
+          "column": 5
+        }
+      },
+      "jsdoc": {
+        "@description": [
+          {
+            "name": "@description",
+            "body": "setValue implements part of the {@link qx.ui.form.IField} interface."
+          }
+        ],
+        "@param": [
+          {
+            "name": "@param",
+            "body": "item {null|qx.ui.tabview.Page} Page to set as selected value.",
+            "paramName": "item",
+            "description": " Page to set as selected value.",
+            "type": [
+              "null",
+              "qx.ui.tabview.Page"
+            ]
+          }
+        ],
+        "@return": [
+          {
+            "name": "@return",
+            "body": "{null|TypeError} The status of this operation.",
+            "type": "null|TypeError",
+            "desc": " The status of this operation."
+          }
+        ]
+      },
+      "type": "function",
+      "access": "public"
+    },
+    "getValue": {
+      "location": {
+        "start": {
+          "line": 166,
+          "column": 4
+        },
+        "end": {
+          "line": 173,
+          "column": 5
+        }
+      },
+      "jsdoc": {
+        "@description": [
+          {
+            "name": "@description",
+            "body": "getValue implements part of the {@link qx.ui.form.IField} interface."
+          }
+        ],
+        "@return": [
+          {
+            "name": "@return",
+            "body": "{null|qx.ui.tabview.Page} The currently selected page or null if there is none.",
+            "type": "null|qx.ui.tabview.Page",
+            "desc": " The currently selected page or null if there is none."
+          }
+        ]
+      },
+      "type": "function",
+      "access": "public"
+    },
+    "resetValue": {
+      "location": {
+        "start": {
+          "line": 179,
+          "column": 4
+        },
+        "end": {
+          "line": 181,
+          "column": 5
+        }
+      },
+      "jsdoc": {
+        "@description": [
+          {
+            "name": "@description",
+            "body": "resetValue implements part of the {@link qx.ui.form.IField} interface."
+          }
+        ]
+      },
+      "type": "function",
+      "access": "public"
+    },
+    "_createChildControlImpl": {
+      "location": {
+        "start": {
+          "line": 192,
+          "column": 4
+        },
+        "end": {
+          "line": 212,
+          "column": 5
+        }
+      },
+      "jsdoc": {
+        "@description": [
+          {
+            "name": "@description",
+            "body": "---------------------------------------------------------------------------\nWIDGET API\n---------------------------------------------------------------------------"
+          },
+          {
+            "name": "@description",
+            "body": "overridden"
+          }
+        ],
+        "@param": [
+          {
+            "name": "@param",
+            "body": "id {String} ID of the child control. If a # is used, the id is\nthe part in front of the #.",
+            "paramName": "id",
+            "description": " ID of the child control. If a # is used, the id is\nthe part in front of the #.",
+            "type": "String"
+          },
+          {
+            "name": "@param",
+            "body": "hash {String?undefined} If a child control name contains a #,\nall text following the # will be the hash argument.",
+            "paramName": "hash",
+            "description": " If a child control name contains a #,\nall text following the # will be the hash argument.",
+            "optional": true,
+            "defaultValue": "undefined",
+            "type": "String"
+          }
+        ],
+        "@return": [
+          {
+            "name": "@return",
+            "body": "{qx.ui.core.Widget} The created control or <code>null</code>",
+            "type": "qx.ui.core.Widget",
+            "desc": " The created control or <code>null</code>"
+          }
+        ]
+      },
+      "type": "function",
+      "access": "protected",
+      "overriddenFrom": "qx.ui.core.Widget",
+      "appearsIn": [
+        "qx.ui.core.Widget"
+      ]
+    },
+    "_createRadioGroupInstance": {
+      "location": {
+        "start": {
+          "line": 221,
+          "column": 4
+        },
+        "end": {
+          "line": 223,
+          "column": 5
+        }
+      },
+      "jsdoc": {
+        "@description": [
+          {
+            "name": "@description",
+            "body": "Creates the radio group manager instance.\n\nAllows override customizations of the instance"
+          }
+        ],
+        "@return": [
+          {
+            "name": "@return",
+            "body": "{qx.ui.form.RadioGroup}",
+            "type": "qx.ui.form.RadioGroup",
+            "desc": ""
+          }
+        ]
+      },
+      "type": "function",
+      "access": "protected"
+    },
+    "_getContentPaddingTarget": {
+      "location": {
+        "start": {
+          "line": 230,
+          "column": 4
+        },
+        "end": {
+          "line": 232,
+          "column": 5
+        }
+      },
+      "jsdoc": {
+        "@description": [
+          {
+            "name": "@description",
+            "body": "Returns the element, to which the content padding should be applied."
+          }
+        ],
+        "@return": [
+          {
+            "name": "@return",
+            "body": "{qx.ui.core.Widget} The content padding target.",
+            "type": "qx.ui.core.Widget",
+            "desc": " The content padding target."
+          }
+        ]
+      },
+      "type": "function",
+      "access": "protected"
+    },
+    "add": {
+      "location": {
+        "start": {
+          "line": 248,
+          "column": 4
+        },
+        "end": {
+          "line": 284,
+          "column": 5
+        }
+      },
+      "jsdoc": {
+        "@description": [
+          {
+            "name": "@description",
+            "body": "---------------------------------------------------------------------------\nCHILDREN HANDLING\n---------------------------------------------------------------------------"
+          },
+          {
+            "name": "@description",
+            "body": "Adds a page to the tabview including its needed button\n(contained in the page)."
+          }
+        ],
+        "@param": [
+          {
+            "name": "@param",
+            "body": "page {qx.ui.tabview.Page} The page which should be added.",
+            "paramName": "page",
+            "description": " The page which should be added.",
+            "type": "qx.ui.tabview.Page"
+          }
+        ]
+      },
+      "type": "function",
+      "access": "public"
+    },
+    "addAt": {
+      "location": {
+        "start": {
+          "line": 293,
+          "column": 4
+        },
+        "end": {
+          "line": 340,
+          "column": 5
+        }
+      },
+      "jsdoc": {
+        "@description": [
+          {
+            "name": "@description",
+            "body": "Adds a page to the tabview including its needed button\n(contained in the page)."
+          }
+        ],
+        "@param": [
+          {
+            "name": "@param",
+            "body": "page {qx.ui.tabview.Page} The page which should be added.",
+            "paramName": "page",
+            "description": " The page which should be added.",
+            "type": "qx.ui.tabview.Page"
+          },
+          {
+            "name": "@param",
+            "body": "index {Integer?null} Optional position where to add the page.",
+            "paramName": "index",
+            "description": " Optional position where to add the page.",
+            "optional": true,
+            "defaultValue": "null",
+            "type": "Integer"
+          }
+        ]
+      },
+      "type": "function",
+      "access": "public"
+    },
+    "remove": {
+      "location": {
+        "start": {
+          "line": 347,
+          "column": 4
+        },
+        "end": {
+          "line": 400,
+          "column": 5
+        }
+      },
+      "jsdoc": {
+        "@description": [
+          {
+            "name": "@description",
+            "body": "Removes a page (and its corresponding button) from the TabView."
+          }
+        ],
+        "@param": [
+          {
+            "name": "@param",
+            "body": "page {qx.ui.tabview.Page} The page to be removed.",
+            "paramName": "page",
+            "description": " The page to be removed.",
+            "type": "qx.ui.tabview.Page"
+          }
+        ]
+      },
+      "type": "function",
+      "access": "public"
+    },
+    "getChildren": {
+      "location": {
+        "start": {
+          "line": 407,
+          "column": 4
+        },
+        "end": {
+          "line": 409,
+          "column": 5
+        }
+      },
+      "jsdoc": {
+        "@description": [
+          {
+            "name": "@description",
+            "body": "Returns TabView's children widgets."
+          }
+        ],
+        "@return": [
+          {
+            "name": "@return",
+            "body": "{qx.ui.tabview.Page[]} List of children.",
+            "type": "qx.ui.tabview.Page[]",
+            "desc": " List of children."
+          }
+        ]
+      },
+      "type": "function",
+      "access": "public"
+    },
+    "indexOf": {
+      "location": {
+        "start": {
+          "line": 417,
+          "column": 4
+        },
+        "end": {
+          "line": 419,
+          "column": 5
+        }
+      },
+      "jsdoc": {
+        "@description": [
+          {
+            "name": "@description",
+            "body": "Returns the position of the given page in the TabView."
+          }
+        ],
+        "@param": [
+          {
+            "name": "@param",
+            "body": "page {qx.ui.tabview.Page} The page to query for.",
+            "paramName": "page",
+            "description": " The page to query for.",
+            "type": "qx.ui.tabview.Page"
+          }
+        ],
+        "@return": [
+          {
+            "name": "@return",
+            "body": "{Integer} Position of the page in the TabView.",
+            "type": "Integer",
+            "desc": " Position of the page in the TabView."
+          }
+        ]
+      },
+      "type": "function",
+      "access": "public"
+    },
+    "getRadioGroup": {
+      "location": {
+        "start": {
+          "line": 426,
+          "column": 4
+        },
+        "end": {
+          "line": 428,
+          "column": 5
+        }
+      },
+      "jsdoc": {
+        "@description": [
+          {
+            "name": "@description",
+            "body": "Returns the radio group manager."
+          }
+        ],
+        "@return": [
+          {
+            "name": "@return",
+            "body": "{qx.ui.form.RadioGroup} the radio group.",
+            "type": "qx.ui.form.RadioGroup",
+            "desc": " the radio group."
+          }
+        ]
+      },
+      "type": "function",
+      "access": "public"
+    },
+    "__barPositionToState": {
+      "location": {
+        "start": {
+          "line": 439,
+          "column": 4
+        },
+        "end": {
+          "line": 439,
+          "column": 31
+        }
+      },
+      "jsdoc": {
+        "@description": [
+          {
+            "name": "@description",
+            "body": "---------------------------------------------------------------------------\nAPPLY ROUTINES\n---------------------------------------------------------------------------"
+          },
+          {
+            "name": "@description",
+            "body": ""
+          }
+        ],
+        "@type": [
+          {
+            "name": "@type",
+            "body": "{Map} Maps the bar position to an appearance state"
+          }
+        ]
+      },
+      "type": "variable",
+      "access": "private"
+    },
+    "_applyBarPosition": {
+      "location": {
+        "start": {
+          "line": 452,
+          "column": 4
+        },
+        "end": {
+          "line": 511,
+          "column": 5
+        }
+      },
+      "jsdoc": {
+        "@description": [
+          {
+            "name": "@description",
+            "body": "Apply method for the placeBarOnTop-Property.\n\nPasses the desired value to the layout of the tabview so\nthat the layout can handle it.\nIt also sets the states to all buttons so they know the\nposition of the bar."
+          }
+        ],
+        "@param": [
+          {
+            "name": "@param",
+            "body": "value {Boolean} The new value.",
+            "paramName": "value",
+            "description": " The new value.",
+            "type": "Boolean"
+          },
+          {
+            "name": "@param",
+            "body": "old {Boolean} The old value.",
+            "paramName": "old",
+            "description": " The old value.",
+            "type": "Boolean"
+          }
+        ]
+      },
+      "type": "function",
+      "access": "protected"
+    },
+    "getSelection": {
+      "location": {
+        "start": {
+          "line": 528,
+          "column": 4
+        },
+        "end": {
+          "line": 537,
+          "column": 5
+        }
+      },
+      "jsdoc": {
+        "@description": [
+          {
+            "name": "@description",
+            "body": "---------------------------------------------------------------------------\nSELECTION API\n---------------------------------------------------------------------------"
+          },
+          {
+            "name": "@description",
+            "body": "Returns an array of currently selected items.\n\nNote: The result is only a set of selected items, so the order can\ndiffer from the sequence in which the items were added."
+          }
+        ],
+        "@return": [
+          {
+            "name": "@return",
+            "body": "{qx.ui.tabview.Page[]} List of items.",
+            "type": "qx.ui.tabview.Page[]",
+            "desc": " List of items."
+          }
+        ]
+      },
+      "type": "function",
+      "access": "public",
+      "overriddenFrom": "qx.ui.core.ISingleSelection",
+      "appearsIn": [
+        "qx.ui.core.ISingleSelection"
+      ]
+    },
+    "setSelection": {
+      "location": {
+        "start": {
+          "line": 546,
+          "column": 4
+        },
+        "end": {
+          "line": 553,
+          "column": 5
+        }
+      },
+      "jsdoc": {
+        "@description": [
+          {
+            "name": "@description",
+            "body": "Replaces current selection with the given items."
+          }
+        ],
+        "@param": [
+          {
+            "name": "@param",
+            "body": "items {qx.ui.tabview.Page[]} Items to select.",
+            "paramName": "items",
+            "description": " Items to select.",
+            "type": "qx.ui.tabview.Page[]"
+          }
+        ],
+        "@throws": [
+          {
+            "name": "@throws",
+            "body": "{Error} if one of the items is not a child element and if\nitems contains more than one elements."
+          }
+        ]
+      },
+      "type": "function",
+      "access": "public",
+      "overriddenFrom": "qx.ui.core.ISingleSelection",
+      "appearsIn": [
+        "qx.ui.core.ISingleSelection"
+      ]
+    },
+    "resetSelection": {
+      "location": {
+        "start": {
+          "line": 558,
+          "column": 4
+        },
+        "end": {
+          "line": 560,
+          "column": 5
+        }
+      },
+      "jsdoc": {
+        "@description": [
+          {
+            "name": "@description",
+            "body": "Clears the whole selection at once."
+          }
+        ]
+      },
+      "type": "function",
+      "access": "public",
+      "overriddenFrom": "qx.ui.core.ISingleSelection",
+      "appearsIn": [
+        "qx.ui.core.ISingleSelection"
+      ]
+    },
+    "isSelected": {
+      "location": {
+        "start": {
+          "line": 569,
+          "column": 4
+        },
+        "end": {
+          "line": 572,
+          "column": 5
+        }
+      },
+      "jsdoc": {
+        "@description": [
+          {
+            "name": "@description",
+            "body": "Detects whether the given item is currently selected."
+          }
+        ],
+        "@param": [
+          {
+            "name": "@param",
+            "body": "item {qx.ui.tabview.Page} Any valid selectable item.",
+            "paramName": "item",
+            "description": " Any valid selectable item.",
+            "type": "qx.ui.tabview.Page"
+          }
+        ],
+        "@return": [
+          {
+            "name": "@return",
+            "body": "{Boolean} Whether the item is selected.",
+            "type": "Boolean",
+            "desc": " Whether the item is selected."
+          }
+        ],
+        "@throws": [
+          {
+            "name": "@throws",
+            "body": "{Error} if one of the items is not a child element."
+          }
+        ]
+      },
+      "type": "function",
+      "access": "public",
+      "overriddenFrom": "qx.ui.core.ISingleSelection",
+      "appearsIn": [
+        "qx.ui.core.ISingleSelection"
+      ]
+    },
+    "isSelectionEmpty": {
+      "location": {
+        "start": {
+          "line": 579,
+          "column": 4
+        },
+        "end": {
+          "line": 581,
+          "column": 5
+        }
+      },
+      "jsdoc": {
+        "@description": [
+          {
+            "name": "@description",
+            "body": "Whether the selection is empty."
+          }
+        ],
+        "@return": [
+          {
+            "name": "@return",
+            "body": "{Boolean} Whether the selection is empty.",
+            "type": "Boolean",
+            "desc": " Whether the selection is empty."
+          }
+        ]
+      },
+      "type": "function",
+      "access": "public",
+      "overriddenFrom": "qx.ui.core.ISingleSelection",
+      "appearsIn": [
+        "qx.ui.core.ISingleSelection"
+      ]
+    },
+    "getSelectables": {
+      "location": {
+        "start": {
+          "line": 591,
+          "column": 4
+        },
+        "end": {
+          "line": 600,
+          "column": 5
+        }
+      },
+      "jsdoc": {
+        "@description": [
+          {
+            "name": "@description",
+            "body": "Returns all elements which are selectable."
+          }
+        ],
+        "@return": [
+          {
+            "name": "@return",
+            "body": "{qx.ui.tabview.Page[]} The contained items.",
+            "type": "qx.ui.tabview.Page[]",
+            "desc": " The contained items."
+          }
+        ],
+        "@param": [
+          {
+            "name": "@param",
+            "body": "all {Boolean} true for all selectables, false for the\nselectables the user can interactively select",
+            "paramName": "all",
+            "description": " true for all selectables, false for the\nselectables the user can interactively select",
+            "type": "Boolean"
+          }
+        ]
+      },
+      "type": "function",
+      "access": "public",
+      "overriddenFrom": "qx.ui.core.ISingleSelection",
+      "appearsIn": [
+        "qx.ui.core.ISingleSelection"
+      ]
+    },
+    "_onChangeSelection": {
+      "location": {
+        "start": {
+          "line": 607,
+          "column": 4
+        },
+        "end": {
+          "line": 631,
+          "column": 5
+        }
+      },
+      "jsdoc": {
+        "@description": [
+          {
+            "name": "@description",
+            "body": "Event handler for <code>changeSelection</code>."
+          }
+        ],
+        "@param": [
+          {
+            "name": "@param",
+            "body": "e {qx.event.type.Data} Data event.",
+            "paramName": "e",
+            "description": " Data event.",
+            "type": "qx.event.type.Data"
+          }
+        ]
+      },
+      "type": "function",
+      "access": "protected"
+    },
+    "_onBeforeChangeSelection": {
+      "location": {
+        "start": {
+          "line": 638,
+          "column": 4
+        },
+        "end": {
+          "line": 644,
+          "column": 5
+        }
+      },
+      "jsdoc": {
+        "@description": [
+          {
+            "name": "@description",
+            "body": "Event handler for <code>beforeChangeSelection</code>."
+          }
+        ],
+        "@param": [
+          {
+            "name": "@param",
+            "body": "e {qx.event.type.Event} Data event.",
+            "paramName": "e",
+            "description": " Data event.",
+            "type": "qx.event.type.Event"
+          }
+        ]
+      },
+      "type": "function",
+      "access": "protected"
+    },
+    "_onRadioChangeSelection": {
+      "location": {
+        "start": {
+          "line": 658,
+          "column": 4
+        },
+        "end": {
+          "line": 665,
+          "column": 5
+        }
+      },
+      "jsdoc": {
+        "@description": [
+          {
+            "name": "@description",
+            "body": "---------------------------------------------------------------------------\nEVENT LISTENERS\n---------------------------------------------------------------------------"
+          },
+          {
+            "name": "@description",
+            "body": "Event handler for the change of the selected item of the radio group."
+          }
+        ],
+        "@param": [
+          {
+            "name": "@param",
+            "body": "e {qx.event.type.Data} The data event",
+            "paramName": "e",
+            "description": " The data event",
+            "type": "qx.event.type.Data"
+          }
+        ]
+      },
+      "type": "function",
+      "access": "protected"
+    },
+    "_onPageClose": {
+      "location": {
+        "start": {
+          "line": 673,
+          "column": 4
+        },
+        "end": {
+          "line": 682,
+          "column": 5
+        }
+      },
+      "jsdoc": {
+        "@description": [
+          {
+            "name": "@description",
+            "body": "Removes the Page widget on which the close button was tapped."
+          }
+        ],
+        "@param": [
+          {
+            "name": "@param",
+            "body": "e {qx.event.type.Pointer} pointer event",
+            "paramName": "e",
+            "description": " pointer event",
+            "type": "qx.event.type.Pointer"
+          }
+        ]
+      },
+      "type": "function",
+      "access": "protected"
+    },
+    "_applyContentPadding": {
+      "type": "function",
+      "name": "_applyContentPadding",
+      "abstract": false,
+      "mixin": true,
+      "inherited": true,
+      "access": "protected",
+      "overriddenFrom": "qx.ui.core.MContentPadding"
+    },
+    "getContentPaddingTop": {
+      "type": "function",
+      "name": "getContentPaddingTop",
+      "abstract": false,
+      "mixin": true,
+      "inherited": true,
+      "access": "public",
+      "overriddenFrom": "qx.ui.core.MContentPadding",
+      "jsdoc": {
+        "@return": [
+          {
+            "name": "@return",
+            "type": "Integer",
+            "desc": "Returns the value for undefined"
+          }
+        ]
+      }
+    },
+    "setContentPaddingTop": {
+      "type": "function",
+      "name": "setContentPaddingTop",
+      "abstract": false,
+      "mixin": true,
+      "inherited": true,
+      "access": "public",
+      "overriddenFrom": "qx.ui.core.MContentPadding",
+      "jsdoc": {
+        "@param": [
+          {
+            "name": "@param",
+            "type": "Integer",
+            "paramName": "value",
+            "desc": "Value for undefined"
+          }
+        ]
+      }
+    },
+    "resetContentPaddingTop": {
+      "type": "function",
+      "name": "resetContentPaddingTop",
+      "abstract": false,
+      "mixin": true,
+      "inherited": true,
+      "access": "public",
+      "overriddenFrom": "qx.ui.core.MContentPadding"
+    },
+    "getContentPaddingRight": {
+      "type": "function",
+      "name": "getContentPaddingRight",
+      "abstract": false,
+      "mixin": true,
+      "inherited": true,
+      "access": "public",
+      "overriddenFrom": "qx.ui.core.MContentPadding",
+      "jsdoc": {
+        "@return": [
+          {
+            "name": "@return",
+            "type": "Integer",
+            "desc": "Returns the value for undefined"
+          }
+        ]
+      }
+    },
+    "setContentPaddingRight": {
+      "type": "function",
+      "name": "setContentPaddingRight",
+      "abstract": false,
+      "mixin": true,
+      "inherited": true,
+      "access": "public",
+      "overriddenFrom": "qx.ui.core.MContentPadding",
+      "jsdoc": {
+        "@param": [
+          {
+            "name": "@param",
+            "type": "Integer",
+            "paramName": "value",
+            "desc": "Value for undefined"
+          }
+        ]
+      }
+    },
+    "resetContentPaddingRight": {
+      "type": "function",
+      "name": "resetContentPaddingRight",
+      "abstract": false,
+      "mixin": true,
+      "inherited": true,
+      "access": "public",
+      "overriddenFrom": "qx.ui.core.MContentPadding"
+    },
+    "getContentPaddingBottom": {
+      "type": "function",
+      "name": "getContentPaddingBottom",
+      "abstract": false,
+      "mixin": true,
+      "inherited": true,
+      "access": "public",
+      "overriddenFrom": "qx.ui.core.MContentPadding",
+      "jsdoc": {
+        "@return": [
+          {
+            "name": "@return",
+            "type": "Integer",
+            "desc": "Returns the value for undefined"
+          }
+        ]
+      }
+    },
+    "setContentPaddingBottom": {
+      "type": "function",
+      "name": "setContentPaddingBottom",
+      "abstract": false,
+      "mixin": true,
+      "inherited": true,
+      "access": "public",
+      "overriddenFrom": "qx.ui.core.MContentPadding",
+      "jsdoc": {
+        "@param": [
+          {
+            "name": "@param",
+            "type": "Integer",
+            "paramName": "value",
+            "desc": "Value for undefined"
+          }
+        ]
+      }
+    },
+    "resetContentPaddingBottom": {
+      "type": "function",
+      "name": "resetContentPaddingBottom",
+      "abstract": false,
+      "mixin": true,
+      "inherited": true,
+      "access": "public",
+      "overriddenFrom": "qx.ui.core.MContentPadding"
+    },
+    "getContentPaddingLeft": {
+      "type": "function",
+      "name": "getContentPaddingLeft",
+      "abstract": false,
+      "mixin": true,
+      "inherited": true,
+      "access": "public",
+      "overriddenFrom": "qx.ui.core.MContentPadding",
+      "jsdoc": {
+        "@return": [
+          {
+            "name": "@return",
+            "type": "Integer",
+            "desc": "Returns the value for undefined"
+          }
+        ]
+      }
+    },
+    "setContentPaddingLeft": {
+      "type": "function",
+      "name": "setContentPaddingLeft",
+      "abstract": false,
+      "mixin": true,
+      "inherited": true,
+      "access": "public",
+      "overriddenFrom": "qx.ui.core.MContentPadding",
+      "jsdoc": {
+        "@param": [
+          {
+            "name": "@param",
+            "type": "Integer",
+            "paramName": "value",
+            "desc": "Value for undefined"
+          }
+        ]
+      }
+    },
+    "resetContentPaddingLeft": {
+      "type": "function",
+      "name": "resetContentPaddingLeft",
+      "abstract": false,
+      "mixin": true,
+      "inherited": true,
+      "access": "public",
+      "overriddenFrom": "qx.ui.core.MContentPadding"
+    },
+    "getContentPadding": {
+      "type": "function",
+      "name": "getContentPadding",
+      "abstract": false,
+      "mixin": true,
+      "inherited": true,
+      "access": "public",
+      "overriddenFrom": "qx.ui.core.MContentPadding",
+      "jsdoc": {
+        "@return": [
+          {
+            "name": "@return",
+            "type": "any",
+            "desc": "Returns the value for undefined"
+          }
+        ]
+      }
+    },
+    "setContentPadding": {
+      "type": "function",
+      "name": "setContentPadding",
+      "abstract": false,
+      "mixin": true,
+      "inherited": true,
+      "access": "public",
+      "overriddenFrom": "qx.ui.core.MContentPadding",
+      "jsdoc": {
+        "@param": [
+          {
+            "name": "@param",
+            "type": "any",
+            "paramName": "value",
+            "desc": "Value for undefined"
+          }
+        ]
+      }
+    },
+    "resetContentPadding": {
+      "type": "function",
+      "name": "resetContentPadding",
+      "abstract": false,
+      "mixin": true,
+      "inherited": true,
+      "access": "public",
+      "overriddenFrom": "qx.ui.core.MContentPadding"
+    },
+    "getBarPosition": {
+      "type": "function",
+      "name": "getBarPosition",
+      "abstract": false,
+      "mixin": false,
+      "inherited": false,
+      "access": "public",
+      "property": "get",
+      "jsdoc": {
+        "@return": [
+          {
+            "name": "@return",
+            "type": "any",
+            "desc": "Returns the value for undefined"
+          }
+        ]
+      }
+    },
+    "setBarPosition": {
+      "type": "function",
+      "name": "setBarPosition",
+      "abstract": false,
+      "mixin": false,
+      "inherited": false,
+      "access": "public",
+      "property": "set",
+      "jsdoc": {
+        "@param": [
+          {
+            "name": "@param",
+            "type": "any",
+            "paramName": "value",
+            "desc": "Value for undefined"
+          }
+        ]
+      }
+    },
+    "resetBarPosition": {
+      "type": "function",
+      "name": "resetBarPosition",
+      "abstract": false,
+      "mixin": false,
+      "inherited": false,
+      "access": "public",
+      "property": "reset",
+      "jsdoc": {}
+    }
+  },
+  "destruct": {
+    "location": {
+      "start": {
+        "line": 693,
+        "column": 2
+      },
+      "end": {
+        "line": 696,
+        "column": 3
+      }
+    },
+    "jsdoc": {
+      "@description": [
+        {
+          "name": "@description",
+          "body": "****************************************************************************\nDESTRUCTOR\n****************************************************************************"
+        }
+      ]
+    }
+  },
+  "descendants": [
+    "widgetbrowser.view.TabView"
+  ]
+}

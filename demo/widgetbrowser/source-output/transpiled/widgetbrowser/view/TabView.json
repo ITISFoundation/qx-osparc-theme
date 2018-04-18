@@ -1,0 +1,86 @@
+{
+  "className": "widgetbrowser.view.TabView",
+  "packageName": "widgetbrowser.view",
+  "name": "TabView",
+  "superClass": "qx.ui.tabview.TabView",
+  "interfaces": [],
+  "mixins": [],
+  "clazz": {
+    "location": {
+      "start": {
+        "line": 19,
+        "column": 0
+      },
+      "end": {
+        "line": 135,
+        "column": 5
+      }
+    },
+    "jsdoc": {
+      "@description": [
+        {
+          "name": "@description",
+          "body": "***********************************************************************\n\nqooxdoo - the new era of web development\n\nhttp://qooxdoo.org\n\nCopyright:\n2004-2010 1&1 Internet AG, Germany, http://www.1und1.de\n\nLicense:\nMIT: https://opensource.org/licenses/MIT\nSee the LICENSE file in the project's top-level directory for details.\n\nAuthors:\nTristan Koch (tristankoch)\n\n***********************************************************************"
+        }
+      ]
+    }
+  },
+  "type": "class",
+  "construct": {
+    "location": {
+      "start": {
+        "line": 24,
+        "column": 4
+      },
+      "end": {
+        "line": 30,
+        "column": 5
+      }
+    }
+  },
+  "members": {
+    "init": {
+      "location": {
+        "start": {
+          "line": 34,
+          "column": 4
+        },
+        "end": {
+          "line": 115,
+          "column": 5
+        }
+      },
+      "type": "function",
+      "access": "public"
+    },
+    "__rememberCurrentTab": {
+      "location": {
+        "start": {
+          "line": 117,
+          "column": 4
+        },
+        "end": {
+          "line": 119,
+          "column": 5
+        }
+      },
+      "type": "function",
+      "access": "private"
+    },
+    "__setCurrentTab": {
+      "location": {
+        "start": {
+          "line": 121,
+          "column": 4
+        },
+        "end": {
+          "line": 133,
+          "column": 5
+        }
+      },
+      "type": "function",
+      "access": "private"
+    }
+  },
+  "descendants": []
+}

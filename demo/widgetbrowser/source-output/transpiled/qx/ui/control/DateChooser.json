@@ -1,0 +1,1320 @@
+{
+  "className": "qx.ui.control.DateChooser",
+  "packageName": "qx.ui.control",
+  "name": "DateChooser",
+  "superClass": "qx.ui.core.Widget",
+  "interfaces": [
+    "qx.ui.form.IExecutable",
+    "qx.ui.form.IForm",
+    "qx.ui.form.IDateForm"
+  ],
+  "mixins": [
+    "qx.ui.core.MExecutable",
+    "qx.ui.form.MForm"
+  ],
+  "clazz": {
+    "location": {
+      "start": {
+        "line": 60,
+        "column": 0
+      },
+      "end": {
+        "line": 771,
+        "column": 3
+      }
+    },
+    "jsdoc": {
+      "@description": [
+        {
+          "name": "@description",
+          "body": "***********************************************************************\n\nqooxdoo - the new era of web development\n\nhttp://qooxdoo.org\n\nCopyright:\n2006 STZ-IDA, Germany, http://www.stz-ida.de\n\nLicense:\nMIT: https://opensource.org/licenses/MIT\nSee the LICENSE file in the project's top-level directory for details.\n\nAuthors:\nTil Schneider (til132)\nMartin Wittemann (martinwittemann)\n\n***********************************************************************"
+        },
+        {
+          "name": "@description",
+          "body": "A *date chooser* is a small calendar including a navigation bar to switch the shown\nmonth. It includes a column for the calendar week and shows one month. Selecting\na date is as easy as tapping on it.\n\nTo be conform with all form widgets, the {@link qx.ui.form.IForm} interface\nis implemented.\n\nThe following example creates and adds a date chooser to the root element.\nA listener alerts the user if a new date is selected.\n\n<pre class='javascript'>\nvar chooser = new qx.ui.control.DateChooser();\nthis.getRoot().add(chooser, { left : 20, top: 20});\n\nchooser.addListener(\"changeValue\", function(e) {\nalert(e.getData());\n});\n</pre>\n\nAdditionally to a selection event an execute event is available which is\nfired by doubletap or tapping the space / enter key. With this event you\ncan for example save the selection and close the date chooser."
+        }
+      ],
+      "@childControl": [
+        {
+          "name": "@childControl",
+          "body": "navigation-bar {qx.ui.container.Composite} container for the navigation bar controls"
+        },
+        {
+          "name": "@childControl",
+          "body": "last-year-button-tooltip {qx.ui.tooltip.ToolTip} tooltip for the last year button"
+        },
+        {
+          "name": "@childControl",
+          "body": "last-year-button {qx.ui.form.Button} button to jump to the last year"
+        },
+        {
+          "name": "@childControl",
+          "body": "last-month-button-tooltip {qx.ui.tooltip.ToolTip} tooltip for the last month button"
+        },
+        {
+          "name": "@childControl",
+          "body": "last-month-button {qx.ui.form.Button} button to jump to the last month"
+        },
+        {
+          "name": "@childControl",
+          "body": "next-month-button-tooltip {qx.ui.tooltip.ToolTip} tooltip for the next month button"
+        },
+        {
+          "name": "@childControl",
+          "body": "next-month-button {qx.ui.form.Button} button to jump to the next month"
+        },
+        {
+          "name": "@childControl",
+          "body": "next-year-button-tooltip {qx.ui.tooltip.ToolTip} tooltip for the next year button"
+        },
+        {
+          "name": "@childControl",
+          "body": "next-year-button {qx.ui.form.Button} button to jump to the next year"
+        },
+        {
+          "name": "@childControl",
+          "body": "month-year-label {qx.ui.basic.Label} shows the current month and year"
+        },
+        {
+          "name": "@childControl",
+          "body": "week {qx.ui.basic.Label} week label (used multiple times)"
+        },
+        {
+          "name": "@childControl",
+          "body": "weekday {qx.ui.basic.Label} weekday label (used multiple times)"
+        },
+        {
+          "name": "@childControl",
+          "body": "day {qx.ui.basic.Label} day label (used multiple times)"
+        },
+        {
+          "name": "@childControl",
+          "body": "date-pane {qx.ui.container.Composite} the pane used to position the week, weekday and day labels"
+        }
+      ]
+    }
+  },
+  "type": "class",
+  "construct": {
+    "location": {
+      "start": {
+        "line": 84,
+        "column": 2
+      },
+      "end": {
+        "line": 117,
+        "column": 3
+      }
+    },
+    "jsdoc": {
+      "@description": [
+        {
+          "name": "@description",
+          "body": "****************************************************************************\nCONSTRUCTOR\n****************************************************************************"
+        },
+        {
+          "name": "@description",
+          "body": ""
+        }
+      ],
+      "@param": [
+        {
+          "name": "@param",
+          "body": "date {Date ? null} The initial date to show. If <code>null</code>\nthe current day (today) is shown.",
+          "paramName": "date",
+          "description": " The initial date to show. If <code>null</code>\nthe current day (today) is shown.",
+          "optional": true,
+          "defaultValue": "null",
+          "type": "Date"
+        }
+      ]
+    }
+  },
+  "properties": {
+    "appearance": {
+      "location": {
+        "start": {
+          "line": 155,
+          "column": 4
+        },
+        "end": {
+          "line": 159,
+          "column": 5
+        }
+      },
+      "jsdoc": {
+        "@description": [
+          {
+            "name": "@description",
+            "body": "overridden"
+          }
+        ]
+      },
+      "name": "appearance",
+      "propertyType": "new",
+      "refine": true,
+      "defaultValue": "datechooser",
+      "overriddenFrom": "qx.ui.core.Widget",
+      "appearsIn": {
+        "qx.ui.core.Widget": "class"
+      }
+    },
+    "width": {
+      "location": {
+        "start": {
+          "line": 162,
+          "column": 4
+        },
+        "end": {
+          "line": 166,
+          "column": 5
+        }
+      },
+      "jsdoc": {
+        "@description": [
+          {
+            "name": "@description",
+            "body": "overridden"
+          }
+        ]
+      },
+      "name": "width",
+      "propertyType": "new",
+      "refine": true,
+      "defaultValue": 200,
+      "overriddenFrom": "qx.ui.core.LayoutItem",
+      "appearsIn": {
+        "qx.ui.core.LayoutItem": "class"
+      }
+    },
+    "height": {
+      "location": {
+        "start": {
+          "line": 169,
+          "column": 4
+        },
+        "end": {
+          "line": 173,
+          "column": 5
+        }
+      },
+      "jsdoc": {
+        "@description": [
+          {
+            "name": "@description",
+            "body": "overridden"
+          }
+        ]
+      },
+      "name": "height",
+      "propertyType": "new",
+      "refine": true,
+      "defaultValue": 150,
+      "overriddenFrom": "qx.ui.core.LayoutItem",
+      "appearsIn": {
+        "qx.ui.core.LayoutItem": "class"
+      }
+    },
+    "shownMonth": {
+      "location": {
+        "start": {
+          "line": 176,
+          "column": 4
+        },
+        "end": {
+          "line": 182,
+          "column": 5
+        }
+      },
+      "jsdoc": {
+        "@description": [
+          {
+            "name": "@description",
+            "body": "The currently shown month. 0 = january, 1 = february, and so on."
+          }
+        ]
+      },
+      "name": "shownMonth",
+      "propertyType": "new",
+      "event": "changeShownMonth",
+      "allowNull": true,
+      "check": "Integer"
+    },
+    "shownYear": {
+      "location": {
+        "start": {
+          "line": 185,
+          "column": 4
+        },
+        "end": {
+          "line": 191,
+          "column": 5
+        }
+      },
+      "jsdoc": {
+        "@description": [
+          {
+            "name": "@description",
+            "body": "The currently shown year."
+          }
+        ]
+      },
+      "name": "shownYear",
+      "propertyType": "new",
+      "event": "changeShownYear",
+      "allowNull": true,
+      "check": "Integer"
+    },
+    "value": {
+      "location": {
+        "start": {
+          "line": 194,
+          "column": 4
+        },
+        "end": {
+          "line": 201,
+          "column": 5
+        }
+      },
+      "jsdoc": {
+        "@description": [
+          {
+            "name": "@description",
+            "body": "The date value of the widget."
+          }
+        ]
+      },
+      "name": "value",
+      "propertyType": "new",
+      "event": "changeValue",
+      "apply": "_applyValue",
+      "allowNull": true,
+      "check": "Date"
+    },
+    "command": {
+      "type": "property",
+      "name": "command",
+      "abstract": false,
+      "mixin": true,
+      "access": "public",
+      "overriddenFrom": "qx.ui.core.MExecutable"
+    },
+    "valid": {
+      "type": "property",
+      "name": "valid",
+      "abstract": false,
+      "mixin": true,
+      "access": "public",
+      "overriddenFrom": "qx.ui.form.MForm"
+    },
+    "required": {
+      "type": "property",
+      "name": "required",
+      "abstract": false,
+      "mixin": true,
+      "access": "public",
+      "overriddenFrom": "qx.ui.form.MForm"
+    },
+    "invalidMessage": {
+      "type": "property",
+      "name": "invalidMessage",
+      "abstract": false,
+      "mixin": true,
+      "access": "public",
+      "overriddenFrom": "qx.ui.form.MForm"
+    },
+    "requiredInvalidMessage": {
+      "type": "property",
+      "name": "requiredInvalidMessage",
+      "abstract": false,
+      "mixin": true,
+      "access": "public",
+      "overriddenFrom": "qx.ui.form.MForm"
+    }
+  },
+  "members": {
+    "__weekdayLabelArr": {
+      "location": {
+        "start": {
+          "line": 215,
+          "column": 4
+        },
+        "end": {
+          "line": 215,
+          "column": 28
+        }
+      },
+      "type": "variable",
+      "access": "private"
+    },
+    "__dayLabelArr": {
+      "location": {
+        "start": {
+          "line": 216,
+          "column": 4
+        },
+        "end": {
+          "line": 216,
+          "column": 24
+        }
+      },
+      "type": "variable",
+      "access": "private"
+    },
+    "__weekLabelArr": {
+      "location": {
+        "start": {
+          "line": 217,
+          "column": 4
+        },
+        "end": {
+          "line": 217,
+          "column": 25
+        }
+      },
+      "type": "variable",
+      "access": "private"
+    },
+    "_forwardStates": {
+      "location": {
+        "start": {
+          "line": 224,
+          "column": 4
+        },
+        "end": {
+          "line": 227,
+          "column": 5
+        }
+      },
+      "jsdoc": {
+        "@description": [
+          {
+            "name": "@description",
+            "body": "overridden"
+          },
+          {
+            "name": "@description",
+            "body": ""
+          }
+        ],
+        "@lint": [
+          {
+            "name": "@lint",
+            "body": "ignoreReferenceField(_forwardStates)"
+          }
+        ]
+      },
+      "type": "variable",
+      "access": "protected"
+    },
+    "_createChildControlImpl": {
+      "location": {
+        "start": {
+          "line": 237,
+          "column": 4
+        },
+        "end": {
+          "line": 389,
+          "column": 5
+        }
+      },
+      "jsdoc": {
+        "@description": [
+          {
+            "name": "@description",
+            "body": "---------------------------------------------------------------------------\nWIDGET INTERNALS\n---------------------------------------------------------------------------"
+          },
+          {
+            "name": "@description",
+            "body": "overridden"
+          }
+        ],
+        "@param": [
+          {
+            "name": "@param",
+            "body": "id {String} ID of the child control. If a # is used, the id is\nthe part in front of the #.",
+            "paramName": "id",
+            "description": " ID of the child control. If a # is used, the id is\nthe part in front of the #.",
+            "type": "String"
+          },
+          {
+            "name": "@param",
+            "body": "hash {String?undefined} If a child control name contains a #,\nall text following the # will be the hash argument.",
+            "paramName": "hash",
+            "description": " If a child control name contains a #,\nall text following the # will be the hash argument.",
+            "optional": true,
+            "defaultValue": "undefined",
+            "type": "String"
+          }
+        ],
+        "@return": [
+          {
+            "name": "@return",
+            "body": "{qx.ui.core.Widget} The created control or <code>null</code>",
+            "type": "qx.ui.core.Widget",
+            "desc": " The created control or <code>null</code>"
+          }
+        ]
+      },
+      "type": "function",
+      "access": "protected",
+      "overriddenFrom": "qx.ui.core.Widget",
+      "appearsIn": [
+        "qx.ui.core.Widget"
+      ]
+    },
+    "_applyValue": {
+      "location": {
+        "start": {
+          "line": 393,
+          "column": 4
+        },
+        "end": {
+          "line": 427,
+          "column": 5
+        }
+      },
+      "jsdoc": {
+        "@description": [
+          {
+            "name": "@description",
+            "body": "apply methods"
+          }
+        ]
+      },
+      "type": "function",
+      "access": "protected"
+    },
+    "_onPointerUpDown": {
+      "location": {
+        "start": {
+          "line": 443,
+          "column": 4
+        },
+        "end": {
+          "line": 451,
+          "column": 5
+        }
+      },
+      "jsdoc": {
+        "@description": [
+          {
+            "name": "@description",
+            "body": "---------------------------------------------------------------------------\nEVENT HANDLER\n---------------------------------------------------------------------------"
+          },
+          {
+            "name": "@description",
+            "body": "Handler which stops the propagation of the tap event if\nthe navigation bar or calendar headers will be tapped."
+          }
+        ],
+        "@param": [
+          {
+            "name": "@param",
+            "body": "e {qx.event.type.Pointer} The pointer up / down event",
+            "paramName": "e",
+            "description": " The pointer up / down event",
+            "type": "qx.event.type.Pointer"
+          }
+        ]
+      },
+      "type": "function",
+      "access": "protected"
+    },
+    "_onNavButtonTap": {
+      "location": {
+        "start": {
+          "line": 459,
+          "column": 4
+        },
+        "end": {
+          "line": 498,
+          "column": 5
+        }
+      },
+      "jsdoc": {
+        "@description": [
+          {
+            "name": "@description",
+            "body": "Event handler. Called when a navigation button has been tapped."
+          }
+        ],
+        "@param": [
+          {
+            "name": "@param",
+            "body": "evt {qx.event.type.Data} The data event.",
+            "paramName": "evt",
+            "description": " The data event.",
+            "type": "qx.event.type.Data"
+          }
+        ]
+      },
+      "type": "function",
+      "access": "protected"
+    },
+    "_onDayTap": {
+      "location": {
+        "start": {
+          "line": 506,
+          "column": 4
+        },
+        "end": {
+          "line": 510,
+          "column": 5
+        }
+      },
+      "jsdoc": {
+        "@description": [
+          {
+            "name": "@description",
+            "body": "Event handler. Called when a day has been tapped."
+          }
+        ],
+        "@param": [
+          {
+            "name": "@param",
+            "body": "evt {qx.event.type.Data} The event.",
+            "paramName": "evt",
+            "description": " The event.",
+            "type": "qx.event.type.Data"
+          }
+        ]
+      },
+      "type": "function",
+      "access": "protected"
+    },
+    "_onDayDblTap": {
+      "location": {
+        "start": {
+          "line": 516,
+          "column": 4
+        },
+        "end": {
+          "line": 518,
+          "column": 5
+        }
+      },
+      "jsdoc": {
+        "@description": [
+          {
+            "name": "@description",
+            "body": "Event handler. Called when a day has been double-tapped."
+          }
+        ]
+      },
+      "type": "function",
+      "access": "protected"
+    },
+    "_onKeyPress": {
+      "location": {
+        "start": {
+          "line": 526,
+          "column": 4
+        },
+        "end": {
+          "line": 612,
+          "column": 5
+        }
+      },
+      "jsdoc": {
+        "@description": [
+          {
+            "name": "@description",
+            "body": "Event handler. Called when a key was pressed."
+          }
+        ],
+        "@param": [
+          {
+            "name": "@param",
+            "body": "evt {qx.event.type.Data} The event.",
+            "paramName": "evt",
+            "description": " The event.",
+            "type": "qx.event.type.Data"
+          }
+        ]
+      },
+      "type": "function",
+      "access": "protected"
+    },
+    "showMonth": {
+      "location": {
+        "start": {
+          "line": 623,
+          "column": 4
+        },
+        "end": {
+          "line": 637,
+          "column": 5
+        }
+      },
+      "jsdoc": {
+        "@description": [
+          {
+            "name": "@description",
+            "body": "Shows a certain month."
+          }
+        ],
+        "@param": [
+          {
+            "name": "@param",
+            "body": "month {Integer ? null} the month to show (0 = january). If not set\nthe month will remain the same.",
+            "paramName": "month",
+            "description": " the month to show (0 = january). If not set\nthe month will remain the same.",
+            "optional": true,
+            "defaultValue": "null",
+            "type": "Integer"
+          },
+          {
+            "name": "@param",
+            "body": "year {Integer ? null} the year to show. If not set the year will\nremain the same.",
+            "paramName": "year",
+            "description": " the year to show. If not set the year will\nremain the same.",
+            "optional": true,
+            "defaultValue": "null",
+            "type": "Integer"
+          }
+        ]
+      },
+      "type": "function",
+      "access": "public"
+    },
+    "handleKeyPress": {
+      "location": {
+        "start": {
+          "line": 645,
+          "column": 4
+        },
+        "end": {
+          "line": 647,
+          "column": 5
+        }
+      },
+      "jsdoc": {
+        "@description": [
+          {
+            "name": "@description",
+            "body": "Event handler. Used to handle the key events."
+          }
+        ],
+        "@param": [
+          {
+            "name": "@param",
+            "body": "e {qx.event.type.Data} The event.",
+            "paramName": "e",
+            "description": " The event.",
+            "type": "qx.event.type.Data"
+          }
+        ]
+      },
+      "type": "function",
+      "access": "public"
+    },
+    "_updateDatePane": {
+      "location": {
+        "start": {
+          "line": 653,
+          "column": 4
+        },
+        "end": {
+          "line": 751,
+          "column": 5
+        }
+      },
+      "jsdoc": {
+        "@description": [
+          {
+            "name": "@description",
+            "body": "Updates the date pane."
+          }
+        ]
+      },
+      "type": "function",
+      "access": "protected"
+    },
+    "setCommand": {
+      "type": "function",
+      "name": "setCommand",
+      "abstract": false,
+      "mixin": false,
+      "inherited": true,
+      "access": "public",
+      "property": "set",
+      "jsdoc": {
+        "@param": [
+          {
+            "name": "@param",
+            "type": "qx.ui.command.Command",
+            "paramName": "value",
+            "desc": "Value for undefined"
+          }
+        ]
+      }
+    },
+    "getCommand": {
+      "type": "function",
+      "name": "getCommand",
+      "abstract": false,
+      "mixin": false,
+      "inherited": true,
+      "access": "public",
+      "property": "get",
+      "jsdoc": {
+        "@return": [
+          {
+            "name": "@return",
+            "type": "qx.ui.command.Command",
+            "desc": "Returns the value for undefined"
+          }
+        ]
+      }
+    },
+    "execute": {
+      "type": "function",
+      "name": "execute",
+      "abstract": false,
+      "mixin": true,
+      "inherited": true,
+      "access": "public",
+      "overriddenFrom": "qx.ui.form.IExecutable"
+    },
+    "setRequired": {
+      "type": "function",
+      "name": "setRequired",
+      "abstract": false,
+      "mixin": true,
+      "inherited": true,
+      "access": "public",
+      "overriddenFrom": "qx.ui.form.IForm",
+      "jsdoc": {
+        "@description": [
+          {
+            "name": "@description",
+            "body": "---------------------------------------------------------------------------\nREQUIRED PROPERTY\n---------------------------------------------------------------------------"
+          },
+          {
+            "name": "@description",
+            "body": "Sets the required state of a widget."
+          }
+        ],
+        "@param": [
+          {
+            "name": "@param",
+            "body": "required {Boolean} A flag signaling if the widget is required.",
+            "paramName": "required",
+            "description": " A flag signaling if the widget is required.",
+            "type": "Boolean"
+          }
+        ]
+      }
+    },
+    "getRequired": {
+      "type": "function",
+      "name": "getRequired",
+      "abstract": false,
+      "mixin": true,
+      "inherited": true,
+      "access": "public",
+      "overriddenFrom": "qx.ui.form.IForm",
+      "jsdoc": {
+        "@description": [
+          {
+            "name": "@description",
+            "body": "Return the current required state of the widget."
+          }
+        ],
+        "@return": [
+          {
+            "name": "@return",
+            "body": "{Boolean} True, if the widget is required.",
+            "type": "Boolean",
+            "desc": " True, if the widget is required."
+          }
+        ]
+      }
+    },
+    "setValid": {
+      "type": "function",
+      "name": "setValid",
+      "abstract": false,
+      "mixin": true,
+      "inherited": true,
+      "access": "public",
+      "overriddenFrom": "qx.ui.form.IForm",
+      "jsdoc": {
+        "@description": [
+          {
+            "name": "@description",
+            "body": "---------------------------------------------------------------------------\nVALID PROPERTY\n---------------------------------------------------------------------------"
+          },
+          {
+            "name": "@description",
+            "body": "Sets the valid state of the widget."
+          }
+        ],
+        "@param": [
+          {
+            "name": "@param",
+            "body": "valid {Boolean} The valid state of the widget.",
+            "paramName": "valid",
+            "description": " The valid state of the widget.",
+            "type": "Boolean"
+          }
+        ]
+      }
+    },
+    "getValid": {
+      "type": "function",
+      "name": "getValid",
+      "abstract": false,
+      "mixin": true,
+      "inherited": true,
+      "access": "public",
+      "overriddenFrom": "qx.ui.form.IForm",
+      "jsdoc": {
+        "@description": [
+          {
+            "name": "@description",
+            "body": "Returns the valid state of the widget."
+          }
+        ],
+        "@return": [
+          {
+            "name": "@return",
+            "body": "{Boolean} If the state of the widget is valid.",
+            "type": "Boolean",
+            "desc": " If the state of the widget is valid."
+          }
+        ]
+      }
+    },
+    "setInvalidMessage": {
+      "type": "function",
+      "name": "setInvalidMessage",
+      "abstract": false,
+      "mixin": true,
+      "inherited": true,
+      "access": "public",
+      "overriddenFrom": "qx.ui.form.IForm",
+      "jsdoc": {
+        "@description": [
+          {
+            "name": "@description",
+            "body": "---------------------------------------------------------------------------\nINVALID MESSAGE PROPERTY\n---------------------------------------------------------------------------"
+          },
+          {
+            "name": "@description",
+            "body": "Sets the invalid message of the widget."
+          }
+        ],
+        "@param": [
+          {
+            "name": "@param",
+            "body": "message {String} The invalid message.",
+            "paramName": "message",
+            "description": " The invalid message.",
+            "type": "String"
+          }
+        ]
+      }
+    },
+    "getInvalidMessage": {
+      "type": "function",
+      "name": "getInvalidMessage",
+      "abstract": false,
+      "mixin": true,
+      "inherited": true,
+      "access": "public",
+      "overriddenFrom": "qx.ui.form.IForm",
+      "jsdoc": {
+        "@description": [
+          {
+            "name": "@description",
+            "body": "Returns the invalid message of the widget."
+          }
+        ],
+        "@return": [
+          {
+            "name": "@return",
+            "body": "{String} The current set message.",
+            "type": "String",
+            "desc": " The current set message."
+          }
+        ]
+      }
+    },
+    "setRequiredInvalidMessage": {
+      "type": "function",
+      "name": "setRequiredInvalidMessage",
+      "abstract": false,
+      "mixin": true,
+      "inherited": true,
+      "access": "public",
+      "overriddenFrom": "qx.ui.form.IForm",
+      "jsdoc": {
+        "@description": [
+          {
+            "name": "@description",
+            "body": "---------------------------------------------------------------------------\nREQUIRED INVALID MESSAGE PROPERTY\n---------------------------------------------------------------------------"
+          },
+          {
+            "name": "@description",
+            "body": "Sets the invalid message if required of the widget."
+          }
+        ],
+        "@param": [
+          {
+            "name": "@param",
+            "body": "message {String} The invalid message.",
+            "paramName": "message",
+            "description": " The invalid message.",
+            "type": "String"
+          }
+        ]
+      }
+    },
+    "getRequiredInvalidMessage": {
+      "type": "function",
+      "name": "getRequiredInvalidMessage",
+      "abstract": false,
+      "mixin": true,
+      "inherited": true,
+      "access": "public",
+      "overriddenFrom": "qx.ui.form.IForm",
+      "jsdoc": {
+        "@description": [
+          {
+            "name": "@description",
+            "body": "Returns the invalid message if required of the widget."
+          }
+        ],
+        "@return": [
+          {
+            "name": "@return",
+            "body": "{String} The current set message.",
+            "type": "String",
+            "desc": " The current set message."
+          }
+        ]
+      }
+    },
+    "setValue": {
+      "type": "function",
+      "name": "setValue",
+      "abstract": false,
+      "mixin": false,
+      "inherited": false,
+      "access": "public",
+      "property": "set",
+      "jsdoc": {
+        "@param": [
+          {
+            "name": "@param",
+            "type": "Date",
+            "paramName": "value",
+            "desc": "Value for undefined"
+          }
+        ]
+      }
+    },
+    "resetValue": {
+      "type": "function",
+      "name": "resetValue",
+      "abstract": false,
+      "mixin": false,
+      "inherited": false,
+      "access": "public",
+      "property": "reset",
+      "jsdoc": {}
+    },
+    "getValue": {
+      "type": "function",
+      "name": "getValue",
+      "abstract": false,
+      "mixin": false,
+      "inherited": false,
+      "access": "public",
+      "property": "get",
+      "jsdoc": {
+        "@return": [
+          {
+            "name": "@return",
+            "type": "Date",
+            "desc": "Returns the value for undefined"
+          }
+        ]
+      }
+    },
+    "__onCommandExecute": {
+      "type": "function",
+      "name": "__onCommandExecute",
+      "abstract": false,
+      "mixin": true,
+      "inherited": true,
+      "access": "private",
+      "overriddenFrom": "qx.ui.core.MExecutable",
+      "jsdoc": {
+        "@description": [
+          {
+            "name": "@description",
+            "body": "Handler for the execute event of the command."
+          }
+        ],
+        "@param": [
+          {
+            "name": "@param",
+            "body": "e {qx.event.type.Event} The execute event of the command.",
+            "paramName": "e",
+            "description": " The execute event of the command.",
+            "type": "qx.event.type.Event"
+          }
+        ]
+      }
+    },
+    "_applyCommand": {
+      "type": "function",
+      "name": "_applyCommand",
+      "abstract": false,
+      "mixin": true,
+      "inherited": true,
+      "access": "protected",
+      "overriddenFrom": "qx.ui.core.MExecutable"
+    },
+    "resetCommand": {
+      "type": "function",
+      "name": "resetCommand",
+      "abstract": false,
+      "mixin": false,
+      "inherited": true,
+      "access": "public",
+      "property": "reset",
+      "jsdoc": {}
+    },
+    "_applyValid": {
+      "type": "function",
+      "name": "_applyValid",
+      "abstract": false,
+      "mixin": true,
+      "inherited": true,
+      "access": "protected",
+      "overriddenFrom": "qx.ui.form.MForm"
+    },
+    "__onChangeLocale": {
+      "type": "function",
+      "name": "__onChangeLocale",
+      "abstract": false,
+      "mixin": true,
+      "inherited": true,
+      "access": "private",
+      "overriddenFrom": "qx.ui.form.MForm",
+      "jsdoc": {
+        "@description": [
+          {
+            "name": "@description",
+            "body": "Locale change event handler"
+          }
+        ],
+        "@signature": [
+          {
+            "name": "@signature",
+            "body": "function(e)"
+          }
+        ],
+        "@param": [
+          {
+            "name": "@param",
+            "body": "e {Event} the change event",
+            "paramName": "e",
+            "description": " the change event",
+            "type": "Event"
+          }
+        ]
+      }
+    },
+    "isValid": {
+      "type": "function",
+      "name": "isValid",
+      "abstract": false,
+      "mixin": true,
+      "inherited": true,
+      "access": "public",
+      "overriddenFrom": "qx.ui.form.MForm",
+      "jsdoc": {
+        "@return": [
+          {
+            "name": "@return",
+            "type": "Boolean",
+            "desc": "Returns the value for undefined"
+          }
+        ]
+      }
+    },
+    "resetValid": {
+      "type": "function",
+      "name": "resetValid",
+      "abstract": false,
+      "mixin": true,
+      "inherited": true,
+      "access": "public",
+      "overriddenFrom": "qx.ui.form.MForm"
+    },
+    "isRequired": {
+      "type": "function",
+      "name": "isRequired",
+      "abstract": false,
+      "mixin": true,
+      "inherited": true,
+      "access": "public",
+      "overriddenFrom": "qx.ui.form.MForm",
+      "jsdoc": {
+        "@return": [
+          {
+            "name": "@return",
+            "type": "Boolean",
+            "desc": "Returns the value for undefined"
+          }
+        ]
+      }
+    },
+    "resetRequired": {
+      "type": "function",
+      "name": "resetRequired",
+      "abstract": false,
+      "mixin": true,
+      "inherited": true,
+      "access": "public",
+      "overriddenFrom": "qx.ui.form.MForm"
+    },
+    "resetInvalidMessage": {
+      "type": "function",
+      "name": "resetInvalidMessage",
+      "abstract": false,
+      "mixin": true,
+      "inherited": true,
+      "access": "public",
+      "overriddenFrom": "qx.ui.form.MForm"
+    },
+    "resetRequiredInvalidMessage": {
+      "type": "function",
+      "name": "resetRequiredInvalidMessage",
+      "abstract": false,
+      "mixin": true,
+      "inherited": true,
+      "access": "public",
+      "overriddenFrom": "qx.ui.form.MForm"
+    },
+    "getShownMonth": {
+      "type": "function",
+      "name": "getShownMonth",
+      "abstract": false,
+      "mixin": false,
+      "inherited": false,
+      "access": "public",
+      "property": "get",
+      "jsdoc": {
+        "@return": [
+          {
+            "name": "@return",
+            "type": "Integer",
+            "desc": "Returns the value for undefined"
+          }
+        ]
+      }
+    },
+    "setShownMonth": {
+      "type": "function",
+      "name": "setShownMonth",
+      "abstract": false,
+      "mixin": false,
+      "inherited": false,
+      "access": "public",
+      "property": "set",
+      "jsdoc": {
+        "@param": [
+          {
+            "name": "@param",
+            "type": "Integer",
+            "paramName": "value",
+            "desc": "Value for undefined"
+          }
+        ]
+      }
+    },
+    "resetShownMonth": {
+      "type": "function",
+      "name": "resetShownMonth",
+      "abstract": false,
+      "mixin": false,
+      "inherited": false,
+      "access": "public",
+      "property": "reset",
+      "jsdoc": {}
+    },
+    "getShownYear": {
+      "type": "function",
+      "name": "getShownYear",
+      "abstract": false,
+      "mixin": false,
+      "inherited": false,
+      "access": "public",
+      "property": "get",
+      "jsdoc": {
+        "@return": [
+          {
+            "name": "@return",
+            "type": "Integer",
+            "desc": "Returns the value for undefined"
+          }
+        ]
+      }
+    },
+    "setShownYear": {
+      "type": "function",
+      "name": "setShownYear",
+      "abstract": false,
+      "mixin": false,
+      "inherited": false,
+      "access": "public",
+      "property": "set",
+      "jsdoc": {
+        "@param": [
+          {
+            "name": "@param",
+            "type": "Integer",
+            "paramName": "value",
+            "desc": "Value for undefined"
+          }
+        ]
+      }
+    },
+    "resetShownYear": {
+      "type": "function",
+      "name": "resetShownYear",
+      "abstract": false,
+      "mixin": false,
+      "inherited": false,
+      "access": "public",
+      "property": "reset",
+      "jsdoc": {}
+    }
+  },
+  "destruct": {
+    "location": {
+      "start": {
+        "line": 763,
+        "column": 2
+      },
+      "end": {
+        "line": 770,
+        "column": 3
+      }
+    },
+    "jsdoc": {
+      "@description": [
+        {
+          "name": "@description",
+          "body": "****************************************************************************\nDESTRUCTOR\n****************************************************************************"
+        }
+      ]
+    }
+  },
+  "descendants": []
+}

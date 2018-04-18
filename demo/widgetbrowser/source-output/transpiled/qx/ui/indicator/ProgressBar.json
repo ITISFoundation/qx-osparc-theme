@@ -1,0 +1,375 @@
+{
+  "className": "qx.ui.indicator.ProgressBar",
+  "packageName": "qx.ui.indicator",
+  "name": "ProgressBar",
+  "superClass": "qx.ui.container.Composite",
+  "interfaces": [],
+  "mixins": [],
+  "clazz": {
+    "location": {
+      "start": {
+        "line": 51,
+        "column": 0
+      },
+      "end": {
+        "line": 207,
+        "column": 3
+      }
+    },
+    "jsdoc": {
+      "@description": [
+        {
+          "name": "@description",
+          "body": "***********************************************************************\n\nqooxdoo - the new era of web development\n\nhttp://qooxdoo.org\n\nCopyright:\n2004-2015 1&1 Internet AG, Germany, http://www.1und1.de\n\nLicense:\nMIT: https://opensource.org/licenses/MIT\nSee the LICENSE file in the project's top-level directory for details.\n\nAuthors:\nAdrian Olaru (adrianolaru)\n\n***********************************************************************"
+        },
+        {
+          "name": "@description",
+          "body": "The Progress bar is designed to simply display the current % complete\nfor a process.\n\nThe Value is limited between 0 and Maximum value.\nIt's not allowed to set a Maximum value of 0.  If you set a Maximum value\nbigger than 0, but smaller than Value, it will be limited to Value.\n\nThe following example creates and adds a progress bar to the root element.\nA listener is used to show the user if the value is changed,\nand another one when the progress is complete.\n\n<pre class='javascript'>\nvar pb = new qx.ui.indicator.ProgressBar();\nthis.getRoot().add(pb, { left : 20, top: 20});\n\npb.addListener(\"change\", function(e) {\nthis.debug(e.getData()); // % complete\nthis.debug(pb.getValue()); // absolute value\n});\n\npb.addListener(\"complete\", function(e) {\nthis.debug(\"complete\");\n});\n\n//set a value\npb.setValue(20);\n</pre>"
+        }
+      ],
+      "@childControl": [
+        {
+          "name": "@childControl",
+          "body": "progress {qx.ui.container.Composite} The progress bar"
+        }
+      ]
+    }
+  },
+  "type": "class",
+  "construct": {
+    "location": {
+      "start": {
+        "line": 60,
+        "column": 2
+      },
+      "end": {
+        "line": 75,
+        "column": 3
+      }
+    },
+    "jsdoc": {
+      "@description": [
+        {
+          "name": "@description",
+          "body": ""
+        }
+      ],
+      "@param": [
+        {
+          "name": "@param",
+          "body": "value {Number ? 0} Progress bar value",
+          "paramName": "value",
+          "description": " Progress bar value",
+          "optional": true,
+          "defaultValue": "0",
+          "type": "Number"
+        },
+        {
+          "name": "@param",
+          "body": "maximum {Number ? 100} Progress bar maximum value",
+          "paramName": "maximum",
+          "description": " Progress bar maximum value",
+          "optional": true,
+          "defaultValue": "100",
+          "type": "Number"
+        }
+      ]
+    }
+  },
+  "properties": {
+    "appearance": {
+      "location": {
+        "start": {
+          "line": 80,
+          "column": 4
+        },
+        "end": {
+          "line": 84,
+          "column": 5
+        }
+      },
+      "name": "appearance",
+      "propertyType": "new",
+      "refine": true,
+      "defaultValue": "progressbar",
+      "overriddenFrom": "qx.ui.core.Widget",
+      "appearsIn": {
+        "qx.ui.core.Widget": "class"
+      }
+    },
+    "maximum": {
+      "location": {
+        "start": {
+          "line": 87,
+          "column": 4
+        },
+        "end": {
+          "line": 92,
+          "column": 5
+        }
+      },
+      "jsdoc": {
+        "@description": [
+          {
+            "name": "@description",
+            "body": "Maximum value of the progress bar"
+          }
+        ]
+      },
+      "name": "maximum",
+      "propertyType": "new",
+      "event": "changeMaximum",
+      "apply": "_applyMaximum",
+      "defaultValue": 100
+    },
+    "value": {
+      "location": {
+        "start": {
+          "line": 95,
+          "column": 4
+        },
+        "end": {
+          "line": 100,
+          "column": 5
+        }
+      },
+      "jsdoc": {
+        "@description": [
+          {
+            "name": "@description",
+            "body": "Current value of the progress bar"
+          }
+        ]
+      },
+      "name": "value",
+      "propertyType": "new",
+      "event": "changeValue",
+      "apply": "_applyValue",
+      "defaultValue": 0
+    }
+  },
+  "members": {
+    "_applyValue": {
+      "location": {
+        "start": {
+          "line": 122,
+          "column": 4
+        },
+        "end": {
+          "line": 143,
+          "column": 5
+        }
+      },
+      "jsdoc": {
+        "@description": [
+          {
+            "name": "@description",
+            "body": "property apply"
+          }
+        ]
+      },
+      "type": "function",
+      "access": "protected"
+    },
+    "_applyMaximum": {
+      "location": {
+        "start": {
+          "line": 147,
+          "column": 4
+        },
+        "end": {
+          "line": 166,
+          "column": 5
+        }
+      },
+      "jsdoc": {
+        "@description": [
+          {
+            "name": "@description",
+            "body": "property apply"
+          }
+        ]
+      },
+      "type": "function",
+      "access": "protected"
+    },
+    "_createChildControlImpl": {
+      "location": {
+        "start": {
+          "line": 170,
+          "column": 4
+        },
+        "end": {
+          "line": 181,
+          "column": 5
+        }
+      },
+      "jsdoc": {
+        "@description": [
+          {
+            "name": "@description",
+            "body": "overridden"
+          }
+        ],
+        "@param": [
+          {
+            "name": "@param",
+            "body": "id {String} ID of the child control. If a # is used, the id is\nthe part in front of the #.",
+            "paramName": "id",
+            "description": " ID of the child control. If a # is used, the id is\nthe part in front of the #.",
+            "type": "String"
+          },
+          {
+            "name": "@param",
+            "body": "hash {String?undefined} If a child control name contains a #,\nall text following the # will be the hash argument.",
+            "paramName": "hash",
+            "description": " If a child control name contains a #,\nall text following the # will be the hash argument.",
+            "optional": true,
+            "defaultValue": "undefined",
+            "type": "String"
+          }
+        ],
+        "@return": [
+          {
+            "name": "@return",
+            "body": "{qx.ui.core.Widget} The created control or <code>null</code>",
+            "type": "qx.ui.core.Widget",
+            "desc": " The created control or <code>null</code>"
+          }
+        ]
+      },
+      "type": "function",
+      "access": "protected",
+      "overriddenFrom": "qx.ui.core.Widget",
+      "appearsIn": [
+        "qx.ui.core.Widget"
+      ]
+    },
+    "_changeProgress": {
+      "location": {
+        "start": {
+          "line": 189,
+          "column": 4
+        },
+        "end": {
+          "line": 205,
+          "column": 5
+        }
+      },
+      "jsdoc": {
+        "@description": [
+          {
+            "name": "@description",
+            "body": "Update the progress bar."
+          }
+        ],
+        "@param": [
+          {
+            "name": "@param",
+            "body": "value {Number} future value of progress bar",
+            "paramName": "value",
+            "description": " future value of progress bar",
+            "type": "Number"
+          }
+        ]
+      },
+      "type": "function",
+      "access": "protected"
+    },
+    "getMaximum": {
+      "type": "function",
+      "name": "getMaximum",
+      "abstract": false,
+      "mixin": false,
+      "inherited": false,
+      "access": "public",
+      "property": "get",
+      "jsdoc": {
+        "@return": [
+          {
+            "name": "@return",
+            "type": "any",
+            "desc": "Returns the value for undefined"
+          }
+        ]
+      }
+    },
+    "setMaximum": {
+      "type": "function",
+      "name": "setMaximum",
+      "abstract": false,
+      "mixin": false,
+      "inherited": false,
+      "access": "public",
+      "property": "set",
+      "jsdoc": {
+        "@param": [
+          {
+            "name": "@param",
+            "type": "any",
+            "paramName": "value",
+            "desc": "Value for undefined"
+          }
+        ]
+      }
+    },
+    "resetMaximum": {
+      "type": "function",
+      "name": "resetMaximum",
+      "abstract": false,
+      "mixin": false,
+      "inherited": false,
+      "access": "public",
+      "property": "reset",
+      "jsdoc": {}
+    },
+    "getValue": {
+      "type": "function",
+      "name": "getValue",
+      "abstract": false,
+      "mixin": false,
+      "inherited": false,
+      "access": "public",
+      "property": "get",
+      "jsdoc": {
+        "@return": [
+          {
+            "name": "@return",
+            "type": "any",
+            "desc": "Returns the value for undefined"
+          }
+        ]
+      }
+    },
+    "setValue": {
+      "type": "function",
+      "name": "setValue",
+      "abstract": false,
+      "mixin": false,
+      "inherited": false,
+      "access": "public",
+      "property": "set",
+      "jsdoc": {
+        "@param": [
+          {
+            "name": "@param",
+            "type": "any",
+            "paramName": "value",
+            "desc": "Value for undefined"
+          }
+        ]
+      }
+    },
+    "resetValue": {
+      "type": "function",
+      "name": "resetValue",
+      "abstract": false,
+      "mixin": false,
+      "inherited": false,
+      "access": "public",
+      "property": "reset",
+      "jsdoc": {}
+    }
+  },
+  "descendants": []
+}

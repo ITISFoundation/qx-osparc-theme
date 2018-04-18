@@ -1,0 +1,80 @@
+{
+  "className": "osparc.theme.osparcdark.Appearance",
+  "packageName": "osparc.theme.osparcdark",
+  "name": "Appearance",
+  "superClass": null,
+  "interfaces": [],
+  "mixins": [],
+  "clazz": {
+    "location": {
+      "start": {
+        "line": 38,
+        "column": 0
+      },
+      "end": {
+        "line": 2638,
+        "column": 5
+      }
+    },
+    "jsdoc": {
+      "@description": [
+        {
+          "name": "@description",
+          "body": "***********************************************************************\n\nOSparc Dark Theme for Qooxdoo\n\nCopyright:\n2018 IT'IS Foundation\n\nLicense:\nMIT: https://opensource.org/licenses/MIT\nSee the LICENSE file in the project's top-level directory for details.\n\nAuthors:\nTobias Oetiker (oetiker)\n\nOrigin:\nThis theme is based in large parts on the the Simple\ntheme included with Qooxdoo.\n***********************************************************************"
+        },
+        {
+          "name": "@description",
+          "body": "global osparc"
+        },
+        {
+          "name": "@description",
+          "body": "eslint no-negated-condition: \"off\", no-nested-ternary: \"off\""
+        },
+        {
+          "name": "@description",
+          "body": "***********************************************************************\n\n\n************************************************************************"
+        },
+        {
+          "name": "@description",
+          "body": "The simple qooxdoo appearance theme."
+        }
+      ],
+      "@asset": [
+        {
+          "name": "@asset",
+          "body": "qx/icon/Tango/16/apps/office-calendar.png"
+        },
+        {
+          "name": "@asset",
+          "body": "qx/icon/Tango/16/places/folder-open.png"
+        },
+        {
+          "name": "@asset",
+          "body": "qx/icon/Tango/16/places/folder.png"
+        },
+        {
+          "name": "@asset",
+          "body": "qx/icon/Tango/16/mimetypes/text-plain.png"
+        },
+        {
+          "name": "@asset",
+          "body": "qx/icon/Tango/16/actions/view-refresh.png"
+        },
+        {
+          "name": "@asset",
+          "body": "qx/icon/Tango/16/actions/window-close.png"
+        },
+        {
+          "name": "@asset",
+          "body": "qx/icon/Tango/16/actions/dialog-cancel.png"
+        },
+        {
+          "name": "@asset",
+          "body": "qx/icon/Tango/16/actions/dialog-ok.png"
+        }
+      ]
+    }
+  },
+  "type": "theme",
+  "descendants": []
+}

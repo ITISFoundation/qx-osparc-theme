@@ -1,0 +1,1913 @@
+{
+  "className": "qx.ui.control.ColorSelector",
+  "packageName": "qx.ui.control",
+  "name": "ColorSelector",
+  "superClass": "qx.ui.core.Widget",
+  "interfaces": [
+    "qx.ui.form.IColorForm"
+  ],
+  "mixins": [],
+  "clazz": {
+    "location": {
+      "start": {
+        "line": 53,
+        "column": 0
+      },
+      "end": {
+        "line": 1301,
+        "column": 3
+      }
+    },
+    "jsdoc": {
+      "@description": [
+        {
+          "name": "@description",
+          "body": "***********************************************************************\n\nqooxdoo - the new era of web development\n\nhttp://qooxdoo.org\n\nCopyright:\n2004-2008 1&1 Internet AG, Germany, http://www.1und1.de\n\nLicense:\nMIT: https://opensource.org/licenses/MIT\nSee the LICENSE file in the project's top-level directory for details.\n\nAuthors:\nSebastian Werner (wpbasti)\nAndreas Ecker (ecker)\nJonathan Weiß (jonathan_rass)\nMatthew Gregory\n\n***********************************************************************"
+        },
+        {
+          "name": "@description",
+          "body": "A typical color selector as known from native applications.\n\nIncludes support for RGB and HSB color areas."
+        }
+      ],
+      "@childControl": [
+        {
+          "name": "@childControl",
+          "body": "control-bar {qx.ui.container.Composite} container which holds the control-pane and visual-pane"
+        },
+        {
+          "name": "@childControl",
+          "body": "visual-pane {qx.ui.groupbox.GroupBox} pane shows the hue-saturation-pane and the brightness-pane"
+        },
+        {
+          "name": "@childControl",
+          "body": "hue-saturation-pane {qx.ui.container.Composite} shows the hue saturation and the handle to select"
+        },
+        {
+          "name": "@childControl",
+          "body": "hue-saturation-field {qx.ui.basic.Image} hue saturation image which shows all available colors"
+        },
+        {
+          "name": "@childControl",
+          "body": "hue-saturation-handle {qx.ui.basic.Image} handle to select the color using the pointer"
+        },
+        {
+          "name": "@childControl",
+          "body": "brightness-pane {qx.ui.container.Composite} shows the brightness field and the handle to select"
+        },
+        {
+          "name": "@childControl",
+          "body": "brightness-field {qx.ui.basic.Image} brightness image which shows all brightness steps"
+        },
+        {
+          "name": "@childControl",
+          "body": "brightness-handle {qx.ui.basic.Image} brightness handle to select the brightness using the pointer"
+        },
+        {
+          "name": "@childControl",
+          "body": "preset-field-set {qx.ui.groupbox.GroupBox} groupbox holding all preset colors"
+        },
+        {
+          "name": "@childControl",
+          "body": "colorbucket {qx.ui.core.Widget} color bucket"
+        },
+        {
+          "name": "@childControl",
+          "body": "preset-grid {qx.ui.container.Composite} container for all color presets"
+        },
+        {
+          "name": "@childControl",
+          "body": "input-field-set {qx.ui.groupbox.GroupBox} groupbox holding different input elements"
+        },
+        {
+          "name": "@childControl",
+          "body": "preview-field-set {qx.ui.groupbox.GroupBox} groupbox holding the two preview fields"
+        },
+        {
+          "name": "@childControl",
+          "body": "hex-field-composite {qx.ui.container.Composite} container for the hex field"
+        },
+        {
+          "name": "@childControl",
+          "body": "hex-field {qx.ui.form.TextField} textfield to input a hex value"
+        },
+        {
+          "name": "@childControl",
+          "body": "rgb-spinner-composite {qx.ui.container.Composite} container for the rgb spinner"
+        },
+        {
+          "name": "@childControl",
+          "body": "rgb-spinner-red {qx.ui.form.Spinner} spinner control for the red hex value"
+        },
+        {
+          "name": "@childControl",
+          "body": "rgb-spinner-green {qx.ui.form.Spinner} spinner control for the green hex value"
+        },
+        {
+          "name": "@childControl",
+          "body": "rgb-spinner-blue {qx.ui.form.Spinner} spinner control for the blue hex value"
+        },
+        {
+          "name": "@childControl",
+          "body": "hsb-spinner-composite {qx.ui.container.Composite} container for the hsb spinners"
+        },
+        {
+          "name": "@childControl",
+          "body": "hsb-spinner-hue {qx.ui.form.Spinner} spinner control for the huevalue"
+        },
+        {
+          "name": "@childControl",
+          "body": "hsb-spinner-saturation {qx.ui.form.Spinner} spinner control for the saturation value"
+        },
+        {
+          "name": "@childControl",
+          "body": "hsb-spinner-brightness {qx.ui.form.Spinner} spinner control for the brightness value"
+        },
+        {
+          "name": "@childControl",
+          "body": "preview-content-old {qx.ui.core.Widget} preview of the old color"
+        },
+        {
+          "name": "@childControl",
+          "body": "preview-content-new {qx.ui.core.Widget} preview of the new color"
+        }
+      ]
+    }
+  },
+  "type": "class",
+  "construct": {
+    "location": {
+      "start": {
+        "line": 70,
+        "column": 2
+      },
+      "end": {
+        "line": 80,
+        "column": 3
+      }
+    },
+    "jsdoc": {
+      "@description": [
+        {
+          "name": "@description",
+          "body": "****************************************************************************\nCONSTRUCTOR\n****************************************************************************"
+        },
+        {
+          "name": "@description",
+          "body": "Creates a ColorSelector."
+        }
+      ]
+    }
+  },
+  "properties": {
+    "appearance": {
+      "location": {
+        "start": {
+          "line": 115,
+          "column": 4
+        },
+        "end": {
+          "line": 119,
+          "column": 5
+        }
+      },
+      "jsdoc": {
+        "@description": [
+          {
+            "name": "@description",
+            "body": "overridden"
+          }
+        ]
+      },
+      "name": "appearance",
+      "propertyType": "new",
+      "refine": true,
+      "defaultValue": "colorselector",
+      "overriddenFrom": "qx.ui.core.Widget",
+      "appearsIn": {
+        "qx.ui.core.Widget": "class"
+      }
+    },
+    "red": {
+      "location": {
+        "start": {
+          "line": 122,
+          "column": 4
+        },
+        "end": {
+          "line": 127,
+          "column": 5
+        }
+      },
+      "jsdoc": {
+        "@description": [
+          {
+            "name": "@description",
+            "body": "The numeric red value of the selected color."
+          }
+        ]
+      },
+      "name": "red",
+      "propertyType": "new",
+      "apply": "_applyRed",
+      "check": "Integer",
+      "defaultValue": 255
+    },
+    "green": {
+      "location": {
+        "start": {
+          "line": 130,
+          "column": 4
+        },
+        "end": {
+          "line": 135,
+          "column": 5
+        }
+      },
+      "jsdoc": {
+        "@description": [
+          {
+            "name": "@description",
+            "body": "The numeric green value of the selected color."
+          }
+        ]
+      },
+      "name": "green",
+      "propertyType": "new",
+      "apply": "_applyGreen",
+      "check": "Integer",
+      "defaultValue": 255
+    },
+    "blue": {
+      "location": {
+        "start": {
+          "line": 138,
+          "column": 4
+        },
+        "end": {
+          "line": 143,
+          "column": 5
+        }
+      },
+      "jsdoc": {
+        "@description": [
+          {
+            "name": "@description",
+            "body": "The numeric blue value of the selected color."
+          }
+        ]
+      },
+      "name": "blue",
+      "propertyType": "new",
+      "apply": "_applyBlue",
+      "check": "Integer",
+      "defaultValue": 255
+    },
+    "hue": {
+      "location": {
+        "start": {
+          "line": 146,
+          "column": 4
+        },
+        "end": {
+          "line": 151,
+          "column": 5
+        }
+      },
+      "jsdoc": {
+        "@description": [
+          {
+            "name": "@description",
+            "body": "The numeric hue value."
+          }
+        ]
+      },
+      "name": "hue",
+      "propertyType": "new",
+      "apply": "_applyHue",
+      "check": "Number",
+      "defaultValue": 0
+    },
+    "saturation": {
+      "location": {
+        "start": {
+          "line": 154,
+          "column": 4
+        },
+        "end": {
+          "line": 159,
+          "column": 5
+        }
+      },
+      "jsdoc": {
+        "@description": [
+          {
+            "name": "@description",
+            "body": "The numeric saturation value."
+          }
+        ]
+      },
+      "name": "saturation",
+      "propertyType": "new",
+      "apply": "_applySaturation",
+      "check": "Number",
+      "defaultValue": 0
+    },
+    "brightness": {
+      "location": {
+        "start": {
+          "line": 162,
+          "column": 4
+        },
+        "end": {
+          "line": 167,
+          "column": 5
+        }
+      },
+      "jsdoc": {
+        "@description": [
+          {
+            "name": "@description",
+            "body": "The numeric brightness value."
+          }
+        ]
+      },
+      "name": "brightness",
+      "propertyType": "new",
+      "apply": "_applyBrightness",
+      "check": "Number",
+      "defaultValue": 100
+    }
+  },
+  "members": {
+    "__updateContext": {
+      "location": {
+        "start": {
+          "line": 190,
+          "column": 4
+        },
+        "end": {
+          "line": 190,
+          "column": 26
+        }
+      },
+      "jsdoc": {
+        "@description": [
+          {
+            "name": "@description",
+            "body": "---------------------------------------------------------------------------\nCONTEXT HANDLING\n---------------------------------------------------------------------------"
+          },
+          {
+            "name": "@description",
+            "body": ""
+          }
+        ],
+        "@type": [
+          {
+            "name": "@type",
+            "body": "{String} The context in which an update has occurred."
+          }
+        ]
+      },
+      "type": "variable",
+      "access": "private"
+    },
+    "__presetTable": {
+      "location": {
+        "start": {
+          "line": 196,
+          "column": 4
+        },
+        "end": {
+          "line": 198,
+          "column": 55
+        }
+      },
+      "jsdoc": {
+        "@description": [
+          {
+            "name": "@description",
+            "body": ""
+          }
+        ],
+        "@type": [
+          {
+            "name": "@type",
+            "body": "{Array} Map containing the preset colors."
+          }
+        ],
+        "@lint": [
+          {
+            "name": "@lint",
+            "body": "ignoreReferenceField(__presetTable)"
+          }
+        ]
+      },
+      "type": "variable",
+      "access": "private"
+    },
+    "__capture": {
+      "location": {
+        "start": {
+          "line": 203,
+          "column": 4
+        },
+        "end": {
+          "line": 203,
+          "column": 18
+        }
+      },
+      "jsdoc": {
+        "@description": [
+          {
+            "name": "@description",
+            "body": ""
+          }
+        ],
+        "@type": [
+          {
+            "name": "@type",
+            "body": "{String} Name of child control which is captured."
+          }
+        ]
+      },
+      "type": "variable",
+      "access": "private"
+    },
+    "__brightnessSubtract": {
+      "location": {
+        "start": {
+          "line": 208,
+          "column": 4
+        },
+        "end": {
+          "line": 208,
+          "column": 28
+        }
+      },
+      "jsdoc": {
+        "@description": [
+          {
+            "name": "@description",
+            "body": ""
+          }
+        ],
+        "@type": [
+          {
+            "name": "@type",
+            "body": "{Number} Numeric brightness value"
+          }
+        ]
+      },
+      "type": "variable",
+      "access": "private"
+    },
+    "__hueSaturationSubtractTop": {
+      "location": {
+        "start": {
+          "line": 213,
+          "column": 4
+        },
+        "end": {
+          "line": 213,
+          "column": 34
+        }
+      },
+      "jsdoc": {
+        "@description": [
+          {
+            "name": "@description",
+            "body": ""
+          }
+        ],
+        "@type": [
+          {
+            "name": "@type",
+            "body": "{Integer} HueSaturation's X coordinate"
+          }
+        ]
+      },
+      "type": "variable",
+      "access": "private"
+    },
+    "__hueSaturationSubtractLeft": {
+      "location": {
+        "start": {
+          "line": 218,
+          "column": 4
+        },
+        "end": {
+          "line": 218,
+          "column": 35
+        }
+      },
+      "jsdoc": {
+        "@description": [
+          {
+            "name": "@description",
+            "body": ""
+          }
+        ],
+        "@type": [
+          {
+            "name": "@type",
+            "body": "{Integer} HueSaturation's Y coordinate"
+          }
+        ]
+      },
+      "type": "variable",
+      "access": "private"
+    },
+    "__nullValue": {
+      "location": {
+        "start": {
+          "line": 221,
+          "column": 4
+        },
+        "end": {
+          "line": 221,
+          "column": 22
+        }
+      },
+      "jsdoc": {
+        "@description": [
+          {
+            "name": "@description",
+            "body": "internal boolean flag to signal, that the value is set to null"
+          }
+        ]
+      },
+      "type": "variable",
+      "access": "private"
+    },
+    "__preventChangeValueEvent": {
+      "location": {
+        "start": {
+          "line": 224,
+          "column": 4
+        },
+        "end": {
+          "line": 224,
+          "column": 37
+        }
+      },
+      "jsdoc": {
+        "@description": [
+          {
+            "name": "@description",
+            "body": "internal mutex to prevent the changeValue event to be fired too often"
+          }
+        ]
+      },
+      "type": "variable",
+      "access": "private"
+    },
+    "_createChildControlImpl": {
+      "location": {
+        "start": {
+          "line": 228,
+          "column": 4
+        },
+        "end": {
+          "line": 473,
+          "column": 5
+        }
+      },
+      "jsdoc": {
+        "@description": [
+          {
+            "name": "@description",
+            "body": "overridden"
+          }
+        ],
+        "@param": [
+          {
+            "name": "@param",
+            "body": "id {String} ID of the child control. If a # is used, the id is\nthe part in front of the #.",
+            "paramName": "id",
+            "description": " ID of the child control. If a # is used, the id is\nthe part in front of the #.",
+            "type": "String"
+          },
+          {
+            "name": "@param",
+            "body": "hash {String?undefined} If a child control name contains a #,\nall text following the # will be the hash argument.",
+            "paramName": "hash",
+            "description": " If a child control name contains a #,\nall text following the # will be the hash argument.",
+            "optional": true,
+            "defaultValue": "undefined",
+            "type": "String"
+          }
+        ],
+        "@return": [
+          {
+            "name": "@return",
+            "body": "{qx.ui.core.Widget} The created control or <code>null</code>",
+            "type": "qx.ui.core.Widget",
+            "desc": " The created control or <code>null</code>"
+          }
+        ]
+      },
+      "type": "function",
+      "access": "protected",
+      "overriddenFrom": "qx.ui.core.Widget",
+      "appearsIn": [
+        "qx.ui.core.Widget"
+      ]
+    },
+    "setValue": {
+      "location": {
+        "start": {
+          "line": 484,
+          "column": 4
+        },
+        "end": {
+          "line": 506,
+          "column": 5
+        }
+      },
+      "jsdoc": {
+        "@description": [
+          {
+            "name": "@description",
+            "body": "The value of the ColorSelector is a string containing the HEX value of\nthe currently selected color. Take a look at\n{@link qx.util.ColorUtil#stringToRgb} to see what kind of input the\nmethod can handle."
+          }
+        ],
+        "@param": [
+          {
+            "name": "@param",
+            "body": "value {String} The value of a color.",
+            "paramName": "value",
+            "description": " The value of a color.",
+            "type": "String"
+          }
+        ]
+      },
+      "type": "function",
+      "access": "public",
+      "overriddenFrom": "qx.ui.form.IColorForm",
+      "appearsIn": [
+        "qx.ui.form.IColorForm",
+        "qx.ui.form.IField"
+      ]
+    },
+    "getValue": {
+      "location": {
+        "start": {
+          "line": 515,
+          "column": 4
+        },
+        "end": {
+          "line": 520,
+          "column": 5
+        }
+      },
+      "jsdoc": {
+        "@description": [
+          {
+            "name": "@description",
+            "body": "Returns the currently selected color."
+          }
+        ],
+        "@return": [
+          {
+            "name": "@return",
+            "body": "{String | null} The HEX value of the color of if not color\nis set, null.",
+            "type": "String | null",
+            "desc": " The HEX value of the color of if not color\nis set, null."
+          }
+        ]
+      },
+      "type": "function",
+      "access": "public",
+      "overriddenFrom": "qx.ui.form.IColorForm",
+      "appearsIn": [
+        "qx.ui.form.IColorForm",
+        "qx.ui.form.IField"
+      ]
+    },
+    "resetValue": {
+      "location": {
+        "start": {
+          "line": 525,
+          "column": 4
+        },
+        "end": {
+          "line": 533,
+          "column": 5
+        }
+      },
+      "jsdoc": {
+        "@description": [
+          {
+            "name": "@description",
+            "body": "Resets the color to null."
+          }
+        ]
+      },
+      "type": "function",
+      "access": "public",
+      "overriddenFrom": "qx.ui.form.IColorForm",
+      "appearsIn": [
+        "qx.ui.form.IColorForm",
+        "qx.ui.form.IField"
+      ]
+    },
+    "__fireChangeValueEvent": {
+      "location": {
+        "start": {
+          "line": 539,
+          "column": 4
+        },
+        "end": {
+          "line": 546,
+          "column": 5
+        }
+      },
+      "jsdoc": {
+        "@description": [
+          {
+            "name": "@description",
+            "body": "Helper for firing the changeValue event and checking for the mutex."
+          }
+        ]
+      },
+      "type": "function",
+      "access": "private"
+    },
+    "_applyRed": {
+      "location": {
+        "start": {
+          "line": 557,
+          "column": 4
+        },
+        "end": {
+          "line": 585,
+          "column": 5
+        }
+      },
+      "jsdoc": {
+        "@description": [
+          {
+            "name": "@description",
+            "body": "---------------------------------------------------------------------------\nRGB MODIFIER\n---------------------------------------------------------------------------"
+          },
+          {
+            "name": "@description",
+            "body": "property apply"
+          }
+        ]
+      },
+      "type": "function",
+      "access": "protected"
+    },
+    "_applyGreen": {
+      "location": {
+        "start": {
+          "line": 589,
+          "column": 4
+        },
+        "end": {
+          "line": 617,
+          "column": 5
+        }
+      },
+      "jsdoc": {
+        "@description": [
+          {
+            "name": "@description",
+            "body": "property apply"
+          }
+        ]
+      },
+      "type": "function",
+      "access": "protected"
+    },
+    "_applyBlue": {
+      "location": {
+        "start": {
+          "line": 621,
+          "column": 4
+        },
+        "end": {
+          "line": 649,
+          "column": 5
+        }
+      },
+      "jsdoc": {
+        "@description": [
+          {
+            "name": "@description",
+            "body": "property apply"
+          }
+        ]
+      },
+      "type": "function",
+      "access": "protected"
+    },
+    "_applyHue": {
+      "location": {
+        "start": {
+          "line": 661,
+          "column": 4
+        },
+        "end": {
+          "line": 691,
+          "column": 5
+        }
+      },
+      "jsdoc": {
+        "@description": [
+          {
+            "name": "@description",
+            "body": "---------------------------------------------------------------------------\nHSB MODIFIER\n---------------------------------------------------------------------------"
+          },
+          {
+            "name": "@description",
+            "body": "property apply"
+          }
+        ]
+      },
+      "type": "function",
+      "access": "protected"
+    },
+    "_applySaturation": {
+      "location": {
+        "start": {
+          "line": 695,
+          "column": 4
+        },
+        "end": {
+          "line": 726,
+          "column": 5
+        }
+      },
+      "jsdoc": {
+        "@description": [
+          {
+            "name": "@description",
+            "body": "property apply"
+          }
+        ]
+      },
+      "type": "function",
+      "access": "protected"
+    },
+    "_applyBrightness": {
+      "location": {
+        "start": {
+          "line": 730,
+          "column": 4
+        },
+        "end": {
+          "line": 762,
+          "column": 5
+        }
+      },
+      "jsdoc": {
+        "@description": [
+          {
+            "name": "@description",
+            "body": "property apply"
+          }
+        ]
+      },
+      "type": "function",
+      "access": "protected"
+    },
+    "_onBrightnessHandlePointerDown": {
+      "location": {
+        "start": {
+          "line": 779,
+          "column": 4
+        },
+        "end": {
+          "line": 795,
+          "column": 5
+        }
+      },
+      "jsdoc": {
+        "@description": [
+          {
+            "name": "@description",
+            "body": "---------------------------------------------------------------------------\nBRIGHTNESS IMPLEMENTATION\n---------------------------------------------------------------------------"
+          },
+          {
+            "name": "@description",
+            "body": "Listener of pointerdown event on the brightness handle.\nAdjusts the color by changing the brightness."
+          }
+        ],
+        "@param": [
+          {
+            "name": "@param",
+            "body": "e {qx.event.type.Pointer} Incoming event object",
+            "paramName": "e",
+            "description": " Incoming event object",
+            "type": "qx.event.type.Pointer"
+          }
+        ]
+      },
+      "type": "function",
+      "access": "protected"
+    },
+    "_onBrightnessHandlePointerUp": {
+      "location": {
+        "start": {
+          "line": 804,
+          "column": 4
+        },
+        "end": {
+          "line": 809,
+          "column": 5
+        }
+      },
+      "jsdoc": {
+        "@description": [
+          {
+            "name": "@description",
+            "body": "Listener of pointerup event on the brightness handle.\nReleases the capture."
+          }
+        ],
+        "@param": [
+          {
+            "name": "@param",
+            "body": "e {qx.event.type.Pointer} Incoming event object",
+            "paramName": "e",
+            "description": " Incoming event object",
+            "type": "qx.event.type.Pointer"
+          }
+        ]
+      },
+      "type": "function",
+      "access": "protected"
+    },
+    "_onBrightnessHandlePointerMove": {
+      "location": {
+        "start": {
+          "line": 818,
+          "column": 4
+        },
+        "end": {
+          "line": 825,
+          "column": 5
+        }
+      },
+      "jsdoc": {
+        "@description": [
+          {
+            "name": "@description",
+            "body": "Listener of pointermove event on the brightness handle.\nForwards the event to _setBrightnessOnFieldEvent()."
+          }
+        ],
+        "@param": [
+          {
+            "name": "@param",
+            "body": "e {qx.event.type.Pointer} Incoming event object",
+            "paramName": "e",
+            "description": " Incoming event object",
+            "type": "qx.event.type.Pointer"
+          }
+        ]
+      },
+      "type": "function",
+      "access": "protected"
+    },
+    "_onBrightnessFieldPointerDown": {
+      "location": {
+        "start": {
+          "line": 834,
+          "column": 4
+        },
+        "end": {
+          "line": 847,
+          "column": 5
+        }
+      },
+      "jsdoc": {
+        "@description": [
+          {
+            "name": "@description",
+            "body": "Listener of pointerdown event on the brightness field.\nAdjusts the color by changing the brightness."
+          }
+        ],
+        "@param": [
+          {
+            "name": "@param",
+            "body": "e {qx.event.type.Pointer} Incoming event object",
+            "paramName": "e",
+            "description": " Incoming event object",
+            "type": "qx.event.type.Pointer"
+          }
+        ]
+      },
+      "type": "function",
+      "access": "protected"
+    },
+    "_onBrightnessPaneRoll": {
+      "location": {
+        "start": {
+          "line": 856,
+          "column": 4
+        },
+        "end": {
+          "line": 866,
+          "column": 5
+        }
+      },
+      "jsdoc": {
+        "@description": [
+          {
+            "name": "@description",
+            "body": "Listener of roll event on the brightness pane.\nAdjusts the color by changing the brightness."
+          }
+        ],
+        "@param": [
+          {
+            "name": "@param",
+            "body": "e {qx.event.type.Roll} Incoming event object",
+            "paramName": "e",
+            "description": " Incoming event object",
+            "type": "qx.event.type.Roll"
+          }
+        ]
+      },
+      "type": "function",
+      "access": "protected"
+    },
+    "_setBrightnessOnFieldEvent": {
+      "location": {
+        "start": {
+          "line": 874,
+          "column": 4
+        },
+        "end": {
+          "line": 889,
+          "column": 5
+        }
+      },
+      "jsdoc": {
+        "@description": [
+          {
+            "name": "@description",
+            "body": "Sets the brightness and moves the brightness handle."
+          }
+        ],
+        "@param": [
+          {
+            "name": "@param",
+            "body": "e {qx.event.type.Pointer} Incoming event object",
+            "paramName": "e",
+            "description": " Incoming event object",
+            "type": "qx.event.type.Pointer"
+          }
+        ]
+      },
+      "type": "function",
+      "access": "protected"
+    },
+    "_onHueSaturationHandlePointerUp": {
+      "location": {
+        "start": {
+          "line": 904,
+          "column": 4
+        },
+        "end": {
+          "line": 913,
+          "column": 5
+        }
+      },
+      "jsdoc": {
+        "@description": [
+          {
+            "name": "@description",
+            "body": "---------------------------------------------------------------------------\nHUE/SATURATION IMPLEMENTATION\n---------------------------------------------------------------------------"
+          },
+          {
+            "name": "@description",
+            "body": "Listener of pointerup event on the saturation handle.\nReleases pointer capture."
+          }
+        ],
+        "@param": [
+          {
+            "name": "@param",
+            "body": "e {qx.event.type.Pointer} Incoming event object",
+            "paramName": "e",
+            "description": " Incoming event object",
+            "type": "qx.event.type.Pointer"
+          }
+        ]
+      },
+      "type": "function",
+      "access": "protected"
+    },
+    "_onHueSaturationHandlePointerMove": {
+      "location": {
+        "start": {
+          "line": 922,
+          "column": 4
+        },
+        "end": {
+          "line": 931,
+          "column": 5
+        }
+      },
+      "jsdoc": {
+        "@description": [
+          {
+            "name": "@description",
+            "body": "Listener of pointermove event on the saturation handle.\nForwards the event to _onHueSaturationHandlePointerMove()."
+          }
+        ],
+        "@param": [
+          {
+            "name": "@param",
+            "body": "e {qx.event.type.Pointer} Incoming event object",
+            "paramName": "e",
+            "description": " Incoming event object",
+            "type": "qx.event.type.Pointer"
+          }
+        ]
+      },
+      "type": "function",
+      "access": "protected"
+    },
+    "_onHueSaturationFieldPointerDown": {
+      "location": {
+        "start": {
+          "line": 941,
+          "column": 4
+        },
+        "end": {
+          "line": 957,
+          "column": 5
+        }
+      },
+      "jsdoc": {
+        "@description": [
+          {
+            "name": "@description",
+            "body": "Listener of pointerdown event on the saturation field.\nAdjusts the color by changing the saturation.\nSets pointer capture."
+          }
+        ],
+        "@param": [
+          {
+            "name": "@param",
+            "body": "e {qx.event.type.Pointer} Incoming event object",
+            "paramName": "e",
+            "description": " Incoming event object",
+            "type": "qx.event.type.Pointer"
+          }
+        ]
+      },
+      "type": "function",
+      "access": "protected"
+    },
+    "_onHueSaturationPaneRoll": {
+      "location": {
+        "start": {
+          "line": 966,
+          "column": 4
+        },
+        "end": {
+          "line": 978,
+          "column": 5
+        }
+      },
+      "jsdoc": {
+        "@description": [
+          {
+            "name": "@description",
+            "body": "Listener of roll event on the saturation pane.\nAdjusts the color by changing the saturation."
+          }
+        ],
+        "@param": [
+          {
+            "name": "@param",
+            "body": "e {qx.event.type.Roll} Incoming event object",
+            "paramName": "e",
+            "description": " Incoming event object",
+            "type": "qx.event.type.Roll"
+          }
+        ]
+      },
+      "type": "function",
+      "access": "protected"
+    },
+    "_setHueSaturationOnFieldEvent": {
+      "location": {
+        "start": {
+          "line": 986,
+          "column": 4
+        },
+        "end": {
+          "line": 999,
+          "column": 5
+        }
+      },
+      "jsdoc": {
+        "@description": [
+          {
+            "name": "@description",
+            "body": "Sets the saturation and moves the saturation handle."
+          }
+        ],
+        "@param": [
+          {
+            "name": "@param",
+            "body": "e {qx.event.type.Pointer} Incoming event object",
+            "paramName": "e",
+            "description": " Incoming event object",
+            "type": "qx.event.type.Pointer"
+          }
+        ]
+      },
+      "type": "function",
+      "access": "protected"
+    },
+    "_setRedFromSpinner": {
+      "location": {
+        "start": {
+          "line": 1013,
+          "column": 4
+        },
+        "end": {
+          "line": 1022,
+          "column": 5
+        }
+      },
+      "jsdoc": {
+        "@description": [
+          {
+            "name": "@description",
+            "body": "---------------------------------------------------------------------------\nRGB SPINNER\n---------------------------------------------------------------------------"
+          },
+          {
+            "name": "@description",
+            "body": "Sets widget's red value to spinner's value."
+          }
+        ]
+      },
+      "type": "function",
+      "access": "protected"
+    },
+    "_setGreenFromSpinner": {
+      "location": {
+        "start": {
+          "line": 1028,
+          "column": 4
+        },
+        "end": {
+          "line": 1037,
+          "column": 5
+        }
+      },
+      "jsdoc": {
+        "@description": [
+          {
+            "name": "@description",
+            "body": "Sets widget's green value to spinner's value."
+          }
+        ]
+      },
+      "type": "function",
+      "access": "protected"
+    },
+    "_setBlueFromSpinner": {
+      "location": {
+        "start": {
+          "line": 1043,
+          "column": 4
+        },
+        "end": {
+          "line": 1052,
+          "column": 5
+        }
+      },
+      "jsdoc": {
+        "@description": [
+          {
+            "name": "@description",
+            "body": "Sets widget's blue value to spinner's value."
+          }
+        ]
+      },
+      "type": "function",
+      "access": "protected"
+    },
+    "_setHueFromSpinner": {
+      "location": {
+        "start": {
+          "line": 1066,
+          "column": 4
+        },
+        "end": {
+          "line": 1075,
+          "column": 5
+        }
+      },
+      "jsdoc": {
+        "@description": [
+          {
+            "name": "@description",
+            "body": "---------------------------------------------------------------------------\nHSB SPINNER\n---------------------------------------------------------------------------"
+          },
+          {
+            "name": "@description",
+            "body": "Sets widget's hue value to spinner's value."
+          }
+        ]
+      },
+      "type": "function",
+      "access": "protected"
+    },
+    "_setSaturationFromSpinner": {
+      "location": {
+        "start": {
+          "line": 1081,
+          "column": 4
+        },
+        "end": {
+          "line": 1090,
+          "column": 5
+        }
+      },
+      "jsdoc": {
+        "@description": [
+          {
+            "name": "@description",
+            "body": "Sets widget's saturation value to spinner's value."
+          }
+        ]
+      },
+      "type": "function",
+      "access": "protected"
+    },
+    "_setBrightnessFromSpinner": {
+      "location": {
+        "start": {
+          "line": 1096,
+          "column": 4
+        },
+        "end": {
+          "line": 1105,
+          "column": 5
+        }
+      },
+      "jsdoc": {
+        "@description": [
+          {
+            "name": "@description",
+            "body": "Sets widget's brightness value to spinner's value."
+          }
+        ]
+      },
+      "type": "function",
+      "access": "protected"
+    },
+    "_onHexFieldChange": {
+      "location": {
+        "start": {
+          "line": 1120,
+          "column": 4
+        },
+        "end": {
+          "line": 1139,
+          "column": 5
+        }
+      },
+      "jsdoc": {
+        "@description": [
+          {
+            "name": "@description",
+            "body": "---------------------------------------------------------------------------\nHEX FIELD\n---------------------------------------------------------------------------"
+          },
+          {
+            "name": "@description",
+            "body": "Changes red, green and blue value to the corresponding hexfield value."
+          }
+        ],
+        "@param": [
+          {
+            "name": "@param",
+            "body": "e {qx.event.type.Data} Incoming event object",
+            "paramName": "e",
+            "description": " Incoming event object",
+            "type": "qx.event.type.Data"
+          }
+        ]
+      },
+      "type": "function",
+      "access": "protected"
+    },
+    "_setHexFromRgb": {
+      "location": {
+        "start": {
+          "line": 1145,
+          "column": 4
+        },
+        "end": {
+          "line": 1155,
+          "column": 5
+        }
+      },
+      "jsdoc": {
+        "@description": [
+          {
+            "name": "@description",
+            "body": "Sets hexfield value to it's corresponding red, green and blue value."
+          }
+        ]
+      },
+      "type": "function",
+      "access": "protected"
+    },
+    "_onColorFieldTap": {
+      "location": {
+        "start": {
+          "line": 1172,
+          "column": 4
+        },
+        "end": {
+          "line": 1186,
+          "column": 5
+        }
+      },
+      "jsdoc": {
+        "@description": [
+          {
+            "name": "@description",
+            "body": "---------------------------------------------------------------------------\nCOLOR FIELD\n---------------------------------------------------------------------------"
+          },
+          {
+            "name": "@description",
+            "body": "Listener of tap event on the color field.\nSets red, green and blue values to tapped color field's background color."
+          }
+        ],
+        "@param": [
+          {
+            "name": "@param",
+            "body": "e {qx.event.type.Pointer} Incoming event object",
+            "paramName": "e",
+            "description": " Incoming event object",
+            "type": "qx.event.type.Pointer"
+          }
+        ]
+      },
+      "type": "function",
+      "access": "protected"
+    },
+    "_setHueFromRgb": {
+      "location": {
+        "start": {
+          "line": 1200,
+          "column": 4
+        },
+        "end": {
+          "line": 1216,
+          "column": 5
+        }
+      },
+      "jsdoc": {
+        "@description": [
+          {
+            "name": "@description",
+            "body": "---------------------------------------------------------------------------\nRGB/HSB SYNC\n---------------------------------------------------------------------------"
+          },
+          {
+            "name": "@description",
+            "body": "Sets hue value to it's corresponding red, green and blue value."
+          }
+        ]
+      },
+      "type": "function",
+      "access": "protected"
+    },
+    "_setRgbFromHue": {
+      "location": {
+        "start": {
+          "line": 1222,
+          "column": 4
+        },
+        "end": {
+          "line": 1237,
+          "column": 5
+        }
+      },
+      "jsdoc": {
+        "@description": [
+          {
+            "name": "@description",
+            "body": "Sets red, green and blue value to corresponding hue value."
+          }
+        ]
+      },
+      "type": "function",
+      "access": "protected"
+    },
+    "_setPreviewFromRgb": {
+      "location": {
+        "start": {
+          "line": 1251,
+          "column": 4
+        },
+        "end": {
+          "line": 1255,
+          "column": 5
+        }
+      },
+      "jsdoc": {
+        "@description": [
+          {
+            "name": "@description",
+            "body": "---------------------------------------------------------------------------\nPREVIEW SYNC\n---------------------------------------------------------------------------"
+          },
+          {
+            "name": "@description",
+            "body": "Sets preview pane's background color to corresponding red, green and blue color values."
+          }
+        ]
+      },
+      "type": "function",
+      "access": "protected"
+    },
+    "setPreviousColor": {
+      "location": {
+        "start": {
+          "line": 1265,
+          "column": 4
+        },
+        "end": {
+          "line": 1273,
+          "column": 5
+        }
+      },
+      "jsdoc": {
+        "@description": [
+          {
+            "name": "@description",
+            "body": "Sets previous color's to given values."
+          }
+        ],
+        "@param": [
+          {
+            "name": "@param",
+            "body": "red {Number} Red color value.",
+            "paramName": "red",
+            "description": " Red color value.",
+            "type": "Number"
+          },
+          {
+            "name": "@param",
+            "body": "green {Number} Green color value.",
+            "paramName": "green",
+            "description": " Green color value.",
+            "type": "Number"
+          },
+          {
+            "name": "@param",
+            "body": "blue {Number} Blue color value.",
+            "paramName": "blue",
+            "description": " Blue color value.",
+            "type": "Number"
+          }
+        ]
+      },
+      "type": "function",
+      "access": "public"
+    },
+    "_setBrightnessGradiant": {
+      "location": {
+        "start": {
+          "line": 1278,
+          "column": 4
+        },
+        "end": {
+          "line": 1284,
+          "column": 5
+        }
+      },
+      "jsdoc": {
+        "@description": [
+          {
+            "name": "@description",
+            "body": "Updates the background of the brightness field to give a nicer gradient"
+          }
+        ]
+      },
+      "type": "function",
+      "access": "protected"
+    },
+    "_onAppear": {
+      "location": {
+        "start": {
+          "line": 1292,
+          "column": 4
+        },
+        "end": {
+          "line": 1299,
+          "column": 5
+        }
+      },
+      "jsdoc": {
+        "@description": [
+          {
+            "name": "@description",
+            "body": "Listener for appear.\nSets preview pane's background color to the current color."
+          }
+        ],
+        "@param": [
+          {
+            "name": "@param",
+            "body": "e {qx.event.type.Data} Incoming event object",
+            "paramName": "e",
+            "description": " Incoming event object",
+            "type": "qx.event.type.Data"
+          }
+        ]
+      },
+      "type": "function",
+      "access": "protected"
+    },
+    "getRed": {
+      "type": "function",
+      "name": "getRed",
+      "abstract": false,
+      "mixin": false,
+      "inherited": false,
+      "access": "public",
+      "property": "get",
+      "jsdoc": {
+        "@return": [
+          {
+            "name": "@return",
+            "type": "Integer",
+            "desc": "Returns the value for undefined"
+          }
+        ]
+      }
+    },
+    "setRed": {
+      "type": "function",
+      "name": "setRed",
+      "abstract": false,
+      "mixin": false,
+      "inherited": false,
+      "access": "public",
+      "property": "set",
+      "jsdoc": {
+        "@param": [
+          {
+            "name": "@param",
+            "type": "Integer",
+            "paramName": "value",
+            "desc": "Value for undefined"
+          }
+        ]
+      }
+    },
+    "resetRed": {
+      "type": "function",
+      "name": "resetRed",
+      "abstract": false,
+      "mixin": false,
+      "inherited": false,
+      "access": "public",
+      "property": "reset",
+      "jsdoc": {}
+    },
+    "getGreen": {
+      "type": "function",
+      "name": "getGreen",
+      "abstract": false,
+      "mixin": false,
+      "inherited": false,
+      "access": "public",
+      "property": "get",
+      "jsdoc": {
+        "@return": [
+          {
+            "name": "@return",
+            "type": "Integer",
+            "desc": "Returns the value for undefined"
+          }
+        ]
+      }
+    },
+    "setGreen": {
+      "type": "function",
+      "name": "setGreen",
+      "abstract": false,
+      "mixin": false,
+      "inherited": false,
+      "access": "public",
+      "property": "set",
+      "jsdoc": {
+        "@param": [
+          {
+            "name": "@param",
+            "type": "Integer",
+            "paramName": "value",
+            "desc": "Value for undefined"
+          }
+        ]
+      }
+    },
+    "resetGreen": {
+      "type": "function",
+      "name": "resetGreen",
+      "abstract": false,
+      "mixin": false,
+      "inherited": false,
+      "access": "public",
+      "property": "reset",
+      "jsdoc": {}
+    },
+    "getBlue": {
+      "type": "function",
+      "name": "getBlue",
+      "abstract": false,
+      "mixin": false,
+      "inherited": false,
+      "access": "public",
+      "property": "get",
+      "jsdoc": {
+        "@return": [
+          {
+            "name": "@return",
+            "type": "Integer",
+            "desc": "Returns the value for undefined"
+          }
+        ]
+      }
+    },
+    "setBlue": {
+      "type": "function",
+      "name": "setBlue",
+      "abstract": false,
+      "mixin": false,
+      "inherited": false,
+      "access": "public",
+      "property": "set",
+      "jsdoc": {
+        "@param": [
+          {
+            "name": "@param",
+            "type": "Integer",
+            "paramName": "value",
+            "desc": "Value for undefined"
+          }
+        ]
+      }
+    },
+    "resetBlue": {
+      "type": "function",
+      "name": "resetBlue",
+      "abstract": false,
+      "mixin": false,
+      "inherited": false,
+      "access": "public",
+      "property": "reset",
+      "jsdoc": {}
+    },
+    "getHue": {
+      "type": "function",
+      "name": "getHue",
+      "abstract": false,
+      "mixin": false,
+      "inherited": false,
+      "access": "public",
+      "property": "get",
+      "jsdoc": {
+        "@return": [
+          {
+            "name": "@return",
+            "type": "Number",
+            "desc": "Returns the value for undefined"
+          }
+        ]
+      }
+    },
+    "setHue": {
+      "type": "function",
+      "name": "setHue",
+      "abstract": false,
+      "mixin": false,
+      "inherited": false,
+      "access": "public",
+      "property": "set",
+      "jsdoc": {
+        "@param": [
+          {
+            "name": "@param",
+            "type": "Number",
+            "paramName": "value",
+            "desc": "Value for undefined"
+          }
+        ]
+      }
+    },
+    "resetHue": {
+      "type": "function",
+      "name": "resetHue",
+      "abstract": false,
+      "mixin": false,
+      "inherited": false,
+      "access": "public",
+      "property": "reset",
+      "jsdoc": {}
+    },
+    "getSaturation": {
+      "type": "function",
+      "name": "getSaturation",
+      "abstract": false,
+      "mixin": false,
+      "inherited": false,
+      "access": "public",
+      "property": "get",
+      "jsdoc": {
+        "@return": [
+          {
+            "name": "@return",
+            "type": "Number",
+            "desc": "Returns the value for undefined"
+          }
+        ]
+      }
+    },
+    "setSaturation": {
+      "type": "function",
+      "name": "setSaturation",
+      "abstract": false,
+      "mixin": false,
+      "inherited": false,
+      "access": "public",
+      "property": "set",
+      "jsdoc": {
+        "@param": [
+          {
+            "name": "@param",
+            "type": "Number",
+            "paramName": "value",
+            "desc": "Value for undefined"
+          }
+        ]
+      }
+    },
+    "resetSaturation": {
+      "type": "function",
+      "name": "resetSaturation",
+      "abstract": false,
+      "mixin": false,
+      "inherited": false,
+      "access": "public",
+      "property": "reset",
+      "jsdoc": {}
+    },
+    "getBrightness": {
+      "type": "function",
+      "name": "getBrightness",
+      "abstract": false,
+      "mixin": false,
+      "inherited": false,
+      "access": "public",
+      "property": "get",
+      "jsdoc": {
+        "@return": [
+          {
+            "name": "@return",
+            "type": "Number",
+            "desc": "Returns the value for undefined"
+          }
+        ]
+      }
+    },
+    "setBrightness": {
+      "type": "function",
+      "name": "setBrightness",
+      "abstract": false,
+      "mixin": false,
+      "inherited": false,
+      "access": "public",
+      "property": "set",
+      "jsdoc": {
+        "@param": [
+          {
+            "name": "@param",
+            "type": "Number",
+            "paramName": "value",
+            "desc": "Value for undefined"
+          }
+        ]
+      }
+    },
+    "resetBrightness": {
+      "type": "function",
+      "name": "resetBrightness",
+      "abstract": false,
+      "mixin": false,
+      "inherited": false,
+      "access": "public",
+      "property": "reset",
+      "jsdoc": {}
+    }
+  },
+  "descendants": []
+}

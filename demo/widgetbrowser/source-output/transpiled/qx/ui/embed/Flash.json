@@ -1,0 +1,1613 @@
+{
+  "className": "qx.ui.embed.Flash",
+  "packageName": "qx.ui.embed",
+  "name": "Flash",
+  "superClass": "qx.ui.core.Widget",
+  "interfaces": [],
+  "mixins": [],
+  "clazz": {
+    "location": {
+      "start": {
+        "line": 22,
+        "column": 0
+      },
+      "end": {
+        "line": 452,
+        "column": 3
+      }
+    },
+    "jsdoc": {
+      "@description": [
+        {
+          "name": "@description",
+          "body": "***********************************************************************\n\nqooxdoo - the new era of web development\n\nhttp://qooxdoo.org\n\nCopyright:\n2004-2008 1&1 Internet AG, Germany, http://www.1und1.de\n\nLicense:\nMIT: https://opensource.org/licenses/MIT\nSee the LICENSE file in the project's top-level directory for details.\n\nAuthors:\nChristian Hagendorn (chris_schmidt)\n\n***********************************************************************"
+        },
+        {
+          "name": "@description",
+          "body": "The Flash widget embeds the HMTL Flash element"
+        }
+      ]
+    }
+  },
+  "type": "class",
+  "construct": {
+    "location": {
+      "start": {
+        "line": 33,
+        "column": 2
+      },
+      "end": {
+        "line": 68,
+        "column": 3
+      }
+    },
+    "jsdoc": {
+      "@description": [
+        {
+          "name": "@description",
+          "body": "Constructs a flash widget."
+        }
+      ],
+      "@param": [
+        {
+          "name": "@param",
+          "body": "source {String} The URL of the Flash movie to display.",
+          "paramName": "source",
+          "description": " The URL of the Flash movie to display.",
+          "type": "String"
+        },
+        {
+          "name": "@param",
+          "body": "id {String?null} The unique id for the Flash movie.",
+          "paramName": "id",
+          "description": " The unique id for the Flash movie.",
+          "optional": true,
+          "defaultValue": "null",
+          "type": "String"
+        }
+      ]
+    }
+  },
+  "properties": {
+    "source": {
+      "location": {
+        "start": {
+          "line": 104,
+          "column": 4
+        },
+        "end": {
+          "line": 108,
+          "column": 5
+        }
+      },
+      "jsdoc": {
+        "@description": [
+          {
+            "name": "@description",
+            "body": "The URL of the Flash movie."
+          }
+        ]
+      },
+      "name": "source",
+      "propertyType": "new",
+      "apply": "_applySource",
+      "check": "String"
+    },
+    "id": {
+      "location": {
+        "start": {
+          "line": 113,
+          "column": 4
+        },
+        "end": {
+          "line": 117,
+          "column": 5
+        }
+      },
+      "jsdoc": {
+        "@description": [
+          {
+            "name": "@description",
+            "body": "The unique Flash movie id."
+          }
+        ]
+      },
+      "name": "id",
+      "propertyType": "new",
+      "apply": "_applyId",
+      "check": "String"
+    },
+    "quality": {
+      "location": {
+        "start": {
+          "line": 122,
+          "column": 4
+        },
+        "end": {
+          "line": 128,
+          "column": 5
+        }
+      },
+      "jsdoc": {
+        "@description": [
+          {
+            "name": "@description",
+            "body": "Set the quality attribute for the Flash movie."
+          }
+        ]
+      },
+      "name": "quality",
+      "propertyType": "new",
+      "apply": "_applyQuality",
+      "allowNull": true,
+      "possibleValues": [
+        "low",
+        "autolow",
+        "autohigh",
+        "medium",
+        "high",
+        "best"
+      ],
+      "defaultValue": "best"
+    },
+    "scale": {
+      "location": {
+        "start": {
+          "line": 133,
+          "column": 4
+        },
+        "end": {
+          "line": 138,
+          "column": 5
+        }
+      },
+      "jsdoc": {
+        "@description": [
+          {
+            "name": "@description",
+            "body": "Set the scale attribute for the Flash movie."
+          }
+        ]
+      },
+      "name": "scale",
+      "propertyType": "new",
+      "apply": "_applyScale",
+      "allowNull": true,
+      "possibleValues": [
+        "showall",
+        "noborder",
+        "exactfit",
+        "noscale"
+      ]
+    },
+    "wmode": {
+      "location": {
+        "start": {
+          "line": 143,
+          "column": 4
+        },
+        "end": {
+          "line": 149,
+          "column": 5
+        }
+      },
+      "jsdoc": {
+        "@description": [
+          {
+            "name": "@description",
+            "body": "Set the wmode attribute for the Flash movie."
+          }
+        ]
+      },
+      "name": "wmode",
+      "propertyType": "new",
+      "apply": "_applyWmode",
+      "allowNull": true,
+      "possibleValues": [
+        "window",
+        "opaque",
+        "transparent"
+      ],
+      "defaultValue": "opaque"
+    },
+    "play": {
+      "location": {
+        "start": {
+          "line": 154,
+          "column": 4
+        },
+        "end": {
+          "line": 159,
+          "column": 5
+        }
+      },
+      "jsdoc": {
+        "@description": [
+          {
+            "name": "@description",
+            "body": "Set the play attribute for the Flash movie."
+          }
+        ]
+      },
+      "name": "play",
+      "propertyType": "new",
+      "apply": "_applyPlay",
+      "allowNull": true,
+      "check": "Boolean"
+    },
+    "loop": {
+      "location": {
+        "start": {
+          "line": 164,
+          "column": 4
+        },
+        "end": {
+          "line": 169,
+          "column": 5
+        }
+      },
+      "jsdoc": {
+        "@description": [
+          {
+            "name": "@description",
+            "body": "Set the loop attribute for the Flash movie."
+          }
+        ]
+      },
+      "name": "loop",
+      "propertyType": "new",
+      "apply": "_applyLoop",
+      "allowNull": true,
+      "check": "Boolean"
+    },
+    "mayScript": {
+      "location": {
+        "start": {
+          "line": 174,
+          "column": 4
+        },
+        "end": {
+          "line": 179,
+          "column": 5
+        }
+      },
+      "jsdoc": {
+        "@description": [
+          {
+            "name": "@description",
+            "body": "Set the mayscript attribute for the Flash movie."
+          }
+        ]
+      },
+      "name": "mayScript",
+      "propertyType": "new",
+      "apply": "_applyMayScript",
+      "allowNull": false,
+      "check": "Boolean"
+    },
+    "menu": {
+      "location": {
+        "start": {
+          "line": 184,
+          "column": 4
+        },
+        "end": {
+          "line": 189,
+          "column": 5
+        }
+      },
+      "jsdoc": {
+        "@description": [
+          {
+            "name": "@description",
+            "body": "Set the menu attribute for the Flash movie."
+          }
+        ]
+      },
+      "name": "menu",
+      "propertyType": "new",
+      "apply": "_applyMenu",
+      "allowNull": true,
+      "check": "Boolean"
+    },
+    "allowScriptAccess": {
+      "location": {
+        "start": {
+          "line": 194,
+          "column": 4
+        },
+        "end": {
+          "line": 200,
+          "column": 5
+        }
+      },
+      "jsdoc": {
+        "@description": [
+          {
+            "name": "@description",
+            "body": "Set allow script access"
+          }
+        ]
+      },
+      "name": "allowScriptAccess",
+      "propertyType": "new",
+      "apply": "_applyAllowScriptAccess",
+      "allowNull": true,
+      "possibleValues": [
+        "sameDomain",
+        "always",
+        "never"
+      ],
+      "defaultValue": "sameDomain"
+    },
+    "liveConnect": {
+      "location": {
+        "start": {
+          "line": 205,
+          "column": 4
+        },
+        "end": {
+          "line": 211,
+          "column": 5
+        }
+      },
+      "jsdoc": {
+        "@description": [
+          {
+            "name": "@description",
+            "body": "Enable/disable live connection"
+          }
+        ]
+      },
+      "name": "liveConnect",
+      "propertyType": "new",
+      "apply": "_applyLiveConnect",
+      "allowNull": true,
+      "check": "Boolean",
+      "defaultValue": true
+    },
+    "variables": {
+      "location": {
+        "start": {
+          "line": 216,
+          "column": 4
+        },
+        "end": {
+          "line": 221,
+          "column": 5
+        }
+      },
+      "jsdoc": {
+        "@description": [
+          {
+            "name": "@description",
+            "body": "Set the 'FlashVars' to pass variables to the Flash movie."
+          }
+        ]
+      },
+      "name": "variables",
+      "propertyType": "new",
+      "apply": "_applyVariables",
+      "check": "Map",
+      "defaultValue": {}
+    },
+    "loadTimeout": {
+      "location": {
+        "start": {
+          "line": 226,
+          "column": 4
+        },
+        "end": {
+          "line": 230,
+          "column": 5
+        }
+      },
+      "jsdoc": {
+        "@description": [
+          {
+            "name": "@description",
+            "body": "A timeout when trying to load the flash source."
+          }
+        ]
+      },
+      "name": "loadTimeout",
+      "propertyType": "new",
+      "check": "Integer",
+      "defaultValue": 10000
+    }
+  },
+  "members": {
+    "__time": {
+      "location": {
+        "start": {
+          "line": 237,
+          "column": 4
+        },
+        "end": {
+          "line": 237,
+          "column": 17
+        }
+      },
+      "jsdoc": {
+        "@description": [
+          {
+            "name": "@description",
+            "body": ""
+          }
+        ],
+        "@type": [
+          {
+            "name": "@type",
+            "body": "{Integer} The time stamp when the loading begins."
+          }
+        ]
+      },
+      "type": "variable",
+      "access": "private"
+    },
+    "getFlashElement": {
+      "location": {
+        "start": {
+          "line": 255,
+          "column": 4
+        },
+        "end": {
+          "line": 264,
+          "column": 5
+        }
+      },
+      "jsdoc": {
+        "@description": [
+          {
+            "name": "@description",
+            "body": "---------------------------------------------------------------------------\nPUBLIC WIDGET API\n---------------------------------------------------------------------------"
+          },
+          {
+            "name": "@description",
+            "body": "Returns the DOM element of the Flash movie.\n\nNote: If you call the method before the widget is rendered, it will\nalways return <code>null</code>. Therefore call the method after\nthe {@link #appear} event is fired."
+          }
+        ],
+        "@return": [
+          {
+            "name": "@return",
+            "body": "{Element|null} The DOM element of the Flash movie.",
+            "type": "Element|null",
+            "desc": " The DOM element of the Flash movie."
+          }
+        ]
+      },
+      "type": "function",
+      "access": "public"
+    },
+    "isLoaded": {
+      "location": {
+        "start": {
+          "line": 273,
+          "column": 4
+        },
+        "end": {
+          "line": 275,
+          "column": 5
+        }
+      },
+      "jsdoc": {
+        "@description": [
+          {
+            "name": "@description",
+            "body": "Checks if the movie is loaded."
+          }
+        ],
+        "@return": [
+          {
+            "name": "@return",
+            "body": "{Boolean} <code>true</code> When the movie is completely loaded,\notherwise <code>false</code>.",
+            "type": "Boolean",
+            "desc": " <code>true</code> When the movie is completely loaded,\notherwise <code>false</code>."
+          }
+        ]
+      },
+      "type": "function",
+      "access": "public"
+    },
+    "getPercentLoaded": {
+      "location": {
+        "start": {
+          "line": 283,
+          "column": 4
+        },
+        "end": {
+          "line": 302,
+          "column": 5
+        }
+      },
+      "jsdoc": {
+        "@description": [
+          {
+            "name": "@description",
+            "body": "Returns the current loaded state from the Flash movie."
+          }
+        ],
+        "@return": [
+          {
+            "name": "@return",
+            "body": "{Integer} The loaded percent value.",
+            "type": "Integer",
+            "desc": " The loaded percent value."
+          }
+        ]
+      },
+      "type": "function",
+      "access": "public"
+    },
+    "_createContentElement": {
+      "location": {
+        "start": {
+          "line": 306,
+          "column": 4
+        },
+        "end": {
+          "line": 310,
+          "column": 5
+        }
+      },
+      "jsdoc": {
+        "@description": [
+          {
+            "name": "@description",
+            "body": "overridden"
+          }
+        ],
+        "@return": [
+          {
+            "name": "@return",
+            "body": "{qx.html.Element} The widget's content element",
+            "type": "qx.html.Element",
+            "desc": " The widget's content element"
+          }
+        ]
+      },
+      "type": "function",
+      "access": "protected",
+      "overriddenFrom": "qx.ui.core.Widget",
+      "appearsIn": [
+        "qx.ui.core.Widget"
+      ]
+    },
+    "_checkLoading": {
+      "location": {
+        "start": {
+          "line": 319,
+          "column": 4
+        },
+        "end": {
+          "line": 354,
+          "column": 5
+        }
+      },
+      "jsdoc": {
+        "@description": [
+          {
+            "name": "@description",
+            "body": "Checks the current loaded state and fires one of the defined events:\n{@link #loading}, {@link #loaded} or {@link #timeout}.\n\nNote the {@link #timeout} event is fired when the check reached the\ndefined {@link #loadTimeout}."
+          }
+        ]
+      },
+      "type": "function",
+      "access": "protected"
+    },
+    "_applySource": {
+      "location": {
+        "start": {
+          "line": 365,
+          "column": 4
+        },
+        "end": {
+          "line": 370,
+          "column": 5
+        }
+      },
+      "jsdoc": {
+        "@description": [
+          {
+            "name": "@description",
+            "body": "---------------------------------------------------------------------------\nAPPLY METHODS\n---------------------------------------------------------------------------"
+          },
+          {
+            "name": "@description",
+            "body": "property apply"
+          }
+        ]
+      },
+      "type": "function",
+      "access": "protected"
+    },
+    "_applyId": {
+      "location": {
+        "start": {
+          "line": 373,
+          "column": 4
+        },
+        "end": {
+          "line": 377,
+          "column": 5
+        }
+      },
+      "jsdoc": {
+        "@description": [
+          {
+            "name": "@description",
+            "body": "property apply"
+          }
+        ]
+      },
+      "type": "function",
+      "access": "protected"
+    },
+    "_applyVariables": {
+      "location": {
+        "start": {
+          "line": 380,
+          "column": 4
+        },
+        "end": {
+          "line": 384,
+          "column": 5
+        }
+      },
+      "jsdoc": {
+        "@description": [
+          {
+            "name": "@description",
+            "body": "property apply"
+          }
+        ]
+      },
+      "type": "function",
+      "access": "protected"
+    },
+    "_applyMayScript": {
+      "location": {
+        "start": {
+          "line": 387,
+          "column": 4
+        },
+        "end": {
+          "line": 391,
+          "column": 5
+        }
+      },
+      "jsdoc": {
+        "@description": [
+          {
+            "name": "@description",
+            "body": "property apply"
+          }
+        ]
+      },
+      "type": "function",
+      "access": "protected"
+    },
+    "_applyQuality": {
+      "location": {
+        "start": {
+          "line": 394,
+          "column": 4
+        },
+        "end": {
+          "line": 396,
+          "column": 5
+        }
+      },
+      "jsdoc": {
+        "@description": [
+          {
+            "name": "@description",
+            "body": "property apply"
+          }
+        ]
+      },
+      "type": "function",
+      "access": "protected"
+    },
+    "_applyScale": {
+      "location": {
+        "start": {
+          "line": 399,
+          "column": 4
+        },
+        "end": {
+          "line": 401,
+          "column": 5
+        }
+      },
+      "jsdoc": {
+        "@description": [
+          {
+            "name": "@description",
+            "body": "property apply"
+          }
+        ]
+      },
+      "type": "function",
+      "access": "protected"
+    },
+    "_applyWmode": {
+      "location": {
+        "start": {
+          "line": 404,
+          "column": 4
+        },
+        "end": {
+          "line": 406,
+          "column": 5
+        }
+      },
+      "jsdoc": {
+        "@description": [
+          {
+            "name": "@description",
+            "body": "property apply"
+          }
+        ]
+      },
+      "type": "function",
+      "access": "protected"
+    },
+    "_applyPlay": {
+      "location": {
+        "start": {
+          "line": 409,
+          "column": 4
+        },
+        "end": {
+          "line": 411,
+          "column": 5
+        }
+      },
+      "jsdoc": {
+        "@description": [
+          {
+            "name": "@description",
+            "body": "property apply"
+          }
+        ]
+      },
+      "type": "function",
+      "access": "protected"
+    },
+    "_applyLoop": {
+      "location": {
+        "start": {
+          "line": 414,
+          "column": 4
+        },
+        "end": {
+          "line": 416,
+          "column": 5
+        }
+      },
+      "jsdoc": {
+        "@description": [
+          {
+            "name": "@description",
+            "body": "property apply"
+          }
+        ]
+      },
+      "type": "function",
+      "access": "protected"
+    },
+    "_applyMenu": {
+      "location": {
+        "start": {
+          "line": 419,
+          "column": 4
+        },
+        "end": {
+          "line": 421,
+          "column": 5
+        }
+      },
+      "jsdoc": {
+        "@description": [
+          {
+            "name": "@description",
+            "body": "property apply"
+          }
+        ]
+      },
+      "type": "function",
+      "access": "protected"
+    },
+    "_applyAllowScriptAccess": {
+      "location": {
+        "start": {
+          "line": 424,
+          "column": 4
+        },
+        "end": {
+          "line": 426,
+          "column": 5
+        }
+      },
+      "jsdoc": {
+        "@description": [
+          {
+            "name": "@description",
+            "body": "property apply"
+          }
+        ]
+      },
+      "type": "function",
+      "access": "protected"
+    },
+    "_applyLiveConnect": {
+      "location": {
+        "start": {
+          "line": 429,
+          "column": 4
+        },
+        "end": {
+          "line": 431,
+          "column": 5
+        }
+      },
+      "jsdoc": {
+        "@description": [
+          {
+            "name": "@description",
+            "body": "property apply"
+          }
+        ]
+      },
+      "type": "function",
+      "access": "protected"
+    },
+    "__flashParamHelper": {
+      "location": {
+        "start": {
+          "line": 446,
+          "column": 4
+        },
+        "end": {
+          "line": 450,
+          "column": 5
+        }
+      },
+      "jsdoc": {
+        "@description": [
+          {
+            "name": "@description",
+            "body": "---------------------------------------------------------------------------\nHELPER METHODS\n---------------------------------------------------------------------------"
+          },
+          {
+            "name": "@description",
+            "body": "Set the attribute for the Flash DOM element."
+          }
+        ],
+        "@param": [
+          {
+            "name": "@param",
+            "body": "key {String} Flash Player attribute name.",
+            "paramName": "key",
+            "description": " Flash Player attribute name.",
+            "type": "String"
+          },
+          {
+            "name": "@param",
+            "body": "value {String?null} The value for the attribute, <code>null</code>\nif the attribute should be removed from the DOM element.",
+            "paramName": "value",
+            "description": " The value for the attribute, <code>null</code>\nif the attribute should be removed from the DOM element.",
+            "optional": true,
+            "defaultValue": "null",
+            "type": "String"
+          }
+        ]
+      },
+      "type": "function",
+      "access": "private"
+    },
+    "getSource": {
+      "type": "function",
+      "name": "getSource",
+      "abstract": false,
+      "mixin": false,
+      "inherited": false,
+      "access": "public",
+      "property": "get",
+      "jsdoc": {
+        "@return": [
+          {
+            "name": "@return",
+            "type": "String",
+            "desc": "Returns the value for undefined"
+          }
+        ]
+      }
+    },
+    "setSource": {
+      "type": "function",
+      "name": "setSource",
+      "abstract": false,
+      "mixin": false,
+      "inherited": false,
+      "access": "public",
+      "property": "set",
+      "jsdoc": {
+        "@param": [
+          {
+            "name": "@param",
+            "type": "String",
+            "paramName": "value",
+            "desc": "Value for undefined"
+          }
+        ]
+      }
+    },
+    "resetSource": {
+      "type": "function",
+      "name": "resetSource",
+      "abstract": false,
+      "mixin": false,
+      "inherited": false,
+      "access": "public",
+      "property": "reset",
+      "jsdoc": {}
+    },
+    "getId": {
+      "type": "function",
+      "name": "getId",
+      "abstract": false,
+      "mixin": false,
+      "inherited": false,
+      "access": "public",
+      "property": "get",
+      "jsdoc": {
+        "@return": [
+          {
+            "name": "@return",
+            "type": "String",
+            "desc": "Returns the value for undefined"
+          }
+        ]
+      }
+    },
+    "setId": {
+      "type": "function",
+      "name": "setId",
+      "abstract": false,
+      "mixin": false,
+      "inherited": false,
+      "access": "public",
+      "property": "set",
+      "jsdoc": {
+        "@param": [
+          {
+            "name": "@param",
+            "type": "String",
+            "paramName": "value",
+            "desc": "Value for undefined"
+          }
+        ]
+      }
+    },
+    "resetId": {
+      "type": "function",
+      "name": "resetId",
+      "abstract": false,
+      "mixin": false,
+      "inherited": false,
+      "access": "public",
+      "property": "reset",
+      "jsdoc": {}
+    },
+    "getQuality": {
+      "type": "function",
+      "name": "getQuality",
+      "abstract": false,
+      "mixin": false,
+      "inherited": false,
+      "access": "public",
+      "property": "get",
+      "jsdoc": {
+        "@return": [
+          {
+            "name": "@return",
+            "type": "any",
+            "desc": "Returns the value for undefined"
+          }
+        ]
+      }
+    },
+    "setQuality": {
+      "type": "function",
+      "name": "setQuality",
+      "abstract": false,
+      "mixin": false,
+      "inherited": false,
+      "access": "public",
+      "property": "set",
+      "jsdoc": {
+        "@param": [
+          {
+            "name": "@param",
+            "type": "any",
+            "paramName": "value",
+            "desc": "Value for undefined"
+          }
+        ]
+      }
+    },
+    "resetQuality": {
+      "type": "function",
+      "name": "resetQuality",
+      "abstract": false,
+      "mixin": false,
+      "inherited": false,
+      "access": "public",
+      "property": "reset",
+      "jsdoc": {}
+    },
+    "getScale": {
+      "type": "function",
+      "name": "getScale",
+      "abstract": false,
+      "mixin": false,
+      "inherited": false,
+      "access": "public",
+      "property": "get",
+      "jsdoc": {
+        "@return": [
+          {
+            "name": "@return",
+            "type": "any",
+            "desc": "Returns the value for undefined"
+          }
+        ]
+      }
+    },
+    "setScale": {
+      "type": "function",
+      "name": "setScale",
+      "abstract": false,
+      "mixin": false,
+      "inherited": false,
+      "access": "public",
+      "property": "set",
+      "jsdoc": {
+        "@param": [
+          {
+            "name": "@param",
+            "type": "any",
+            "paramName": "value",
+            "desc": "Value for undefined"
+          }
+        ]
+      }
+    },
+    "resetScale": {
+      "type": "function",
+      "name": "resetScale",
+      "abstract": false,
+      "mixin": false,
+      "inherited": false,
+      "access": "public",
+      "property": "reset",
+      "jsdoc": {}
+    },
+    "getWmode": {
+      "type": "function",
+      "name": "getWmode",
+      "abstract": false,
+      "mixin": false,
+      "inherited": false,
+      "access": "public",
+      "property": "get",
+      "jsdoc": {
+        "@return": [
+          {
+            "name": "@return",
+            "type": "any",
+            "desc": "Returns the value for undefined"
+          }
+        ]
+      }
+    },
+    "setWmode": {
+      "type": "function",
+      "name": "setWmode",
+      "abstract": false,
+      "mixin": false,
+      "inherited": false,
+      "access": "public",
+      "property": "set",
+      "jsdoc": {
+        "@param": [
+          {
+            "name": "@param",
+            "type": "any",
+            "paramName": "value",
+            "desc": "Value for undefined"
+          }
+        ]
+      }
+    },
+    "resetWmode": {
+      "type": "function",
+      "name": "resetWmode",
+      "abstract": false,
+      "mixin": false,
+      "inherited": false,
+      "access": "public",
+      "property": "reset",
+      "jsdoc": {}
+    },
+    "getPlay": {
+      "type": "function",
+      "name": "getPlay",
+      "abstract": false,
+      "mixin": false,
+      "inherited": false,
+      "access": "public",
+      "property": "get",
+      "jsdoc": {
+        "@return": [
+          {
+            "name": "@return",
+            "type": "Boolean",
+            "desc": "Returns the value for undefined"
+          }
+        ]
+      }
+    },
+    "isPlay": {
+      "type": "function",
+      "name": "isPlay",
+      "abstract": false,
+      "mixin": false,
+      "inherited": false,
+      "access": "public",
+      "property": "is",
+      "jsdoc": {
+        "@return": [
+          {
+            "name": "@return",
+            "type": "Boolean",
+            "desc": "Returns the value for undefined"
+          }
+        ]
+      }
+    },
+    "setPlay": {
+      "type": "function",
+      "name": "setPlay",
+      "abstract": false,
+      "mixin": false,
+      "inherited": false,
+      "access": "public",
+      "property": "set",
+      "jsdoc": {
+        "@param": [
+          {
+            "name": "@param",
+            "type": "Boolean",
+            "paramName": "value",
+            "desc": "Value for undefined"
+          }
+        ]
+      }
+    },
+    "resetPlay": {
+      "type": "function",
+      "name": "resetPlay",
+      "abstract": false,
+      "mixin": false,
+      "inherited": false,
+      "access": "public",
+      "property": "reset",
+      "jsdoc": {}
+    },
+    "getLoop": {
+      "type": "function",
+      "name": "getLoop",
+      "abstract": false,
+      "mixin": false,
+      "inherited": false,
+      "access": "public",
+      "property": "get",
+      "jsdoc": {
+        "@return": [
+          {
+            "name": "@return",
+            "type": "Boolean",
+            "desc": "Returns the value for undefined"
+          }
+        ]
+      }
+    },
+    "isLoop": {
+      "type": "function",
+      "name": "isLoop",
+      "abstract": false,
+      "mixin": false,
+      "inherited": false,
+      "access": "public",
+      "property": "is",
+      "jsdoc": {
+        "@return": [
+          {
+            "name": "@return",
+            "type": "Boolean",
+            "desc": "Returns the value for undefined"
+          }
+        ]
+      }
+    },
+    "setLoop": {
+      "type": "function",
+      "name": "setLoop",
+      "abstract": false,
+      "mixin": false,
+      "inherited": false,
+      "access": "public",
+      "property": "set",
+      "jsdoc": {
+        "@param": [
+          {
+            "name": "@param",
+            "type": "Boolean",
+            "paramName": "value",
+            "desc": "Value for undefined"
+          }
+        ]
+      }
+    },
+    "resetLoop": {
+      "type": "function",
+      "name": "resetLoop",
+      "abstract": false,
+      "mixin": false,
+      "inherited": false,
+      "access": "public",
+      "property": "reset",
+      "jsdoc": {}
+    },
+    "getMayScript": {
+      "type": "function",
+      "name": "getMayScript",
+      "abstract": false,
+      "mixin": false,
+      "inherited": false,
+      "access": "public",
+      "property": "get",
+      "jsdoc": {
+        "@return": [
+          {
+            "name": "@return",
+            "type": "Boolean",
+            "desc": "Returns the value for undefined"
+          }
+        ]
+      }
+    },
+    "isMayScript": {
+      "type": "function",
+      "name": "isMayScript",
+      "abstract": false,
+      "mixin": false,
+      "inherited": false,
+      "access": "public",
+      "property": "is",
+      "jsdoc": {
+        "@return": [
+          {
+            "name": "@return",
+            "type": "Boolean",
+            "desc": "Returns the value for undefined"
+          }
+        ]
+      }
+    },
+    "setMayScript": {
+      "type": "function",
+      "name": "setMayScript",
+      "abstract": false,
+      "mixin": false,
+      "inherited": false,
+      "access": "public",
+      "property": "set",
+      "jsdoc": {
+        "@param": [
+          {
+            "name": "@param",
+            "type": "Boolean",
+            "paramName": "value",
+            "desc": "Value for undefined"
+          }
+        ]
+      }
+    },
+    "resetMayScript": {
+      "type": "function",
+      "name": "resetMayScript",
+      "abstract": false,
+      "mixin": false,
+      "inherited": false,
+      "access": "public",
+      "property": "reset",
+      "jsdoc": {}
+    },
+    "getMenu": {
+      "type": "function",
+      "name": "getMenu",
+      "abstract": false,
+      "mixin": false,
+      "inherited": false,
+      "access": "public",
+      "property": "get",
+      "jsdoc": {
+        "@return": [
+          {
+            "name": "@return",
+            "type": "Boolean",
+            "desc": "Returns the value for undefined"
+          }
+        ]
+      }
+    },
+    "isMenu": {
+      "type": "function",
+      "name": "isMenu",
+      "abstract": false,
+      "mixin": false,
+      "inherited": false,
+      "access": "public",
+      "property": "is",
+      "jsdoc": {
+        "@return": [
+          {
+            "name": "@return",
+            "type": "Boolean",
+            "desc": "Returns the value for undefined"
+          }
+        ]
+      }
+    },
+    "setMenu": {
+      "type": "function",
+      "name": "setMenu",
+      "abstract": false,
+      "mixin": false,
+      "inherited": false,
+      "access": "public",
+      "property": "set",
+      "jsdoc": {
+        "@param": [
+          {
+            "name": "@param",
+            "type": "Boolean",
+            "paramName": "value",
+            "desc": "Value for undefined"
+          }
+        ]
+      }
+    },
+    "resetMenu": {
+      "type": "function",
+      "name": "resetMenu",
+      "abstract": false,
+      "mixin": false,
+      "inherited": false,
+      "access": "public",
+      "property": "reset",
+      "jsdoc": {}
+    },
+    "getAllowScriptAccess": {
+      "type": "function",
+      "name": "getAllowScriptAccess",
+      "abstract": false,
+      "mixin": false,
+      "inherited": false,
+      "access": "public",
+      "property": "get",
+      "jsdoc": {
+        "@return": [
+          {
+            "name": "@return",
+            "type": "any",
+            "desc": "Returns the value for undefined"
+          }
+        ]
+      }
+    },
+    "setAllowScriptAccess": {
+      "type": "function",
+      "name": "setAllowScriptAccess",
+      "abstract": false,
+      "mixin": false,
+      "inherited": false,
+      "access": "public",
+      "property": "set",
+      "jsdoc": {
+        "@param": [
+          {
+            "name": "@param",
+            "type": "any",
+            "paramName": "value",
+            "desc": "Value for undefined"
+          }
+        ]
+      }
+    },
+    "resetAllowScriptAccess": {
+      "type": "function",
+      "name": "resetAllowScriptAccess",
+      "abstract": false,
+      "mixin": false,
+      "inherited": false,
+      "access": "public",
+      "property": "reset",
+      "jsdoc": {}
+    },
+    "getLiveConnect": {
+      "type": "function",
+      "name": "getLiveConnect",
+      "abstract": false,
+      "mixin": false,
+      "inherited": false,
+      "access": "public",
+      "property": "get",
+      "jsdoc": {
+        "@return": [
+          {
+            "name": "@return",
+            "type": "Boolean",
+            "desc": "Returns the value for undefined"
+          }
+        ]
+      }
+    },
+    "isLiveConnect": {
+      "type": "function",
+      "name": "isLiveConnect",
+      "abstract": false,
+      "mixin": false,
+      "inherited": false,
+      "access": "public",
+      "property": "is",
+      "jsdoc": {
+        "@return": [
+          {
+            "name": "@return",
+            "type": "Boolean",
+            "desc": "Returns the value for undefined"
+          }
+        ]
+      }
+    },
+    "setLiveConnect": {
+      "type": "function",
+      "name": "setLiveConnect",
+      "abstract": false,
+      "mixin": false,
+      "inherited": false,
+      "access": "public",
+      "property": "set",
+      "jsdoc": {
+        "@param": [
+          {
+            "name": "@param",
+            "type": "Boolean",
+            "paramName": "value",
+            "desc": "Value for undefined"
+          }
+        ]
+      }
+    },
+    "resetLiveConnect": {
+      "type": "function",
+      "name": "resetLiveConnect",
+      "abstract": false,
+      "mixin": false,
+      "inherited": false,
+      "access": "public",
+      "property": "reset",
+      "jsdoc": {}
+    },
+    "getVariables": {
+      "type": "function",
+      "name": "getVariables",
+      "abstract": false,
+      "mixin": false,
+      "inherited": false,
+      "access": "public",
+      "property": "get",
+      "jsdoc": {
+        "@return": [
+          {
+            "name": "@return",
+            "type": "Map",
+            "desc": "Returns the value for undefined"
+          }
+        ]
+      }
+    },
+    "setVariables": {
+      "type": "function",
+      "name": "setVariables",
+      "abstract": false,
+      "mixin": false,
+      "inherited": false,
+      "access": "public",
+      "property": "set",
+      "jsdoc": {
+        "@param": [
+          {
+            "name": "@param",
+            "type": "Map",
+            "paramName": "value",
+            "desc": "Value for undefined"
+          }
+        ]
+      }
+    },
+    "resetVariables": {
+      "type": "function",
+      "name": "resetVariables",
+      "abstract": false,
+      "mixin": false,
+      "inherited": false,
+      "access": "public",
+      "property": "reset",
+      "jsdoc": {}
+    },
+    "getLoadTimeout": {
+      "type": "function",
+      "name": "getLoadTimeout",
+      "abstract": false,
+      "mixin": false,
+      "inherited": false,
+      "access": "public",
+      "property": "get",
+      "jsdoc": {
+        "@return": [
+          {
+            "name": "@return",
+            "type": "Integer",
+            "desc": "Returns the value for undefined"
+          }
+        ]
+      }
+    },
+    "setLoadTimeout": {
+      "type": "function",
+      "name": "setLoadTimeout",
+      "abstract": false,
+      "mixin": false,
+      "inherited": false,
+      "access": "public",
+      "property": "set",
+      "jsdoc": {
+        "@param": [
+          {
+            "name": "@param",
+            "type": "Integer",
+            "paramName": "value",
+            "desc": "Value for undefined"
+          }
+        ]
+      }
+    },
+    "resetLoadTimeout": {
+      "type": "function",
+      "name": "resetLoadTimeout",
+      "abstract": false,
+      "mixin": false,
+      "inherited": false,
+      "access": "public",
+      "property": "reset",
+      "jsdoc": {}
+    }
+  },
+  "descendants": []
+}

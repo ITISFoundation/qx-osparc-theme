@@ -1,0 +1,48 @@
+{
+  "className": "osparc.theme.osparcdark.Image",
+  "packageName": "osparc.theme.osparcdark",
+  "name": "Image",
+  "superClass": "qx.core.Object",
+  "interfaces": [],
+  "mixins": [],
+  "clazz": {
+    "location": {
+      "start": {
+        "line": 30,
+        "column": 0
+      },
+      "end": {
+        "line": 109,
+        "column": 5
+      }
+    },
+    "jsdoc": {
+      "@description": [
+        {
+          "name": "@description",
+          "body": "***********************************************************************\n\nOSparc Dark Theme for Qooxdoo\n\nCopyright:\n2018 IT'IS Foundation\n\nLicense:\nMIT: https://opensource.org/licenses/MIT\nSee the LICENSE file in the project's top-level directory for details.\n\nAuthors:\nTobias Oetiker (oetiker)\n\nOrigin:\nThis theme is based in large parts on the the Simple\ntheme included with Qooxdoo.\n***********************************************************************"
+        },
+        {
+          "name": "@description",
+          "body": "***********************************************************************\n\n\n************************************************************************"
+        },
+        {
+          "name": "@description",
+          "body": "Mapping class for all images used in the simple theme."
+        }
+      ],
+      "@asset": [
+        {
+          "name": "@asset",
+          "body": "qx/decoration/Simple/*"
+        },
+        {
+          "name": "@asset",
+          "body": "qx/static/blank.png"
+        }
+      ]
+    }
+  },
+  "type": "class",
+  "descendants": []
+}

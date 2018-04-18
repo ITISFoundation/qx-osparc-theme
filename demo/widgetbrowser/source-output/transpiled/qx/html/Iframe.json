@@ -1,0 +1,464 @@
+{
+  "className": "qx.html.Iframe",
+  "packageName": "qx.html",
+  "name": "Iframe",
+  "superClass": "qx.html.Element",
+  "interfaces": [],
+  "mixins": [],
+  "clazz": {
+    "location": {
+      "start": {
+        "line": 23,
+        "column": 0
+      },
+      "end": {
+        "line": 271,
+        "column": 3
+      }
+    },
+    "jsdoc": {
+      "@description": [
+        {
+          "name": "@description",
+          "body": "***********************************************************************\n\nqooxdoo - the new era of web development\n\nhttp://qooxdoo.org\n\nCopyright:\n2004-2008 1&1 Internet AG, Germany, http://www.1und1.de\n\nLicense:\nMIT: https://opensource.org/licenses/MIT\nSee the LICENSE file in the project's top-level directory for details.\n\nAuthors:\nSebastian Werner (wpbasti)\nJonathan Weiß (jonathan_rass)\n\n***********************************************************************"
+        },
+        {
+          "name": "@description",
+          "body": "A cross browser iframe instance."
+        }
+      ]
+    }
+  },
+  "type": "class",
+  "construct": {
+    "location": {
+      "start": {
+        "line": 43,
+        "column": 2
+      },
+      "end": {
+        "line": 53,
+        "column": 3
+      }
+    },
+    "jsdoc": {
+      "@description": [
+        {
+          "name": "@description",
+          "body": "****************************************************************************\nCONSTRUCTOR\n****************************************************************************"
+        },
+        {
+          "name": "@description",
+          "body": "Wrapper for the HTML Iframe element."
+        }
+      ],
+      "@param": [
+        {
+          "name": "@param",
+          "body": "url {String} Location which should be loaded inside the Iframe.",
+          "paramName": "url",
+          "description": " Location which should be loaded inside the Iframe.",
+          "type": "String"
+        },
+        {
+          "name": "@param",
+          "body": "styles {Map?null} optional map of CSS styles, where the key is the name\nof the style and the value is the value to use.",
+          "paramName": "styles",
+          "description": " optional map of CSS styles, where the key is the name\nof the style and the value is the value to use.",
+          "optional": true,
+          "defaultValue": "null",
+          "type": "Map"
+        },
+        {
+          "name": "@param",
+          "body": "attributes {Map?null} optional map of element attributes, where the\nkey is the name of the attribute and the value is the value to use.",
+          "paramName": "attributes",
+          "description": " optional map of element attributes, where the\nkey is the name of the attribute and the value is the value to use.",
+          "optional": true,
+          "defaultValue": "null",
+          "type": "Map"
+        }
+      ]
+    }
+  },
+  "members": {
+    "_applyProperty": {
+      "location": {
+        "start": {
+          "line": 101,
+          "column": 4
+        },
+        "end": {
+          "line": 120,
+          "column": 5
+        }
+      },
+      "jsdoc": {
+        "@description": [
+          {
+            "name": "@description",
+            "body": "---------------------------------------------------------------------------\nELEMENT API\n---------------------------------------------------------------------------"
+          },
+          {
+            "name": "@description",
+            "body": "overridden"
+          }
+        ],
+        "@param": [
+          {
+            "name": "@param",
+            "body": "name {String} Unique property identifier",
+            "paramName": "name",
+            "description": " Unique property identifier",
+            "type": "String"
+          },
+          {
+            "name": "@param",
+            "body": "value {var} Any valid value (depends on the property)",
+            "paramName": "value",
+            "description": " Any valid value (depends on the property)",
+            "type": "var"
+          }
+        ],
+        "@return": [
+          {
+            "name": "@return",
+            "body": "{qx.html.Element} this object (for chaining support)",
+            "type": "qx.html.Element",
+            "desc": " this object (for chaining support)"
+          }
+        ]
+      },
+      "type": "function",
+      "access": "protected",
+      "overriddenFrom": "qx.html.Element",
+      "appearsIn": [
+        "qx.html.Element"
+      ]
+    },
+    "_createDomElement": {
+      "location": {
+        "start": {
+          "line": 123,
+          "column": 4
+        },
+        "end": {
+          "line": 125,
+          "column": 5
+        }
+      },
+      "jsdoc": {
+        "@description": [
+          {
+            "name": "@description",
+            "body": "overridden"
+          }
+        ],
+        "@return": [
+          {
+            "name": "@return",
+            "body": "{Element} DOM element",
+            "type": "qx.html.Element",
+            "desc": " DOM element"
+          }
+        ]
+      },
+      "type": "function",
+      "access": "protected",
+      "overriddenFrom": "qx.html.Element",
+      "appearsIn": [
+        "qx.html.Element"
+      ]
+    },
+    "getWindow": {
+      "location": {
+        "start": {
+          "line": 141,
+          "column": 4
+        },
+        "end": {
+          "line": 151,
+          "column": 5
+        }
+      },
+      "jsdoc": {
+        "@description": [
+          {
+            "name": "@description",
+            "body": "---------------------------------------------------------------------------\nIFRAME API\n---------------------------------------------------------------------------"
+          },
+          {
+            "name": "@description",
+            "body": "Get the DOM window object of an iframe."
+          }
+        ],
+        "@return": [
+          {
+            "name": "@return",
+            "body": "{Window} The DOM window object of the iframe.",
+            "type": "Window",
+            "desc": " The DOM window object of the iframe."
+          }
+        ]
+      },
+      "type": "function",
+      "access": "public"
+    },
+    "getDocument": {
+      "location": {
+        "start": {
+          "line": 159,
+          "column": 4
+        },
+        "end": {
+          "line": 168,
+          "column": 5
+        }
+      },
+      "jsdoc": {
+        "@description": [
+          {
+            "name": "@description",
+            "body": "Get the DOM document object of an iframe."
+          }
+        ],
+        "@return": [
+          {
+            "name": "@return",
+            "body": "{Document} The DOM document object of the iframe.",
+            "type": "Document",
+            "desc": " The DOM document object of the iframe."
+          }
+        ]
+      },
+      "type": "function",
+      "access": "public"
+    },
+    "getBody": {
+      "location": {
+        "start": {
+          "line": 176,
+          "column": 4
+        },
+        "end": {
+          "line": 185,
+          "column": 5
+        }
+      },
+      "jsdoc": {
+        "@description": [
+          {
+            "name": "@description",
+            "body": "Get the HTML body element of the iframe."
+          }
+        ],
+        "@return": [
+          {
+            "name": "@return",
+            "body": "{Element} The DOM node of the <code>body</code> element of the iframe.",
+            "type": "qx.html.Element",
+            "desc": " The DOM node of the <code>body</code> element of the iframe."
+          }
+        ]
+      },
+      "type": "function",
+      "access": "public"
+    },
+    "setSource": {
+      "location": {
+        "start": {
+          "line": 194,
+          "column": 4
+        },
+        "end": {
+          "line": 199,
+          "column": 5
+        }
+      },
+      "jsdoc": {
+        "@description": [
+          {
+            "name": "@description",
+            "body": "Sets iframe's source attribute to given value"
+          }
+        ],
+        "@param": [
+          {
+            "name": "@param",
+            "body": "source {String} URL to be set.",
+            "paramName": "source",
+            "description": " URL to be set.",
+            "type": "String"
+          }
+        ],
+        "@return": [
+          {
+            "name": "@return",
+            "body": "{qx.html.Iframe} The current instance for chaining",
+            "type": "qx.html.Iframe",
+            "desc": " The current instance for chaining"
+          }
+        ]
+      },
+      "type": "function",
+      "access": "public"
+    },
+    "getSource": {
+      "location": {
+        "start": {
+          "line": 207,
+          "column": 4
+        },
+        "end": {
+          "line": 209,
+          "column": 5
+        }
+      },
+      "jsdoc": {
+        "@description": [
+          {
+            "name": "@description",
+            "body": "Get the current source."
+          }
+        ],
+        "@return": [
+          {
+            "name": "@return",
+            "body": "{String} The iframe's source",
+            "type": "String",
+            "desc": " The iframe's source"
+          }
+        ]
+      },
+      "type": "function",
+      "access": "public"
+    },
+    "setName": {
+      "location": {
+        "start": {
+          "line": 218,
+          "column": 4
+        },
+        "end": {
+          "line": 222,
+          "column": 5
+        }
+      },
+      "jsdoc": {
+        "@description": [
+          {
+            "name": "@description",
+            "body": "Sets iframe's name attribute to given value"
+          }
+        ],
+        "@param": [
+          {
+            "name": "@param",
+            "body": "name {String} Name to be set.",
+            "paramName": "name",
+            "description": " Name to be set.",
+            "type": "String"
+          }
+        ],
+        "@return": [
+          {
+            "name": "@return",
+            "body": "{qx.html.Iframe} The current instance for chaining",
+            "type": "qx.html.Iframe",
+            "desc": " The current instance for chaining"
+          }
+        ]
+      },
+      "type": "function",
+      "access": "public"
+    },
+    "getName": {
+      "location": {
+        "start": {
+          "line": 230,
+          "column": 4
+        },
+        "end": {
+          "line": 232,
+          "column": 5
+        }
+      },
+      "jsdoc": {
+        "@description": [
+          {
+            "name": "@description",
+            "body": "Get the current name."
+          }
+        ],
+        "@return": [
+          {
+            "name": "@return",
+            "body": "{String} The iframe's name.",
+            "type": "String",
+            "desc": " The iframe's name."
+          }
+        ]
+      },
+      "type": "function",
+      "access": "public"
+    },
+    "reload": {
+      "location": {
+        "start": {
+          "line": 238,
+          "column": 4
+        },
+        "end": {
+          "line": 248,
+          "column": 5
+        }
+      },
+      "jsdoc": {
+        "@description": [
+          {
+            "name": "@description",
+            "body": "Reloads iframe"
+          }
+        ]
+      },
+      "type": "function",
+      "access": "public"
+    },
+    "__onNavigate": {
+      "location": {
+        "start": {
+          "line": 264,
+          "column": 4
+        },
+        "end": {
+          "line": 269,
+          "column": 5
+        }
+      },
+      "jsdoc": {
+        "@description": [
+          {
+            "name": "@description",
+            "body": "---------------------------------------------------------------------------\nLISTENER\n---------------------------------------------------------------------------"
+          },
+          {
+            "name": "@description",
+            "body": "Handle user navigation. Sync actual URL of iframe with source property."
+          }
+        ],
+        "@param": [
+          {
+            "name": "@param",
+            "body": "e {qx.event.type.Data} navigate event",
+            "paramName": "e",
+            "description": " navigate event",
+            "type": "qx.event.type.Data"
+          }
+        ]
+      },
+      "type": "function",
+      "access": "private"
+    }
+  },
+  "descendants": []
+}

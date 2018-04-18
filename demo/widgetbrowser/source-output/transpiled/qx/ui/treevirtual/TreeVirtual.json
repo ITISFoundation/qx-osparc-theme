@@ -1,0 +1,2843 @@
+{
+  "className": "qx.ui.treevirtual.TreeVirtual",
+  "packageName": "qx.ui.treevirtual",
+  "name": "TreeVirtual",
+  "superClass": "qx.ui.table.Table",
+  "interfaces": [],
+  "mixins": [],
+  "clazz": {
+    "location": {
+      "start": {
+        "line": 29,
+        "column": 0
+      },
+      "end": {
+        "line": 896,
+        "column": 3
+      }
+    },
+    "jsdoc": {
+      "@description": [
+        {
+          "name": "@description",
+          "body": "***********************************************************************\n\nqooxdoo - the new era of web development\n\nhttp://qooxdoo.org\n\nCopyright:\n2007 Derrell Lipman\n\nLicense:\nMIT: https://opensource.org/licenses/MIT\nSee the LICENSE file in the project's top-level directory for details.\n\nAuthors:\nDerrell Lipman (derrell)\n\n***********************************************************************"
+        },
+        {
+          "name": "@description",
+          "body": "A \"virtual\" tree\n<p>\nA number of convenience methods are available in the following mixins:\n<ul>\n<li>{@link qx.ui.treevirtual.MNode}</li>\n<li>{@link qx.ui.treevirtual.MFamily}</li>\n</ul>\n</p>"
+        }
+      ]
+    }
+  },
+  "type": "class",
+  "construct": {
+    "location": {
+      "start": {
+        "line": 100,
+        "column": 2
+      },
+      "end": {
+        "line": 223,
+        "column": 3
+      }
+    },
+    "jsdoc": {
+      "@description": [
+        {
+          "name": "@description",
+          "body": "****************************************************************************\nCONSTRUCTOR\n****************************************************************************"
+        },
+        {
+          "name": "@description",
+          "body": ""
+        }
+      ],
+      "@param": [
+        {
+          "name": "@param",
+          "body": "headings {Array | String}\nAn array containing a list of strings, one for each column, representing\nthe headings for each column.  As a special case, if only one column is\nto exist, the string representing its heading need not be enclosed in an\narray.",
+          "paramName": "headings",
+          "description": "\nAn array containing a list of strings, one for each column, representing\nthe headings for each column.  As a special case, if only one column is\nto exist, the string representing its heading need not be enclosed in an\narray.",
+          "type": [
+            "Array",
+            "String"
+          ]
+        },
+        {
+          "name": "@param",
+          "body": "custom {Map ? null}\nA map provided (typically) by subclasses, to override the various\nsupplemental classes allocated within this constructor.  For normal\nusage, this parameter may be omitted.  Each property must be an object\ninstance or a function which returns an object instance, as indicated by\nthe defaults listed here:\n\n<dl>\n<dt>initiallyHiddenColumns</dt>\n<dd>\n{Array?}\nA list of column numbers that should be initially invisible. Any\ncolumn not mentioned will be initially visible, and if no array\nis provided, all columns will be initially visible.\n</dd>\n<dt>dataModel</dt>\n<dd>new qx.ui.treevirtual.SimpleTreeDataModel()</dd>\n<dt>treeDataCellRenderer</dt>\n<dd>\nInstance of {@link qx.ui.treevirtual.SimpleTreeDataCellRenderer}.\nCustom data cell renderer for the tree column.\n</dd>\n<dt>treeColumn</dt>\n<dd>\nThe column number in which the tree is to reside, i.e., which\ncolumn uses the SimpleTreeDataCellRenderer or a subclass of it.\n</dd>\n<dt>defaultDataCellRenderer</dt>\n<dd>\nInstance of {@link qx.ui.treevirtual.DefaultDataCellRenderer}.\nCustom data cell renderer for all columns other than the tree\ncolumn.\n</dd>\n<dt>dataRowRenderer</dt>\n<dd>new qx.ui.treevirtual.SimpleTreeDataRowRenderer()</dd>\n<dt>selectionManager</dt>\n<dd><pre class='javascript'>\nfunction(obj)\n{\nreturn new qx.ui.treevirtual.SelectionManager(obj);\n}\n</pre></dd>\n<dt>tableColumnModel</dt>\n<dd><pre class='javascript'>\nfunction(obj)\n{\nreturn new qx.ui.table.columnmodel.Resize(obj);\n}\n</pre></dd>\n</dl>",
+          "paramName": "custom",
+          "description": "\nA map provided (typically) by subclasses, to override the various\nsupplemental classes allocated within this constructor.  For normal\nusage, this parameter may be omitted.  Each property must be an object\ninstance or a function which returns an object instance, as indicated by\nthe defaults listed here:\n\n<dl>\n<dt>initiallyHiddenColumns</dt>\n<dd>\n{Array?}\nA list of column numbers that should be initially invisible. Any\ncolumn not mentioned will be initially visible, and if no array\nis provided, all columns will be initially visible.\n</dd>\n<dt>dataModel</dt>\n<dd>new qx.ui.treevirtual.SimpleTreeDataModel()</dd>\n<dt>treeDataCellRenderer</dt>\n<dd>\nInstance of {@link qx.ui.treevirtual.SimpleTreeDataCellRenderer}.\nCustom data cell renderer for the tree column.\n</dd>\n<dt>treeColumn</dt>\n<dd>\nThe column number in which the tree is to reside, i.e., which\ncolumn uses the SimpleTreeDataCellRenderer or a subclass of it.\n</dd>\n<dt>defaultDataCellRenderer</dt>\n<dd>\nInstance of {@link qx.ui.treevirtual.DefaultDataCellRenderer}.\nCustom data cell renderer for all columns other than the tree\ncolumn.\n</dd>\n<dt>dataRowRenderer</dt>\n<dd>new qx.ui.treevirtual.SimpleTreeDataRowRenderer()</dd>\n<dt>selectionManager</dt>\n<dd><pre class='javascript'>\nfunction(obj)\n{\nreturn new qx.ui.treevirtual.SelectionManager(obj);\n}\n</pre></dd>\n<dt>tableColumnModel</dt>\n<dd><pre class='javascript'>\nfunction(obj)\n{\nreturn new qx.ui.table.columnmodel.Resize(obj);\n}\n</pre></dd>\n</dl>",
+          "optional": true,
+          "defaultValue": "null",
+          "type": "Map"
+        }
+      ]
+    }
+  },
+  "properties": {
+    "openCloseClickSelectsRow": {
+      "location": {
+        "start": {
+          "line": 332,
+          "column": 4
+        },
+        "end": {
+          "line": 336,
+          "column": 5
+        }
+      },
+      "jsdoc": {
+        "@description": [
+          {
+            "name": "@description",
+            "body": "Whether a click on the open/close button should also cause selection of\nthe row."
+          }
+        ]
+      },
+      "name": "openCloseClickSelectsRow",
+      "propertyType": "new",
+      "check": "Boolean",
+      "defaultValue": false
+    },
+    "appearance": {
+      "location": {
+        "start": {
+          "line": 338,
+          "column": 4
+        },
+        "end": {
+          "line": 342,
+          "column": 5
+        }
+      },
+      "name": "appearance",
+      "propertyType": "new",
+      "refine": true,
+      "defaultValue": "treevirtual",
+      "overriddenFrom": "qx.ui.table.Table",
+      "appearsIn": {
+        "qx.ui.table.Table": "class",
+        "qx.ui.core.Widget": "class"
+      }
+    },
+    "dragScrollThresholdX": {
+      "type": "property",
+      "name": "dragScrollThresholdX",
+      "abstract": false,
+      "mixin": true,
+      "access": "public",
+      "overriddenFrom": "qx.ui.core.MDragDropScrolling"
+    },
+    "dragScrollThresholdY": {
+      "type": "property",
+      "name": "dragScrollThresholdY",
+      "abstract": false,
+      "mixin": true,
+      "access": "public",
+      "overriddenFrom": "qx.ui.core.MDragDropScrolling"
+    },
+    "dragScrollSlowDownFactor": {
+      "type": "property",
+      "name": "dragScrollSlowDownFactor",
+      "abstract": false,
+      "mixin": true,
+      "access": "public",
+      "overriddenFrom": "qx.ui.core.MDragDropScrolling"
+    }
+  },
+  "members": {
+    "getDataModel": {
+      "location": {
+        "start": {
+          "line": 361,
+          "column": 4
+        },
+        "end": {
+          "line": 364,
+          "column": 5
+        }
+      },
+      "jsdoc": {
+        "@description": [
+          {
+            "name": "@description",
+            "body": "Return the data model for this tree."
+          }
+        ],
+        "@return": [
+          {
+            "name": "@return",
+            "body": "{qx.ui.table.ITableModel} The data model.",
+            "type": "qx.ui.table.ITableModel",
+            "desc": " The data model."
+          }
+        ]
+      },
+      "type": "function",
+      "access": "public"
+    },
+    "setUseTreeLines": {
+      "location": {
+        "start": {
+          "line": 378,
+          "column": 4
+        },
+        "end": {
+          "line": 398,
+          "column": 5
+        }
+      },
+      "jsdoc": {
+        "@description": [
+          {
+            "name": "@description",
+            "body": "Set whether lines linking tree children shall be drawn on the tree.\nNote that not all themes support tree lines.  As of the time of this\nwriting, the Classic theme supports tree lines (and uses +/- icons\nwhich lend themselves to tree lines), while the Modern theme, which\nuses right-facing and downward-facing arrows instead of +/-, does not."
+          }
+        ],
+        "@param": [
+          {
+            "name": "@param",
+            "body": "b {Boolean}\n<i>true</i> if tree lines should be shown; <i>false</i> otherwise.",
+            "paramName": "b",
+            "description": "\n<i>true</i> if tree lines should be shown; <i>false</i> otherwise.",
+            "type": "Boolean"
+          }
+        ]
+      },
+      "type": "function",
+      "access": "public"
+    },
+    "getUseTreeLines": {
+      "location": {
+        "start": {
+          "line": 408,
+          "column": 4
+        },
+        "end": {
+          "line": 413,
+          "column": 5
+        }
+      },
+      "jsdoc": {
+        "@description": [
+          {
+            "name": "@description",
+            "body": "Get whether lines linking tree children shall be drawn on the tree."
+          }
+        ],
+        "@return": [
+          {
+            "name": "@return",
+            "body": "{Boolean}\n<i>true</i> if tree lines are in use;\n<i>false</i> otherwise.",
+            "type": "Boolean",
+            "desc": "\n<i>true</i> if tree lines are in use;\n<i>false</i> otherwise."
+          }
+        ]
+      },
+      "type": "function",
+      "access": "public"
+    },
+    "setAlwaysShowOpenCloseSymbol": {
+      "location": {
+        "start": {
+          "line": 425,
+          "column": 4
+        },
+        "end": {
+          "line": 445,
+          "column": 5
+        }
+      },
+      "jsdoc": {
+        "@description": [
+          {
+            "name": "@description",
+            "body": "Set whether the open/close button should be displayed on a branch,\neven if the branch has no children."
+          }
+        ],
+        "@param": [
+          {
+            "name": "@param",
+            "body": "b {Boolean}\n<i>true</i> if the open/close button should be shown;\n<i>false</i> otherwise.",
+            "paramName": "b",
+            "description": "\n<i>true</i> if the open/close button should be shown;\n<i>false</i> otherwise.",
+            "type": "Boolean"
+          }
+        ]
+      },
+      "type": "function",
+      "access": "public"
+    },
+    "setExcludeFirstLevelTreeLines": {
+      "location": {
+        "start": {
+          "line": 457,
+          "column": 4
+        },
+        "end": {
+          "line": 477,
+          "column": 5
+        }
+      },
+      "jsdoc": {
+        "@description": [
+          {
+            "name": "@description",
+            "body": "Set whether drawing of first-level tree-node lines are disabled even\nif drawing of tree lines is enabled."
+          }
+        ],
+        "@param": [
+          {
+            "name": "@param",
+            "body": "b {Boolean}\n<i>true</i> if first-level tree lines should be disabled;\n<i>false</i> for normal operation.",
+            "paramName": "b",
+            "description": "\n<i>true</i> if first-level tree lines should be disabled;\n<i>false</i> for normal operation.",
+            "type": "Boolean"
+          }
+        ]
+      },
+      "type": "function",
+      "access": "public"
+    },
+    "getExcludeFirstLevelTreeLines": {
+      "location": {
+        "start": {
+          "line": 489,
+          "column": 4
+        },
+        "end": {
+          "line": 494,
+          "column": 5
+        }
+      },
+      "jsdoc": {
+        "@description": [
+          {
+            "name": "@description",
+            "body": "Get whether drawing of first-level tree lines should be disabled even\nif drawing of tree lines is enabled.\n(See also {@link #getUseTreeLines})"
+          }
+        ],
+        "@return": [
+          {
+            "name": "@return",
+            "body": "{Boolean}\n<i>true</i> if tree lines are in use;\n<i>false</i> otherwise.",
+            "type": "Boolean",
+            "desc": "\n<i>true</i> if tree lines are in use;\n<i>false</i> otherwise."
+          }
+        ]
+      },
+      "type": "function",
+      "access": "public"
+    },
+    "getAlwaysShowOpenCloseSymbol": {
+      "location": {
+        "start": {
+          "line": 505,
+          "column": 4
+        },
+        "end": {
+          "line": 510,
+          "column": 5
+        }
+      },
+      "jsdoc": {
+        "@description": [
+          {
+            "name": "@description",
+            "body": "Set whether the open/close button should be displayed on a branch,\neven if the branch has no children."
+          }
+        ],
+        "@return": [
+          {
+            "name": "@return",
+            "body": "{Boolean}\n<i>true</i> if tree lines are in use;\n<i>false</i> otherwise.",
+            "type": "Boolean",
+            "desc": "\n<i>true</i> if tree lines are in use;\n<i>false</i> otherwise."
+          }
+        ]
+      },
+      "type": "function",
+      "access": "public"
+    },
+    "setSelectionMode": {
+      "location": {
+        "start": {
+          "line": 533,
+          "column": 4
+        },
+        "end": {
+          "line": 536,
+          "column": 5
+        }
+      },
+      "jsdoc": {
+        "@description": [
+          {
+            "name": "@description",
+            "body": "Set the selection mode."
+          }
+        ],
+        "@param": [
+          {
+            "name": "@param",
+            "body": "mode {Integer}\nThe selection mode to be used.  It may be any of:\n<pre>\nqx.ui.treevirtual.TreeVirtual.SelectionMode.NONE:\nNothing can ever be selected.\n\nqx.ui.treevirtual.TreeVirtual.SelectionMode.SINGLE\nAllow only one selected item.\n\nqx.ui.treevirtual.TreeVirtual.SelectionMode.SINGLE_INTERVAL\nAllow one contiguous interval of selected items.\n\nqx.ui.treevirtual.TreeVirtual.SelectionMode.MULTIPLE_INTERVAL\nAllow any selected items, whether contiguous or not.\n</pre>",
+            "paramName": "mode",
+            "description": "\nThe selection mode to be used.  It may be any of:\n<pre>\nqx.ui.treevirtual.TreeVirtual.SelectionMode.NONE:\nNothing can ever be selected.\n\nqx.ui.treevirtual.TreeVirtual.SelectionMode.SINGLE\nAllow only one selected item.\n\nqx.ui.treevirtual.TreeVirtual.SelectionMode.SINGLE_INTERVAL\nAllow one contiguous interval of selected items.\n\nqx.ui.treevirtual.TreeVirtual.SelectionMode.MULTIPLE_INTERVAL\nAllow any selected items, whether contiguous or not.\n</pre>",
+            "type": "Integer"
+          }
+        ]
+      },
+      "type": "function",
+      "access": "public"
+    },
+    "getSelectionMode": {
+      "location": {
+        "start": {
+          "line": 545,
+          "column": 4
+        },
+        "end": {
+          "line": 548,
+          "column": 5
+        }
+      },
+      "jsdoc": {
+        "@description": [
+          {
+            "name": "@description",
+            "body": "Get the selection mode currently in use."
+          }
+        ],
+        "@return": [
+          {
+            "name": "@return",
+            "body": "{Integer}\nOne of the values documented in {@link #setSelectionMode}",
+            "type": "Integer",
+            "desc": "\nOne of the values documented in {@link #setSelectionMode}"
+          }
+        ]
+      },
+      "type": "function",
+      "access": "public"
+    },
+    "getHierarchy": {
+      "location": {
+        "start": {
+          "line": 568,
+          "column": 4
+        },
+        "end": {
+          "line": 610,
+          "column": 5
+        }
+      },
+      "jsdoc": {
+        "@description": [
+          {
+            "name": "@description",
+            "body": "Obtain the entire hierarchy of labels from the root down to the\nspecified node."
+          }
+        ],
+        "@param": [
+          {
+            "name": "@param",
+            "body": "nodeReference {Object | Integer}\nThe node for which the hierarchy is desired.  The node can be\nrepresented either by the node object, or the node id (as would have\nbeen returned by addBranch(), addLeaf(), etc.)",
+            "paramName": "nodeReference",
+            "description": "\nThe node for which the hierarchy is desired.  The node can be\nrepresented either by the node object, or the node id (as would have\nbeen returned by addBranch(), addLeaf(), etc.)",
+            "type": [
+              "Object",
+              "Integer"
+            ]
+          }
+        ],
+        "@return": [
+          {
+            "name": "@return",
+            "body": "{Array}\nThe returned array contains one string for each label in the\nhierarchy of the node specified by the parameter.  Element 0 of the\narray contains the label of the root node, element 1 contains the\nlabel of the node immediately below root in the specified node's\nhierarchy, etc., down to the last element in the array contain the\nlabel of the node referenced by the parameter.",
+            "type": "Array",
+            "desc": "\nThe returned array contains one string for each label in the\nhierarchy of the node specified by the parameter.  Element 0 of the\narray contains the label of the root node, element 1 contains the\nlabel of the node immediately below root in the specified node's\nhierarchy, etc., down to the last element in the array contain the\nlabel of the node referenced by the parameter."
+          }
+        ]
+      },
+      "type": "function",
+      "access": "public"
+    },
+    "getSelectedNodes": {
+      "location": {
+        "start": {
+          "line": 619,
+          "column": 4
+        },
+        "end": {
+          "line": 622,
+          "column": 5
+        }
+      },
+      "jsdoc": {
+        "@description": [
+          {
+            "name": "@description",
+            "body": "Return the nodes that are currently selected."
+          }
+        ],
+        "@return": [
+          {
+            "name": "@return",
+            "body": "{Array}\nAn array containing the nodes that are currently selected.",
+            "type": "Array",
+            "desc": "\nAn array containing the nodes that are currently selected."
+          }
+        ]
+      },
+      "type": "function",
+      "access": "public"
+    },
+    "_onKeyPress": {
+      "location": {
+        "start": {
+          "line": 635,
+          "column": 4
+        },
+        "end": {
+          "line": 809,
+          "column": 5
+        }
+      },
+      "jsdoc": {
+        "@description": [
+          {
+            "name": "@description",
+            "body": "Event handler. Called when a key was pressed.\n\nWe handle the Enter key to toggle opened/closed tree state.  All\nother keydown events are passed to our superclass."
+          }
+        ],
+        "@param": [
+          {
+            "name": "@param",
+            "body": "evt {Map}\nThe event.",
+            "paramName": "evt",
+            "description": "\nThe event.",
+            "type": "Map"
+          }
+        ]
+      },
+      "type": "function",
+      "access": "protected",
+      "overriddenFrom": "qx.ui.table.Table",
+      "appearsIn": [
+        "qx.ui.table.Table"
+      ]
+    },
+    "_onSelectionChanged": {
+      "location": {
+        "start": {
+          "line": 819,
+          "column": 4
+        },
+        "end": {
+          "line": 836,
+          "column": 5
+        }
+      },
+      "jsdoc": {
+        "@description": [
+          {
+            "name": "@description",
+            "body": "Event handler. Called when the selection has changed."
+          }
+        ],
+        "@param": [
+          {
+            "name": "@param",
+            "body": "evt {Map}\nThe event.",
+            "paramName": "evt",
+            "description": "\nThe event.",
+            "type": "Map"
+          }
+        ]
+      },
+      "type": "function",
+      "access": "protected",
+      "overriddenFrom": "qx.ui.table.Table",
+      "appearsIn": [
+        "qx.ui.table.Table"
+      ]
+    },
+    "_calculateSelectedNodes": {
+      "location": {
+        "start": {
+          "line": 851,
+          "column": 4
+        },
+        "end": {
+          "line": 874,
+          "column": 5
+        }
+      },
+      "jsdoc": {
+        "@description": [
+          {
+            "name": "@description",
+            "body": "Calculate and return the set of nodes which are currently selected by\nthe user, on the screen.  In the process of calculating which nodes\nare selected, the nodes corresponding to the selected rows on the\nscreen are marked as selected by setting their <i>bSelected</i>\nproperty to true, and all previously-selected nodes have their\n<i>bSelected</i> property reset to false."
+          }
+        ],
+        "@return": [
+          {
+            "name": "@return",
+            "body": "{Array}\nAn array of nodes matching the set of rows which are selected on the\nscreen.",
+            "type": "Array",
+            "desc": "\nAn array of nodes matching the set of rows which are selected on the\nscreen."
+          }
+        ]
+      },
+      "type": "function",
+      "access": "protected"
+    },
+    "setOverflow": {
+      "location": {
+        "start": {
+          "line": 887,
+          "column": 4
+        },
+        "end": {
+          "line": 894,
+          "column": 5
+        }
+      },
+      "jsdoc": {
+        "@description": [
+          {
+            "name": "@description",
+            "body": "Set the overflow mode."
+          }
+        ],
+        "@param": [
+          {
+            "name": "@param",
+            "body": "s {String}\nOverflow mode.  The only allowable mode is \"hidden\".",
+            "paramName": "s",
+            "description": "\nOverflow mode.  The only allowable mode is \"hidden\".",
+            "type": "String"
+          }
+        ],
+        "@throws": [
+          {
+            "name": "@throws",
+            "body": "{Error}\nError if tree overflow mode is other than \"hidden\""
+          }
+        ]
+      },
+      "type": "function",
+      "access": "public"
+    },
+    "_findScrollableParent": {
+      "type": "function",
+      "name": "_findScrollableParent",
+      "abstract": false,
+      "mixin": true,
+      "inherited": true,
+      "access": "protected",
+      "overriddenFrom": "qx.ui.core.MDragDropScrolling",
+      "jsdoc": {
+        "@description": [
+          {
+            "name": "@description",
+            "body": "Finds the first scrollable parent (in the parent chain)."
+          }
+        ],
+        "@param": [
+          {
+            "name": "@param",
+            "body": "widget {qx.ui.core.LayoutItem} The widget to start from.",
+            "paramName": "widget",
+            "description": " The widget to start from.",
+            "type": "qx.ui.core.LayoutItem"
+          }
+        ],
+        "@return": [
+          {
+            "name": "@return",
+            "body": "{qx.ui.core.Widget} A scrollable widget.",
+            "type": "qx.ui.core.Widget",
+            "desc": " A scrollable widget."
+          }
+        ]
+      }
+    },
+    "_isScrollable": {
+      "type": "function",
+      "name": "_isScrollable",
+      "abstract": false,
+      "mixin": true,
+      "inherited": true,
+      "access": "protected",
+      "overriddenFrom": "qx.ui.core.MDragDropScrolling",
+      "jsdoc": {
+        "@description": [
+          {
+            "name": "@description",
+            "body": "Whether the widget is scrollable."
+          }
+        ],
+        "@param": [
+          {
+            "name": "@param",
+            "body": "widget {qx.ui.core.Widget} The widget to check.",
+            "paramName": "widget",
+            "description": " The widget to check.",
+            "type": "qx.ui.core.Widget"
+          }
+        ],
+        "@return": [
+          {
+            "name": "@return",
+            "body": "{Boolean} Whether the widget is scrollable.",
+            "type": "Boolean",
+            "desc": " Whether the widget is scrollable."
+          }
+        ]
+      }
+    },
+    "_getBounds": {
+      "type": "function",
+      "name": "_getBounds",
+      "abstract": false,
+      "mixin": true,
+      "inherited": true,
+      "access": "protected",
+      "overriddenFrom": "qx.ui.core.MDragDropScrolling",
+      "jsdoc": {
+        "@description": [
+          {
+            "name": "@description",
+            "body": "Gets the bounds of the given scrollable."
+          }
+        ],
+        "@param": [
+          {
+            "name": "@param",
+            "body": "scrollable {qx.ui.core.Widget} Scrollable which has scrollbar child controls.",
+            "paramName": "scrollable",
+            "description": " Scrollable which has scrollbar child controls.",
+            "type": "qx.ui.core.Widget"
+          }
+        ],
+        "@return": [
+          {
+            "name": "@return",
+            "body": "{Map} A map with all four bounds (e.g. {\"left\":0, \"top\":20, \"right\":0, \"bottom\":80}).",
+            "type": "Map",
+            "desc": " A map with all four bounds (e.g. {\"left\":0, \"top\":20, \"right\":0, \"bottom\":80})."
+          }
+        ]
+      }
+    },
+    "_getEdgeType": {
+      "type": "function",
+      "name": "_getEdgeType",
+      "abstract": false,
+      "mixin": true,
+      "inherited": true,
+      "access": "protected",
+      "overriddenFrom": "qx.ui.core.MDragDropScrolling",
+      "jsdoc": {
+        "@description": [
+          {
+            "name": "@description",
+            "body": "Gets the edge type or null if the pointer isn't within one of the thresholds."
+          }
+        ],
+        "@param": [
+          {
+            "name": "@param",
+            "body": "diff {Map} Difference map with all for edgeTypes.",
+            "paramName": "diff",
+            "description": " Difference map with all for edgeTypes.",
+            "type": "Map"
+          },
+          {
+            "name": "@param",
+            "body": "thresholdX {Number} x-axis threshold.",
+            "paramName": "thresholdX",
+            "description": " x-axis threshold.",
+            "type": "Number"
+          },
+          {
+            "name": "@param",
+            "body": "thresholdY {Number} y-axis threshold.",
+            "paramName": "thresholdY",
+            "description": " y-axis threshold.",
+            "type": "Number"
+          }
+        ],
+        "@return": [
+          {
+            "name": "@return",
+            "body": "{String} One of the four edgeTypes ('left', 'right', 'top', 'bottom').",
+            "type": "String",
+            "desc": " One of the four edgeTypes ('left', 'right', 'top', 'bottom')."
+          }
+        ]
+      }
+    },
+    "_getAxis": {
+      "type": "function",
+      "name": "_getAxis",
+      "abstract": false,
+      "mixin": true,
+      "inherited": true,
+      "access": "protected",
+      "overriddenFrom": "qx.ui.core.MDragDropScrolling",
+      "jsdoc": {
+        "@description": [
+          {
+            "name": "@description",
+            "body": "Gets the axis ('x' or 'y') by the edge type."
+          }
+        ],
+        "@param": [
+          {
+            "name": "@param",
+            "body": "edgeType {String} One of the four edgeTypes ('left', 'right', 'top', 'bottom').",
+            "paramName": "edgeType",
+            "description": " One of the four edgeTypes ('left', 'right', 'top', 'bottom').",
+            "type": "String"
+          }
+        ],
+        "@throws": [
+          {
+            "name": "@throws",
+            "body": "{Error} If edgeType is not one of the distinct four ones."
+          }
+        ],
+        "@return": [
+          {
+            "name": "@return",
+            "body": "{String} Returns 'y' or 'x'.",
+            "type": "String",
+            "desc": " Returns 'y' or 'x'."
+          }
+        ]
+      }
+    },
+    "_getThresholdByEdgeType": {
+      "type": "function",
+      "name": "_getThresholdByEdgeType",
+      "abstract": false,
+      "mixin": true,
+      "inherited": true,
+      "access": "protected",
+      "overriddenFrom": "qx.ui.core.MDragDropScrolling",
+      "jsdoc": {
+        "@description": [
+          {
+            "name": "@description",
+            "body": "Gets the threshold amount by edge type."
+          }
+        ],
+        "@param": [
+          {
+            "name": "@param",
+            "body": "edgeType {String} One of the four edgeTypes ('left', 'right', 'top', 'bottom').",
+            "paramName": "edgeType",
+            "description": " One of the four edgeTypes ('left', 'right', 'top', 'bottom').",
+            "type": "String"
+          }
+        ],
+        "@return": [
+          {
+            "name": "@return",
+            "body": "{Number} The threshold of the x or y axis.",
+            "type": "Number",
+            "desc": " The threshold of the x or y axis."
+          }
+        ]
+      }
+    },
+    "_isScrollbarVisible": {
+      "type": "function",
+      "name": "_isScrollbarVisible",
+      "abstract": false,
+      "mixin": true,
+      "inherited": true,
+      "access": "protected",
+      "overriddenFrom": "qx.ui.core.MDragDropScrolling",
+      "jsdoc": {
+        "@description": [
+          {
+            "name": "@description",
+            "body": "Whether the scrollbar is visible."
+          }
+        ],
+        "@param": [
+          {
+            "name": "@param",
+            "body": "scrollable {qx.ui.core.Widget} Scrollable which has scrollbar child controls.",
+            "paramName": "scrollable",
+            "description": " Scrollable which has scrollbar child controls.",
+            "type": "qx.ui.core.Widget"
+          },
+          {
+            "name": "@param",
+            "body": "axis {String} Can be 'y' or 'x'.",
+            "paramName": "axis",
+            "description": " Can be 'y' or 'x'.",
+            "type": "String"
+          }
+        ],
+        "@return": [
+          {
+            "name": "@return",
+            "body": "{Boolean} Whether the scrollbar is visible.",
+            "type": "Boolean",
+            "desc": " Whether the scrollbar is visible."
+          }
+        ]
+      }
+    },
+    "_isScrollbarExceedingMaxPos": {
+      "type": "function",
+      "name": "_isScrollbarExceedingMaxPos",
+      "abstract": false,
+      "mixin": true,
+      "inherited": true,
+      "access": "protected",
+      "overriddenFrom": "qx.ui.core.MDragDropScrolling",
+      "jsdoc": {
+        "@description": [
+          {
+            "name": "@description",
+            "body": "Whether the scrollbar is exceeding it's maximum position."
+          }
+        ],
+        "@param": [
+          {
+            "name": "@param",
+            "body": "scrollbar {qx.ui.core.scroll.IScrollBar} Scrollbar to check.",
+            "paramName": "scrollbar",
+            "description": " Scrollbar to check.",
+            "type": "qx.ui.core.scroll.IScrollBar"
+          },
+          {
+            "name": "@param",
+            "body": "axis {String} Can be 'y' or 'x'.",
+            "paramName": "axis",
+            "description": " Can be 'y' or 'x'.",
+            "type": "String"
+          },
+          {
+            "name": "@param",
+            "body": "amount {Number} Amount to scroll which may be negative.",
+            "paramName": "amount",
+            "description": " Amount to scroll which may be negative.",
+            "type": "Number"
+          }
+        ],
+        "@return": [
+          {
+            "name": "@return",
+            "body": "{Boolean} Whether the amount will exceed the scrollbar max position.",
+            "type": "Boolean",
+            "desc": " Whether the amount will exceed the scrollbar max position."
+          }
+        ]
+      }
+    },
+    "_calculateThresholdExceedance": {
+      "type": "function",
+      "name": "_calculateThresholdExceedance",
+      "abstract": false,
+      "mixin": true,
+      "inherited": true,
+      "access": "protected",
+      "overriddenFrom": "qx.ui.core.MDragDropScrolling",
+      "jsdoc": {
+        "@description": [
+          {
+            "name": "@description",
+            "body": "Calculates the threshold exceedance (which may be negative)."
+          }
+        ],
+        "@param": [
+          {
+            "name": "@param",
+            "body": "diff {Number} Difference value of one edgeType.",
+            "paramName": "diff",
+            "description": " Difference value of one edgeType.",
+            "type": "Number"
+          },
+          {
+            "name": "@param",
+            "body": "threshold {Number} x-axis or y-axis threshold.",
+            "paramName": "threshold",
+            "description": " x-axis or y-axis threshold.",
+            "type": "Number"
+          }
+        ],
+        "@return": [
+          {
+            "name": "@return",
+            "body": "{Number} Threshold exceedance amount (positive or negative).",
+            "type": "Number",
+            "desc": " Threshold exceedance amount (positive or negative)."
+          }
+        ]
+      }
+    },
+    "_calculateScrollAmount": {
+      "type": "function",
+      "name": "_calculateScrollAmount",
+      "abstract": false,
+      "mixin": true,
+      "inherited": true,
+      "access": "protected",
+      "overriddenFrom": "qx.ui.core.MDragDropScrolling",
+      "jsdoc": {
+        "@description": [
+          {
+            "name": "@description",
+            "body": "Calculates the scroll amount (which may be negative).\nThe amount is influenced by the scrollbar size (bigger = faster)\nthe exceedanceAmount (bigger = faster) and the slowDownFactor."
+          }
+        ],
+        "@param": [
+          {
+            "name": "@param",
+            "body": "scrollbarSize {Number} Size of the scrollbar.",
+            "paramName": "scrollbarSize",
+            "description": " Size of the scrollbar.",
+            "type": "Number"
+          },
+          {
+            "name": "@param",
+            "body": "exceedanceAmount {Number} Threshold exceedance amount (positive or negative).",
+            "paramName": "exceedanceAmount",
+            "description": " Threshold exceedance amount (positive or negative).",
+            "type": "Number"
+          }
+        ],
+        "@return": [
+          {
+            "name": "@return",
+            "body": "{Number} Scroll amount (positive or negative).",
+            "type": "Number",
+            "desc": " Scroll amount (positive or negative)."
+          }
+        ]
+      }
+    },
+    "_scrollBy": {
+      "type": "function",
+      "name": "_scrollBy",
+      "abstract": false,
+      "mixin": true,
+      "inherited": true,
+      "access": "protected",
+      "overriddenFrom": "qx.ui.core.MDragDropScrolling",
+      "jsdoc": {
+        "@description": [
+          {
+            "name": "@description",
+            "body": "Scrolls the given scrollable on the given axis for the given amount."
+          }
+        ],
+        "@param": [
+          {
+            "name": "@param",
+            "body": "scrollable {qx.ui.core.Widget} Scrollable which has scrollbar child controls.",
+            "paramName": "scrollable",
+            "description": " Scrollable which has scrollbar child controls.",
+            "type": "qx.ui.core.Widget"
+          },
+          {
+            "name": "@param",
+            "body": "axis {String} Can be 'y' or 'x'.",
+            "paramName": "axis",
+            "description": " Can be 'y' or 'x'.",
+            "type": "String"
+          },
+          {
+            "name": "@param",
+            "body": "exceedanceAmount {Number} Threshold exceedance amount (positive or negative).",
+            "paramName": "exceedanceAmount",
+            "description": " Threshold exceedance amount (positive or negative).",
+            "type": "Number"
+          }
+        ]
+      }
+    },
+    "__onDrag": {
+      "type": "function",
+      "name": "__onDrag",
+      "abstract": false,
+      "mixin": true,
+      "inherited": true,
+      "access": "private",
+      "overriddenFrom": "qx.ui.core.MDragDropScrolling",
+      "jsdoc": {
+        "@description": [
+          {
+            "name": "@description",
+            "body": "---------------------------------------------------------------------------\nEVENT HANDLERS\n---------------------------------------------------------------------------"
+          },
+          {
+            "name": "@description",
+            "body": "Event handler for the drag event."
+          }
+        ],
+        "@param": [
+          {
+            "name": "@param",
+            "body": "e {qx.event.type.Drag} The drag event instance.",
+            "paramName": "e",
+            "description": " The drag event instance.",
+            "type": "qx.event.type.Drag"
+          }
+        ]
+      }
+    },
+    "__onDragend": {
+      "type": "function",
+      "name": "__onDragend",
+      "abstract": false,
+      "mixin": true,
+      "inherited": true,
+      "access": "private",
+      "overriddenFrom": "qx.ui.core.MDragDropScrolling",
+      "jsdoc": {
+        "@description": [
+          {
+            "name": "@description",
+            "body": "Event handler for the dragend event."
+          }
+        ],
+        "@param": [
+          {
+            "name": "@param",
+            "body": "e {qx.event.type.Drag} The drag event instance.",
+            "paramName": "e",
+            "description": " The drag event instance.",
+            "type": "qx.event.type.Drag"
+          }
+        ]
+      }
+    },
+    "getDragScrollThresholdX": {
+      "type": "function",
+      "name": "getDragScrollThresholdX",
+      "abstract": false,
+      "mixin": true,
+      "inherited": true,
+      "access": "public",
+      "overriddenFrom": "qx.ui.core.MDragDropScrolling",
+      "jsdoc": {
+        "@return": [
+          {
+            "name": "@return",
+            "type": "Integer",
+            "desc": "Returns the value for undefined"
+          }
+        ]
+      }
+    },
+    "setDragScrollThresholdX": {
+      "type": "function",
+      "name": "setDragScrollThresholdX",
+      "abstract": false,
+      "mixin": true,
+      "inherited": true,
+      "access": "public",
+      "overriddenFrom": "qx.ui.core.MDragDropScrolling",
+      "jsdoc": {
+        "@param": [
+          {
+            "name": "@param",
+            "type": "Integer",
+            "paramName": "value",
+            "desc": "Value for undefined"
+          }
+        ]
+      }
+    },
+    "resetDragScrollThresholdX": {
+      "type": "function",
+      "name": "resetDragScrollThresholdX",
+      "abstract": false,
+      "mixin": true,
+      "inherited": true,
+      "access": "public",
+      "overriddenFrom": "qx.ui.core.MDragDropScrolling"
+    },
+    "getDragScrollThresholdY": {
+      "type": "function",
+      "name": "getDragScrollThresholdY",
+      "abstract": false,
+      "mixin": true,
+      "inherited": true,
+      "access": "public",
+      "overriddenFrom": "qx.ui.core.MDragDropScrolling",
+      "jsdoc": {
+        "@return": [
+          {
+            "name": "@return",
+            "type": "Integer",
+            "desc": "Returns the value for undefined"
+          }
+        ]
+      }
+    },
+    "setDragScrollThresholdY": {
+      "type": "function",
+      "name": "setDragScrollThresholdY",
+      "abstract": false,
+      "mixin": true,
+      "inherited": true,
+      "access": "public",
+      "overriddenFrom": "qx.ui.core.MDragDropScrolling",
+      "jsdoc": {
+        "@param": [
+          {
+            "name": "@param",
+            "type": "Integer",
+            "paramName": "value",
+            "desc": "Value for undefined"
+          }
+        ]
+      }
+    },
+    "resetDragScrollThresholdY": {
+      "type": "function",
+      "name": "resetDragScrollThresholdY",
+      "abstract": false,
+      "mixin": true,
+      "inherited": true,
+      "access": "public",
+      "overriddenFrom": "qx.ui.core.MDragDropScrolling"
+    },
+    "getDragScrollSlowDownFactor": {
+      "type": "function",
+      "name": "getDragScrollSlowDownFactor",
+      "abstract": false,
+      "mixin": true,
+      "inherited": true,
+      "access": "public",
+      "overriddenFrom": "qx.ui.core.MDragDropScrolling",
+      "jsdoc": {
+        "@return": [
+          {
+            "name": "@return",
+            "type": "Float",
+            "desc": "Returns the value for undefined"
+          }
+        ]
+      }
+    },
+    "setDragScrollSlowDownFactor": {
+      "type": "function",
+      "name": "setDragScrollSlowDownFactor",
+      "abstract": false,
+      "mixin": true,
+      "inherited": true,
+      "access": "public",
+      "overriddenFrom": "qx.ui.core.MDragDropScrolling",
+      "jsdoc": {
+        "@param": [
+          {
+            "name": "@param",
+            "type": "Float",
+            "paramName": "value",
+            "desc": "Value for undefined"
+          }
+        ]
+      }
+    },
+    "resetDragScrollSlowDownFactor": {
+      "type": "function",
+      "name": "resetDragScrollSlowDownFactor",
+      "abstract": false,
+      "mixin": true,
+      "inherited": true,
+      "access": "public",
+      "overriddenFrom": "qx.ui.core.MDragDropScrolling"
+    },
+    "getInitiallyHiddenColumns": {
+      "type": "function",
+      "name": "getInitiallyHiddenColumns",
+      "abstract": false,
+      "mixin": false,
+      "inherited": true,
+      "access": "public",
+      "property": "get",
+      "jsdoc": {
+        "@return": [
+          {
+            "name": "@return",
+            "type": "any",
+            "desc": "Returns the value for undefined"
+          }
+        ]
+      }
+    },
+    "setInitiallyHiddenColumns": {
+      "type": "function",
+      "name": "setInitiallyHiddenColumns",
+      "abstract": false,
+      "mixin": false,
+      "inherited": true,
+      "access": "public",
+      "property": "set",
+      "jsdoc": {
+        "@param": [
+          {
+            "name": "@param",
+            "type": "any",
+            "paramName": "value",
+            "desc": "Value for undefined"
+          }
+        ]
+      }
+    },
+    "resetInitiallyHiddenColumns": {
+      "type": "function",
+      "name": "resetInitiallyHiddenColumns",
+      "abstract": false,
+      "mixin": false,
+      "inherited": true,
+      "access": "public",
+      "property": "reset",
+      "jsdoc": {}
+    },
+    "getSelectionModel": {
+      "type": "function",
+      "name": "getSelectionModel",
+      "abstract": false,
+      "mixin": false,
+      "inherited": true,
+      "access": "public",
+      "property": "get",
+      "jsdoc": {
+        "@return": [
+          {
+            "name": "@return",
+            "type": "qx.ui.table.selection.Model",
+            "desc": "Returns the value for undefined"
+          }
+        ]
+      }
+    },
+    "setSelectionModel": {
+      "type": "function",
+      "name": "setSelectionModel",
+      "abstract": false,
+      "mixin": false,
+      "inherited": true,
+      "access": "public",
+      "property": "set",
+      "jsdoc": {
+        "@param": [
+          {
+            "name": "@param",
+            "type": "qx.ui.table.selection.Model",
+            "paramName": "value",
+            "desc": "Value for undefined"
+          }
+        ]
+      }
+    },
+    "resetSelectionModel": {
+      "type": "function",
+      "name": "resetSelectionModel",
+      "abstract": false,
+      "mixin": false,
+      "inherited": true,
+      "access": "public",
+      "property": "reset",
+      "jsdoc": {}
+    },
+    "getTableModel": {
+      "type": "function",
+      "name": "getTableModel",
+      "abstract": false,
+      "mixin": false,
+      "inherited": true,
+      "access": "public",
+      "property": "get",
+      "jsdoc": {
+        "@return": [
+          {
+            "name": "@return",
+            "type": "qx.ui.table.ITableModel",
+            "desc": "Returns the value for undefined"
+          }
+        ]
+      }
+    },
+    "setTableModel": {
+      "type": "function",
+      "name": "setTableModel",
+      "abstract": false,
+      "mixin": false,
+      "inherited": true,
+      "access": "public",
+      "property": "set",
+      "jsdoc": {
+        "@param": [
+          {
+            "name": "@param",
+            "type": "qx.ui.table.ITableModel",
+            "paramName": "value",
+            "desc": "Value for undefined"
+          }
+        ]
+      }
+    },
+    "resetTableModel": {
+      "type": "function",
+      "name": "resetTableModel",
+      "abstract": false,
+      "mixin": false,
+      "inherited": true,
+      "access": "public",
+      "property": "reset",
+      "jsdoc": {}
+    },
+    "getRowHeight": {
+      "type": "function",
+      "name": "getRowHeight",
+      "abstract": false,
+      "mixin": false,
+      "inherited": true,
+      "access": "public",
+      "property": "get",
+      "jsdoc": {
+        "@return": [
+          {
+            "name": "@return",
+            "type": "Number",
+            "desc": "Returns the value for undefined"
+          }
+        ]
+      }
+    },
+    "setRowHeight": {
+      "type": "function",
+      "name": "setRowHeight",
+      "abstract": false,
+      "mixin": false,
+      "inherited": true,
+      "access": "public",
+      "property": "set",
+      "jsdoc": {
+        "@param": [
+          {
+            "name": "@param",
+            "type": "Number",
+            "paramName": "value",
+            "desc": "Value for undefined"
+          }
+        ]
+      }
+    },
+    "resetRowHeight": {
+      "type": "function",
+      "name": "resetRowHeight",
+      "abstract": false,
+      "mixin": false,
+      "inherited": true,
+      "access": "public",
+      "property": "reset",
+      "jsdoc": {}
+    },
+    "getForceLineHeight": {
+      "type": "function",
+      "name": "getForceLineHeight",
+      "abstract": false,
+      "mixin": false,
+      "inherited": true,
+      "access": "public",
+      "property": "get",
+      "jsdoc": {
+        "@return": [
+          {
+            "name": "@return",
+            "type": "Boolean",
+            "desc": "Returns the value for undefined"
+          }
+        ]
+      }
+    },
+    "isForceLineHeight": {
+      "type": "function",
+      "name": "isForceLineHeight",
+      "abstract": false,
+      "mixin": false,
+      "inherited": true,
+      "access": "public",
+      "property": "is",
+      "jsdoc": {
+        "@return": [
+          {
+            "name": "@return",
+            "type": "Boolean",
+            "desc": "Returns the value for undefined"
+          }
+        ]
+      }
+    },
+    "setForceLineHeight": {
+      "type": "function",
+      "name": "setForceLineHeight",
+      "abstract": false,
+      "mixin": false,
+      "inherited": true,
+      "access": "public",
+      "property": "set",
+      "jsdoc": {
+        "@param": [
+          {
+            "name": "@param",
+            "type": "Boolean",
+            "paramName": "value",
+            "desc": "Value for undefined"
+          }
+        ]
+      }
+    },
+    "resetForceLineHeight": {
+      "type": "function",
+      "name": "resetForceLineHeight",
+      "abstract": false,
+      "mixin": false,
+      "inherited": true,
+      "access": "public",
+      "property": "reset",
+      "jsdoc": {}
+    },
+    "getHeaderCellsVisible": {
+      "type": "function",
+      "name": "getHeaderCellsVisible",
+      "abstract": false,
+      "mixin": false,
+      "inherited": true,
+      "access": "public",
+      "property": "get",
+      "jsdoc": {
+        "@return": [
+          {
+            "name": "@return",
+            "type": "Boolean",
+            "desc": "Returns the value for undefined"
+          }
+        ]
+      }
+    },
+    "isHeaderCellsVisible": {
+      "type": "function",
+      "name": "isHeaderCellsVisible",
+      "abstract": false,
+      "mixin": false,
+      "inherited": true,
+      "access": "public",
+      "property": "is",
+      "jsdoc": {
+        "@return": [
+          {
+            "name": "@return",
+            "type": "Boolean",
+            "desc": "Returns the value for undefined"
+          }
+        ]
+      }
+    },
+    "setHeaderCellsVisible": {
+      "type": "function",
+      "name": "setHeaderCellsVisible",
+      "abstract": false,
+      "mixin": false,
+      "inherited": true,
+      "access": "public",
+      "property": "set",
+      "jsdoc": {
+        "@param": [
+          {
+            "name": "@param",
+            "type": "Boolean",
+            "paramName": "value",
+            "desc": "Value for undefined"
+          }
+        ]
+      }
+    },
+    "resetHeaderCellsVisible": {
+      "type": "function",
+      "name": "resetHeaderCellsVisible",
+      "abstract": false,
+      "mixin": false,
+      "inherited": true,
+      "access": "public",
+      "property": "reset",
+      "jsdoc": {}
+    },
+    "getHeaderCellHeight": {
+      "type": "function",
+      "name": "getHeaderCellHeight",
+      "abstract": false,
+      "mixin": false,
+      "inherited": true,
+      "access": "public",
+      "property": "get",
+      "jsdoc": {
+        "@return": [
+          {
+            "name": "@return",
+            "type": "Integer",
+            "desc": "Returns the value for undefined"
+          }
+        ]
+      }
+    },
+    "setHeaderCellHeight": {
+      "type": "function",
+      "name": "setHeaderCellHeight",
+      "abstract": false,
+      "mixin": false,
+      "inherited": true,
+      "access": "public",
+      "property": "set",
+      "jsdoc": {
+        "@param": [
+          {
+            "name": "@param",
+            "type": "Integer",
+            "paramName": "value",
+            "desc": "Value for undefined"
+          }
+        ]
+      }
+    },
+    "resetHeaderCellHeight": {
+      "type": "function",
+      "name": "resetHeaderCellHeight",
+      "abstract": false,
+      "mixin": false,
+      "inherited": true,
+      "access": "public",
+      "property": "reset",
+      "jsdoc": {}
+    },
+    "getStatusBarVisible": {
+      "type": "function",
+      "name": "getStatusBarVisible",
+      "abstract": false,
+      "mixin": false,
+      "inherited": true,
+      "access": "public",
+      "property": "get",
+      "jsdoc": {
+        "@return": [
+          {
+            "name": "@return",
+            "type": "Boolean",
+            "desc": "Returns the value for undefined"
+          }
+        ]
+      }
+    },
+    "isStatusBarVisible": {
+      "type": "function",
+      "name": "isStatusBarVisible",
+      "abstract": false,
+      "mixin": false,
+      "inherited": true,
+      "access": "public",
+      "property": "is",
+      "jsdoc": {
+        "@return": [
+          {
+            "name": "@return",
+            "type": "Boolean",
+            "desc": "Returns the value for undefined"
+          }
+        ]
+      }
+    },
+    "setStatusBarVisible": {
+      "type": "function",
+      "name": "setStatusBarVisible",
+      "abstract": false,
+      "mixin": false,
+      "inherited": true,
+      "access": "public",
+      "property": "set",
+      "jsdoc": {
+        "@param": [
+          {
+            "name": "@param",
+            "type": "Boolean",
+            "paramName": "value",
+            "desc": "Value for undefined"
+          }
+        ]
+      }
+    },
+    "resetStatusBarVisible": {
+      "type": "function",
+      "name": "resetStatusBarVisible",
+      "abstract": false,
+      "mixin": false,
+      "inherited": true,
+      "access": "public",
+      "property": "reset",
+      "jsdoc": {}
+    },
+    "getAdditionalStatusBarText": {
+      "type": "function",
+      "name": "getAdditionalStatusBarText",
+      "abstract": false,
+      "mixin": false,
+      "inherited": true,
+      "access": "public",
+      "property": "get",
+      "jsdoc": {
+        "@return": [
+          {
+            "name": "@return",
+            "type": "any",
+            "desc": "Returns the value for undefined"
+          }
+        ]
+      }
+    },
+    "setAdditionalStatusBarText": {
+      "type": "function",
+      "name": "setAdditionalStatusBarText",
+      "abstract": false,
+      "mixin": false,
+      "inherited": true,
+      "access": "public",
+      "property": "set",
+      "jsdoc": {
+        "@param": [
+          {
+            "name": "@param",
+            "type": "any",
+            "paramName": "value",
+            "desc": "Value for undefined"
+          }
+        ]
+      }
+    },
+    "resetAdditionalStatusBarText": {
+      "type": "function",
+      "name": "resetAdditionalStatusBarText",
+      "abstract": false,
+      "mixin": false,
+      "inherited": true,
+      "access": "public",
+      "property": "reset",
+      "jsdoc": {}
+    },
+    "getColumnVisibilityButtonVisible": {
+      "type": "function",
+      "name": "getColumnVisibilityButtonVisible",
+      "abstract": false,
+      "mixin": false,
+      "inherited": true,
+      "access": "public",
+      "property": "get",
+      "jsdoc": {
+        "@return": [
+          {
+            "name": "@return",
+            "type": "Boolean",
+            "desc": "Returns the value for undefined"
+          }
+        ]
+      }
+    },
+    "isColumnVisibilityButtonVisible": {
+      "type": "function",
+      "name": "isColumnVisibilityButtonVisible",
+      "abstract": false,
+      "mixin": false,
+      "inherited": true,
+      "access": "public",
+      "property": "is",
+      "jsdoc": {
+        "@return": [
+          {
+            "name": "@return",
+            "type": "Boolean",
+            "desc": "Returns the value for undefined"
+          }
+        ]
+      }
+    },
+    "setColumnVisibilityButtonVisible": {
+      "type": "function",
+      "name": "setColumnVisibilityButtonVisible",
+      "abstract": false,
+      "mixin": false,
+      "inherited": true,
+      "access": "public",
+      "property": "set",
+      "jsdoc": {
+        "@param": [
+          {
+            "name": "@param",
+            "type": "Boolean",
+            "paramName": "value",
+            "desc": "Value for undefined"
+          }
+        ]
+      }
+    },
+    "resetColumnVisibilityButtonVisible": {
+      "type": "function",
+      "name": "resetColumnVisibilityButtonVisible",
+      "abstract": false,
+      "mixin": false,
+      "inherited": true,
+      "access": "public",
+      "property": "reset",
+      "jsdoc": {}
+    },
+    "getMetaColumnCounts": {
+      "type": "function",
+      "name": "getMetaColumnCounts",
+      "abstract": false,
+      "mixin": false,
+      "inherited": true,
+      "access": "public",
+      "property": "get",
+      "jsdoc": {
+        "@return": [
+          {
+            "name": "@return",
+            "type": "Object",
+            "desc": "Returns the value for undefined"
+          }
+        ]
+      }
+    },
+    "setMetaColumnCounts": {
+      "type": "function",
+      "name": "setMetaColumnCounts",
+      "abstract": false,
+      "mixin": false,
+      "inherited": true,
+      "access": "public",
+      "property": "set",
+      "jsdoc": {
+        "@param": [
+          {
+            "name": "@param",
+            "type": "Object",
+            "paramName": "value",
+            "desc": "Value for undefined"
+          }
+        ]
+      }
+    },
+    "resetMetaColumnCounts": {
+      "type": "function",
+      "name": "resetMetaColumnCounts",
+      "abstract": false,
+      "mixin": false,
+      "inherited": true,
+      "access": "public",
+      "property": "reset",
+      "jsdoc": {}
+    },
+    "getFocusCellOnPointerMove": {
+      "type": "function",
+      "name": "getFocusCellOnPointerMove",
+      "abstract": false,
+      "mixin": false,
+      "inherited": true,
+      "access": "public",
+      "property": "get",
+      "jsdoc": {
+        "@return": [
+          {
+            "name": "@return",
+            "type": "Boolean",
+            "desc": "Returns the value for undefined"
+          }
+        ]
+      }
+    },
+    "isFocusCellOnPointerMove": {
+      "type": "function",
+      "name": "isFocusCellOnPointerMove",
+      "abstract": false,
+      "mixin": false,
+      "inherited": true,
+      "access": "public",
+      "property": "is",
+      "jsdoc": {
+        "@return": [
+          {
+            "name": "@return",
+            "type": "Boolean",
+            "desc": "Returns the value for undefined"
+          }
+        ]
+      }
+    },
+    "setFocusCellOnPointerMove": {
+      "type": "function",
+      "name": "setFocusCellOnPointerMove",
+      "abstract": false,
+      "mixin": false,
+      "inherited": true,
+      "access": "public",
+      "property": "set",
+      "jsdoc": {
+        "@param": [
+          {
+            "name": "@param",
+            "type": "Boolean",
+            "paramName": "value",
+            "desc": "Value for undefined"
+          }
+        ]
+      }
+    },
+    "resetFocusCellOnPointerMove": {
+      "type": "function",
+      "name": "resetFocusCellOnPointerMove",
+      "abstract": false,
+      "mixin": false,
+      "inherited": true,
+      "access": "public",
+      "property": "reset",
+      "jsdoc": {}
+    },
+    "getRowFocusChangeModifiesSelection": {
+      "type": "function",
+      "name": "getRowFocusChangeModifiesSelection",
+      "abstract": false,
+      "mixin": false,
+      "inherited": true,
+      "access": "public",
+      "property": "get",
+      "jsdoc": {
+        "@return": [
+          {
+            "name": "@return",
+            "type": "Boolean",
+            "desc": "Returns the value for undefined"
+          }
+        ]
+      }
+    },
+    "isRowFocusChangeModifiesSelection": {
+      "type": "function",
+      "name": "isRowFocusChangeModifiesSelection",
+      "abstract": false,
+      "mixin": false,
+      "inherited": true,
+      "access": "public",
+      "property": "is",
+      "jsdoc": {
+        "@return": [
+          {
+            "name": "@return",
+            "type": "Boolean",
+            "desc": "Returns the value for undefined"
+          }
+        ]
+      }
+    },
+    "setRowFocusChangeModifiesSelection": {
+      "type": "function",
+      "name": "setRowFocusChangeModifiesSelection",
+      "abstract": false,
+      "mixin": false,
+      "inherited": true,
+      "access": "public",
+      "property": "set",
+      "jsdoc": {
+        "@param": [
+          {
+            "name": "@param",
+            "type": "Boolean",
+            "paramName": "value",
+            "desc": "Value for undefined"
+          }
+        ]
+      }
+    },
+    "resetRowFocusChangeModifiesSelection": {
+      "type": "function",
+      "name": "resetRowFocusChangeModifiesSelection",
+      "abstract": false,
+      "mixin": false,
+      "inherited": true,
+      "access": "public",
+      "property": "reset",
+      "jsdoc": {}
+    },
+    "getShowCellFocusIndicator": {
+      "type": "function",
+      "name": "getShowCellFocusIndicator",
+      "abstract": false,
+      "mixin": false,
+      "inherited": true,
+      "access": "public",
+      "property": "get",
+      "jsdoc": {
+        "@return": [
+          {
+            "name": "@return",
+            "type": "Boolean",
+            "desc": "Returns the value for undefined"
+          }
+        ]
+      }
+    },
+    "isShowCellFocusIndicator": {
+      "type": "function",
+      "name": "isShowCellFocusIndicator",
+      "abstract": false,
+      "mixin": false,
+      "inherited": true,
+      "access": "public",
+      "property": "is",
+      "jsdoc": {
+        "@return": [
+          {
+            "name": "@return",
+            "type": "Boolean",
+            "desc": "Returns the value for undefined"
+          }
+        ]
+      }
+    },
+    "setShowCellFocusIndicator": {
+      "type": "function",
+      "name": "setShowCellFocusIndicator",
+      "abstract": false,
+      "mixin": false,
+      "inherited": true,
+      "access": "public",
+      "property": "set",
+      "jsdoc": {
+        "@param": [
+          {
+            "name": "@param",
+            "type": "Boolean",
+            "paramName": "value",
+            "desc": "Value for undefined"
+          }
+        ]
+      }
+    },
+    "resetShowCellFocusIndicator": {
+      "type": "function",
+      "name": "resetShowCellFocusIndicator",
+      "abstract": false,
+      "mixin": false,
+      "inherited": true,
+      "access": "public",
+      "property": "reset",
+      "jsdoc": {}
+    },
+    "getContextMenuFromDataCellsOnly": {
+      "type": "function",
+      "name": "getContextMenuFromDataCellsOnly",
+      "abstract": false,
+      "mixin": false,
+      "inherited": true,
+      "access": "public",
+      "property": "get",
+      "jsdoc": {
+        "@return": [
+          {
+            "name": "@return",
+            "type": "Boolean",
+            "desc": "Returns the value for undefined"
+          }
+        ]
+      }
+    },
+    "isContextMenuFromDataCellsOnly": {
+      "type": "function",
+      "name": "isContextMenuFromDataCellsOnly",
+      "abstract": false,
+      "mixin": false,
+      "inherited": true,
+      "access": "public",
+      "property": "is",
+      "jsdoc": {
+        "@return": [
+          {
+            "name": "@return",
+            "type": "Boolean",
+            "desc": "Returns the value for undefined"
+          }
+        ]
+      }
+    },
+    "setContextMenuFromDataCellsOnly": {
+      "type": "function",
+      "name": "setContextMenuFromDataCellsOnly",
+      "abstract": false,
+      "mixin": false,
+      "inherited": true,
+      "access": "public",
+      "property": "set",
+      "jsdoc": {
+        "@param": [
+          {
+            "name": "@param",
+            "type": "Boolean",
+            "paramName": "value",
+            "desc": "Value for undefined"
+          }
+        ]
+      }
+    },
+    "resetContextMenuFromDataCellsOnly": {
+      "type": "function",
+      "name": "resetContextMenuFromDataCellsOnly",
+      "abstract": false,
+      "mixin": false,
+      "inherited": true,
+      "access": "public",
+      "property": "reset",
+      "jsdoc": {}
+    },
+    "getKeepFirstVisibleRowComplete": {
+      "type": "function",
+      "name": "getKeepFirstVisibleRowComplete",
+      "abstract": false,
+      "mixin": false,
+      "inherited": true,
+      "access": "public",
+      "property": "get",
+      "jsdoc": {
+        "@return": [
+          {
+            "name": "@return",
+            "type": "Boolean",
+            "desc": "Returns the value for undefined"
+          }
+        ]
+      }
+    },
+    "isKeepFirstVisibleRowComplete": {
+      "type": "function",
+      "name": "isKeepFirstVisibleRowComplete",
+      "abstract": false,
+      "mixin": false,
+      "inherited": true,
+      "access": "public",
+      "property": "is",
+      "jsdoc": {
+        "@return": [
+          {
+            "name": "@return",
+            "type": "Boolean",
+            "desc": "Returns the value for undefined"
+          }
+        ]
+      }
+    },
+    "setKeepFirstVisibleRowComplete": {
+      "type": "function",
+      "name": "setKeepFirstVisibleRowComplete",
+      "abstract": false,
+      "mixin": false,
+      "inherited": true,
+      "access": "public",
+      "property": "set",
+      "jsdoc": {
+        "@param": [
+          {
+            "name": "@param",
+            "type": "Boolean",
+            "paramName": "value",
+            "desc": "Value for undefined"
+          }
+        ]
+      }
+    },
+    "resetKeepFirstVisibleRowComplete": {
+      "type": "function",
+      "name": "resetKeepFirstVisibleRowComplete",
+      "abstract": false,
+      "mixin": false,
+      "inherited": true,
+      "access": "public",
+      "property": "reset",
+      "jsdoc": {}
+    },
+    "getAlwaysUpdateCells": {
+      "type": "function",
+      "name": "getAlwaysUpdateCells",
+      "abstract": false,
+      "mixin": false,
+      "inherited": true,
+      "access": "public",
+      "property": "get",
+      "jsdoc": {
+        "@return": [
+          {
+            "name": "@return",
+            "type": "Boolean",
+            "desc": "Returns the value for undefined"
+          }
+        ]
+      }
+    },
+    "isAlwaysUpdateCells": {
+      "type": "function",
+      "name": "isAlwaysUpdateCells",
+      "abstract": false,
+      "mixin": false,
+      "inherited": true,
+      "access": "public",
+      "property": "is",
+      "jsdoc": {
+        "@return": [
+          {
+            "name": "@return",
+            "type": "Boolean",
+            "desc": "Returns the value for undefined"
+          }
+        ]
+      }
+    },
+    "setAlwaysUpdateCells": {
+      "type": "function",
+      "name": "setAlwaysUpdateCells",
+      "abstract": false,
+      "mixin": false,
+      "inherited": true,
+      "access": "public",
+      "property": "set",
+      "jsdoc": {
+        "@param": [
+          {
+            "name": "@param",
+            "type": "Boolean",
+            "paramName": "value",
+            "desc": "Value for undefined"
+          }
+        ]
+      }
+    },
+    "resetAlwaysUpdateCells": {
+      "type": "function",
+      "name": "resetAlwaysUpdateCells",
+      "abstract": false,
+      "mixin": false,
+      "inherited": true,
+      "access": "public",
+      "property": "reset",
+      "jsdoc": {}
+    },
+    "getResetSelectionOnHeaderTap": {
+      "type": "function",
+      "name": "getResetSelectionOnHeaderTap",
+      "abstract": false,
+      "mixin": false,
+      "inherited": true,
+      "access": "public",
+      "property": "get",
+      "jsdoc": {
+        "@return": [
+          {
+            "name": "@return",
+            "type": "Boolean",
+            "desc": "Returns the value for undefined"
+          }
+        ]
+      }
+    },
+    "isResetSelectionOnHeaderTap": {
+      "type": "function",
+      "name": "isResetSelectionOnHeaderTap",
+      "abstract": false,
+      "mixin": false,
+      "inherited": true,
+      "access": "public",
+      "property": "is",
+      "jsdoc": {
+        "@return": [
+          {
+            "name": "@return",
+            "type": "Boolean",
+            "desc": "Returns the value for undefined"
+          }
+        ]
+      }
+    },
+    "setResetSelectionOnHeaderTap": {
+      "type": "function",
+      "name": "setResetSelectionOnHeaderTap",
+      "abstract": false,
+      "mixin": false,
+      "inherited": true,
+      "access": "public",
+      "property": "set",
+      "jsdoc": {
+        "@param": [
+          {
+            "name": "@param",
+            "type": "Boolean",
+            "paramName": "value",
+            "desc": "Value for undefined"
+          }
+        ]
+      }
+    },
+    "resetResetSelectionOnHeaderTap": {
+      "type": "function",
+      "name": "resetResetSelectionOnHeaderTap",
+      "abstract": false,
+      "mixin": false,
+      "inherited": true,
+      "access": "public",
+      "property": "reset",
+      "jsdoc": {}
+    },
+    "getDataRowRenderer": {
+      "type": "function",
+      "name": "getDataRowRenderer",
+      "abstract": false,
+      "mixin": false,
+      "inherited": true,
+      "access": "public",
+      "property": "get",
+      "jsdoc": {
+        "@return": [
+          {
+            "name": "@return",
+            "type": "qx.ui.table.IRowRenderer",
+            "desc": "Returns the value for undefined"
+          }
+        ]
+      }
+    },
+    "setDataRowRenderer": {
+      "type": "function",
+      "name": "setDataRowRenderer",
+      "abstract": false,
+      "mixin": false,
+      "inherited": true,
+      "access": "public",
+      "property": "set",
+      "jsdoc": {
+        "@param": [
+          {
+            "name": "@param",
+            "type": "qx.ui.table.IRowRenderer",
+            "paramName": "value",
+            "desc": "Value for undefined"
+          }
+        ]
+      }
+    },
+    "resetDataRowRenderer": {
+      "type": "function",
+      "name": "resetDataRowRenderer",
+      "abstract": false,
+      "mixin": false,
+      "inherited": true,
+      "access": "public",
+      "property": "reset",
+      "jsdoc": {}
+    },
+    "getModalCellEditorPreOpenFunction": {
+      "type": "function",
+      "name": "getModalCellEditorPreOpenFunction",
+      "abstract": false,
+      "mixin": false,
+      "inherited": true,
+      "access": "public",
+      "property": "get",
+      "jsdoc": {
+        "@return": [
+          {
+            "name": "@return",
+            "type": "Function",
+            "desc": "Returns the value for undefined"
+          }
+        ]
+      }
+    },
+    "setModalCellEditorPreOpenFunction": {
+      "type": "function",
+      "name": "setModalCellEditorPreOpenFunction",
+      "abstract": false,
+      "mixin": false,
+      "inherited": true,
+      "access": "public",
+      "property": "set",
+      "jsdoc": {
+        "@param": [
+          {
+            "name": "@param",
+            "type": "Function",
+            "paramName": "value",
+            "desc": "Value for undefined"
+          }
+        ]
+      }
+    },
+    "resetModalCellEditorPreOpenFunction": {
+      "type": "function",
+      "name": "resetModalCellEditorPreOpenFunction",
+      "abstract": false,
+      "mixin": false,
+      "inherited": true,
+      "access": "public",
+      "property": "reset",
+      "jsdoc": {}
+    },
+    "getNewColumnMenu": {
+      "type": "function",
+      "name": "getNewColumnMenu",
+      "abstract": false,
+      "mixin": false,
+      "inherited": true,
+      "access": "public",
+      "property": "get",
+      "jsdoc": {
+        "@return": [
+          {
+            "name": "@return",
+            "type": "Function",
+            "desc": "Returns the value for undefined"
+          }
+        ]
+      }
+    },
+    "setNewColumnMenu": {
+      "type": "function",
+      "name": "setNewColumnMenu",
+      "abstract": false,
+      "mixin": false,
+      "inherited": true,
+      "access": "public",
+      "property": "set",
+      "jsdoc": {
+        "@param": [
+          {
+            "name": "@param",
+            "type": "Function",
+            "paramName": "value",
+            "desc": "Value for undefined"
+          }
+        ]
+      }
+    },
+    "resetNewColumnMenu": {
+      "type": "function",
+      "name": "resetNewColumnMenu",
+      "abstract": false,
+      "mixin": false,
+      "inherited": true,
+      "access": "public",
+      "property": "reset",
+      "jsdoc": {}
+    },
+    "getNewSelectionManager": {
+      "type": "function",
+      "name": "getNewSelectionManager",
+      "abstract": false,
+      "mixin": false,
+      "inherited": true,
+      "access": "public",
+      "property": "get",
+      "jsdoc": {
+        "@return": [
+          {
+            "name": "@return",
+            "type": "Function",
+            "desc": "Returns the value for undefined"
+          }
+        ]
+      }
+    },
+    "setNewSelectionManager": {
+      "type": "function",
+      "name": "setNewSelectionManager",
+      "abstract": false,
+      "mixin": false,
+      "inherited": true,
+      "access": "public",
+      "property": "set",
+      "jsdoc": {
+        "@param": [
+          {
+            "name": "@param",
+            "type": "Function",
+            "paramName": "value",
+            "desc": "Value for undefined"
+          }
+        ]
+      }
+    },
+    "resetNewSelectionManager": {
+      "type": "function",
+      "name": "resetNewSelectionManager",
+      "abstract": false,
+      "mixin": false,
+      "inherited": true,
+      "access": "public",
+      "property": "reset",
+      "jsdoc": {}
+    },
+    "getNewSelectionModel": {
+      "type": "function",
+      "name": "getNewSelectionModel",
+      "abstract": false,
+      "mixin": false,
+      "inherited": true,
+      "access": "public",
+      "property": "get",
+      "jsdoc": {
+        "@return": [
+          {
+            "name": "@return",
+            "type": "Function",
+            "desc": "Returns the value for undefined"
+          }
+        ]
+      }
+    },
+    "setNewSelectionModel": {
+      "type": "function",
+      "name": "setNewSelectionModel",
+      "abstract": false,
+      "mixin": false,
+      "inherited": true,
+      "access": "public",
+      "property": "set",
+      "jsdoc": {
+        "@param": [
+          {
+            "name": "@param",
+            "type": "Function",
+            "paramName": "value",
+            "desc": "Value for undefined"
+          }
+        ]
+      }
+    },
+    "resetNewSelectionModel": {
+      "type": "function",
+      "name": "resetNewSelectionModel",
+      "abstract": false,
+      "mixin": false,
+      "inherited": true,
+      "access": "public",
+      "property": "reset",
+      "jsdoc": {}
+    },
+    "getNewTableColumnModel": {
+      "type": "function",
+      "name": "getNewTableColumnModel",
+      "abstract": false,
+      "mixin": false,
+      "inherited": true,
+      "access": "public",
+      "property": "get",
+      "jsdoc": {
+        "@return": [
+          {
+            "name": "@return",
+            "type": "Function",
+            "desc": "Returns the value for undefined"
+          }
+        ]
+      }
+    },
+    "setNewTableColumnModel": {
+      "type": "function",
+      "name": "setNewTableColumnModel",
+      "abstract": false,
+      "mixin": false,
+      "inherited": true,
+      "access": "public",
+      "property": "set",
+      "jsdoc": {
+        "@param": [
+          {
+            "name": "@param",
+            "type": "Function",
+            "paramName": "value",
+            "desc": "Value for undefined"
+          }
+        ]
+      }
+    },
+    "resetNewTableColumnModel": {
+      "type": "function",
+      "name": "resetNewTableColumnModel",
+      "abstract": false,
+      "mixin": false,
+      "inherited": true,
+      "access": "public",
+      "property": "reset",
+      "jsdoc": {}
+    },
+    "getNewTablePane": {
+      "type": "function",
+      "name": "getNewTablePane",
+      "abstract": false,
+      "mixin": false,
+      "inherited": true,
+      "access": "public",
+      "property": "get",
+      "jsdoc": {
+        "@return": [
+          {
+            "name": "@return",
+            "type": "Function",
+            "desc": "Returns the value for undefined"
+          }
+        ]
+      }
+    },
+    "setNewTablePane": {
+      "type": "function",
+      "name": "setNewTablePane",
+      "abstract": false,
+      "mixin": false,
+      "inherited": true,
+      "access": "public",
+      "property": "set",
+      "jsdoc": {
+        "@param": [
+          {
+            "name": "@param",
+            "type": "Function",
+            "paramName": "value",
+            "desc": "Value for undefined"
+          }
+        ]
+      }
+    },
+    "resetNewTablePane": {
+      "type": "function",
+      "name": "resetNewTablePane",
+      "abstract": false,
+      "mixin": false,
+      "inherited": true,
+      "access": "public",
+      "property": "reset",
+      "jsdoc": {}
+    },
+    "getNewTablePaneHeader": {
+      "type": "function",
+      "name": "getNewTablePaneHeader",
+      "abstract": false,
+      "mixin": false,
+      "inherited": true,
+      "access": "public",
+      "property": "get",
+      "jsdoc": {
+        "@return": [
+          {
+            "name": "@return",
+            "type": "Function",
+            "desc": "Returns the value for undefined"
+          }
+        ]
+      }
+    },
+    "setNewTablePaneHeader": {
+      "type": "function",
+      "name": "setNewTablePaneHeader",
+      "abstract": false,
+      "mixin": false,
+      "inherited": true,
+      "access": "public",
+      "property": "set",
+      "jsdoc": {
+        "@param": [
+          {
+            "name": "@param",
+            "type": "Function",
+            "paramName": "value",
+            "desc": "Value for undefined"
+          }
+        ]
+      }
+    },
+    "resetNewTablePaneHeader": {
+      "type": "function",
+      "name": "resetNewTablePaneHeader",
+      "abstract": false,
+      "mixin": false,
+      "inherited": true,
+      "access": "public",
+      "property": "reset",
+      "jsdoc": {}
+    },
+    "getNewTablePaneScroller": {
+      "type": "function",
+      "name": "getNewTablePaneScroller",
+      "abstract": false,
+      "mixin": false,
+      "inherited": true,
+      "access": "public",
+      "property": "get",
+      "jsdoc": {
+        "@return": [
+          {
+            "name": "@return",
+            "type": "Function",
+            "desc": "Returns the value for undefined"
+          }
+        ]
+      }
+    },
+    "setNewTablePaneScroller": {
+      "type": "function",
+      "name": "setNewTablePaneScroller",
+      "abstract": false,
+      "mixin": false,
+      "inherited": true,
+      "access": "public",
+      "property": "set",
+      "jsdoc": {
+        "@param": [
+          {
+            "name": "@param",
+            "type": "Function",
+            "paramName": "value",
+            "desc": "Value for undefined"
+          }
+        ]
+      }
+    },
+    "resetNewTablePaneScroller": {
+      "type": "function",
+      "name": "resetNewTablePaneScroller",
+      "abstract": false,
+      "mixin": false,
+      "inherited": true,
+      "access": "public",
+      "property": "reset",
+      "jsdoc": {}
+    },
+    "getNewTablePaneModel": {
+      "type": "function",
+      "name": "getNewTablePaneModel",
+      "abstract": false,
+      "mixin": false,
+      "inherited": true,
+      "access": "public",
+      "property": "get",
+      "jsdoc": {
+        "@return": [
+          {
+            "name": "@return",
+            "type": "Function",
+            "desc": "Returns the value for undefined"
+          }
+        ]
+      }
+    },
+    "setNewTablePaneModel": {
+      "type": "function",
+      "name": "setNewTablePaneModel",
+      "abstract": false,
+      "mixin": false,
+      "inherited": true,
+      "access": "public",
+      "property": "set",
+      "jsdoc": {
+        "@param": [
+          {
+            "name": "@param",
+            "type": "Function",
+            "paramName": "value",
+            "desc": "Value for undefined"
+          }
+        ]
+      }
+    },
+    "resetNewTablePaneModel": {
+      "type": "function",
+      "name": "resetNewTablePaneModel",
+      "abstract": false,
+      "mixin": false,
+      "inherited": true,
+      "access": "public",
+      "property": "reset",
+      "jsdoc": {}
+    },
+    "getOpenCloseClickSelectsRow": {
+      "type": "function",
+      "name": "getOpenCloseClickSelectsRow",
+      "abstract": false,
+      "mixin": false,
+      "inherited": false,
+      "access": "public",
+      "property": "get",
+      "jsdoc": {
+        "@return": [
+          {
+            "name": "@return",
+            "type": "Boolean",
+            "desc": "Returns the value for undefined"
+          }
+        ]
+      }
+    },
+    "isOpenCloseClickSelectsRow": {
+      "type": "function",
+      "name": "isOpenCloseClickSelectsRow",
+      "abstract": false,
+      "mixin": false,
+      "inherited": false,
+      "access": "public",
+      "property": "is",
+      "jsdoc": {
+        "@return": [
+          {
+            "name": "@return",
+            "type": "Boolean",
+            "desc": "Returns the value for undefined"
+          }
+        ]
+      }
+    },
+    "setOpenCloseClickSelectsRow": {
+      "type": "function",
+      "name": "setOpenCloseClickSelectsRow",
+      "abstract": false,
+      "mixin": false,
+      "inherited": false,
+      "access": "public",
+      "property": "set",
+      "jsdoc": {
+        "@param": [
+          {
+            "name": "@param",
+            "type": "Boolean",
+            "paramName": "value",
+            "desc": "Value for undefined"
+          }
+        ]
+      }
+    },
+    "resetOpenCloseClickSelectsRow": {
+      "type": "function",
+      "name": "resetOpenCloseClickSelectsRow",
+      "abstract": false,
+      "mixin": false,
+      "inherited": false,
+      "access": "public",
+      "property": "reset",
+      "jsdoc": {}
+    }
+  },
+  "descendants": []
+}

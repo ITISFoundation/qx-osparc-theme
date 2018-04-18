@@ -1,0 +1,151 @@
+{
+  "className": "widgetbrowser.Application",
+  "packageName": "widgetbrowser",
+  "name": "Application",
+  "superClass": "qx.application.Standalone",
+  "interfaces": [],
+  "mixins": [],
+  "clazz": {
+    "location": {
+      "start": {
+        "line": 22,
+        "column": 0
+      },
+      "end": {
+        "line": 91,
+        "column": 5
+      }
+    },
+    "jsdoc": {
+      "@description": [
+        {
+          "name": "@description",
+          "body": "***********************************************************************\n\nqooxdoo - the new era of web development\n\nhttp://qooxdoo.org\n\nCopyright:\n2004-2010 1&1 Internet AG, Germany, http://www.1und1.de\n\nLicense:\nMIT: https://opensource.org/licenses/MIT\nSee the LICENSE file in the project's top-level directory for details.\n\nAuthors:\nTristan Koch (tristankoch)\n\n***********************************************************************"
+        },
+        {
+          "name": "@description",
+          "body": "Main Application."
+        }
+      ]
+    }
+  },
+  "type": "class",
+  "construct": {
+    "location": {
+      "start": {
+        "line": 27,
+        "column": 4
+      },
+      "end": {
+        "line": 29,
+        "column": 5
+      }
+    }
+  },
+  "members": {
+    "__header": {
+      "location": {
+        "start": {
+          "line": 33,
+          "column": 4
+        },
+        "end": {
+          "line": 33,
+          "column": 18
+        }
+      },
+      "type": "variable",
+      "access": "private"
+    },
+    "__tabs": {
+      "location": {
+        "start": {
+          "line": 35,
+          "column": 4
+        },
+        "end": {
+          "line": 35,
+          "column": 16
+        }
+      },
+      "type": "variable",
+      "access": "private"
+    },
+    "__scroll": {
+      "location": {
+        "start": {
+          "line": 37,
+          "column": 4
+        },
+        "end": {
+          "line": 37,
+          "column": 18
+        }
+      },
+      "type": "variable",
+      "access": "private"
+    },
+    "main": {
+      "location": {
+        "start": {
+          "line": 39,
+          "column": 4
+        },
+        "end": {
+          "line": 67,
+          "column": 5
+        }
+      },
+      "type": "function",
+      "access": "public",
+      "overriddenFrom": "qx.application.AbstractGui",
+      "appearsIn": [
+        "qx.application.AbstractGui",
+        "qx.application.IApplication"
+      ]
+    },
+    "_createTabView": {
+      "location": {
+        "start": {
+          "line": 69,
+          "column": 4
+        },
+        "end": {
+          "line": 72,
+          "column": 5
+        }
+      },
+      "type": "function",
+      "access": "protected"
+    },
+    "getScroll": {
+      "location": {
+        "start": {
+          "line": 74,
+          "column": 4
+        },
+        "end": {
+          "line": 76,
+          "column": 5
+        }
+      },
+      "type": "function",
+      "access": "public"
+    },
+    "getThemes": {
+      "location": {
+        "start": {
+          "line": 78,
+          "column": 4
+        },
+        "end": {
+          "line": 89,
+          "column": 5
+        }
+      },
+      "type": "function",
+      "access": "public"
+    }
+  },
+  "descendants": []
+}

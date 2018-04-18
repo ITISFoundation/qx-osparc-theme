@@ -1,0 +1,333 @@
+{
+  "className": "qx.ui.tree.core.FolderOpenButton",
+  "packageName": "qx.ui.tree.core",
+  "name": "FolderOpenButton",
+  "superClass": "qx.ui.basic.Image",
+  "interfaces": [],
+  "mixins": [
+    "qx.ui.core.MExecutable"
+  ],
+  "clazz": {
+    "location": {
+      "start": {
+        "line": 22,
+        "column": 0
+      },
+      "end": {
+        "line": 111,
+        "column": 3
+      }
+    },
+    "jsdoc": {
+      "@description": [
+        {
+          "name": "@description",
+          "body": "***********************************************************************\n\nqooxdoo - the new era of web development\n\nhttp://qooxdoo.org\n\nCopyright:\n2004-2008 1&1 Internet AG, Germany, http://www.1und1.de\n\nLicense:\nMIT: https://opensource.org/licenses/MIT\nSee the LICENSE file in the project's top-level directory for details.\n\nAuthors:\nFabian Jakobs (fjakobs)\n\n***********************************************************************"
+        },
+        {
+          "name": "@description",
+          "body": "The small folder open/close button"
+        }
+      ]
+    }
+  },
+  "type": "class",
+  "construct": {
+    "location": {
+      "start": {
+        "line": 36,
+        "column": 2
+      },
+      "end": {
+        "line": 45,
+        "column": 3
+      }
+    },
+    "jsdoc": {
+      "@description": [
+        {
+          "name": "@description",
+          "body": "****************************************************************************\nCONSTRUCTOR\n****************************************************************************"
+        }
+      ]
+    }
+  },
+  "properties": {
+    "open": {
+      "location": {
+        "start": {
+          "line": 62,
+          "column": 4
+        },
+        "end": {
+          "line": 68,
+          "column": 5
+        }
+      },
+      "jsdoc": {
+        "@description": [
+          {
+            "name": "@description",
+            "body": "Whether the button state is \"open\""
+          }
+        ]
+      },
+      "name": "open",
+      "propertyType": "new",
+      "event": "changeOpen",
+      "apply": "_applyOpen",
+      "check": "Boolean",
+      "defaultValue": false
+    },
+    "command": {
+      "type": "property",
+      "name": "command",
+      "abstract": false,
+      "mixin": true,
+      "access": "public",
+      "overriddenFrom": "qx.ui.core.MExecutable"
+    }
+  },
+  "members": {
+    "_applyOpen": {
+      "location": {
+        "start": {
+          "line": 83,
+          "column": 4
+        },
+        "end": {
+          "line": 87,
+          "column": 5
+        }
+      },
+      "jsdoc": {
+        "@description": [
+          {
+            "name": "@description",
+            "body": "property apply"
+          }
+        ]
+      },
+      "type": "function",
+      "access": "protected"
+    },
+    "_stopPropagation": {
+      "location": {
+        "start": {
+          "line": 95,
+          "column": 4
+        },
+        "end": {
+          "line": 97,
+          "column": 5
+        }
+      },
+      "jsdoc": {
+        "@description": [
+          {
+            "name": "@description",
+            "body": "Stop tap event propagation"
+          }
+        ],
+        "@param": [
+          {
+            "name": "@param",
+            "body": "e {qx.event.type.Event} The event object",
+            "paramName": "e",
+            "description": " The event object",
+            "type": "qx.event.type.Event"
+          }
+        ]
+      },
+      "type": "function",
+      "access": "protected"
+    },
+    "_onTap": {
+      "location": {
+        "start": {
+          "line": 105,
+          "column": 4
+        },
+        "end": {
+          "line": 109,
+          "column": 5
+        }
+      },
+      "jsdoc": {
+        "@description": [
+          {
+            "name": "@description",
+            "body": "Pointer tap event listener"
+          }
+        ],
+        "@param": [
+          {
+            "name": "@param",
+            "body": "e {qx.event.type.Pointer} Pointer event",
+            "paramName": "e",
+            "description": " Pointer event",
+            "type": "qx.event.type.Pointer"
+          }
+        ]
+      },
+      "type": "function",
+      "access": "protected"
+    },
+    "execute": {
+      "type": "function",
+      "name": "execute",
+      "abstract": false,
+      "mixin": true,
+      "inherited": true,
+      "access": "public",
+      "overriddenFrom": "qx.ui.core.MExecutable"
+    },
+    "__onCommandExecute": {
+      "type": "function",
+      "name": "__onCommandExecute",
+      "abstract": false,
+      "mixin": true,
+      "inherited": true,
+      "access": "private",
+      "overriddenFrom": "qx.ui.core.MExecutable",
+      "jsdoc": {
+        "@description": [
+          {
+            "name": "@description",
+            "body": "Handler for the execute event of the command."
+          }
+        ],
+        "@param": [
+          {
+            "name": "@param",
+            "body": "e {qx.event.type.Event} The execute event of the command.",
+            "paramName": "e",
+            "description": " The execute event of the command.",
+            "type": "qx.event.type.Event"
+          }
+        ]
+      }
+    },
+    "_applyCommand": {
+      "type": "function",
+      "name": "_applyCommand",
+      "abstract": false,
+      "mixin": true,
+      "inherited": true,
+      "access": "protected",
+      "overriddenFrom": "qx.ui.core.MExecutable"
+    },
+    "getCommand": {
+      "type": "function",
+      "name": "getCommand",
+      "abstract": false,
+      "mixin": true,
+      "inherited": true,
+      "access": "public",
+      "overriddenFrom": "qx.ui.core.MExecutable",
+      "jsdoc": {
+        "@return": [
+          {
+            "name": "@return",
+            "type": "qx.ui.command.Command",
+            "desc": "Returns the value for undefined"
+          }
+        ]
+      }
+    },
+    "setCommand": {
+      "type": "function",
+      "name": "setCommand",
+      "abstract": false,
+      "mixin": true,
+      "inherited": true,
+      "access": "public",
+      "overriddenFrom": "qx.ui.core.MExecutable",
+      "jsdoc": {
+        "@param": [
+          {
+            "name": "@param",
+            "type": "qx.ui.command.Command",
+            "paramName": "value",
+            "desc": "Value for undefined"
+          }
+        ]
+      }
+    },
+    "resetCommand": {
+      "type": "function",
+      "name": "resetCommand",
+      "abstract": false,
+      "mixin": true,
+      "inherited": true,
+      "access": "public",
+      "overriddenFrom": "qx.ui.core.MExecutable"
+    },
+    "getOpen": {
+      "type": "function",
+      "name": "getOpen",
+      "abstract": false,
+      "mixin": false,
+      "inherited": false,
+      "access": "public",
+      "property": "get",
+      "jsdoc": {
+        "@return": [
+          {
+            "name": "@return",
+            "type": "Boolean",
+            "desc": "Returns the value for undefined"
+          }
+        ]
+      }
+    },
+    "isOpen": {
+      "type": "function",
+      "name": "isOpen",
+      "abstract": false,
+      "mixin": false,
+      "inherited": false,
+      "access": "public",
+      "property": "is",
+      "jsdoc": {
+        "@return": [
+          {
+            "name": "@return",
+            "type": "Boolean",
+            "desc": "Returns the value for undefined"
+          }
+        ]
+      }
+    },
+    "setOpen": {
+      "type": "function",
+      "name": "setOpen",
+      "abstract": false,
+      "mixin": false,
+      "inherited": false,
+      "access": "public",
+      "property": "set",
+      "jsdoc": {
+        "@param": [
+          {
+            "name": "@param",
+            "type": "Boolean",
+            "paramName": "value",
+            "desc": "Value for undefined"
+          }
+        ]
+      }
+    },
+    "resetOpen": {
+      "type": "function",
+      "name": "resetOpen",
+      "abstract": false,
+      "mixin": false,
+      "inherited": false,
+      "access": "public",
+      "property": "reset",
+      "jsdoc": {}
+    }
+  },
+  "descendants": []
+}

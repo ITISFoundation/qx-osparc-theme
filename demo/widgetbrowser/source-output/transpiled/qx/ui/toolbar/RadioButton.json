@@ -1,0 +1,191 @@
+{
+  "className": "qx.ui.toolbar.RadioButton",
+  "packageName": "qx.ui.toolbar",
+  "name": "RadioButton",
+  "superClass": "qx.ui.toolbar.CheckBox",
+  "interfaces": [
+    "qx.ui.form.IModel",
+    "qx.ui.form.IRadioItem"
+  ],
+  "mixins": [
+    "qx.ui.form.MModelProperty"
+  ],
+  "clazz": {
+    "location": {
+      "start": {
+        "line": 26,
+        "column": 0
+      },
+      "end": {
+        "line": 74,
+        "column": 3
+      }
+    },
+    "jsdoc": {
+      "@description": [
+        {
+          "name": "@description",
+          "body": "***********************************************************************\n\nqooxdoo - the new era of web development\n\nhttp://qooxdoo.org\n\nCopyright:\n2004-2008 1&1 Internet AG, Germany, http://www.1und1.de\n\nLicense:\nMIT: https://opensource.org/licenses/MIT\nSee the LICENSE file in the project's top-level directory for details.\n\nAuthors:\nSebastian Werner (wpbasti)\nAndreas Ecker (ecker)\nMartin Wittemann (martinwittemann)\n\n***********************************************************************"
+        },
+        {
+          "name": "@description",
+          "body": "Radio buttons are used to manage a single selection. Radio buttons only\nmake sense used in a group of two or more of them. They are managed (connected)\nto a {@link qx.ui.form.RadioGroup} to handle the selection."
+        }
+      ]
+    }
+  },
+  "type": "class",
+  "members": {
+    "_applyValue": {
+      "location": {
+        "start": {
+          "line": 50,
+          "column": 4
+        },
+        "end": {
+          "line": 61,
+          "column": 5
+        }
+      },
+      "jsdoc": {
+        "@description": [
+          {
+            "name": "@description",
+            "body": "---------------------------------------------------------------------------\nPROPERTY APPLY ROUTINES\n---------------------------------------------------------------------------"
+          },
+          {
+            "name": "@description",
+            "body": "overridden"
+          }
+        ],
+        "@param": [
+          {
+            "name": "@param",
+            "body": "value {Boolean} Current value",
+            "paramName": "value",
+            "description": " Current value",
+            "type": "Boolean"
+          },
+          {
+            "name": "@param",
+            "body": "old {Boolean} Previous value",
+            "paramName": "old",
+            "description": " Previous value",
+            "type": "Boolean"
+          }
+        ]
+      },
+      "type": "function",
+      "access": "protected",
+      "overriddenFrom": "qx.ui.form.ToggleButton",
+      "appearsIn": [
+        "qx.ui.form.ToggleButton"
+      ]
+    },
+    "_onExecute": {
+      "location": {
+        "start": {
+          "line": 65,
+          "column": 4
+        },
+        "end": {
+          "line": 72,
+          "column": 5
+        }
+      },
+      "jsdoc": {
+        "@description": [
+          {
+            "name": "@description",
+            "body": "overridden"
+          }
+        ],
+        "@param": [
+          {
+            "name": "@param",
+            "body": "e {qx.event.type.Event} The execute event.",
+            "paramName": "e",
+            "description": " The execute event.",
+            "type": "qx.event.type.Event"
+          }
+        ]
+      },
+      "type": "function",
+      "access": "protected",
+      "overriddenFrom": "qx.ui.form.ToggleButton",
+      "appearsIn": [
+        "qx.ui.form.ToggleButton"
+      ]
+    },
+    "setModel": {
+      "type": "function",
+      "name": "setModel",
+      "abstract": false,
+      "mixin": true,
+      "inherited": true,
+      "access": "public",
+      "overriddenFrom": "qx.ui.form.IModel",
+      "jsdoc": {
+        "@description": [
+          {
+            "name": "@description",
+            "body": "Set the representative data for the item."
+          }
+        ],
+        "@param": [
+          {
+            "name": "@param",
+            "body": "value {var} The data.",
+            "paramName": "value",
+            "description": " The data.",
+            "type": "var"
+          }
+        ]
+      }
+    },
+    "getModel": {
+      "type": "function",
+      "name": "getModel",
+      "abstract": false,
+      "mixin": true,
+      "inherited": true,
+      "access": "public",
+      "overriddenFrom": "qx.ui.form.IModel",
+      "jsdoc": {
+        "@description": [
+          {
+            "name": "@description",
+            "body": "Returns the representative data for the item"
+          }
+        ],
+        "@return": [
+          {
+            "name": "@return",
+            "body": "{var} The data.",
+            "type": "var",
+            "desc": " The data."
+          }
+        ]
+      }
+    },
+    "resetModel": {
+      "type": "function",
+      "name": "resetModel",
+      "abstract": false,
+      "mixin": true,
+      "inherited": true,
+      "access": "public",
+      "overriddenFrom": "qx.ui.form.IModel"
+    },
+    "_applyModel": {
+      "type": "function",
+      "name": "_applyModel",
+      "abstract": false,
+      "mixin": true,
+      "inherited": true,
+      "access": "protected",
+      "overriddenFrom": "qx.ui.form.MModelProperty"
+    }
+  },
+  "descendants": []
+}

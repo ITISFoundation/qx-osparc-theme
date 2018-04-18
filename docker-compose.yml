@@ -1,0 +1,14 @@
+version: '3'
+services:
+  qx:
+    image: "itisfoundation/qx-osparc-theme"
+    build:
+      context: .
+      dockerfile: Dockerfile
+    working_dir: /home/node/src
+    volumes:
+      - '.:/home/node/src'
+    ports:
+      - '8744:8744'
+    command: serve --verbose
+    

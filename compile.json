@@ -1,0 +1,115 @@
+{
+  "targets": [
+    {
+      "type": "source",
+      "outputPath": "source-output"
+    },
+    {
+      "type": "hybrid",
+      "outputPath": "hybrid-output"
+    },
+    {
+      "type": "build",
+      "outputPath": "build-output"
+    }
+  ],
+  "defaultTarget": "hybrid",
+  "serve": {
+    "listenPort": 8744
+  },
+  "locales": [
+    "en",
+    "de",
+    "fr"
+  ],
+  "environment": {
+    "qx.icontheme": "Tango"
+  },
+  "applications": [
+    {
+      "class": "widgetbrowser.Application",
+      "theme": "qx.theme.Classic",
+      "name": "OSparc Theme Demo Widgetbrowser",
+      "writeIndexHtmlToRoot": true,
+      "include": [
+        "qx.theme.Indigo",
+        "qx.theme.Modern",
+        "qx.theme.Simple",
+        "osparc.theme.OSparcDark"
+      ],
+      "parts": {
+        "boot": {
+          "include": [
+            "widgetbrowser.Application"
+          ]
+        },
+        "tree": {
+          "include": [
+            "widgetbrowser.pages.Tree"
+          ]
+        },
+        "list": {
+          "include": [
+            "widgetbrowser.pages.List"
+          ]
+        },
+        "table": {
+          "include": [
+            "widgetbrowser.pages.Table"
+          ]
+        },
+        "form": {
+          "include": [
+            "widgetbrowser.pages.Form"
+          ]
+        },
+        "toolbar": {
+          "include": [
+            "widgetbrowser.pages.ToolBar"
+          ]
+        },
+        "window": {
+          "include": [
+            "widgetbrowser.pages.Window"
+          ]
+        },
+        "tab": {
+          "include": [
+            "widgetbrowser.pages.Tab"
+          ]
+        },
+        "control": {
+          "include": [
+            "widgetbrowser.pages.Control"
+          ]
+        },
+        "embed": {
+          "include": [
+            "widgetbrowser.pages.Embed"
+          ]
+        },
+        "embedframe": {
+          "include": [
+            "widgetbrowser.pages.EmbedFrame"
+          ]
+        },
+        "basic": {
+          "include": [
+            "widgetbrowser.pages.Basic"
+          ]
+        },
+        "misc": {
+          "include": [
+            "widgetbrowser.pages.Misc"
+          ]
+        }
+      }
+    }
+  ],
+  "libraries": [
+    "../.npm-global/lib/node_modules/qxcompiler/node_modules/qooxdoo-sdk/framework",
+    "./components/versionlabel",
+    "./components/formdemo",
+    "."
+  ]
+}

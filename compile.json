@@ -18,14 +18,27 @@
 
   "applications": [
     {
-      "class": "qx-osparc-theme.demo.Application",
-      "theme": "qx-osparc-theme.theme.Theme",
-      "name": "qx-osparc-theme"
+      "class": "osparc.demo.Application",
+      "theme": "osparc.theme.OSparc",
+      "name": "QxOSparcTheme"
     }
   ],
 
   "libraries": [
-    "lib/node_modules/qxcompiler/node_modules/qooxdoo-sdk/framework",
+    ".node_modules/qxcompiler/node_modules/qooxdoo-sdk/framework",
     "."
   ]
+  ,
+  "eslintConfig": {
+    "parserOptions": {
+      "ecmaVersion": 2017,
+      "sourceType": "module"
+    },
+    "globals": {
+      "osparc": false
+    }, 
+    "extends": [
+      "qx/browser"          
+    ] 
+  }
 }

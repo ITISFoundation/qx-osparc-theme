@@ -61,11 +61,11 @@ var libinfo = {
     "sourceUri": "../transpiled",
     "resourceUri": "../resource"
   },
-  "widgetbrowser": {
+  "qxc.application.formdemo": {
     "sourceUri": "../transpiled",
     "resourceUri": "../resource"
   },
-  "qxc.application.formdemo": {
+  "widgetbrowser": {
     "sourceUri": "../transpiled",
     "resourceUri": "../resource"
   },

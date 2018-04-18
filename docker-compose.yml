@@ -5,10 +5,10 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
-    working_dir: /home/node/src/demo/widgetbrowser
+    working_dir: /home/node/src
     volumes:
       - '.:/home/node/src'
     ports:
-      - '8080:8080'
-    command: serve
+      - '8744:8744'
+    command: serve --verbose
     

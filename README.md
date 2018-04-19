@@ -1,6 +1,6 @@
 # A Qooxdoo Theme for OSparc
 
-> These instructions assume that you are using the new [qooxdoo-comiler](https://github.com/qooxdoo/qooxdoo-compiler)
+> These instructions assume that you are using the new [qooxdoo-compiler](https://github.com/qooxdoo/qooxdoo-compiler)
 > for building your application.
 
 ## Using the Theme in your Application
@@ -44,6 +44,7 @@ and give this a whirl.
    ```console
    $ docker-compose up
    ```
+  Now you can open http://localhost:8744 to see the widgetbrowser. The selectbox in the top right corner lets you select the OSparc theme.
 
 If you want to run a different qx command, you can do this too
 

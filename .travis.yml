@@ -4,10 +4,10 @@ node_js:
   
 cache:
   directories:
-    - ../.npm-global
+    - $HOME/.nvm
 
 script:
-  - npm config get prefix
+  - ln -s $(npm config get prefix) ../.npm-global
   - npm run lint
   - npm run build
   

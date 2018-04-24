@@ -1,11 +1,6 @@
 {
-  "extends": "eslint:recommended",
+  "extends": "qx",
   "parser": "babel-eslint",
-  "globals": {
-    "qx": false,
-    "q": false,
-    "qxWeb": false
-  },
   "rules": {
     "max-len": [
       2,

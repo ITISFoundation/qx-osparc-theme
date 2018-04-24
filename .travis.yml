@@ -5,9 +5,11 @@ node_js:
 cache:
   directories:
     - $HOME/.nvm
+    - $HOME/.npm
 
 script:
   - ln -s $(npm config get prefix) ../.npm-global
+  - find ../.npm-global/* -name qooxdoo-sdk
   - npm run lint
   - npm run build
   

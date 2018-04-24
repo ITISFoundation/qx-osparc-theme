@@ -4,9 +4,10 @@ node_js:
   
 cache:
   directories:
-    - node_modules
+    - ../.npm-global
 
 script:
+  - npm config get prefix
   - npm run lint
   - npm run build
   

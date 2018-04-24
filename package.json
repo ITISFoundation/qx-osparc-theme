@@ -20,5 +20,6 @@
     {
       "type": "MIT"
     }
-  ]
+  ],
+  "preferGlobal": "true"
 }

@@ -51,3 +51,9 @@ If you want to run a different qx command, you can do this too
 ```console
 $ docker-compose run qx lint
 ```
+
+Inspect the image interactively
+
+```console
+$ docker run --entrypoint /bin/bash -i -t itisfoundation/qx-osparc-theme
+```

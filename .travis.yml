@@ -5,14 +5,9 @@ node_js:
 cache:
   directories:
     - node_modules
-
-before_install:
-    - npm install --quiet --no-progress -g npm
-    
+      
 script:
-  - ln -s `pwd`/node_modules ../.npm-global
-  - echo $(npm config get prefix)
-  - ls -la $HOME
+  - mkdir -p ../.npm-global/lib && ln -s `pwd`/node_modules ../.npm-global/lib/node_modules
   - npm run lint
   - npm run build
   

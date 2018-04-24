@@ -5,3 +5,6 @@ resource-db.json
 qooxdoo/
 contrib/
 node_modules/
+DEADJOE
+*~
+*.bak

@@ -1,5 +1,5 @@
 {
-  "info" : 
+  "info" :
   {
     "name" : "qx-osparc-theme",
 
@@ -17,8 +17,8 @@
     "version" : "0.0.2",
     "qooxdoo-range": "5.x - 6.0.0-alpha"
   },
-  
-  "provides" : 
+
+  "provides" :
   {
     "namespace"   : "osparc.theme",
     "encoding"    : "utf-8",

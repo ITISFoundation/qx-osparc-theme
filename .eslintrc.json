@@ -1,6 +1,9 @@
 {
   "extends": "qx",
   "parser": "babel-eslint",
+  "globals": {
+    "osparc": false
+  },
   "rules": {
     "max-len": [
       2,
@@ -46,8 +49,7 @@
         },
         "multiLine": {
           "beforeColon": false,
-          "afterColon": true,
-          "align": "value"
+          "afterColon": true
         }
       }
     ],

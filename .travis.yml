@@ -4,16 +4,15 @@ node_js:
   
 cache:
   directories:
-    - $HOME/.nvm
+    - node_modules
 
 before_install:
     - npm install --quiet --no-progress -g npm
     
 script:
-  - ln -s $(npm config get prefix) ../.npm-global
-  - find $(npm config get prefix) -name qooxdoo-sdk
-  - which qx
-  - ls $HOME
+  - ln -s `pwd`/node_modules ../.npm-global
+  - echo $(npm config get prefix)
+  - ls -la $HOME
   - npm run lint
   - npm run build
   

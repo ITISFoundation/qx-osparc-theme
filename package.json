@@ -1,5 +1,5 @@
 {
-  "devDependencies": {
+  "dependencies": {
     "babel-eslint": "^8.2.3",
     "eslint": "^4.19.1",
     "eslint-config-qx": "^0.1.0",
@@ -8,8 +8,17 @@
   },
   "scripts": {
     "lint": "eslint ./source/class/osparc/**/*.js",
-    "build": "qx compile"
+    "build": "qx compile --target=source"
   },
   "name": "qx-osparc-theme",
-  "version": "0.3.0"
+  "version": "0.3.0",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/ITISFoundation/qx-osparc-theme.git"
+  },
+  "licenses": [
+    {
+      "type": "MIT"
+    }
+  ]
 }

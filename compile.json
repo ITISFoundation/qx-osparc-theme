@@ -107,7 +107,7 @@
     }
   ],
   "libraries": [
-    "./node_modules/qooxdoo-sdk/framework",
+    "../.npm-global/lib/node_modules/qooxdoo-sdk/framework",
     "./components/versionlabel",
     "./components/formdemo",
     "."

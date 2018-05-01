@@ -13,7 +13,7 @@
       "outputPath": "build-output"
     }
   ],
-  "defaultTarget": "hybrid",
+  "defaultTarget": "source",
   "serve": {
     "listenPort": 8744
   },
@@ -28,14 +28,14 @@
   "applications": [
     {
       "class": "widgetbrowser.Application",
-      "theme": "qx.theme.Classic",
+      "theme": "osparc.theme.OSparcDark",
       "name": "widgetbrowser",
       "writeIndexHtmlToRoot": true,
       "include": [
         "qx.theme.Indigo",
         "qx.theme.Modern",
         "qx.theme.Simple",
-        "osparc.theme.OSparcDark"
+        "qx.theme.Classic"
       ],
       "parts": {
         "boot": {
@@ -107,7 +107,7 @@
     }
   ],
   "libraries": [
-    "../.npm-global/lib/node_modules/qooxdoo-sdk/framework",
+    "./node_modules/qooxdoo-sdk/framework",
     "./components/versionlabel",
     "./components/formdemo",
     "."

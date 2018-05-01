@@ -19,6 +19,8 @@
 /**
  * @asset(osparc/font/*.woff)
  * @asset(osparc/font/*.woff2)
+ * @asset(osparc/font/*.ttf)
+ * @asset(osparc/font/*.eof)
  */
 /**
  * The simple qooxdoo font theme.
@@ -27,7 +29,7 @@ qx.Theme.define("osparc.theme.osparcdark.Font", {
   fonts: {
     "default": {
       size: 13,
-      family: ["sans-serif"],
+      family: ["Roboto"],
       color: "text",
       sources: [
         {
@@ -43,7 +45,7 @@ qx.Theme.define("osparc.theme.osparcdark.Font", {
     "bold":
       {
         size: 13,
-        family: ["sans-serif"],
+        family: ["Roboto"],
         bold: true,
         color: "text",
         sources: [
@@ -60,7 +62,7 @@ qx.Theme.define("osparc.theme.osparcdark.Font", {
     "headline":
       {
         size: 24,
-        family: ["sans-serif"],
+        family: ["Roboto"],
         color: "text",
         sources: [
           {
@@ -76,11 +78,11 @@ qx.Theme.define("osparc.theme.osparcdark.Font", {
     "small":
       {
         size: 11,
-        family: ["sans-serif"],
+        family: ["Roboto"],
         color: "text",
         sources: [
           {
-            family: "Open Sans",
+            family: "Roboto",
             source: [
               "osparc/font/roboto-v18-latin-ext_latin-regular.woff",
               "osparc/font/roboto-v18-latin-ext_latin-regular.woff2"
@@ -92,17 +94,38 @@ qx.Theme.define("osparc.theme.osparcdark.Font", {
     "monospace":
       {
         size: 11,
-        family: ["monospace"],
+        family: ["Roboto Mono"],
         color: "text",
         sources: [
           {
-            family: "Open Sans",
+            family: "Roboto Mono",
             source: [
               "osparc/font/roboto-mono-v5-latin-ext_latin-italic.woff",
               "osparc/font/roboto-mono-v5-latin-ext_latin-italic.woff2"
             ]
           }
         ]
-      }
+      },
+    "FontAwesomeBrands": {
+      size: 32,
+      lineHeight: 1,
+      family: ["Font Awesome 5 Brands"]
+    },
+    "FontAwesomeRegular": {
+      size: 32,
+      lineHeight: 1,
+      family: ["Font Awesome 5 Free"]
+    },
+    "FontAwesomeSolid": {
+      size: 32,
+      lineHeight: 1,
+      bold: true,
+      family: ["Font Awesome 5 Free"]
+    },
+    "MaterialIcons": {
+      size: 32,
+      lineHeight: 1,
+      family: ["Material Icons"]
+    }
   }
 });

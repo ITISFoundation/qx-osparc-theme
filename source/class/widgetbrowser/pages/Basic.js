@@ -60,7 +60,17 @@ qx.Class.define("widgetbrowser.pages.Basic",
       var image = new qx.ui.basic.Atom("Image", "icon/32/status/dialog-information.png");
       widgets.push(image);
       this.__hbox.add(image);
-
+      var that=this;
+      [
+        "@FontAwesomeRegular/envelope-open",
+        "@FontAwesomeSolid/envelope-open",
+        "@FontAwesomeBrands/google-play",
+        "@MaterialIcons/book/40"
+      ].forEach((icon, i) => {
+        let img2 = new qx.ui.basic.Atom(icon, icon);
+        widgets.push(img2);
+        that.__hbox.add(img2);
+      });
       // Atom
       var atom = new qx.ui.basic.Atom("Atom", "icon/32/status/dialog-information.png");
       widgets.push(atom);

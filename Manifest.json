@@ -25,6 +25,55 @@
     "class"       : "source/class",
     "resource"    : "source/resource",
     "translation" : "source/translation",
-    "type"        : "contribution"
+    "type"        : "contribution",
+    "webfonts": [
+      {
+        "name": "FontAwesomeBrands",
+        "defaultSize": 32,
+        "testCharacters": "\uf26e\uf368",
+        "mapping": "source/resource/osparc/font/fa-brands.json",
+        "resources": [
+          "osparc/font/fa-brands-400.ttf",
+          "osparc/font/fa-brands-400.woff",
+          "osparc/font/fa-brands-400.woff2",
+          "osparc/font/fa-brands-400.eot"
+        ]
+      },
+      {
+        "name": "FontAwesomeRegular",
+        "defaultSize": 32,
+        "testCharacters": "\uf2b9\uf2bb",
+        "mapping": "source/resource/osparc/font/fa-regular.json",
+        "resources": [
+          "osparc/font/fa-regular-400.ttf",
+          "osparc/font/fa-regular-400.woff",
+          "osparc/font/fa-regular-400.woff2",
+          "osparc/font/fa-regular-400.eot"
+        ]
+      },
+      {
+        "name": "FontAwesomeSolid",
+        "defaultSize": 32,
+        "testCharacters": "\uf2b9\uf2bb",
+        "mapping": "source/resource/osparc/font/fa-solid.json",
+        "resources": [
+          "osparc/font/fa-solid-900.ttf",
+          "osparc/font/fa-solid-900.woff",
+          "osparc/font/fa-solid-900.woff2",
+          "osparc/font/fa-solid-900.eot"
+        ]
+      },
+      {
+        "name": "MaterialIcons",
+        "defaultSize": 32,
+        "mapping": "source/resource/osparc/font/MaterialIcons-Regular.json",
+        "resources": [
+          "osparc/font/MaterialIcons-Regular.ttf",
+          "osparc/font/MaterialIcons-Regular.woff",
+          "osparc/font/MaterialIcons-Regular.woff2",
+          "osparc/font/MaterialIcons-Regular.eot"
+        ]
+      }
+    ]
   }
 }

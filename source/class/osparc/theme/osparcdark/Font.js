@@ -80,7 +80,7 @@ qx.Theme.define("osparc.theme.osparcdark.Font", {
         color: "text",
         sources: [
           {
-            family: "Open Sans",
+            family: "Roboto",
             source: [
               "osparc/font/roboto-v18-latin-ext_latin-regular.woff",
               "osparc/font/roboto-v18-latin-ext_latin-regular.woff2"
@@ -96,7 +96,7 @@ qx.Theme.define("osparc.theme.osparcdark.Font", {
         color: "text",
         sources: [
           {
-            family: "Open Sans",
+            family: "Roboto Mono",
             source: [
               "osparc/font/roboto-mono-v5-latin-ext_latin-italic.woff",
               "osparc/font/roboto-mono-v5-latin-ext_latin-italic.woff2"

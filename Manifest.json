@@ -11,11 +11,11 @@
     "authors" : [
       {
         "name": "Tobias Oetiker (oetiker)",
-        "email": "tobi@itis.ethz.ch"
+        "email": "oetiker@itis.ethz.ch"
       }
     ],
-    "version" : "0.0.4",
-    "qooxdoo-range": "5.x - 6.0.0-alpha"
+    "version" : "0.0.5",
+    "qooxdoo-range": "6.0.0-alpha-20180529 - 6.x"
   },
 
   "provides" :

@@ -45,7 +45,8 @@ qx.Class.define("widgetbrowser.Application", {
           // support additional cross-browser console. Press F7 to toggle visibility
           qx.log.appender.Console;
         }
-
+        iconfont.material.Load;
+        iconfont.fontawesome5.Load;
         var doc = this.getRoot();
         var dockLayout = new qx.ui.layout.Dock();
         var dockLayoutComposite = new qx.ui.container.Composite(dockLayout);

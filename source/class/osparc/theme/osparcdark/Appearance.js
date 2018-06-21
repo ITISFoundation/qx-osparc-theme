@@ -1148,24 +1148,24 @@ qx.Theme.define("osparc.theme.osparcdark.Appearance", {
       {
         style: function (states) {
           var styles = {};
-          styles.padding = 4;
+          styles.padding = 0;
 
           var icon = "";
           if (states.left) {
             icon = "left";
-            styles.marginRight = 2;
+            styles.marginRight = 0;
           }
           else if (states.right) {
             icon += "right";
-            styles.marginLeft = 2;
+            styles.marginLeft = 0;
           }
           else if (states.up) {
             icon += "up";
-            styles.marginBottom = 2;
+            styles.marginBottom = 0;
           }
           else {
             icon += "down";
-            styles.marginTop = 2;
+            styles.marginTop = 0;
           }
 
           styles.icon = osparc.theme.osparcdark.Image.URLS["arrow-" + icon];
@@ -1777,13 +1777,20 @@ qx.Theme.define("osparc.theme.osparcdark.Appearance", {
 
     "window-resize-frame": "resize-frame",
 
-    "window/pane": {},
+    "window/pane": {
+        style: function (states) {
+          return {
+            padding: 10
+          }
+        }
+    },
 
     "window/captionbar":
       {
         style: function (states) {
           return {
             backgroundColor: states.active ? "light-background" : "background-disabled",
+            margin: 0,
             padding:         8,
             font:            "bold",
             decorator:       "window-caption"
@@ -1817,7 +1824,7 @@ qx.Theme.define("osparc.theme.osparcdark.Appearance", {
         style: function (states) {
           return {
             icon:    osparc.theme.osparcdark.Image.URLS["window-minimize"],
-            padding: [1, 2],
+            padding: 0,
             cursor:  states.disabled ? undefined : "pointer"
           };
         }
@@ -1830,7 +1837,7 @@ qx.Theme.define("osparc.theme.osparcdark.Appearance", {
         style: function (states) {
           return {
             icon:    osparc.theme.osparcdark.Image.URLS["window-restore"],
-            padding: [1, 2],
+            padding: 0,
             cursor:  states.disabled ? undefined : "pointer"
           };
         }
@@ -1843,7 +1850,7 @@ qx.Theme.define("osparc.theme.osparcdark.Appearance", {
         style: function (states) {
           return {
             icon:    osparc.theme.osparcdark.Image.URLS["window-maximize"],
-            padding: [1, 2],
+            padding: 0,
             cursor:  states.disabled ? undefined : "pointer"
           };
         }
@@ -1855,9 +1862,8 @@ qx.Theme.define("osparc.theme.osparcdark.Appearance", {
 
         style: function (states) {
           return {
-            marginLeft: 2,
             icon:       osparc.theme.osparcdark.Image.URLS["window-close"],
-            padding:    [1, 2],
+            padding:    0,
             cursor:     states.disabled ? undefined : "pointer"
           };
         }
@@ -2123,7 +2129,9 @@ qx.Theme.define("osparc.theme.osparcdark.Appearance", {
         include: "toolbar-button",
 
         style: function (states) {
-          return {showArrow: true};
+          return {
+            showArrow: true
+          };
         }
       },
 
@@ -2136,7 +2144,8 @@ qx.Theme.define("osparc.theme.osparcdark.Appearance", {
           return {
             source:     osparc.theme.osparcdark.Image.URLS["arrow-down"],
             cursor:     states.disabled ? undefined : "pointer",
-            padding:    [0, 5],
+            padding:    0,
+            textColor:  "text",
             marginLeft: 2
           };
         }

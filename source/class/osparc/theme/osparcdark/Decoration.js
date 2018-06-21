@@ -803,7 +803,7 @@ qx.Theme.define("osparc.theme.osparcdark.Decoration",
               {
                 width:            1,
                 color:            "window-border",
-                innerWidth:       4,
+                innerWidth:       0,
                 innerColor:       "window-border-inner",
                 shadowLength:     1,
                 shadowBlurRadius: 3,

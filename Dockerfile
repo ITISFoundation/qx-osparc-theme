@@ -16,7 +16,6 @@ ENV NPM_CONFIG_PREFIX=/home/node/.npm-global
 ENV PATH=$NPM_CONFIG_PREFIX/bin:$PATH
 
 RUN npm install qxcompiler qooxdoo-sdk -g
-
 WORKDIR /home/node/src
 VOLUME  /home/node/src
 EXPOSE 8744

@@ -46,10 +46,10 @@ qx.Class.define("osparc.theme.osparcdark.Image",
       "checkbox-undetermined" : "decoration/checkbox/undetermined.png",
 
       // window
-      "window-minimize" : "decoration/window/minimize.gif",
-      "window-maximize" : "decoration/window/maximize.gif",
-      "window-restore" : "decoration/window/restore.gif",
-      "window-close" : "decoration/window/close.gif",
+      "window-minimize" : "@MaterialIcons/keyboard_arrow_down/18",
+      "window-maximize" : "@MaterialIcons/fullscreen/18",
+      "window-restore" : "@MaterialIcons/fullscreen_exit/18",
+      "window-close" : "@MaterialIcons/close/18",
 
       // cursor
       "cursor-copy" : "decoration/cursors/copy.gif",
@@ -57,11 +57,12 @@ qx.Class.define("osparc.theme.osparcdark.Image",
       "cursor-alias" : "decoration/cursors/alias.gif",
       "cursor-nodrop" : "decoration/cursors/nodrop.gif",
 
+
       // arrows
-      "arrow-right" : "decoration/arrows/right.gif",
-      "arrow-left" : "decoration/arrows/left.gif",
-      "arrow-up" : "decoration/arrows/up.gif",
-      "arrow-down" : "decoration/arrows/down.gif",
+      "arrow-right" : "@MaterialIcons/keyboard_arrow_right/18",
+      "arrow-left" : "@MaterialIcons/keyboard_arrow_left/18",
+      "arrow-up" : "@MaterialIcons/keyboard_arrow_up/18",
+      "arrow-down" : "@MaterialIcons/keyboard_arrow_down/18",
       "arrow-forward" : "decoration/arrows/forward.gif",
       "arrow-rewind" : "decoration/arrows/rewind.gif",
       "arrow-down-small" : "decoration/arrows/down-small.gif",

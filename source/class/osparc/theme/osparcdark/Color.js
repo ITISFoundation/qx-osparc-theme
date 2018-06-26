@@ -39,8 +39,8 @@ qx.Theme.define("osparc.theme.osparcdark.Color", {
     // backgrounds
     "background-selected":          "#555",
     "background-selected-disabled": "#333",
-    "background-selecsted-dark":     "#444",
-    "background-disabazzed":          "#333",
+    "background-selected-dark":     "#444",
+    "background-disabled":          "#333",
     "background-disabled-checked":  "#333",
     "background-pane":              "#222",
 

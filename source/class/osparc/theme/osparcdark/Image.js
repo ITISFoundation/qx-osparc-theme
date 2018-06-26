@@ -46,10 +46,10 @@ qx.Class.define("osparc.theme.osparcdark.Image",
       "checkbox-undetermined" : "decoration/checkbox/undetermined.png",
 
       // window
-      "window-minimize" : "@MaterialIcons/keyboard_arrow_down/18",
-      "window-maximize" : "@MaterialIcons/fullscreen/18",
-      "window-restore" : "@MaterialIcons/fullscreen_exit/18",
-      "window-close" : "@MaterialIcons/close/18",
+      "window-minimize" : "@MaterialIcons/keyboard_arrow_down",
+      "window-maximize" : "@MaterialIcons/fullscreen",
+      "window-restore" : "@MaterialIcons/fullscreen_exit",
+      "window-close" : "@MaterialIcons/close",
 
       // cursor
       "cursor-copy" : "decoration/cursors/copy.gif",

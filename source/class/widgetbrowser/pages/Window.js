@@ -128,7 +128,7 @@ qx.Class.define("widgetbrowser.pages.Window",
       var win = new qx.ui.window.Window("Second Window", "icon/16/apps/internet-feed-reader.png");
       win.setLayout(new qx.ui.layout.VBox(10));
       win.setStatus("Application is ready");
-
+      win.setAppearance("window-small-cap");
       var atom = new qx.ui.basic.Atom("The second window", "icon/22/apps/utilities-calculator.png");
       win.add(atom);
 

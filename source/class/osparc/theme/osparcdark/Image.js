@@ -42,8 +42,9 @@ qx.Class.define("osparc.theme.osparcdark.Image",
       "blank" : "qx/static/blank.png",
 
       // checkbox
-      "checkbox-checked" : "decoration/checkbox/checked.png",
-      "checkbox-undetermined" : "decoration/checkbox/undetermined.png",
+      "checkbox-checked" : "@MaterialIcons/check_box/15",
+      "checkbox-blank" : "@MaterialIcons/check_box_outline_blank/15",
+      "checkbox-undetermined" : "@MaterialIcons/indeterminate_check_box/15",
 
       // window
       "window-minimize" : "@MaterialIcons/keyboard_arrow_down",

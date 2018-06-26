@@ -1186,7 +1186,6 @@ qx.Theme.define("osparc.theme.osparcdark.Decoration",
           {
             style:
               {
-                backgroundColor: "#FFF",
                 width:           1,
                 color:           "border-separator"
               }
@@ -1236,7 +1235,6 @@ qx.Theme.define("osparc.theme.osparcdark.Decoration",
           {
             style:
               {
-                width: 1,
                 color: "button-border"
               }
           },

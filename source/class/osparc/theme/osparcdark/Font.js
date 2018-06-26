@@ -75,7 +75,7 @@ qx.Theme.define("osparc.theme.osparcdark.Font", {
 
     "small":
       {
-        size: 11,
+        size: 12,
         family: ["sans-serif"],
         color: "text",
         sources: [
@@ -91,7 +91,7 @@ qx.Theme.define("osparc.theme.osparcdark.Font", {
 
     "monospace":
       {
-        size: 11,
+        size: 13,
         family: ["monospace"],
         color: "text",
         sources: [

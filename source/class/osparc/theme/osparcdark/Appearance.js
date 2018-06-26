@@ -1792,7 +1792,6 @@ qx.Theme.define("osparc.theme.osparcdark.Appearance", {
             backgroundColor: states.active ? "light-background" : "background-disabled",
             margin: 0,
             padding:         8,
-            font:            "bold",
             decorator:       "window-caption"
           };
         }
@@ -1801,7 +1800,7 @@ qx.Theme.define("osparc.theme.osparcdark.Appearance", {
     "window/icon":
       {
         style: function (states) {
-          return {marginRight: 4};
+          return {marginRight: 4, marginTop: 2};
         }
       },
 
@@ -1810,7 +1809,7 @@ qx.Theme.define("osparc.theme.osparcdark.Appearance", {
         style: function (states) {
           return {
             cursor:      "default",
-            font:        "bold",
+            font:        states.active ? "bold" : "default",
             marginRight: 20,
             alignY:      "middle"
           };
@@ -1823,7 +1822,7 @@ qx.Theme.define("osparc.theme.osparcdark.Appearance", {
 
         style: function (states) {
           return {
-            icon:    osparc.theme.osparcdark.Image.URLS["window-minimize"],
+            icon:    osparc.theme.osparcdark.Image.URLS["window-minimize"]+"/18",
             padding: 0,
             cursor:  states.disabled ? undefined : "pointer"
           };
@@ -1836,7 +1835,7 @@ qx.Theme.define("osparc.theme.osparcdark.Appearance", {
 
         style: function (states) {
           return {
-            icon:    osparc.theme.osparcdark.Image.URLS["window-restore"],
+            icon:    osparc.theme.osparcdark.Image.URLS["window-restore"]+"/18",
             padding: 0,
             cursor:  states.disabled ? undefined : "pointer"
           };
@@ -1849,7 +1848,7 @@ qx.Theme.define("osparc.theme.osparcdark.Appearance", {
 
         style: function (states) {
           return {
-            icon:    osparc.theme.osparcdark.Image.URLS["window-maximize"],
+            icon:    osparc.theme.osparcdark.Image.URLS["window-maximize"]+"/18",
             padding: 0,
             cursor:  states.disabled ? undefined : "pointer"
           };
@@ -1862,7 +1861,7 @@ qx.Theme.define("osparc.theme.osparcdark.Appearance", {
 
         style: function (states) {
           return {
-            icon:       osparc.theme.osparcdark.Image.URLS["window-close"],
+            icon:       osparc.theme.osparcdark.Image.URLS["window-close"]+"/18",
             padding:    0,
             cursor:     states.disabled ? undefined : "pointer"
           };
@@ -1881,8 +1880,81 @@ qx.Theme.define("osparc.theme.osparcdark.Appearance", {
 
     "window/statusbar-text": "label",
 
+    /*
+    ---------------------------------------------------------------------------
+      WINDOW-SMALL-CAP CHOOSER
+    ---------------------------------------------------------------------------
+    */
+    "window-small-cap":
+      {
+        include: "window", // get all the settings from window
+        alias: "window" // redirect kids to window/kid
+      },
+    "window-small-cap/captionbar":
+      {
+        include: "window/captionbar", // load defaults from window captionbar
+        alias: "window/captionbar", // redirect kids
+        style: function(states) {
+          return {
+            padding:         1
+          };
+        }
+      },
+    "window-small-cap/title":
+      {
+        include: "window/title",
+        style: function(states) {
+          return {
+            font:         "small"
+          };
+        }
+      },
+      "window-small-cap/minimize-button":
+      {
+        alias: "window/minimize-button",
+        include: "window/minimize-button",
 
+        style: function (states) {
+          return {
+            icon:    osparc.theme.osparcdark.Image.URLS["window-minimize"]+"/14"
+          };
+        }
+      },
 
+    "window-small-cap/restore-button":
+      {
+        alias: "window/restore-button",
+        include: "window/restore-button",
+
+        style: function (states) {
+          return {
+            icon:    osparc.theme.osparcdark.Image.URLS["window-restore"]+"/14",
+          };
+        }
+      },
+
+    "window-small-cap/maximize-button":
+      {
+        alias: "window/maximize-button",
+        include: "window/maximize-button",
+
+        style: function (states) {
+          return {
+            icon:    osparc.theme.osparcdark.Image.URLS["window-maximize"]+"/14",
+          };
+        }
+      },
+
+    "window-small-cap/close-button":
+      {
+        alias: "window/close-button",
+        include: "window/close-button",
+        style: function (states) {
+          return {
+            icon:       osparc.theme.osparcdark.Image.URLS["window-close"]+"/14",
+          };
+        }
+      },
     /*
     ---------------------------------------------------------------------------
       DATE CHOOSER

@@ -14,7 +14,7 @@
         "email": "oetiker@itis.ethz.ch"
       }
     ],
-    "version" : "0.0.5",
+    "version" : "0.0.6",
     "qooxdoo-range": "6.0.0-alpha-20180529 - 6.x"
   },
 

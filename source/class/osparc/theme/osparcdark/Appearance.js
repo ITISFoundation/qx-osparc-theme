@@ -1284,7 +1284,7 @@ qx.Theme.define("osparc.theme.osparcdark.Appearance", {
           }
           else {
             // empty icon
-            icon = osparc.theme.osparcdark.Image.URLS["blank"];
+            icon = osparc.theme.osparcdark.Image.URLS["checkbox-blank"];
           }
 
           return {
@@ -1305,22 +1305,12 @@ qx.Theme.define("osparc.theme.osparcdark.Appearance", {
 
         decorator += states.invalid && !states.disabled ? "-invalid" : "";
 
-        var padding;
-        // Checked
-        if (states.checked) {
-          padding = 2;
-          // Undetermined
-        }
-        else if (states.undetermined) {
-          padding = [4, 2];
-        }
-
         return {
           decorator:       decorator,
-          width:           12,
-          height:          12,
-          padding:         padding,
-          backgroundColor: "white"
+          //width:           16,
+          //height:          16,
+          padding:         0
+          // backgroundColor: "white"
         };
       }
     },
@@ -1811,6 +1801,7 @@ qx.Theme.define("osparc.theme.osparcdark.Appearance", {
             cursor:      "default",
             font:        states.active ? "bold" : "default",
             marginRight: 20,
+            marginLeft: 4,
             alignY:      "middle"
           };
         }
@@ -1896,7 +1887,8 @@ qx.Theme.define("osparc.theme.osparcdark.Appearance", {
         alias: "window/captionbar", // redirect kids
         style: function(states) {
           return {
-            padding:         1
+            padding:         [0,3,0,3],
+            minHeight:       20
           };
         }
       },
@@ -1905,6 +1897,7 @@ qx.Theme.define("osparc.theme.osparcdark.Appearance", {
         include: "window/title",
         style: function(states) {
           return {
+            marginLeft: 2,
             font:         "small"
           };
         }
@@ -2093,7 +2086,7 @@ qx.Theme.define("osparc.theme.osparcdark.Appearance", {
           return {
             decorator:       "progressbar",
             padding:         1,
-            backgroundColor: "white",
+            backgroundColor: "background",
             width:           200,
             height:          20
           };

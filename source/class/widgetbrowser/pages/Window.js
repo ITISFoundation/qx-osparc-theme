@@ -125,7 +125,7 @@ qx.Class.define("widgetbrowser.pages.Window",
 
 
     __createWindow2 : function() {
-      var win = new qx.ui.window.Window("Second Window", "icon/16/apps/internet-feed-reader.png");
+      var win = new qx.ui.window.Window("Window with window-small-cap appearance");//, "icon/16/apps/internet-feed-reader.png");
       win.setLayout(new qx.ui.layout.VBox(10));
       win.setStatus("Application is ready");
       win.setAppearance("window-small-cap");

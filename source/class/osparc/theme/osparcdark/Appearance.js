@@ -643,6 +643,7 @@ qx.Theme.define("osparc.theme.osparcdark.Appearance", {
         style: function (states) {
           return {
             icon: (states.opened ?
+              // the old treevirtual code can not use fonticons
               "icon/16/places/folder-open.png" : "icon/16/places/folder.png"),
             opacity: states.drag ? 0.5 : undefined
           };
@@ -1076,7 +1077,7 @@ qx.Theme.define("osparc.theme.osparcdark.Appearance", {
       },
 
     "virtual-tree-folder": "tree-folder",
-    "virtual-tree-file":   "tree-file",
+    "virtual-tree-file": "tree-file",
 
     "cell":
       {
@@ -1676,7 +1677,8 @@ qx.Theme.define("osparc.theme.osparcdark.Appearance", {
           return {
             source: states.opened ?
               osparc.theme.osparcdark.Image.URLS["tree-minus"] :
-              osparc.theme.osparcdark.Image.URLS["tree-plus"]
+              osparc.theme.osparcdark.Image.URLS["tree-plus"],
+              textColor:  states.selected ? "text-selected" : "text",
           };
         }
       },
@@ -1694,9 +1696,12 @@ qx.Theme.define("osparc.theme.osparcdark.Appearance", {
           }
           return {
             padding:         [2, 8, 2, 5],
-            icon:            states.opened ? "icon/16/places/folder-open.png" : "icon/16/places/folder.png",
+            icon:            states.opened ?
+              osparc.theme.osparcdark.Image.URLS["folder-open"] :
+              osparc.theme.osparcdark.Image.URLS["folder"],
             backgroundColor: backgroundColor,
-            iconOpened:      "icon/16/places/folder-open.png",
+            textColor:       states.selected ? "text-selected" : "text",
+            iconOpened:      osparc.theme.osparcdark.Image.URLS["folder-open"],
             opacity:         states.drag ? 0.5 : undefined
           };
         }
@@ -1706,7 +1711,10 @@ qx.Theme.define("osparc.theme.osparcdark.Appearance", {
       {
         include: "image",
         style:   function (states) {
-          return {padding: [0, 4, 0, 0]};
+          return {
+            padding: [0, 4, 0, 0],
+            textColor:       states.selected ? "text-selected" : "text",
+          };
         }
       },
 
@@ -1715,7 +1723,7 @@ qx.Theme.define("osparc.theme.osparcdark.Appearance", {
         style: function (states) {
           return {
             padding:   [1, 2],
-            textColor: states.selected && !states.disabled ? "text-selected" : undefined
+            textColor: states.selected ? "text-selected" : "text",
           };
         }
       },
@@ -1727,8 +1735,7 @@ qx.Theme.define("osparc.theme.osparcdark.Appearance", {
 
         style: function (states) {
           return {
-            icon:    "icon/16/mimetypes/text-plain.png",
-            opacity: states.drag ? 0.5 : undefined
+            icon:    osparc.theme.osparcdark.Image.URLS["file"],
           };
         }
       },

@@ -28,14 +28,14 @@
   "applications": [
     {
       "class": "widgetbrowser.Application",
-      "theme": "qx.theme.Classic",
+      "theme": "osparc.theme.OSparcDark",
       "name": "widgetbrowser",
       "writeIndexHtmlToRoot": true,
       "include": [
         "qx.theme.Indigo",
         "qx.theme.Modern",
         "qx.theme.Simple",
-        "osparc.theme.OSparcDark"
+        "qx.theme.Classic"
       ],
       "parts": {
         "boot": {

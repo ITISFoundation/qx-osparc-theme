@@ -89,7 +89,7 @@ qx.Theme.define("osparc.theme.osparcdark.Color", {
     // text
     "text":             "#bfbfbf",
     "text-disabled":    "#808080",
-    "text-selected":    "#e0e0e0",
+    "text-selected":    "#f0f0f0",
     "text-placeholder": "#404040",
 
     // tooltip
@@ -98,17 +98,19 @@ qx.Theme.define("osparc.theme.osparcdark.Color", {
 
     // table
     "table-header":          "#333",
-    "table-focus-indicator": "#252525",
+    "table-focus-indicator": "#757575",
 
     // used in table code
     "table-header-cell":                     "#202020",
-    "table-row-background-focused-selected": "#232323",
-    "table-row-background-focused":          "#353535",
-    "table-row-background-selected":         "#262626",
+    "table-row-background-focused-selected": "#565656",
+    "table-row-background-focused":          "#454545",
+    "table-row-background-selected":         "#565656",
     "table-row-background-even":             "#202020",
     "table-row-background-odd":              "#303030",
-    "table-row-selected":                    "#000000",
-    "table-row":                             "#ddd",
+    // foreground
+    "table-row-selected":                    "#f0f0f0",
+    "table-row":                             "#bfbfbf",
+    // table grid color
     "table-row-line":                        "#222",
     "table-column-line":                     "#222",
 

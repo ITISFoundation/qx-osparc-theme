@@ -77,8 +77,8 @@ qx.Class.define("osparc.theme.osparcdark.Image",
       "knob-vertical" : "decoration/splitpane/knob-vertical.png",
 
       // tree
-      "tree-minus" : "decoration/tree/minus.gif",
-      "tree-plus" : "decoration/tree/plus.gif",
+      "tree-minus" : "@MaterialIcons/arrow_drop_down/16",
+      "tree-plus" : "@MaterialIcons/arrow_right/16",
 
       // table
       "select-column-order" : "decoration/table/select-column-order.png",
@@ -97,6 +97,9 @@ qx.Class.define("osparc.theme.osparcdark.Image",
       "treevirtual-plus-cross" : "decoration/treevirtual/cross_plus.gif",
       "treevirtual-end" : "decoration/treevirtual/end.gif",
       "treevirtual-cross" : "decoration/treevirtual/cross.gif",
+      "folder-open": "@MaterialIcons/folder_open/15",
+      "folder": "@MaterialIcons/folder/15",
+      "file": "@MaterialIcons/insert_drive_file/15",
 
       // menu
       "menu-checkbox" : "decoration/menu/checkbox.gif",

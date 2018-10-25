@@ -33,7 +33,7 @@ qx.Theme.define("osparc.theme.osparcdark.Color", {
 
     // material-textfield
     "material-textfield":          "#808080",
-    "material-textfield-focussed": "#e0e0e0",
+    "material-textfield-focused": "#e0e0e0",
     "material-textfield-invalid":  "#a04040",
 
     // backgrounds
@@ -53,8 +53,8 @@ qx.Theme.define("osparc.theme.osparcdark.Color", {
     "link": "#aaa",
 
     // scrollbar
-    "scrollbar-bright": "#444",
-    "scrollbar-dark":   "#111",
+    "scrollbar-passive": "#333",
+    "scrollbar-active":   "#444",
 
     // form
     "button":                    "#555",

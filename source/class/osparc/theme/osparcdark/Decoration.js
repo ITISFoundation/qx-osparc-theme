@@ -32,21 +32,21 @@ qx.Theme.define("osparc.theme.osparcdark.Decoration",
         */
       "material-textfield": {
         style: {
-          styleBottom: 'solid',
+          styleBottom: "solid",
           widthBottom: 1,
           colorBottom: "material-textfield"
         }
       },
-      "material-textfield-focussed": {
+      "material-textfield-focused": {
         style: {
-          styleBottom: 'solid',
+          styleBottom: "solid",
           widthBottom: 2,
-          colorBottom: "material-textfield-focussed"
+          colorBottom: "material-textfield-focused"
         }
       },
       "material-textfield-invalid": {
         style: {
-          styleBottom: 'solid',
+          styleBottom: "solid",
           widthBottom: 2,
           colorBottom: "material-textfield-invalid"
         }
@@ -59,37 +59,37 @@ qx.Theme.define("osparc.theme.osparcdark.Decoration",
 
       "material-button": {
         style: {
-          radius:                 2,
-          backgroundColor:        "material-button-background",
+          radius: 2,
+          backgroundColor: "material-button-background",
           shadowHorizontalLength: 0,
-          shadowVerticalLength:   [3, 2, 1],
-          shadowBlurRadius:       [1, 2, 5],
-          shadowSpreadRadius:     [-2, 0, 0],
-          shadowColor:            [
-            'rgba(0, 0, 0, 0.2)',
-            'rgba(0, 0, 0, 0.14)',
-            'rgba(0, 0, 0, 0.12)'
+          shadowVerticalLength: [3, 2, 1],
+          shadowBlurRadius: [1, 2, 5],
+          shadowSpreadRadius: [-2, 0, 0],
+          shadowColor: [
+            "rgba(0, 0, 0, 0.2)",
+            "rgba(0, 0, 0, 0.14)",
+            "rgba(0, 0, 0, 0.12)"
           ],
-          transitionProperty: 'box-shadow',
-          transitionDuration: '0.6s'
+          transitionProperty: "box-shadow",
+          transitionDuration: "0.6s"
         }
       },
       "material-button-hovered": {
         include: "material-button",
-        style:   {
-          backgroundColor:      "material-button-background-hovered",
+        style: {
+          backgroundColor: "material-button-background-hovered",
           shadowVerticalLength: [2, 4, 1],
-          shadowBlurRadius:     [4, 5, 10],
-          shadowSpreadRadius:   [-1, 0, 0],
+          shadowBlurRadius: [4, 5, 10],
+          shadowSpreadRadius: [-1, 0, 0]
         }
       },
       "material-button-pressed": {
         include: "material-button",
-        style:   {
-          backgroundColor:      "material-button-background-pressed",
+        style: {
+          backgroundColor: "material-button-background-pressed",
           shadowVerticalLength: [5, 8, 3],
-          shadowBlurRadius:     [5, 10, 14],
-          shadowSpreadRadius:   [-3, 1, 2],
+          shadowBlurRadius: [5, 10, 14],
+          shadowSpreadRadius: [-3, 1, 2]
         }
       },
 
@@ -131,11 +131,11 @@ qx.Theme.define("osparc.theme.osparcdark.Decoration",
           {
             style:
               {
-                width:            1,
-                color:            "window-border",
-                shadowLength:     2,
+                width: 1,
+                color: "window-border",
+                shadowLength: 2,
                 shadowBlurRadius: 5,
-                shadowColor:      "shadow"
+                shadowColor: "shadow"
               }
           },
 
@@ -158,11 +158,11 @@ qx.Theme.define("osparc.theme.osparcdark.Decoration",
           {
             style:
               {
-                radius:          1,
-                width:           1,
-                color:           "button-border",
-                //gradientStart : ["button-box-bright", 40],
-                //gradientEnd : ["button-box-dark", 70],
+                radius: 1,
+                width: 1,
+                color: "button-border",
+                // gradientStart : ["button-box-bright", 40],
+                // gradientEnd : ["button-box-dark", 70],
                 backgroundColor: "button-box-bright"
               }
           },
@@ -330,7 +330,7 @@ qx.Theme.define("osparc.theme.osparcdark.Decoration",
             style:
               {
                 radius: [0, 1, 1, 0],
-                width:  [1, 1, 1, 0]
+                width: [1, 1, 1, 0]
               }
           },
 
@@ -341,7 +341,7 @@ qx.Theme.define("osparc.theme.osparcdark.Decoration",
             style:
               {
                 radius: [0, 1, 1, 0],
-                width:  [1, 1, 1, 0]
+                width: [1, 1, 1, 0]
               }
           },
 
@@ -352,7 +352,7 @@ qx.Theme.define("osparc.theme.osparcdark.Decoration",
             style:
               {
                 radius: [0, 1, 1, 0],
-                width:  [1, 1, 1, 0]
+                width: [1, 1, 1, 0]
               }
           },
 
@@ -363,7 +363,7 @@ qx.Theme.define("osparc.theme.osparcdark.Decoration",
             style:
               {
                 radius: [0, 1, 1, 0],
-                width:  [1, 1, 1, 0]
+                width: [1, 1, 1, 0]
               }
           },
 
@@ -380,7 +380,7 @@ qx.Theme.define("osparc.theme.osparcdark.Decoration",
             style:
               {
                 radius: [0, 1, 0, 0],
-                width:  [1, 1, 1, 0]
+                width: [1, 1, 1, 0]
               }
           },
 
@@ -391,7 +391,7 @@ qx.Theme.define("osparc.theme.osparcdark.Decoration",
             style:
               {
                 radius: [0, 1, 0, 0],
-                width:  [1, 1, 1, 0]
+                width: [1, 1, 1, 0]
               }
           },
 
@@ -402,7 +402,7 @@ qx.Theme.define("osparc.theme.osparcdark.Decoration",
             style:
               {
                 radius: [0, 1, 0, 0],
-                width:  [1, 1, 1, 0]
+                width: [1, 1, 1, 0]
               }
           },
 
@@ -413,7 +413,7 @@ qx.Theme.define("osparc.theme.osparcdark.Decoration",
             style:
               {
                 radius: [0, 1, 0, 0],
-                width:  [1, 1, 1, 0]
+                width: [1, 1, 1, 0]
               }
           },
 
@@ -430,7 +430,7 @@ qx.Theme.define("osparc.theme.osparcdark.Decoration",
             style:
               {
                 radius: [0, 0, 1, 0],
-                width:  [0, 1, 1, 0]
+                width: [0, 1, 1, 0]
               }
           },
 
@@ -441,7 +441,7 @@ qx.Theme.define("osparc.theme.osparcdark.Decoration",
             style:
               {
                 radius: [0, 0, 1, 0],
-                width:  [0, 1, 1, 0]
+                width: [0, 1, 1, 0]
               }
           },
 
@@ -452,7 +452,7 @@ qx.Theme.define("osparc.theme.osparcdark.Decoration",
             style:
               {
                 radius: [0, 0, 1, 0],
-                width:  [0, 1, 1, 0]
+                width: [0, 1, 1, 0]
               }
           },
 
@@ -463,7 +463,7 @@ qx.Theme.define("osparc.theme.osparcdark.Decoration",
             style:
               {
                 radius: [0, 0, 1, 0],
-                width:  [0, 1, 1, 0]
+                width: [0, 1, 1, 0]
               }
           },
 
@@ -480,7 +480,7 @@ qx.Theme.define("osparc.theme.osparcdark.Decoration",
             style:
               {
                 radius: [0, 0, 0, 1],
-                width:  [0, 0, 1, 1]
+                width: [0, 0, 1, 1]
               }
           },
 
@@ -491,7 +491,7 @@ qx.Theme.define("osparc.theme.osparcdark.Decoration",
             style:
               {
                 radius: [0, 0, 0, 1],
-                width:  [0, 0, 1, 1]
+                width: [0, 0, 1, 1]
               }
           },
 
@@ -502,7 +502,7 @@ qx.Theme.define("osparc.theme.osparcdark.Decoration",
             style:
               {
                 radius: [0, 0, 0, 1],
-                width:  [0, 0, 1, 1]
+                width: [0, 0, 1, 1]
               }
           },
 
@@ -513,7 +513,7 @@ qx.Theme.define("osparc.theme.osparcdark.Decoration",
             style:
               {
                 radius: [0, 0, 0, 1],
-                width:  [0, 0, 1, 1]
+                width: [0, 0, 1, 1]
               }
           },
 
@@ -530,7 +530,7 @@ qx.Theme.define("osparc.theme.osparcdark.Decoration",
             style:
               {
                 radius: [1, 0, 0, 0],
-                width:  [1, 0, 0, 1]
+                width: [1, 0, 0, 1]
               }
           },
 
@@ -541,7 +541,7 @@ qx.Theme.define("osparc.theme.osparcdark.Decoration",
             style:
               {
                 radius: [1, 0, 0, 0],
-                width:  [1, 0, 0, 1]
+                width: [1, 0, 0, 1]
               }
           },
 
@@ -552,7 +552,7 @@ qx.Theme.define("osparc.theme.osparcdark.Decoration",
             style:
               {
                 radius: [1, 0, 0, 0],
-                width:  [1, 0, 0, 1]
+                width: [1, 0, 0, 1]
               }
           },
 
@@ -563,7 +563,7 @@ qx.Theme.define("osparc.theme.osparcdark.Decoration",
             style:
               {
                 radius: [1, 0, 0, 0],
-                width:  [1, 0, 0, 1]
+                width: [1, 0, 0, 1]
               }
           },
 
@@ -580,7 +580,7 @@ qx.Theme.define("osparc.theme.osparcdark.Decoration",
             style:
               {
                 radius: 0,
-                width:  [1, 0, 1, 1]
+                width: [1, 0, 1, 1]
               }
           },
 
@@ -591,7 +591,7 @@ qx.Theme.define("osparc.theme.osparcdark.Decoration",
             style:
               {
                 radius: 0,
-                width:  [1, 0, 1, 1]
+                width: [1, 0, 1, 1]
               }
           },
 
@@ -602,7 +602,7 @@ qx.Theme.define("osparc.theme.osparcdark.Decoration",
             style:
               {
                 radius: 0,
-                width:  [1, 0, 1, 1]
+                width: [1, 0, 1, 1]
               }
           },
 
@@ -613,7 +613,7 @@ qx.Theme.define("osparc.theme.osparcdark.Decoration",
             style:
               {
                 radius: 0,
-                width:  [1, 0, 1, 1]
+                width: [1, 0, 1, 1]
               }
           },
 
@@ -630,7 +630,7 @@ qx.Theme.define("osparc.theme.osparcdark.Decoration",
             style:
               {
                 radius: [1, 0, 0, 1],
-                width:  [1, 0, 1, 1]
+                width: [1, 0, 1, 1]
               }
           },
 
@@ -641,7 +641,7 @@ qx.Theme.define("osparc.theme.osparcdark.Decoration",
             style:
               {
                 radius: [1, 0, 0, 1],
-                width:  [1, 0, 1, 1]
+                width: [1, 0, 1, 1]
               }
           },
 
@@ -652,7 +652,7 @@ qx.Theme.define("osparc.theme.osparcdark.Decoration",
             style:
               {
                 radius: [1, 0, 0, 1],
-                width:  [1, 0, 1, 1]
+                width: [1, 0, 1, 1]
               }
           },
 
@@ -663,7 +663,7 @@ qx.Theme.define("osparc.theme.osparcdark.Decoration",
             style:
               {
                 radius: [1, 0, 0, 1],
-                width:  [1, 0, 1, 1]
+                width: [1, 0, 1, 1]
               }
           },
 
@@ -674,7 +674,7 @@ qx.Theme.define("osparc.theme.osparcdark.Decoration",
             style:
               {
                 radius: [1, 0, 0, 1],
-                width:  [1, 0, 1, 1]
+                width: [1, 0, 1, 1]
               }
           },
 
@@ -685,7 +685,7 @@ qx.Theme.define("osparc.theme.osparcdark.Decoration",
             style:
               {
                 radius: [1, 0, 0, 1],
-                width:  [1, 0, 1, 1]
+                width: [1, 0, 1, 1]
               }
           },
 
@@ -696,7 +696,7 @@ qx.Theme.define("osparc.theme.osparcdark.Decoration",
             style:
               {
                 radius: [1, 0, 0, 1],
-                width:  [1, 0, 1, 1]
+                width: [1, 0, 1, 1]
               }
           },
 
@@ -707,7 +707,7 @@ qx.Theme.define("osparc.theme.osparcdark.Decoration",
             style:
               {
                 radius: [1, 0, 0, 1],
-                width:  [1, 0, 1, 1]
+                width: [1, 0, 1, 1]
               }
           },
 
@@ -746,10 +746,10 @@ qx.Theme.define("osparc.theme.osparcdark.Decoration",
           {
             style:
               {
-                radius:          1,
-                width:           1,
-                color:           "button-border",
-                backgroundColor: "scrollbar-bright"
+                radius: 4,
+                width: 0,
+                color: "button-border",
+                backgroundColor: "scrollbar-passive"
               }
           },
 
@@ -758,24 +758,14 @@ qx.Theme.define("osparc.theme.osparcdark.Decoration",
             include: "scroll-knob",
 
             style:
-              {backgroundColor: "scrollbar-dark"}
+              {backgroundColor: "scrollbar-active"}
           },
 
       "scroll-knob-hovered":
-          {
-            include: "scroll-knob",
-
-            style:
-              {color: "button-border-hovered"}
-          },
+          {include: "scroll-knob"},
 
       "scroll-knob-pressed-hovered":
-          {
-            include: "scroll-knob-pressed",
-
-            style:
-              {color: "button-border-hovered"}
-          },
+          {include: "scroll-knob-pressed"},
 
       /*
         ---------------------------------------------------------------------------
@@ -787,7 +777,7 @@ qx.Theme.define("osparc.theme.osparcdark.Decoration",
             style:
               {
                 backgroundColor: "button",
-                radius:          1
+                radius: 1
               }
           },
 
@@ -801,14 +791,14 @@ qx.Theme.define("osparc.theme.osparcdark.Decoration",
           {
             style:
               {
-                width:            1,
-                color:            "window-border",
-                innerWidth:       0,
-                innerColor:       "window-border-inner",
-                shadowLength:     1,
+                width: 1,
+                color: "window-border",
+                innerWidth: 0,
+                innerColor: "window-border-inner",
+                shadowLength: 1,
                 shadowBlurRadius: 3,
-                shadowColor:      "shadow",
-                backgroundColor:  "background"
+                shadowColor: "shadow",
+                backgroundColor: "background"
               }
           },
 
@@ -818,7 +808,7 @@ qx.Theme.define("osparc.theme.osparcdark.Decoration",
 
             style:
               {
-                shadowLength:     2,
+                shadowLength: 2,
                 shadowBlurRadius: 5
               }
           },
@@ -843,34 +833,42 @@ qx.Theme.define("osparc.theme.osparcdark.Decoration",
           {
             style:
               {
-                width:           1,
-                radius:          2,
-                color:           "white-box-border",
-                backgroundColor: "background",
+                width: 1,
+                radius: 2,
+                color: "white-box-border",
+                backgroundColor: "background"
               }
           },
 
 
       /*
         ---------------------------------------------------------------------------
-          TEXT FIELD
+          FRAME BOX
         ---------------------------------------------------------------------------
         */
-      "inset":
+      "border":
+          {
+            style:
+              {
+                width: 1,
+                color: "background-selected"
+              }
+          },
+      "border-disabled":
+          {
+            style:
+              {
+                width: 1,
+                color: "background-selected"
+              }
+          },
+
+      "border-focused":
           {
             style:
               {
                 width: 1,
                 color: "border-light"
-              }
-          },
-
-      "focused-inset":
-          {
-            style:
-              {
-                width: 2,
-                color: "background-selected"
               }
           },
 
@@ -913,11 +911,11 @@ qx.Theme.define("osparc.theme.osparcdark.Decoration",
           {
             style:
               {
-                width:            1,
-                color:            "tooltip-text",
-                shadowLength:     1,
+                width: 1,
+                color: "tooltip-text",
+                shadowLength: 1,
                 shadowBlurRadius: 2,
-                shadowColor:      "shadow"
+                shadowColor: "shadow"
               }
           },
 
@@ -925,7 +923,7 @@ qx.Theme.define("osparc.theme.osparcdark.Decoration",
       "tooltip-error":
           {
             style: {
-              radius:          5,
+              radius: 5,
               backgroundColor: "invalid"
             }
           },
@@ -973,9 +971,9 @@ qx.Theme.define("osparc.theme.osparcdark.Decoration",
           {
             style:
               {
-                width:           1,
-                color:           "border-main",
-                radius:          1,
+                width: 1,
+                color: "border-main",
+                radius: 1,
                 backgroundColor: "white"
               }
           },
@@ -988,7 +986,7 @@ qx.Theme.define("osparc.theme.osparcdark.Decoration",
             style:
               {
                 radius: [1, 1, 0, 0],
-                width:  [1, 1, 0, 1]
+                width: [1, 1, 0, 1]
               }
           },
 
@@ -1005,7 +1003,7 @@ qx.Theme.define("osparc.theme.osparcdark.Decoration",
               {
                 widthTop: 1,
                 colorTop: "gray",
-                style:    "solid"
+                style: "solid"
               }
           },
 
@@ -1016,7 +1014,7 @@ qx.Theme.define("osparc.theme.osparcdark.Decoration",
               {
                 widthBottom: 1,
                 colorBottom: "gray",
-                style:       "solid"
+                style: "solid"
               }
           },
 
@@ -1026,7 +1024,7 @@ qx.Theme.define("osparc.theme.osparcdark.Decoration",
               {
                 widthRight: 1,
                 colorRight: "gray",
-                style:      "solid"
+                style: "solid"
               }
           },
 
@@ -1036,9 +1034,9 @@ qx.Theme.define("osparc.theme.osparcdark.Decoration",
               {
                 widthBottom: 1,
                 colorBottom: "gray",
-                widthRight:  1,
-                colorRight:  "gray",
-                style:       "solid"
+                widthRight: 1,
+                colorRight: "gray",
+                style: "solid"
               }
           },
 
@@ -1056,10 +1054,10 @@ qx.Theme.define("osparc.theme.osparcdark.Decoration",
           {
             style:
               {
-                width:           [1, 1, 0, 1],
+                width: [1, 1, 0, 1],
                 backgroundColor: "background",
-                color:           "border-main",
-                radius:          [1, 1, 0, 0]
+                color: "border-main",
+                radius: [1, 1, 0, 0]
               }
           },
 
@@ -1069,7 +1067,7 @@ qx.Theme.define("osparc.theme.osparcdark.Decoration",
         style:
             {
               radius: [0, 0, 1, 1],
-              width:  [0, 1, 1, 1]
+              width: [0, 1, 1, 1]
             }
       },
 
@@ -1079,7 +1077,7 @@ qx.Theme.define("osparc.theme.osparcdark.Decoration",
         style:
             {
               radius: [1, 0, 0, 1],
-              width:  [1, 0, 1, 1]
+              width: [1, 0, 1, 1]
             }
       },
 
@@ -1089,7 +1087,7 @@ qx.Theme.define("osparc.theme.osparcdark.Decoration",
         style:
             {
               radius: [0, 1, 1, 0],
-              width:  [1, 1, 1, 0]
+              width: [1, 1, 1, 0]
             }
       },
 
@@ -1127,14 +1125,14 @@ qx.Theme.define("osparc.theme.osparcdark.Decoration",
             style:
               {
                 radius: 0,
-                width:  [1, 0, 1, 0]
+                width: [1, 0, 1, 0]
               }
           },
 
       "table-header-column-button":
           {
             include: "table-header",
-            style:   {
+            style: {
               width: 1,
               color: "button-border"
             }
@@ -1145,14 +1143,14 @@ qx.Theme.define("osparc.theme.osparcdark.Decoration",
             style:
               {
                 widthRight: 1,
-                color:      "button-border"
+                color: "button-border"
               }
           },
 
       "table-header-cell-first":
           {
             include: "table-header-cell",
-            style:   {widthLeft: 1}
+            style: {widthLeft: 1}
           },
 
       "progressive-table-header":
@@ -1162,7 +1160,7 @@ qx.Theme.define("osparc.theme.osparcdark.Decoration",
             style:
               {
                 radius: 0,
-                width:  [1, 0, 1, 1]
+                width: [1, 0, 1, 1]
               }
           },
 
@@ -1171,7 +1169,7 @@ qx.Theme.define("osparc.theme.osparcdark.Decoration",
             style:
               {
                 widthRight: 1,
-                color:      "button-border"
+                color: "button-border"
               }
           },
 
@@ -1186,8 +1184,8 @@ qx.Theme.define("osparc.theme.osparcdark.Decoration",
           {
             style:
               {
-                width:           1,
-                color:           "border-separator"
+                width: 1,
+                color: "border-separator"
               }
           },
 
@@ -1202,9 +1200,9 @@ qx.Theme.define("osparc.theme.osparcdark.Decoration",
           {
             style:
               {
-                radius:     12,
-                width:      1,
-                color:      "button-border",
+                radius: 12,
+                width: 1,
+                color: "button-border",
                 innerColor: "background",
                 innerWidth: 2
               }
@@ -1234,9 +1232,7 @@ qx.Theme.define("osparc.theme.osparcdark.Decoration",
       "checkbox":
           {
             style:
-              {
-                color: "button-border"
-              }
+              {color: "button-border"}
           },
 
       "checkbox-focused":

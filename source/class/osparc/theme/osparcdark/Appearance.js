@@ -1727,8 +1727,8 @@ qx.Theme.define("osparc.theme.osparcdark.Appearance", {
 
         style: function(states) {
           return {
-            contentPadding: states.invalid && !states.disabled ? [3, 0] : [4, 1],
-            padding: states.focused ? 0 : 1
+            contentPadding: [4,1],
+            padding: 1
           };
         }
       },

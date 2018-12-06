@@ -42,10 +42,6 @@
  * toolbar.SplitButton
  * toolbar.ToolBar
  *
- * @asset(qx/icon/${qx.icontheme}/16/actions/*)
- * @asset(qx/icon/${qx.icontheme}/16/apps/utilities-help.png)
- * @asset(qx/icon/${qx.icontheme}/22/apps/preferences-users.png)
- *
  */
 
 qx.Class.define("widgetbrowser.pages.ToolBar",
@@ -118,26 +114,26 @@ qx.Class.define("widgetbrowser.pages.ToolBar",
       toolbar.add(secondPart);
 
       // SplitButton
-      var splitButton = new qx.ui.toolbar.SplitButton("Toolbar SplitButton", "icon/16/actions/go-previous.png", this.getSplitButtonMenu());
+      var splitButton = new qx.ui.toolbar.SplitButton("Toolbar SplitButton", "@MaterialIcons/skip_previous/16", this.getSplitButtonMenu());
       splitButton.setToolTip(new qx.ui.tooltip.ToolTip("Toolbar SplitButton"));
       this._widgets.push(splitButton);
 
       // Button
-      var button = new qx.ui.toolbar.Button("Toolbar Button", "icon/16/actions/document-new.png");
+      var button = new qx.ui.toolbar.Button("Toolbar Button", "@MaterialIcons/create/16");
       button.setToolTip(new qx.ui.tooltip.ToolTip("Toolbar Button"));
       this._widgets.push(button);
 
       // CheckBox
-      var checkBox = new qx.ui.toolbar.CheckBox("Toggle", "icon/16/actions/format-text-underline.png");
+      var checkBox = new qx.ui.toolbar.CheckBox("Toggle", "@MaterialIcons/format_underlined/16");
       checkBox.setToolTip(new qx.ui.tooltip.ToolTip("Toolbar CheckBox"));
       this._widgets.push(checkBox);
 
       // RadioButton
-      var radioButton1 = new qx.ui.toolbar.RadioButton("Left", "icon/16/actions/format-justify-left.png");
+      var radioButton1 = new qx.ui.toolbar.RadioButton("Left", "@MaterialIcons/format_align_left/16");
       radioButton1.setToolTip(new qx.ui.tooltip.ToolTip("Toolbar RadioButton"));
       this._widgets.push(radioButton1);
 
-      var radioButton2 = new qx.ui.toolbar.RadioButton("Center", "icon/16/actions/format-justify-center.png");
+      var radioButton2 = new qx.ui.toolbar.RadioButton("Center", "@MaterialIcons/format_align_center/16");
       radioButton2.setToolTip(new qx.ui.tooltip.ToolTip("Toolbar RadioButton"));
       this._widgets.push(radioButton2);
 
@@ -185,7 +181,7 @@ qx.Class.define("widgetbrowser.pages.ToolBar",
       //
 
       // MenuButton
-      var button = new qx.ui.menu.Button("Menu MenuButton", "icon/16/actions/document-new.png");
+      var button = new qx.ui.menu.Button("Menu MenuButton", "@MaterialIcons/menu/16");
       this._widgets.push(button);
 
       // CheckBox
@@ -204,7 +200,7 @@ qx.Class.define("widgetbrowser.pages.ToolBar",
       var radioButtonActive = new qx.ui.menu.RadioButton("Menu RadioButton").set({value: true});
       this._widgets.push(radioButtonActive);
 
-      // var radioButtonGroup = new qx.ui.form.RadioGroup(radioButton, radioButtonActive);
+      var radioButtonGroup = new qx.ui.form.RadioGroup(radioButton, radioButtonActive);
 
       menu.add(button);
       menu.add(checkBox);

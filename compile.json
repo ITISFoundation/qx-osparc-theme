@@ -28,14 +28,11 @@
   "applications": [
     {
       "class": "widgetbrowser.Application",
+      // "theme": "osparc.theme.OSparcBlue",
       "theme": "osparc.theme.OSparcDark",
       "name": "widgetbrowser",
-      "writeIndexHtmlToRoot": true,
       "include": [
-        "qx.theme.Indigo",
-        "qx.theme.Modern",
-        "qx.theme.Simple",
-        "qx.theme.Classic"
+        "osparc.theme.OSparcBlue"
       ],
       "parts": {
         "boot": {
@@ -107,7 +104,6 @@
     }
   ],
   "libraries": [
-    "./node_modules/qooxdoo-sdk/framework",
     "./components/versionlabel",
     "./components/formdemo",
     "."

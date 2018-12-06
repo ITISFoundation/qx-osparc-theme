@@ -44,6 +44,13 @@ qx.Theme.define("osparc.theme.osparcdark.Decoration",
           colorBottom: "material-textfield-focused"
         }
       },
+      "material-textfield-disabled": {
+        style: {
+          styleBottom: "solid",
+          widthBottom: 1,
+          colorBottom: "material-textfield-disabled"
+        }
+      },
       "material-textfield-invalid": {
         style: {
           styleBottom: "solid",
@@ -70,8 +77,8 @@ qx.Theme.define("osparc.theme.osparcdark.Decoration",
             "rgba(0, 0, 0, 0.14)",
             "rgba(0, 0, 0, 0.12)"
           ],
-          transitionProperty: "box-shadow",
-          transitionDuration: "0.6s"
+          transitionProperty: ["all"],
+          transitionDuration: "0s"
         }
       },
       "material-button-hovered": {
@@ -80,7 +87,8 @@ qx.Theme.define("osparc.theme.osparcdark.Decoration",
           backgroundColor: "material-button-background-hovered",
           shadowVerticalLength: [2, 4, 1],
           shadowBlurRadius: [4, 5, 10],
-          shadowSpreadRadius: [-1, 0, 0]
+          shadowSpreadRadius: [-1, 0, 0],
+          transitionDuration: "0.2s"
         }
       },
       "material-button-pressed": {
@@ -89,10 +97,14 @@ qx.Theme.define("osparc.theme.osparcdark.Decoration",
           backgroundColor: "material-button-background-pressed",
           shadowVerticalLength: [5, 8, 3],
           shadowBlurRadius: [5, 10, 14],
-          shadowSpreadRadius: [-3, 1, 2]
+          shadowSpreadRadius: [-3, 1, 2],
+          transitionDuration: "0.2s"
         }
       },
-
+      "material-button-disabled": {
+        include: "material-button",
+        style: {backgroundColor: "material-button-background-disabled"}
+      },
       /*
         ---------------------------------------------------------------------------
           CORE
@@ -113,10 +125,34 @@ qx.Theme.define("osparc.theme.osparcdark.Decoration",
             style:
               {
                 width: 1,
-                color: "border-main"
+                color: "border"
               }
           },
-
+      "main-top":
+          {
+            include: "main",
+            style:
+              {width: [1, 0, 0, 0]}
+          },
+      "main-right":
+          {
+            include: "main",
+            style:
+              {width: [0, 1, 0, 0]}
+          },
+      // eslint-disable-next-line no-dupe-keys
+      "main-bottom":
+          {
+            include: "main",
+            style:
+              {width: [0, 0, 1, 0]}
+          },
+          "main-left":
+          {
+            include: "main",
+            style:
+              {width: [0, 0, 0, 1]}
+          },
       "main-dark":
           {
             style:
@@ -158,12 +194,10 @@ qx.Theme.define("osparc.theme.osparcdark.Decoration",
           {
             style:
               {
-                radius: 1,
-                width: 1,
+                radius: 0,
+                width: 0,
                 color: "button-border",
-                // gradientStart : ["button-box-bright", 40],
-                // gradientEnd : ["button-box-dark", 70],
-                backgroundColor: "button-box-bright"
+                backgroundColor: "button-box"
               }
           },
 
@@ -173,9 +207,7 @@ qx.Theme.define("osparc.theme.osparcdark.Decoration",
 
             style:
               {
-                // gradientStart : ["button-box-bright-pressed", 40],
-                // gradientEnd : ["button-box-dark-pressed", 70],
-                backgroundColor: "button-box-bright-pressed"
+                backgroundColor: "button-box-pressed"
               }
           },
 
@@ -322,7 +354,7 @@ qx.Theme.define("osparc.theme.osparcdark.Decoration",
         ---------------------------------------------------------------------------
           BUTTON BORDERLESS RIGHT
         ---------------------------------------------------------------------------
-        */
+
       "button-box-right-borderless":
           {
             include: "button-box",
@@ -366,7 +398,7 @@ qx.Theme.define("osparc.theme.osparcdark.Decoration",
                 width: [1, 1, 1, 0]
               }
           },
-
+*/
 
       /*
         ---------------------------------------------------------------------------
@@ -379,8 +411,8 @@ qx.Theme.define("osparc.theme.osparcdark.Decoration",
 
             style:
               {
-                radius: [0, 1, 0, 0],
-                width: [1, 1, 1, 0]
+                radius: [0, 1, 0, 0]
+
               }
           },
 
@@ -390,8 +422,8 @@ qx.Theme.define("osparc.theme.osparcdark.Decoration",
 
             style:
               {
-                radius: [0, 1, 0, 0],
-                width: [1, 1, 1, 0]
+                radius: [0, 1, 0, 0]
+
               }
           },
 
@@ -401,8 +433,8 @@ qx.Theme.define("osparc.theme.osparcdark.Decoration",
 
             style:
               {
-                radius: [0, 1, 0, 0],
-                width: [1, 1, 1, 0]
+                radius: [0, 1, 0, 0]
+
               }
           },
 
@@ -412,8 +444,8 @@ qx.Theme.define("osparc.theme.osparcdark.Decoration",
 
             style:
               {
-                radius: [0, 1, 0, 0],
-                width: [1, 1, 1, 0]
+                radius: [0, 1, 0, 0]
+
               }
           },
 
@@ -798,7 +830,7 @@ qx.Theme.define("osparc.theme.osparcdark.Decoration",
                 shadowLength: 1,
                 shadowBlurRadius: 3,
                 shadowColor: "shadow",
-                backgroundColor: "background"
+                backgroundColor: "background-main"
               }
           },
 
@@ -836,7 +868,7 @@ qx.Theme.define("osparc.theme.osparcdark.Decoration",
                 width: 1,
                 radius: 2,
                 color: "white-box-border",
-                backgroundColor: "background"
+                backgroundColor: "background-main"
               }
           },
 
@@ -851,7 +883,7 @@ qx.Theme.define("osparc.theme.osparcdark.Decoration",
             style:
               {
                 width: 1,
-                color: "background-selected"
+                color: "border"
               }
           },
       "border-disabled":
@@ -859,7 +891,7 @@ qx.Theme.define("osparc.theme.osparcdark.Decoration",
             style:
               {
                 width: 1,
-                color: "background-selected"
+                color: "border-disabled"
               }
           },
 
@@ -868,7 +900,7 @@ qx.Theme.define("osparc.theme.osparcdark.Decoration",
             style:
               {
                 width: 1,
-                color: "border-light"
+                color: "border-focused"
               }
           },
 
@@ -877,7 +909,7 @@ qx.Theme.define("osparc.theme.osparcdark.Decoration",
             style:
               {
                 width: 1,
-                color: "invalid"
+                color: "border-invalid"
               }
           },
 
@@ -945,6 +977,18 @@ qx.Theme.define("osparc.theme.osparcdark.Decoration",
                 colorLeft: "button-border"
               }
           },
+      "toolbar-button": {
+          include: "material-button",
+            style: {
+              shadowHorizontalLength: 0,
+              shadowVerticalLength: 0,
+              shadowBlurRadius: 0,
+              shadowSpreadRadius: 0
+            }
+          },
+        "toolbar-button-hovered": {
+          include: "material-button-hovered"
+        },
 
 
       /*
@@ -971,10 +1015,7 @@ qx.Theme.define("osparc.theme.osparcdark.Decoration",
           {
             style:
               {
-                width: 1,
-                color: "border-main",
-                radius: 1,
-                backgroundColor: "white"
+                backgroundColor: "material-button-background-hovered"
               }
           },
 
@@ -985,8 +1026,7 @@ qx.Theme.define("osparc.theme.osparcdark.Decoration",
 
             style:
               {
-                radius: [1, 1, 0, 0],
-                width: [1, 1, 0, 1]
+                backgroundColor: "material-button-background-pressed"
               }
           },
 
@@ -1054,10 +1094,9 @@ qx.Theme.define("osparc.theme.osparcdark.Decoration",
           {
             style:
               {
-                width: [1, 1, 0, 1],
-                backgroundColor: "background",
-                color: "border-main",
-                radius: [1, 1, 0, 0]
+                width: [0, 0, 2, 0],
+                backgroundColor: "tabview-button-background",
+                color: "tabview-button-border"
               }
           },
 
@@ -1065,30 +1104,21 @@ qx.Theme.define("osparc.theme.osparcdark.Decoration",
         include: "tabview-page-button-top",
 
         style:
-            {
-              radius: [0, 0, 1, 1],
-              width: [0, 1, 1, 1]
-            }
+            {width: [2, 0, 0, 0]}
       },
 
       "tabview-page-button-left": {
         include: "tabview-page-button-top",
 
         style:
-            {
-              radius: [1, 0, 0, 1],
-              width: [1, 0, 1, 1]
-            }
+            {width: [0, 2, 0, 0]}
       },
 
       "tabview-page-button-right": {
         include: "tabview-page-button-top",
 
         style:
-            {
-              radius: [0, 1, 1, 0],
-              width: [1, 1, 1, 0]
-            }
+            {width: [0, 0, 0, 2]}
       },
 
 
@@ -1125,33 +1155,27 @@ qx.Theme.define("osparc.theme.osparcdark.Decoration",
             style:
               {
                 radius: 0,
-                width: [1, 0, 1, 0]
+                color: "table-header-border",
+                width: [0, 0, 2, 0]
               }
           },
 
       "table-header-column-button":
           {
-            include: "table-header",
-            style: {
-              width: 1,
-              color: "button-border"
-            }
+            include: "table-header"
           },
 
       "table-header-cell":
           {
             style:
               {
-                widthRight: 1,
-                color: "button-border"
               }
           },
 
       "table-header-cell-first":
           {
-            include: "table-header-cell",
-            style: {widthLeft: 1}
-          },
+            include: "table-header-cell"
+         },
 
       "progressive-table-header":
           {
@@ -1196,33 +1220,11 @@ qx.Theme.define("osparc.theme.osparcdark.Decoration",
           RADIO BUTTON
         ---------------------------------------------------------------------------
         */
-      "radiobutton":
-          {
-            style:
-              {
-                radius: 12,
-                width: 1,
-                color: "button-border",
-                innerColor: "background",
-                innerWidth: 2
-              }
-          },
-
-      "radiobutton-focused":
-          {
-            include: "radiobutton",
-            style:
-              {color: "background-selected"}
-          },
-
-      "radiobutton-invalid":
-          {
-            include: "radiobutton",
-            style:
-              {color: "invalid"}
-          },
-
-
+       "radiobutton":
+       {
+         style:
+           {color: "text"}
+       },
       /*
         ---------------------------------------------------------------------------
           CHECK BOX
@@ -1232,21 +1234,7 @@ qx.Theme.define("osparc.theme.osparcdark.Decoration",
       "checkbox":
           {
             style:
-              {color: "button-border"}
-          },
-
-      "checkbox-focused":
-          {
-            include: "checkbox",
-            style:
-              {color: "background-selected"}
-          },
-
-      "checkbox-invalid":
-          {
-            include: "checkbox",
-            style:
-              {color: "invalid"}
+              {color: "text"}
           }
     }
   });

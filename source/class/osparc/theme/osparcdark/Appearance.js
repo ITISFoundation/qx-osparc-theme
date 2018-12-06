@@ -67,7 +67,7 @@ qx.Theme.define("osparc.theme.osparcdark.Appearance", {
       {
         style: function(states) {
           return {
-            backgroundColor: "background",
+            backgroundColor: "background-main",
             textColor: "text",
             font: "default"
           };
@@ -187,6 +187,9 @@ qx.Theme.define("osparc.theme.osparcdark.Appearance", {
             decorator += "-hovered";
           }
         }
+        else {
+          decorator += "-disabled";
+        }
 
         if (states.invalid && !states.disabled) {
           decorator += "-invalid";
@@ -205,7 +208,10 @@ qx.Theme.define("osparc.theme.osparcdark.Appearance", {
       alias: "atom/label",
 
       style: function(states) {
-        return {textColor: states.disabled ? "text-disabled" : undefined};
+        return {
+          textColor: states.disabled ?
+            "material-button-text-disabled" : "material-button-text"
+        };
       }
     },
 
@@ -267,7 +273,6 @@ qx.Theme.define("osparc.theme.osparcdark.Appearance", {
     "menubutton": {
       include: "button",
       alias: "button",
-
       style: function(states) {
         return {
           icon: osparc.theme.osparcdark.Image.URLS["arrow-down"],
@@ -300,25 +305,28 @@ qx.Theme.define("osparc.theme.osparcdark.Appearance", {
         var decorator;
         var padding;
         decorator = "material-textfield";
-        padding = [0, 0, 6, 0];
+        padding = [0, 0, 4, 0];
         if (states.readonly) {
           decorator = "flat";
-          padding = [0, 0, 7, 0];
+          padding = [0, 0, 5, 0];
         }
         if (states.invalid) {
           decorator += "-invalid";
-          padding = [0, 0, 5, 0];
+          padding = [0, 0, 3, 0];
         }
         else if (states.focused) {
           decorator += "-focused";
-          padding = [0, 0, 5, 0];
+          padding = [0, 0, 3, 0];
+        }
+        else if (states.disabled) {
+          decorator += "-disabled";
         }
 
         return {
           decorator: decorator,
           padding: padding,
           textColor: textColor,
-          backgroundColor: states.disabled ? "background-disabled" : "background"
+          backgroundColor: states.disabled ? "background-disabled" : "background-main"
         };
       }
     },
@@ -363,7 +371,7 @@ qx.Theme.define("osparc.theme.osparcdark.Appearance", {
           decorator: decorator,
           padding: padding,
           textColor: textColor,
-          backgroundColor: states.disabled ? "background-disabled" : "background"
+          backgroundColor: states.disabled ? "background-disabled" : "background-main"
         };
       }
     },
@@ -490,6 +498,8 @@ qx.Theme.define("osparc.theme.osparcdark.Appearance", {
         style: function(states) {
           return {
             decorator: "table-header-column-button",
+            textColor: "table-header-foreground",
+            backgroundColor: "table-header",
             padding: 3,
             icon: osparc.theme.osparcdark.Image.URLS["select-column-order"]
           };
@@ -500,9 +510,11 @@ qx.Theme.define("osparc.theme.osparcdark.Appearance", {
       {
         include: "menu-button",
         alias: "menu-button",
-
         style: function() {
-          return {icon: "icon/16/actions/view-refresh.png"};
+          return {
+            decorator: "table-header-column-button",
+            icon: "icon/16/actions/view-refresh.png"
+          };
         }
       },
 
@@ -513,7 +525,11 @@ qx.Theme.define("osparc.theme.osparcdark.Appearance", {
 
     "table-scroller/header": {
       style: function() {
-        return {decorator: "table-header"};
+        return {
+          textColor: "table-header-foreground",
+          backgroundColor: "table-header",
+          decorator: "table-header"
+        };
       }
     },
 
@@ -792,7 +808,7 @@ qx.Theme.define("osparc.theme.osparcdark.Appearance", {
             source: osparc.theme.osparcdark.Image.URLS[
               "knob-" + (states.horizontal ? "horizontal" : "vertical")
             ],
-            padding: 2
+            padding: 0
           };
         }
       },
@@ -801,7 +817,7 @@ qx.Theme.define("osparc.theme.osparcdark.Appearance", {
       {
         style: function(states) {
           return {
-            backgroundColor: "border-light-shadow",
+            backgroundColor: "material-button-background",
             opacity: 0.3
           };
         }
@@ -820,7 +836,7 @@ qx.Theme.define("osparc.theme.osparcdark.Appearance", {
         style: function(states) {
           var result =
             {
-              backgroundColor: "background",
+              backgroundColor: "background-main",
               decorator: "main",
               spacingX: 6,
               spacingY: 1,
@@ -905,7 +921,7 @@ qx.Theme.define("osparc.theme.osparcdark.Appearance", {
         style: function(states) {
           return {
             backgroundColor: states.selected ? "background-selected" : undefined,
-            textColor: states.selected ? "text-selected" : undefined,
+            textColor: states.selected ? "text-selected" : "text",
             padding: [2, 6]
           };
         }
@@ -916,7 +932,10 @@ qx.Theme.define("osparc.theme.osparcdark.Appearance", {
         include: "image",
 
         style: function(states) {
-          return {alignY: "middle"};
+          return {
+            alignY: "middle",
+            textColor: states.selected ? "text-selected" : "text"
+          };
         }
       },
 
@@ -965,11 +984,12 @@ qx.Theme.define("osparc.theme.osparcdark.Appearance", {
         include: "menu-button",
 
         style: function(states) {
+          var icon = "menu-checkbox";
+          if (states.checked) {
+            icon += "-checked";
+          }
           return {
-            icon: !states.checked ? undefined :
-              osparc.theme.osparcdark.Image.URLS[
-                "menu-checkbox" + (states.selected ? "-invert" : "")
-              ]
+            icon: osparc.theme.osparcdark.Image.URLS[icon]
           };
         }
       },
@@ -980,11 +1000,12 @@ qx.Theme.define("osparc.theme.osparcdark.Appearance", {
         include: "menu-button",
 
         style: function(states) {
+          var icon = "menu-radiobutton";
+          if (states.checked) {
+            icon += "-checked";
+          }
           return {
-            icon: !states.checked ? undefined :
-              osparc.theme.osparcdark.Image.URLS[
-                "menu-radiobutton" + (states.selected ? "-invert" : "")
-              ]
+            icon: osparc.theme.osparcdark.Image.URLS[icon]
           };
         }
       },
@@ -1000,7 +1021,7 @@ qx.Theme.define("osparc.theme.osparcdark.Appearance", {
       {
         style: function(states) {
           return {
-            backgroundColor: "light-background",
+            backgroundColor: "material-button-background",
             padding: [4, 2]
           };
         }
@@ -1014,18 +1035,16 @@ qx.Theme.define("osparc.theme.osparcdark.Appearance", {
           if (!states.disabled) {
             if (states.pressed) {
               decorator = "menubar-button-pressed";
-              padding = [1, 5, 2, 5];
             }
             else if (states.hovered) {
               decorator = "menubar-button-hovered";
-              padding = [1, 5];
             }
           }
 
           return {
             padding: padding,
             cursor: states.disabled ? undefined : "pointer",
-            textColor: "link",
+            textColor: "material-button-text",
             decorator: decorator
           };
         }
@@ -1171,7 +1190,7 @@ qx.Theme.define("osparc.theme.osparcdark.Appearance", {
     "scrollarea/corner":
       {
         style: function(states) {
-          return {backgroundColor: "background"};
+          return {backgroundColor: "background-main"};
         }
       },
 
@@ -1188,41 +1207,40 @@ qx.Theme.define("osparc.theme.osparcdark.Appearance", {
     ---------------------------------------------------------------------------
     */
 
-    "radiobutton/icon": {
-      style: function(states) {
-        var decorator = "radiobutton";
-
-        if (states.focused && !states.invalid) {
-          decorator = "radiobutton-focused";
-        }
-
-        decorator += states.invalid && !states.disabled ? "-invalid" : "";
-
-        var backgroundColor;
-        if (states.disabled && states.checked) {
-          backgroundColor = "background-disabled-checked";
-        }
-        else if (states.disabled) {
-          backgroundColor = "background-disabled";
-        }
-        else if (states.checked) {
-          backgroundColor = "background-selected";
-        }
-
-        return {
-          decorator: decorator,
-          width: 12,
-          height: 12,
-          backgroundColor: backgroundColor
-        };
-      }
-    },
-
     "radiobutton":
       {
         style: function(states) {
-          // set an empty icon to be sure that the icon image is rendered
-          return {icon: osparc.theme.osparcdark.Image.URLS["blank"]};
+          var icon;
+
+          if (states.checked) {
+            icon = osparc.theme.osparcdark.Image.URLS["radiobutton-checked"];
+            // Checked
+          }
+          else  {
+            icon = osparc.theme.osparcdark.Image.URLS["radiobutton-unchecked"];
+            // Unchecked
+          }
+
+          var textColor = "text";
+          if (states.disabled) {
+            textColor = "text-disabled";
+          }
+          else if (states.invalid) {
+            textColor = "invalid";
+          }
+          return {
+            icon: icon,
+            textColor: textColor,
+            gap: 6
+          };
+        }
+      },
+      "radiobutton/icon": {
+        style: function(states) {
+          return {
+            decorator: "radiobutton",
+            padding: 0
+          };
         }
       },
 
@@ -1269,8 +1287,16 @@ qx.Theme.define("osparc.theme.osparcdark.Appearance", {
             icon = osparc.theme.osparcdark.Image.URLS["checkbox-blank"];
           }
 
+          var textColor = "text";
+          if (states.disabled) {
+            textColor = "text-disabled";
+          }
+          else if (states.invalid) {
+            textColor = "invalid";
+          }
           return {
             icon: icon,
+            textColor: textColor,
             gap: 6
           };
         }
@@ -1279,20 +1305,9 @@ qx.Theme.define("osparc.theme.osparcdark.Appearance", {
 
     "checkbox/icon": {
       style: function(states) {
-        var decorator = "checkbox";
-
-        if (states.focused && !states.invalid) {
-          decorator = "checkbox-focused";
-        }
-
-        decorator += states.invalid && !states.disabled ? "-invalid" : "";
-
         return {
-          decorator: decorator,
-          // width:           16,
-          // height:          16,
+          decorator: "checkbox",
           padding: 0
-          // backgroundColor: "white"
         };
       }
     },
@@ -1319,22 +1334,12 @@ qx.Theme.define("osparc.theme.osparcdark.Appearance", {
         include: "combobox/button",
 
         style: function(states) {
-          var decorator = "button-box-top-right";
-
-          if (states.hovered && !states.pressed && !states.checked) {
-            decorator = "button-box-hovered-top-right";
-          }
-          else if (states.hovered && (states.pressed || states.checked)) {
-            decorator = "button-box-pressed-hovered-top-right";
-          }
-          else if (states.pressed || states.checked) {
-            decorator = "button-box-pressed-top-right";
-          }
-
           return {
             icon: osparc.theme.osparcdark.Image.URLS["arrow-up-small"],
-            decorator: decorator,
-            width: 17
+            decorator: undefined,
+            width: 12,
+            height: 6,
+            padding: [-1,0,0,0]
           };
         }
       },
@@ -1345,22 +1350,12 @@ qx.Theme.define("osparc.theme.osparcdark.Appearance", {
         include: "combobox/button",
 
         style: function(states) {
-          var decorator = "button-box-bottom-right";
-
-          if (states.hovered && !states.pressed && !states.checked) {
-            decorator = "button-box-hovered-bottom-right";
-          }
-          else if (states.hovered && (states.pressed || states.checked)) {
-            decorator = "button-box-pressed-hovered-bottom-right";
-          }
-          else if (states.pressed || states.checked) {
-            decorator = "button-box-pressed-bottom-right";
-          }
-
           return {
             icon: osparc.theme.osparcdark.Image.URLS["arrow-down-small"],
-            decorator: decorator,
-            width: 17
+            decorator: undefined,
+            width: 12,
+            height: 6,
+            padding: [-1,0,0,0]
           };
         }
       },
@@ -1372,7 +1367,7 @@ qx.Theme.define("osparc.theme.osparcdark.Appearance", {
     ---------------------------------------------------------------------------
     */
 
-    "selectbox": "button-frame",
+    "selectbox": "textfield",
 
     "selectbox/atom": "atom",
     "selectbox/popup": "popup",
@@ -1392,7 +1387,7 @@ qx.Theme.define("osparc.theme.osparcdark.Appearance", {
         style: function(states) {
           return {
             source: osparc.theme.osparcdark.Image.URLS["arrow-down"],
-            paddingRight: 2,
+            paddingRight: 0,
             paddingLeft: 2
           };
         }
@@ -1414,17 +1409,18 @@ qx.Theme.define("osparc.theme.osparcdark.Appearance", {
 
         style: function(states) {
           let decorator = "material-textfield";
-          console.log(states);
           if (states.focused) {
             decorator += "-focused";
+          }
+          if (states.disabled) {
+            decorator += "-disabled";
           }
 
           return {
             backgroundColor: undefined,
             icon: osparc.theme.osparcdark.Image.URLS["arrow-down"],
             decorator: decorator,
-            padding: [0, 0],
-            width: 13
+            padding: [0, 0,0,0]
           };
         }
       },
@@ -1433,9 +1429,7 @@ qx.Theme.define("osparc.theme.osparcdark.Appearance", {
     "combobox/list": {
       alias: "list",
       style: function(states) {
-        return {
-          paddingRight: 2
-        };
+        return {paddingRight: 2};
       }
     },
 
@@ -1457,11 +1451,11 @@ qx.Theme.define("osparc.theme.osparcdark.Appearance", {
 
         style: function(states) {
           return {
-            icon: "icon/16/apps/office-calendar.png",
-            padding: [0, 0, 0, 3],
+            icon: "@MaterialIcons/calendar_today/16",
+            padding: [0, 0, 0, 0],
             backgroundColor: undefined,
             decorator: undefined,
-            width: 19
+            width: 16
           };
         }
       },
@@ -1602,7 +1596,7 @@ qx.Theme.define("osparc.theme.osparcdark.Appearance", {
       {
         style: function(states) {
           return {
-            backgroundColor: "background",
+            backgroundColor: "background-main",
             padding: [6, 9],
             margin: [18, 2, 2, 2],
             decorator: "white-box"
@@ -1727,7 +1721,7 @@ qx.Theme.define("osparc.theme.osparcdark.Appearance", {
 
         style: function(states) {
           return {
-            contentPadding: [4,1],
+            contentPadding: [4, 1],
             padding: 1
           };
         }
@@ -1746,7 +1740,7 @@ qx.Theme.define("osparc.theme.osparcdark.Appearance", {
         style: function(states) {
           return {
             contentPadding: [10, 10, 10, 10],
-            backgroundColor: "background",
+            backgroundColor: "background-main",
             decorator: states.maximized ? undefined : states.active ? "window-active" : "window"
           };
         }
@@ -1764,7 +1758,7 @@ qx.Theme.define("osparc.theme.osparcdark.Appearance", {
       {
         style: function(states) {
           return {
-            backgroundColor: states.active ? "light-background" : "background-disabled",
+            backgroundColor: states.active ? "window-caption-background-active" : "window-caption-background",
             margin: 0,
             padding: 8,
             decorator: "window-caption"
@@ -1788,6 +1782,7 @@ qx.Theme.define("osparc.theme.osparcdark.Appearance", {
           return {
             cursor: "default",
             font: states.active ? "bold" : "default",
+            textColor: states.active ? "window-caption-text-active": "window-caption-text",
             marginRight: 20,
             marginLeft: 4,
             alignY: "middle"
@@ -1948,7 +1943,7 @@ qx.Theme.define("osparc.theme.osparcdark.Appearance", {
       {
         style: function(states) {
           return {
-            backgroundColor: "background",
+            backgroundColor: "background-main",
             textColor: states.disabled ? "text-disabled" : states.invalid ? "invalid" : undefined,
             padding: [2, 10]
           };
@@ -2007,7 +2002,7 @@ qx.Theme.define("osparc.theme.osparcdark.Appearance", {
         style: function(states) {
           return {
             decorator: "datechooser-date-pane",
-            backgroundColor: "background"
+            backgroundColor: "background-main"
           };
         }
       },
@@ -2019,8 +2014,8 @@ qx.Theme.define("osparc.theme.osparcdark.Appearance", {
             decorator: "datechooser-weekday",
             font: "bold",
             textAlign: "center",
-            textColor: states.disabled ? "text-disabled" : states.weekend ? "background-selected-dark" : "background",
-            backgroundColor: states.weekend ? "background" : "background-selected-dark",
+            textColor: states.disabled ? "text-disabled" : states.weekend ? "background-selected-dark" : "background-main",
+            backgroundColor: states.weekend ? "background-main" : "background-selected-dark",
             paddingTop: 2
           };
         }
@@ -2066,7 +2061,7 @@ qx.Theme.define("osparc.theme.osparcdark.Appearance", {
           return {
             decorator: "progressbar",
             padding: 1,
-            backgroundColor: "background",
+            backgroundColor: "background-main",
             width: 200,
             height: 20
           };
@@ -2096,7 +2091,7 @@ qx.Theme.define("osparc.theme.osparcdark.Appearance", {
       {
         style: function(states) {
           return {
-            backgroundColor: "light-background",
+            backgroundColor: "material-button-background",
             padding: 0
           };
         }
@@ -2115,7 +2110,7 @@ qx.Theme.define("osparc.theme.osparcdark.Appearance", {
       {
         style: function(states) {
           return {
-            decorator: "toolbar-separator",
+            decorator: undefined,
             margin: [7, 0],
             width: 4
           };
@@ -2127,41 +2122,21 @@ qx.Theme.define("osparc.theme.osparcdark.Appearance", {
         alias: "atom",
 
         style: function(states) {
-          var decorator = "button-box";
-
-          if (states.disabled) {
-            decorator = "button-box";
-          }
-          else if (states.hovered && !states.pressed && !states.checked) {
-            decorator = "button-box-hovered";
-          }
-          else if (states.hovered && (states.pressed || states.checked)) {
-            decorator = "button-box-pressed-hovered";
-          }
-          else if (states.pressed || states.checked) {
-            decorator = "button-box-pressed";
-          }
-
-          // set the right left and right decorator
-          if (states.left) {
-            decorator += "-left";
-          }
-          else if (states.right) {
-            decorator += "-right";
-          }
-          else if (states.middle) {
-            decorator += "-middle";
-          }
 
           // set the margin
           var margin = [7, 10];
           if (states.left || states.middle || states.right) {
-            margin = [7, 0];
+            margin = [7, 3];
+          }
+          var decorator = "toolbar-button";
+          if (states.hovered || states.pressed || states.focused ||states.checked) {
+            decorator += "-hovered";
           }
 
           return {
             cursor: states.disabled ? undefined : "pointer",
             decorator: decorator,
+            textColor: "material-button-text",
             margin: margin,
             padding: [3, 5]
           };
@@ -2188,7 +2163,7 @@ qx.Theme.define("osparc.theme.osparcdark.Appearance", {
             source: osparc.theme.osparcdark.Image.URLS["arrow-down"],
             cursor: states.disabled ? undefined : "pointer",
             padding: 0,
-            textColor: "text",
+            textColor: "material-button-text",
             marginLeft: 2
           };
         }
@@ -2409,10 +2384,36 @@ qx.Theme.define("osparc.theme.osparcdark.Appearance", {
     "tabview/pane":
       {
         style: function(states) {
+          let marginTop =0;
+          let marginBottom = 0;
+          let marginLeft = 0;
+          let marginRight = 0;
+          let decorator;
+
+          if (states.barTop) {
+            marginTop = -1;
+            decorator = "main-top";
+          }
+          else if (states.barBottom) {
+            marginBottom = -1;
+            decorator = "main-bottom";
+          }
+          else if (states.barLeft) {
+            marginLeft = -1;
+            decorator = "main-left";
+          }
+          else {
+            marginRight = -1;
+            decorator = "main-right";
+          }
           return {
-            backgroundColor: "background",
-            decorator: "main",
-            padding: 10
+            marginLeft: marginLeft,
+            marginRight: marginRight,
+            marginTop: marginTop,
+            marginBottom: marginBottom,
+            padding: 10,
+            decorator: decorator,
+            backgroundColor: "tabview-pane-background"
           };
         }
       },
@@ -2436,32 +2437,18 @@ qx.Theme.define("osparc.theme.osparcdark.Appearance", {
           if (states.checked) {
             if (states.barTop) {
               decorator = "tabview-page-button-top";
-            }
-            else if (states.barBottom) {
-              decorator = "tabview-page-button-bottom";
-            }
-            else if (states.barRight) {
-              decorator = "tabview-page-button-right";
-            }
-            else if (states.barLeft) {
-              decorator = "tabview-page-button-left";
-            }
-          }
-          else {
-            for (var i = 0; i < padding.length; i++) {
-              padding[i] += 1;
-            }
-            // reduce the size by 1 because we have different decorator border width
-            if (states.barTop) {
               padding[2] -= 1;
             }
             else if (states.barBottom) {
+              decorator = "tabview-page-button-bottom";
               padding[0] -= 1;
             }
             else if (states.barRight) {
+              decorator = "tabview-page-button-right";
               padding[3] -= 1;
             }
             else if (states.barLeft) {
+              decorator = "tabview-page-button-left";
               padding[1] -= 1;
             }
           }
@@ -2469,7 +2456,8 @@ qx.Theme.define("osparc.theme.osparcdark.Appearance", {
           return {
             zIndex: states.checked ? 10 : 5,
             decorator: decorator,
-            textColor: states.disabled ? "text-disabled" : states.checked ? "text-selected" : "text",
+            textColor: states.disabled ? "text-disabled" : "text",
+            font: states.checked ? "bold": undefined,
             padding: padding,
             cursor: "pointer"
           };
@@ -2522,7 +2510,7 @@ qx.Theme.define("osparc.theme.osparcdark.Appearance", {
             margin: 2,
             width: 14,
             height: 14,
-            backgroundColor: "background",
+            backgroundColor: "background-main",
             decorator: "main-dark"
           };
         }

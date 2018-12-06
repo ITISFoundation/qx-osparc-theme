@@ -45,6 +45,8 @@ qx.Class.define("osparc.theme.osparcdark.Image",
       "checkbox-checked" : "@MaterialIcons/check_box/15",
       "checkbox-blank" : "@MaterialIcons/check_box_outline_blank/15",
       "checkbox-undetermined" : "@MaterialIcons/indeterminate_check_box/15",
+      "radiobutton-checked" : "@MaterialIcons/radio_button_checked/15",
+      "radiobutton-unchecked" : "@MaterialIcons/radio_button_unchecked/15",
 
       // window
       "window-minimize" : "@MaterialIcons/keyboard_arrow_down",
@@ -64,26 +66,26 @@ qx.Class.define("osparc.theme.osparcdark.Image",
       "arrow-left" : "@MaterialIcons/keyboard_arrow_left/18",
       "arrow-up" : "@MaterialIcons/keyboard_arrow_up/18",
       "arrow-down" : "@MaterialIcons/keyboard_arrow_down/18",
-      "arrow-forward" : "decoration/arrows/forward.gif",
-      "arrow-rewind" : "decoration/arrows/rewind.gif",
-      "arrow-down-small" : "decoration/arrows/down-small.gif",
-      "arrow-up-small" : "decoration/arrows/up-small.gif",
-      "arrow-up-invert" : "decoration/arrows/up-invert.gif",
-      "arrow-down-invert" : "decoration/arrows/down-invert.gif",
-      "arrow-right-invert" : "decoration/arrows/right-invert.gif",
+      "arrow-forward" : "@MaterialIcons/fast_forward/18",
+      "arrow-rewind" : "@MaterialIcons/fast_rewind/18",
+      "arrow-down-small" : "@MaterialIcons/keyboard_arrow_down/13",
+      "arrow-up-small" : "@MaterialIcons/keyboard_arrow_up/13",
+      "arrow-up-invert" : "@MaterialIcons/keyboard_arrow_up/18",
+      "arrow-down-invert" : "@MaterialIcons/keyboard_arrow_down/18",
+      "arrow-right-invert" : "@MaterialIcons/keyboard_arrow_right/18",
 
       // split pane
-      "knob-horizontal" : "decoration/splitpane/knob-horizontal.png",
-      "knob-vertical" : "decoration/splitpane/knob-vertical.png",
+      "knob-horizontal" : "@MaterialIcons/drag_indicator/12",
+      "knob-vertical" : "@MaterialIcons/drag_handle/12",
 
       // tree
       "tree-minus" : "@MaterialIcons/arrow_drop_down/16",
       "tree-plus" : "@MaterialIcons/arrow_right/16",
 
       // table
-      "select-column-order" : "decoration/table/select-column-order.png",
-      "table-ascending" : "decoration/table/ascending.png",
-      "table-descending" : "decoration/table/descending.png",
+      "select-column-order" : "@MaterialIcons/reorder/15",
+      "table-ascending" : "@MaterialIcons/keyboard_arrow_up/14",
+      "table-descending" : "@MaterialIcons/keyboard_arrow_down/14",
 
       // tree virtual
       "treevirtual-line" : "decoration/treevirtual/line.gif",
@@ -102,10 +104,10 @@ qx.Class.define("osparc.theme.osparcdark.Image",
       "file": "@MaterialIcons/insert_drive_file/15",
 
       // menu
-      "menu-checkbox" : "decoration/menu/checkbox.gif",
-      "menu-checkbox-invert" : "decoration/menu/checkbox-invert.gif",
-      "menu-radiobutton-invert" : "decoration/menu/radiobutton-invert.gif",
-      "menu-radiobutton" : "decoration/menu/radiobutton.gif",
+      "menu-checkbox" : "@MaterialIcons/check_box_outline_blank/15",
+      "menu-checkbox-checked" : "@MaterialIcons/check_box/15",
+      "menu-radiobutton-checked" : "@MaterialIcons/radio_button_checked/15",
+      "menu-radiobutton" : "@MaterialIcons/radio_button_unchecked/15",
 
       // tabview
       "tabview-close" : "decoration/tabview/close.gif"

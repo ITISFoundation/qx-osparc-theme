@@ -4,17 +4,17 @@
     "name" : "qx-osparc-theme",
 
     "summary" : "theme for the osparc web ui",
-    "description" : "a material design ispired dark theme for osparc",
+    "description" : "a material design inspired dark theme for osparc",
     "homepage" : "https://github.com/ITISFoundation/qx-osparc-theme",
 
     "license" : "MIT license",
     "authors" : [
       {
         "name": "Tobias Oetiker (oetiker)",
-        "email": "oetiker@itis.ethz.ch"
+        "email": "tobi@itis.swiss"
       }
     ],
-    "version" : "0.2.1",
+    "version" : "0.3.0",
     "qooxdoo-range": "6.0.0-alpha-20180529 - 6.x"
   },
 

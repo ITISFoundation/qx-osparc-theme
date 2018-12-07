@@ -65,6 +65,11 @@ qx.Class.define("widgetbrowser.pages.Basic",
       var atom = new qx.ui.basic.Atom("Atom", "icon/32/status/dialog-information.png");
       widgets.push(atom);
       this.__hbox.add(atom);
+
+      // Atom
+      var font = new qx.ui.basic.Atom("Atom", "@FontAwesome5Solid/sign-in-alt/32");
+      widgets.push(font);
+      this.__hbox.add(font);
     }
   }
   });

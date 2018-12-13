@@ -38,26 +38,24 @@ qx.Theme.define("osparc.theme.osparcdark.Decoration",
         }
       },
       "material-textfield-focused": {
+        include: "material-textfield",
         style: {
-          styleBottom: "solid",
           widthBottom: 2,
           colorBottom: "material-textfield-focused"
         }
       },
       "material-textfield-disabled": {
+        include: "material-textfield",
         style: {
-          styleBottom: "solid",
           widthBottom: 1,
           colorBottom: "material-textfield-disabled"
         }
       },
-      "material-textfield-invalid": {
-        style: {
-          styleBottom: "solid",
-          widthBottom: 2,
-          colorBottom: "material-textfield-invalid"
-        }
+
+      "material-textfield-readonly": {
+        style: {}
       },
+
       /*
         ---------------------------------------------------------------------------
           BUTTON

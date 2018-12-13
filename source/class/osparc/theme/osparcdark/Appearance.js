@@ -307,7 +307,7 @@ qx.Theme.define("osparc.theme.osparcdark.Appearance", {
         decorator = "material-textfield";
         padding = [0, 0, 4, 0];
         if (states.readonly) {
-          decorator = "flat";
+          decorator += "-readonly";
           padding = [0, 0, 5, 0];
         }
         if (states.invalid) {

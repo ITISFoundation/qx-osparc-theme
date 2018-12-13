@@ -44,6 +44,20 @@ qx.Theme.define("osparc.theme.osparcdark.Decoration",
           colorBottom: "material-textfield-focused"
         }
       },
+      "material-textfield-focused-invalid": {
+        include: "material-textfield",
+        style: {
+          widthBottom: 2,
+          colorBottom: "material-textfield-invalid"
+        }
+      },
+      "material-textfield-invalid": {
+        include: "material-textfield",
+        style: {
+          widthBottom: 1,
+          colorBottom: "material-textfield-invalid"
+        }
+      },
       "material-textfield-disabled": {
         include: "material-textfield",
         style: {
@@ -52,9 +66,7 @@ qx.Theme.define("osparc.theme.osparcdark.Decoration",
         }
       },
 
-      "material-textfield-readonly": {
-        style: {}
-      },
+      "material-textfield-readonly": {style: {}},
 
       /*
         ---------------------------------------------------------------------------
@@ -103,6 +115,39 @@ qx.Theme.define("osparc.theme.osparcdark.Decoration",
         include: "material-button",
         style: {backgroundColor: "material-button-background-disabled"}
       },
+
+      "material-button-left": {
+        include: "material-button",
+        style: {radius: [2, 0, 0, 2]}
+      },
+      "material-button-right": {
+        include: "material-button",
+        style: {radius: [0, 2, 2, 0]}
+      },
+      "material-button-hovered-left": {
+        include: "material-button-hovered",
+        style: {radius: [2, 0, 0, 2]}
+      },
+      "material-button-hovered-right": {
+        include: "material-button-hovered",
+        style: {radius: [0, 2, 2, 0]}
+      },
+      "material-button-pressed-left": {
+        include: "material-button-pressed",
+        style: {radius: [2, 0, 0, 2]}
+      },
+      "material-button-pressed-right": {
+        include: "material-button-pressed",
+        style: {radius: [0, 2, 2, 0]}
+      },
+      "material-button-disabled-left": {
+        include: "material-button-disabled",
+        style: {radius: [2, 0, 0, 2]}
+      },
+      "material-button-disabled-right": {
+        include: "material-button-disabled",
+        style: {radius: [0, 2, 2, 0]}
+      },
       /*
         ---------------------------------------------------------------------------
           CORE
@@ -145,7 +190,7 @@ qx.Theme.define("osparc.theme.osparcdark.Decoration",
             style:
               {width: [0, 0, 1, 0]}
           },
-          "main-left":
+      "main-left":
           {
             include: "main",
             style:
@@ -204,9 +249,7 @@ qx.Theme.define("osparc.theme.osparcdark.Decoration",
             include: "button-box",
 
             style:
-              {
-                backgroundColor: "button-box-pressed"
-              }
+              {backgroundColor: "button-box-pressed"}
           },
 
       "button-box-pressed-hovered":
@@ -408,10 +451,7 @@ qx.Theme.define("osparc.theme.osparcdark.Decoration",
             include: "button-box",
 
             style:
-              {
-                radius: [0, 1, 0, 0]
-
-              }
+              {radius: [0, 1, 0, 0]}
           },
 
       "button-box-pressed-top-right":
@@ -419,10 +459,7 @@ qx.Theme.define("osparc.theme.osparcdark.Decoration",
             include: "button-box-pressed",
 
             style:
-              {
-                radius: [0, 1, 0, 0]
-
-              }
+              {radius: [0, 1, 0, 0]}
           },
 
       "button-box-pressed-hovered-top-right":
@@ -430,10 +467,7 @@ qx.Theme.define("osparc.theme.osparcdark.Decoration",
             include: "button-box-pressed-hovered",
 
             style:
-              {
-                radius: [0, 1, 0, 0]
-
-              }
+              {radius: [0, 1, 0, 0]}
           },
 
       "button-box-hovered-top-right":
@@ -441,10 +475,7 @@ qx.Theme.define("osparc.theme.osparcdark.Decoration",
             include: "button-box-hovered",
 
             style:
-              {
-                radius: [0, 1, 0, 0]
-
-              }
+              {radius: [0, 1, 0, 0]}
           },
 
 
@@ -976,18 +1007,36 @@ qx.Theme.define("osparc.theme.osparcdark.Decoration",
               }
           },
       "toolbar-button": {
-          include: "material-button",
-            style: {
-              shadowHorizontalLength: 0,
-              shadowVerticalLength: 0,
-              shadowBlurRadius: 0,
-              shadowSpreadRadius: 0
-            }
-          },
-        "toolbar-button-hovered": {
-          include: "material-button-hovered"
-        },
+        include: "material-button",
+        style: {
+          shadowHorizontalLength: 0,
+          shadowVerticalLength: 0,
+          shadowBlurRadius: 0,
+          shadowSpreadRadius: 0
+        }
+      },
+      "toolbar-button-hovered": {include: "material-button-hovered"},
 
+      "toolbar-button-left": {
+        include: "material-button-left",
+        style: {
+          shadowHorizontalLength: 0,
+          shadowVerticalLength: 0,
+          shadowBlurRadius: 0,
+          shadowSpreadRadius: 0
+        }
+      },
+      "toolbar-button-hovered-left": {include: "material-button-hovered-left"},
+      "toolbar-button-right": {
+        include: "material-button-right",
+        style: {
+          shadowHorizontalLength: 0,
+          shadowVerticalLength: 0,
+          shadowBlurRadius: 0,
+          shadowSpreadRadius: 0
+        }
+      },
+      "toolbar-button-hovered-right": {include: "material-button-hovered-right"},
 
       /*
         ---------------------------------------------------------------------------
@@ -1012,9 +1061,7 @@ qx.Theme.define("osparc.theme.osparcdark.Decoration",
       "menubar-button-hovered":
           {
             style:
-              {
-                backgroundColor: "material-button-background-hovered"
-              }
+              {backgroundColor: "material-button-background-hovered"}
           },
 
 
@@ -1023,9 +1070,7 @@ qx.Theme.define("osparc.theme.osparcdark.Decoration",
             include: "menubar-button-hovered",
 
             style:
-              {
-                backgroundColor: "material-button-background-pressed"
-              }
+              {backgroundColor: "material-button-background-pressed"}
           },
 
 
@@ -1159,21 +1204,16 @@ qx.Theme.define("osparc.theme.osparcdark.Decoration",
           },
 
       "table-header-column-button":
-          {
-            include: "table-header"
-          },
+          {include: "table-header"},
 
       "table-header-cell":
           {
             style:
-              {
-              }
+              {}
           },
 
       "table-header-cell-first":
-          {
-            include: "table-header-cell"
-         },
+          {include: "table-header-cell"},
 
       "progressive-table-header":
           {
@@ -1218,7 +1258,7 @@ qx.Theme.define("osparc.theme.osparcdark.Decoration",
           RADIO BUTTON
         ---------------------------------------------------------------------------
         */
-       "radiobutton":
+      "radiobutton":
        {
          style:
            {color: "text"}

@@ -310,16 +310,18 @@ qx.Theme.define("osparc.theme.osparcdark.Appearance", {
           decorator += "-readonly";
           padding = [0, 0, 5, 0];
         }
-        if (states.invalid) {
-          decorator += "-invalid";
-          padding = [0, 0, 3, 0];
+        else if (states.disabled) {
+          decorator += "-disabled";
         }
         else if (states.focused) {
           decorator += "-focused";
+          if (states.invalid) {
+            decorator += "-invalid";
+          }
           padding = [0, 0, 3, 0];
         }
-        else if (states.disabled) {
-          decorator += "-disabled";
+        else if (states.invalid) {
+          decorator += "-invalid";
         }
 
         return {
@@ -386,10 +388,9 @@ qx.Theme.define("osparc.theme.osparcdark.Appearance", {
 
     "splitbutton/button":
       {
-        alias: "atom",
-
+        alias: "material-button",
         style: function(states) {
-          var decorator = "button-box";
+          var decorator = "material-button";
 
           if (!states.disabled) {
             if (states.pressed || states.checked) {
@@ -399,7 +400,9 @@ qx.Theme.define("osparc.theme.osparcdark.Appearance", {
               decorator += "-hovered";
             }
           }
-
+          else {
+            decorator += "-disabled";
+          }
           if (states.focused) {
             decorator += "-focused";
           }
@@ -415,9 +418,9 @@ qx.Theme.define("osparc.theme.osparcdark.Appearance", {
       },
 
     "splitbutton/arrow": {
-
+      alias: "material-button",
       style: function(states) {
-        var decorator = "button-box";
+        var decorator = "material-button";
 
         if (!states.disabled) {
           if (states.pressed || states.checked) {
@@ -427,7 +430,9 @@ qx.Theme.define("osparc.theme.osparcdark.Appearance", {
             decorator += "-hovered";
           }
         }
-
+        else {
+          decorator += "-disabled";
+        }
         if (states.focused) {
           decorator += "-focused";
         }
@@ -988,9 +993,7 @@ qx.Theme.define("osparc.theme.osparcdark.Appearance", {
           if (states.checked) {
             icon += "-checked";
           }
-          return {
-            icon: osparc.theme.osparcdark.Image.URLS[icon]
-          };
+          return {icon: osparc.theme.osparcdark.Image.URLS[icon]};
         }
       },
 
@@ -1004,9 +1007,7 @@ qx.Theme.define("osparc.theme.osparcdark.Appearance", {
           if (states.checked) {
             icon += "-checked";
           }
-          return {
-            icon: osparc.theme.osparcdark.Image.URLS[icon]
-          };
+          return {icon: osparc.theme.osparcdark.Image.URLS[icon]};
         }
       },
 
@@ -1216,7 +1217,7 @@ qx.Theme.define("osparc.theme.osparcdark.Appearance", {
             icon = osparc.theme.osparcdark.Image.URLS["radiobutton-checked"];
             // Checked
           }
-          else  {
+          else {
             icon = osparc.theme.osparcdark.Image.URLS["radiobutton-unchecked"];
             // Unchecked
           }
@@ -1235,14 +1236,14 @@ qx.Theme.define("osparc.theme.osparcdark.Appearance", {
           };
         }
       },
-      "radiobutton/icon": {
-        style: function(states) {
-          return {
-            decorator: "radiobutton",
-            padding: 0
-          };
-        }
-      },
+    "radiobutton/icon": {
+      style: function(states) {
+        return {
+          decorator: "radiobutton",
+          padding: 0
+        };
+      }
+    },
 
     /*
     ---------------------------------------------------------------------------
@@ -1339,7 +1340,7 @@ qx.Theme.define("osparc.theme.osparcdark.Appearance", {
             decorator: undefined,
             width: 12,
             height: 6,
-            padding: [-1,0,0,0]
+            padding: [-1, 0, 0, 0]
           };
         }
       },
@@ -1355,7 +1356,7 @@ qx.Theme.define("osparc.theme.osparcdark.Appearance", {
             decorator: undefined,
             width: 12,
             height: 6,
-            padding: [-1,0,0,0]
+            padding: [-1, 0, 0, 0]
           };
         }
       },
@@ -1411,8 +1412,14 @@ qx.Theme.define("osparc.theme.osparcdark.Appearance", {
           let decorator = "material-textfield";
           if (states.focused) {
             decorator += "-focused";
+            if (states.invalid) {
+              decorator += "-invalid";
+            }
           }
-          if (states.disabled) {
+          else if (states.invalid) {
+            decorator += "-invalid";
+          }
+          else if (states.disabled) {
             decorator += "-disabled";
           }
 
@@ -1420,7 +1427,7 @@ qx.Theme.define("osparc.theme.osparcdark.Appearance", {
             backgroundColor: undefined,
             icon: osparc.theme.osparcdark.Image.URLS["arrow-down"],
             decorator: decorator,
-            padding: [0, 0,0,0]
+            padding: [0, 0, 0, 0]
           };
         }
       },
@@ -2122,7 +2129,6 @@ qx.Theme.define("osparc.theme.osparcdark.Appearance", {
         alias: "atom",
 
         style: function(states) {
-
           // set the margin
           var margin = [7, 10];
           if (states.left || states.middle || states.right) {
@@ -2170,49 +2176,25 @@ qx.Theme.define("osparc.theme.osparcdark.Appearance", {
       },
 
     "toolbar-splitbutton": {},
+
     "toolbar-splitbutton/button":
       {
         alias: "toolbar-button",
         include: "toolbar-button",
 
         style: function(states) {
-          var decorator = "button-box";
-
-          if (states.disabled) {
-            decorator = "button-box";
-          }
-          else if (states.hovered && !states.pressed && !states.checked) {
-            decorator = "button-box-hovered";
-          }
-          else if (states.hovered && (states.pressed || states.checked)) {
-            decorator = "button-box-pressed-hovered";
-          }
-          else if (states.pressed || states.checked) {
-            decorator = "button-box-pressed";
-          }
-
-          // default margin, when the button is alone
-          var margin = [7, 0, 7, 10];
+          // set the margin
+          var margin = [7, 0,7,10];
           if (states.left || states.middle || states.right) {
-            margin = [7, 0, 7, 0];
+            margin = [7, 0,7,3];
           }
-
-          // set the right left and right decorator
-          if (states.left) {
-            decorator += "-left";
+          var decorator = "toolbar-button";
+          if (states.hovered || states.pressed || states.focused ||states.checked) {
+            decorator += "-hovered";
           }
-          else if (states.right) {
-            decorator += "-middle";
-          }
-          else if (states.middle) {
-            decorator += "-middle";
-          }
-          else {
-            decorator += "-left";
-          }
+          decorator += "-left";
 
           return {
-            icon: osparc.theme.osparcdark.Image.URLS["arrow-down"],
             decorator: decorator,
             margin: margin
           };
@@ -2226,40 +2208,17 @@ qx.Theme.define("osparc.theme.osparcdark.Appearance", {
         include: "toolbar-button",
 
         style: function(states) {
-          var decorator = "button-box";
-
-          if (states.disabled) {
-            decorator = "button-box";
-          }
-          else if (states.hovered && !states.pressed && !states.checked) {
-            decorator = "button-box-hovered";
-          }
-          else if (states.hovered && (states.pressed || states.checked)) {
-            decorator = "button-box-pressed-hovered";
-          }
-          else if (states.pressed || states.checked) {
-            decorator = "button-box-pressed";
-          }
-
-          // default margin, when the button is alone
-          var margin = [7, 10, 7, 0];
+          // set the margin
+          var margin = [7, 10,7,0];
           if (states.left || states.middle || states.right) {
-            margin = [7, 0, 7, 0];
+            margin = [7, 3,7,0];
           }
+          var decorator = "toolbar-button";
+          if (states.hovered || states.pressed || states.focused ||states.checked) {
+            decorator += "-hovered";
+          }
+          decorator += "-right";
 
-          // set the right left and right decorator
-          if (states.left) {
-            decorator += "-middle";
-          }
-          else if (states.right) {
-            decorator += "-right";
-          }
-          else if (states.middle) {
-            decorator += "-middle";
-          }
-          else {
-            decorator += "-right";
-          }
 
           return {
             icon: osparc.theme.osparcdark.Image.URLS["arrow-down"],

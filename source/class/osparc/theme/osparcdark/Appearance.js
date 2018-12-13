@@ -2429,27 +2429,30 @@ qx.Theme.define("osparc.theme.osparcdark.Appearance", {
           if (states.barTop || states.barBottom) {
             padding = [8, 16, 8, 13];
           }
-          else {
-            padding = [8, 4, 8, 4];
+          else if (states.barRight) {
+            padding = [8, 8, 8, 12];
+          }
+          else if (states.barLeft) {
+            padding = [8, 8, 8, 8];
           }
 
           // decorator
           if (states.checked) {
             if (states.barTop) {
               decorator = "tabview-page-button-top";
-              padding[2] -= 1;
+              padding[2] -= 2;
             }
             else if (states.barBottom) {
               decorator = "tabview-page-button-bottom";
-              padding[0] -= 1;
+              padding[0] -= 2;
             }
             else if (states.barRight) {
               decorator = "tabview-page-button-right";
-              padding[3] -= 1;
+              padding[3] -= 2;
             }
             else if (states.barLeft) {
               decorator = "tabview-page-button-left";
-              padding[1] -= 1;
+              padding[1] -= 2;
             }
           }
 

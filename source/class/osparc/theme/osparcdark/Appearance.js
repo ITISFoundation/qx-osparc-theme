@@ -305,10 +305,10 @@ qx.Theme.define("osparc.theme.osparcdark.Appearance", {
         var decorator;
         var padding;
         decorator = "material-textfield";
-        padding = [0, 0, 4, 0];
+        padding = [3, 0, 4, 0];
         if (states.readonly) {
           decorator += "-readonly";
-          padding = [0, 0, 5, 0];
+          padding = [3, 0, 5, 0];
         }
         else if (states.disabled) {
           decorator += "-disabled";
@@ -318,7 +318,7 @@ qx.Theme.define("osparc.theme.osparcdark.Appearance", {
           if (states.invalid) {
             decorator += "-invalid";
           }
-          padding = [0, 0, 3, 0];
+          padding = [3, 0, 3, 0];
         }
         else if (states.invalid) {
           decorator += "-invalid";
@@ -1231,6 +1231,7 @@ qx.Theme.define("osparc.theme.osparcdark.Appearance", {
           }
           return {
             icon: icon,
+            paddingTop: 2,
             textColor: textColor,
             gap: 6
           };
@@ -1240,7 +1241,7 @@ qx.Theme.define("osparc.theme.osparcdark.Appearance", {
       style: function(states) {
         return {
           decorator: "radiobutton",
-          padding: 0
+          padding: [2,0,0,0]
         };
       }
     },
@@ -1389,7 +1390,8 @@ qx.Theme.define("osparc.theme.osparcdark.Appearance", {
           return {
             source: osparc.theme.osparcdark.Image.URLS["arrow-down"],
             paddingRight: 0,
-            paddingLeft: 2
+            paddingLeft: 2,
+            paddingTop: -3
           };
         }
       },
@@ -1458,7 +1460,7 @@ qx.Theme.define("osparc.theme.osparcdark.Appearance", {
 
         style: function(states) {
           return {
-            icon: "@MaterialIcons/calendar_today/16",
+            icon: "@MaterialIcons/calendar_today/14",
             padding: [0, 0, 0, 0],
             backgroundColor: undefined,
             decorator: undefined,

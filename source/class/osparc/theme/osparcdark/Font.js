@@ -19,6 +19,8 @@
 /**
  * @asset(osparc/font/*.woff)
  * @asset(osparc/font/*.woff2)
+ * @asset(osparc/font/*.eot)
+ * @asset(osparc/font/*.ttf)
  */
 /**
  * The simple qooxdoo font theme.
@@ -33,8 +35,10 @@ qx.Theme.define("osparc.theme.osparcdark.Font", {
         {
           family: "Roboto",
           source: [
-            "osparc/font/roboto-v18-latin-ext_latin-regular.woff",
-            "osparc/font/roboto-v18-latin-ext_latin-regular.woff2"
+            "resource/osparc/font/roboto-v18-latin_latin-ext-regular.eot",
+            "resource/osparc/font/roboto-v18-latin_latin-ext-regular.woff2",
+            "resource/osparc/font/roboto-v18-latin_latin-ext-regular.woff",
+            "resource/osparc/font/roboto-v18-latin_latin-ext-regular.ttf"
           ]
         }
       ]
@@ -50,8 +54,10 @@ qx.Theme.define("osparc.theme.osparcdark.Font", {
           {
             family: "Roboto",
             source: [
-              "osparc/font/roboto-v18-latin-ext_latin-700.woff",
-              "osparc/font/roboto-v18-latin-ext_latin-700.woff2"
+              "resource/osparc/font/roboto-v18-latin_latin-ext-700.eot",
+              "resource/osparc/font/roboto-v18-latin_latin-ext-700.woff2",
+              "resource/osparc/font/roboto-v18-latin_latin-ext-700.woff",
+              "resource/osparc/font/roboto-v18-latin_latin-ext-700.ttf"
             ]
           }
         ]
@@ -66,8 +72,10 @@ qx.Theme.define("osparc.theme.osparcdark.Font", {
           {
             family: "Roboto",
             source: [
-              "osparc/font/roboto-v18-latin-ext_latin-regular.woff",
-              "osparc/font/roboto-v18-latin-ext_latin-regular.woff2"
+              "resource/osparc/font/roboto-v18-latin_latin-ext-regular.eot",
+              "resource/osparc/font/roboto-v18-latin_latin-ext-regular.woff2",
+              "resource/osparc/font/roboto-v18-latin_latin-ext-regular.woff",
+              "resource/osparc/font/roboto-v18-latin_latin-ext-regular.ttf"
             ]
           }
         ]
@@ -82,8 +90,10 @@ qx.Theme.define("osparc.theme.osparcdark.Font", {
           {
             family: "Roboto",
             source: [
-              "osparc/font/roboto-v18-latin-ext_latin-regular.woff",
-              "osparc/font/roboto-v18-latin-ext_latin-regular.woff2"
+              "resource/osparc/font/roboto-v18-latin_latin-ext-regular.eot",
+              "resource/osparc/font/roboto-v18-latin_latin-ext-regular.woff2",
+              "resource/osparc/font/roboto-v18-latin_latin-ext-regular.woff",
+              "resource/osparc/font/roboto-v18-latin_latin-ext-regular.ttf"
             ]
           }
         ]
@@ -98,8 +108,10 @@ qx.Theme.define("osparc.theme.osparcdark.Font", {
           {
             family: "Roboto Mono",
             source: [
-              "osparc/font/roboto-mono-v5-latin-ext_latin-italic.woff",
-              "osparc/font/roboto-mono-v5-latin-ext_latin-italic.woff2"
+              "resource/osparc/font/roboto-mono-v6-latin_latin-ext-regular.eot",
+              "resource/osparc/font/roboto-mono-v6-latin_latin-ext-regular.woff2",
+              "resource/osparc/font/roboto-mono-v6-latin_latin-ext-regular.woff",
+              "resource/osparc/font/roboto-mono-v6-latin_latin-ext-regular.ttf"
             ]
           }
         ]

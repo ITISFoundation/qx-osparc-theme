@@ -14,8 +14,7 @@
         "email": "tobi@itis.swiss"
       }
     ],
-    "version" : "0.4.1",
-    "qooxdoo-range": "6.0.0-alpha-20180529 - 6.x"
+    "version" : "0.4.2"
   },
 
   "provides" :

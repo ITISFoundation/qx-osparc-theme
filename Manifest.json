@@ -14,7 +14,7 @@
         "email": "tobi@itis.swiss"
       }
     ],
-    "version" : "0.4.2"
+    "version" : "0.4.3"
   },
 
   "provides" :
@@ -25,5 +25,9 @@
     "resource"    : "source/resource",
     "translation" : "source/translation",
     "type"        : "contribution"
+  },
+  "requires": {
+    "qooxdoo-sdk": "^6.0.0-alpha",
+    "qx-iconfont-material": "^0.1.4"
   }
 }

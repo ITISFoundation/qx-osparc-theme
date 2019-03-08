@@ -7,7 +7,6 @@ cache:
     - node_modules
 
 script:
-  - node_modules/.bin/qx lint
   - node_modules/.bin/qx compile --machine-readable --target=build
 
 deploy:

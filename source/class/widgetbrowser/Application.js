@@ -46,7 +46,6 @@ qx.Class.define("widgetbrowser.Application", {
           qx.log.appender.Console;
         }
         iconfont.material.Load;
-        iconfont.fontawesome5.Load;
         var doc = this.getRoot();
         var dockLayout = new qx.ui.layout.Dock();
         var dockLayoutComposite = new qx.ui.container.Composite(dockLayout);

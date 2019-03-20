@@ -2137,7 +2137,7 @@ qx.Theme.define("osparc.theme.osparcdark.Appearance", {
             margin = [7, 3];
           }
           var decorator = "toolbar-button";
-          if (states.hovered || states.pressed || states.focused ||states.checked) {
+          if (states.hovered || states.pressed || states.checked) {
             decorator += "-hovered";
           }
 

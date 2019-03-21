@@ -1,30 +1,28 @@
 {
-  "info" :
-  {
-    "name" : "qx-osparc-theme",
-
-    "summary" : "theme for the osparc web ui",
-    "description" : "a material design inspired dark theme for osparc",
-    "homepage" : "https://github.com/ITISFoundation/qx-osparc-theme",
-
-    "license" : "MIT license",
-    "authors" : [
+  "info": {
+    "name": "qx-osparc-theme",
+    "summary": "theme for the osparc web ui",
+    "description": "a material design inspired dark theme for osparc",
+    "homepage": "https://github.com/ITISFoundation/qx-osparc-theme",
+    "license": "MIT license",
+    "authors": [
       {
         "name": "Tobias Oetiker (oetiker)",
         "email": "tobi@itis.swiss"
       }
     ],
-    "version" : "0.4.1",
-    "qooxdoo-range": "6.0.0-alpha-20180529 - 6.x"
+    "version": "0.4.4"
   },
-
-  "provides" :
-  {
-    "namespace"   : "osparc.theme",
-    "encoding"    : "utf-8",
-    "class"       : "source/class",
-    "resource"    : "source/resource",
-    "translation" : "source/translation",
-    "type"        : "contribution"
+  "provides": {
+    "namespace": "osparc.theme",
+    "encoding": "utf-8",
+    "class": "source/class",
+    "resource": "source/resource",
+    "translation": "source/translation",
+    "type": "contribution"
+  },
+  "requires": {
+    "qooxdoo-sdk": "^6.0.0-alpha",
+    "ITISFoundation/qx-iconfont-material": "^0.1.4"
   }
 }

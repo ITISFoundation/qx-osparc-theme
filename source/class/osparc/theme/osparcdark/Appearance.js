@@ -1871,7 +1871,13 @@ qx.Theme.define("osparc.theme.osparcdark.Appearance", {
     "window-small-cap":
       {
         include: "window", // get all the settings from window
-        alias: "window" // redirect kids to window/kid
+        alias: "window", // redirect kids to window/kid
+        style: function(states) {
+          return {
+            backgroundColor: "background-selected-dark",
+            decorator: "window-small-cap"
+          };
+        }
       },
     "window-small-cap/captionbar":
       {
@@ -1880,7 +1886,9 @@ qx.Theme.define("osparc.theme.osparcdark.Appearance", {
         style: function(states) {
           return {
             padding: [0, 3, 0, 3],
-            minHeight: 20
+            minHeight: 20,
+            backgroundColor: "background-selected-dark",
+            decorator: "workbench-small-cap-captionbar"
           };
         }
       },
@@ -2137,7 +2145,7 @@ qx.Theme.define("osparc.theme.osparcdark.Appearance", {
             margin = [7, 3];
           }
           var decorator = "toolbar-button";
-          if (states.hovered || states.pressed || states.focused ||states.checked) {
+          if (states.hovered || states.pressed || states.checked) {
             decorator += "-hovered";
           }
 

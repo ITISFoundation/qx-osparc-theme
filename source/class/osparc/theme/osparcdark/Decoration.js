@@ -883,20 +883,6 @@ qx.Theme.define("osparc.theme.osparcdark.Decoration",
             }
       },
 
-      "window-small-cap": {
-        include: "window",
-        style: {
-          width: 0,
-          radius: 3
-        }
-      },
-
-      "workbench-small-cap-captionbar": {
-        style: {
-          width: 0
-        }
-      },
-
       /*
         ---------------------------------------------------------------------------
           GROUP BOX

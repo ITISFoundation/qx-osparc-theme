@@ -802,7 +802,10 @@ qx.Theme.define("osparc.theme.osparcdark.Appearance", {
     "splitpane/splitter":
       {
         style: function(states) {
-          return {backgroundColor: "light-background"};
+          return {
+            backgroundColor: "light-background",
+            visible: false
+          };
         }
       },
 

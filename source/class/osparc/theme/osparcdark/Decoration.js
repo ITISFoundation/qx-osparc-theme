@@ -128,7 +128,15 @@ qx.Theme.define("osparc.theme.osparcdark.Decoration",
         include: "material-button-hovered",
         style: {radius: [2, 0, 0, 2]}
       },
+      "material-button-focused-left": {
+        include: "material-button-hovered",
+        style: {radius: [2, 0, 0, 2]}
+      },
       "material-button-hovered-right": {
+        include: "material-button-hovered",
+        style: {radius: [0, 2, 2, 0]}
+      },
+      "material-button-focused-right": {
         include: "material-button-hovered",
         style: {radius: [0, 2, 2, 0]}
       },

@@ -396,15 +396,15 @@ qx.Theme.define("osparc.theme.osparcdark.Appearance", {
             if (states.pressed || states.checked) {
               decorator += "-pressed";
             }
-            if (states.hovered) {
+            else if (states.hovered) {
               decorator += "-hovered";
+            }
+            else if (states.focused) {
+              decorator += "-focused";
             }
           }
           else {
             decorator += "-disabled";
-          }
-          if (states.focused) {
-            decorator += "-focused";
           }
 
           decorator += "-left";
@@ -426,15 +426,15 @@ qx.Theme.define("osparc.theme.osparcdark.Appearance", {
           if (states.pressed || states.checked) {
             decorator += "-pressed";
           }
-          if (states.hovered) {
+          else if (states.focused) {
+            decorator += "-focused";
+          }
+          else if (states.hovered) {
             decorator += "-hovered";
           }
         }
         else {
           decorator += "-disabled";
-        }
-        if (states.focused) {
-          decorator += "-focused";
         }
 
         decorator += "-right";

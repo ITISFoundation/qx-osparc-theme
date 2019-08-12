@@ -4,12 +4,11 @@
     "babel-eslint": "^8.2.6",
     "eslint": "^4.19.1",
     "eslint-config-qx": "^0.1.0",
-    "eslint-plugin-qx-rules": "^0.1.0",
-    "qooxdoo-sdk": "^6.0.0-alpha"
+    "eslint-plugin-qx-rules": "^0.1.0"
   },
   "scripts": {
     "lint": "eslint ./source/class/osparc/**/*.js",
-    "build": "qx compile --target=source"
+    "build": "npx qx compile --target=source"
   },
   "preferGlobal": "false"
 }

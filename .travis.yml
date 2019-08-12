@@ -7,7 +7,7 @@ cache:
     - node_modules
 
 script:
-  - node_modules/.bin/qx compile --machine-readable --target=build
+  - npx qx compile --machine-readable --target=build
 
 deploy:
   provider: pages

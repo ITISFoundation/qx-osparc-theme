@@ -17,10 +17,10 @@
     theme included with Qooxdoo.
 ************************************************************************ */
 /**
- * @asset(osparc/font/*.woff)
- * @asset(osparc/font/*.woff2)
- * @asset(osparc/font/*.eot)
- * @asset(osparc/font/*.ttf)
+ * @asset(osparc/theme/font/*.woff)
+ * @asset(osparc/theme/font/*.woff2)
+ * @asset(osparc/theme/font/*.eot)
+ * @asset(osparc/theme/font/*.ttf)
  */
 /**
  * The simple qooxdoo font theme.
@@ -35,10 +35,10 @@ qx.Theme.define("osparc.theme.osparcdark.Font", {
         {
           family: "Roboto",
           source: [
-            "osparc/font/roboto-v18-latin_latin-ext-regular.eot",
-            "osparc/font/roboto-v18-latin_latin-ext-regular.woff2",
-            "osparc/font/roboto-v18-latin_latin-ext-regular.woff",
-            "osparc/font/roboto-v18-latin_latin-ext-regular.ttf"
+            "osparc/theme/font/roboto-v18-latin_latin-ext-regular.eot",
+            "osparc/theme/font/roboto-v18-latin_latin-ext-regular.woff2",
+            "osparc/theme/font/roboto-v18-latin_latin-ext-regular.woff",
+            "osparc/theme/font/roboto-v18-latin_latin-ext-regular.ttf"
           ]
         }
       ]

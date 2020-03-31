@@ -1,6 +1,6 @@
 {
   "devDependencies": {
-    "@qooxdoo/compiler": "^1.0.0-beta.20190911-2033",
+    "@qooxdoo/compiler": "^1.0.0-beta.20200326-1746",
     "babel-eslint": "^8.2.6",
     "eslint": "^4.19.1",
     "eslint-config-qx": "^0.1.0",

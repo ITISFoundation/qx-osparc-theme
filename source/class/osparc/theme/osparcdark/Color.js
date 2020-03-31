@@ -26,6 +26,7 @@ qx.Theme.define("osparc.theme.osparcdark.Color", {
     "background-main-lighter": "#303030",
     "background-main-lighter+": "#373737",
     "light-background": "#444",
+    "light-background+": "#555555",
 
     // window
     "window-caption-background": "background-main",
@@ -147,6 +148,8 @@ qx.Theme.define("osparc.theme.osparcdark.Color", {
     "workbench-start-hint": "#505050",
 
     "node-selected-background": "#666666",
+    "node-title-text": "#DCDCDC",
+    "node-port-text": "#BABABA",
 
     "logger-debug-message": "#FFFFFF",
     "logger-info-message": "#FFFFFF",
@@ -154,6 +157,9 @@ qx.Theme.define("osparc.theme.osparcdark.Color", {
     "logger-error-message": "#FF0000",
 
     "service-window-hint": "#808080",
+
+    "activitytree-background-cpu": "#2C7CCE",
+    "activitytree-background-memory": "#358475",
 
     "ready-green": "#33925A",
     "failed-red": "#FF2D2D",

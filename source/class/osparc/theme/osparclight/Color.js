@@ -22,7 +22,7 @@
 qx.Theme.define("osparc.theme.osparclight.Color", {
   colors: {
     // main
-    "background-main": "#DFDFDF",
+    "background-main": "#FFFFFF",
     "background-main-lighter": "#CFCFCF",
     "background-main-lighter+": "#C8C8C8",
     "light-background": "#BBBBBB",

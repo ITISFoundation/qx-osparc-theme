@@ -43,7 +43,7 @@ qx.Theme.define("osparc.theme.osparcdark.Color", {
     "material-textfield-focused": "#e0e0e0",
     "material-textfield-disabled": "#555",
     "material-textfield-invalid": "#a04040",
-    "invalid":"material-textfield-invalid",
+    "invalid": "material-textfield-invalid",
 
     // backgrounds
     "background-selected": "#555",

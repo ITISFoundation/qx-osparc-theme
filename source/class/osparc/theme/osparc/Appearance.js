@@ -12,6 +12,8 @@
 
    Authors:
      * Tobias Oetiker (oetiker)
+     * Odei Maiz (odeimaiz)
+     * Ignacio Pascual (ignapas)
 
 ************************************************************************ */
 

@@ -108,7 +108,7 @@ qx.Theme.define("osparc.theme.osparc.Appearance", {
       include: "window/minimize-button",
       style: function(states) {
         return {
-          icon: osparc.theme.osparcdark.Image.URLS["window-minimize"]+"/14"
+          icon: osparc.theme.common.Image.URLS["window-minimize"]+"/14"
         };
       }
     },
@@ -118,7 +118,7 @@ qx.Theme.define("osparc.theme.osparc.Appearance", {
       include: "window/restore-button",
       style: function(states) {
         return {
-          icon: osparc.theme.osparcdark.Image.URLS["window-restore"]+"/14"
+          icon: osparc.theme.common.Image.URLS["window-restore"]+"/14"
         };
       }
     },
@@ -128,7 +128,7 @@ qx.Theme.define("osparc.theme.osparc.Appearance", {
       include: "window/maximize-button",
       style: function(states) {
         return {
-          icon: osparc.theme.osparcdark.Image.URLS["window-maximize"]+"/14"
+          icon: osparc.theme.common.Image.URLS["window-maximize"]+"/14"
         };
       }
     },
@@ -138,7 +138,7 @@ qx.Theme.define("osparc.theme.osparc.Appearance", {
       include: "window/close-button",
       style: function(states) {
         return {
-          icon: osparc.theme.osparcdark.Image.URLS["window-close"]+"/14"
+          icon: osparc.theme.common.Image.URLS["window-close"]+"/14"
         };
       }
     },

@@ -35,7 +35,7 @@
  * @asset(qx/icon/Tango/16/actions/dialog-cancel.png)
  * @asset(qx/icon/Tango/16/actions/dialog-ok.png)
  */
-qx.Theme.define("osparc.theme.osparcdark.Appearance", {
+qx.Theme.define("osparc.theme.common.Appearance", {
   appearances: {
     /*
     ---------------------------------------------------------------------------

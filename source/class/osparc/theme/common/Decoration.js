@@ -19,7 +19,7 @@
 /**
  * The simple qooxdoo decoration theme.
  */
-qx.Theme.define("osparc.theme.osparcdark.Decoration",
+qx.Theme.define("osparc.theme.common.Decoration",
   {
     aliases: {decoration: "qx/decoration/Simple"},
 

@@ -25,7 +25,7 @@
 /**
  * The simple qooxdoo font theme.
  */
-qx.Theme.define("osparc.theme.osparcdark.Font", {
+qx.Theme.define("osparc.theme.common.Font", {
   fonts: {
     "default": {
       size: 13,

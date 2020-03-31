@@ -169,6 +169,10 @@ qx.Theme.define("osparc.theme.osparcdark.Color", {
     "ready-green": "#33925A",
     "failed-red": "#FF2D2D",
 
-    "progressbar": "#60909e"
+    "progressbar": "#60909e",
+
+    "loading-page-background-color": "#202020",
+    "loading-page-text": "#FFFFFF",
+    "loading-page-spinner": "#DDDDDD"
   }
 });

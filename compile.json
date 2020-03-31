@@ -24,7 +24,6 @@
   "applications": [
     {
       "class": "widgetbrowser.Application",
-      // "theme": "osparc.theme.OSparcBlue",
       "theme": "osparc.theme.OSparcDark",
       "name": "widgetbrowser",
       "include": [

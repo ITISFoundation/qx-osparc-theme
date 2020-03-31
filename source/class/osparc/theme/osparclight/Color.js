@@ -22,7 +22,7 @@
 qx.Theme.define("osparc.theme.osparclight.Color", {
   colors: {
     // main
-    "background-main": "#DFDFDF",
+    "background-main": "#FFFFFF",
     "background-main-lighter": "#CFCFCF",
     "background-main-lighter+": "#C8C8C8",
     "light-background": "#BBBBBB",
@@ -141,7 +141,12 @@ qx.Theme.define("osparc.theme.osparclight.Color", {
     "progressive-progressbar-percent-background": "#FFFFFF",
     "progressive-progressbar-percent-text": "#CCCCCC",
 
-    // ----- osparc related -----
+
+    /*
+    ---------------------------------------------------------------------------
+      OSPARC RELATED
+    ---------------------------------------------------------------------------
+    */
     "workbench-edge-comp-active": "#888888",
     "workbench-edge-api-active": "#444444",
     "workbench-edge-selected": "#FFFF00",
@@ -164,7 +169,10 @@ qx.Theme.define("osparc.theme.osparclight.Color", {
     "ready-green": "#33925A",
     "failed-red": "#FF2D2D",
 
-    "progressbar": "#9F6F61"
-    // ----- osparc related -----
+    "progressbar": "#9F6F61",
+
+    "loading-page-background-color": "#DFDFDF",
+    "loading-page-text": "#000000",
+    "loading-page-spinner": "#222222"
   }
 });

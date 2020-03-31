@@ -141,7 +141,12 @@ qx.Theme.define("osparc.theme.osparcdark.Color", {
     "progressive-progressbar-percent-background": "#000",
     "progressive-progressbar-percent-text": "#333",
 
-    // ----- osparc related -----
+
+    /*
+    ---------------------------------------------------------------------------
+      OSPARC RELATED
+    ---------------------------------------------------------------------------
+    */
     "workbench-edge-comp-active": "#777777",
     "workbench-edge-api-active": "#BBBBBB",
     "workbench-edge-selected": "#0000FF",
@@ -164,7 +169,10 @@ qx.Theme.define("osparc.theme.osparcdark.Color", {
     "ready-green": "#33925A",
     "failed-red": "#FF2D2D",
 
-    "progressbar": "#60909e"
-    // ----- osparc related -----
+    "progressbar": "#60909e",
+
+    "loading-page-background-color": "#202020",
+    "loading-page-text": "#FFFFFF",
+    "loading-page-spinner": "#DDDDDD"
   }
 });

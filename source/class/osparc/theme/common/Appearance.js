@@ -35,7 +35,7 @@
  * @asset(qx/icon/Tango/16/actions/dialog-cancel.png)
  * @asset(qx/icon/Tango/16/actions/dialog-ok.png)
  */
-qx.Theme.define("osparc.theme.osparcdark.Appearance", {
+qx.Theme.define("osparc.theme.common.Appearance", {
   appearances: {
     /*
     ---------------------------------------------------------------------------
@@ -153,7 +153,7 @@ qx.Theme.define("osparc.theme.osparcdark.Appearance", {
         }
 
         return {
-          source: osparc.theme.osparcdark.Image.URLS["cursor-" + icon],
+          source: osparc.theme.common.Image.URLS["cursor-" + icon],
           position: "right-top",
           offset: [2, 16, 2, 6]
         };
@@ -275,7 +275,7 @@ qx.Theme.define("osparc.theme.osparcdark.Appearance", {
       alias: "button",
       style: function(states) {
         return {
-          icon: osparc.theme.osparcdark.Image.URLS["arrow-down"],
+          icon: osparc.theme.common.Image.URLS["arrow-down"],
           iconPosition: "right"
         };
       }
@@ -440,7 +440,7 @@ qx.Theme.define("osparc.theme.osparcdark.Appearance", {
         decorator += "-right";
 
         return {
-          icon: osparc.theme.osparcdark.Image.URLS["arrow-down"],
+          icon: osparc.theme.common.Image.URLS["arrow-down"],
           decorator: decorator,
           cursor: states.disabled ? undefined : "pointer",
           padding: [3, 4]
@@ -463,7 +463,7 @@ qx.Theme.define("osparc.theme.osparcdark.Appearance", {
         include: "button",
 
         style: function(states) {
-          return {icon: osparc.theme.osparcdark.Image.URLS["arrow-" + (states.vertical ? "down" : "right")]};
+          return {icon: osparc.theme.common.Image.URLS["arrow-" + (states.vertical ? "down" : "right")]};
         }
       },
 
@@ -473,7 +473,7 @@ qx.Theme.define("osparc.theme.osparcdark.Appearance", {
         include: "button",
 
         style: function(states) {
-          return {icon: osparc.theme.osparcdark.Image.URLS["arrow-" + (states.vertical ? "up" : "left")]};
+          return {icon: osparc.theme.common.Image.URLS["arrow-" + (states.vertical ? "up" : "left")]};
         }
       },
 
@@ -506,7 +506,7 @@ qx.Theme.define("osparc.theme.osparcdark.Appearance", {
             textColor: "table-header-foreground",
             backgroundColor: "table-header",
             padding: 3,
-            icon: osparc.theme.osparcdark.Image.URLS["select-column-order"]
+            icon: osparc.theme.common.Image.URLS["select-column-order"]
           };
         }
       },
@@ -570,7 +570,7 @@ qx.Theme.define("osparc.theme.osparcdark.Appearance", {
             paddingLeft: 5,
             cursor: states.disabled ? undefined : "pointer",
             sortIcon: states.sorted ?
-              (osparc.theme.osparcdark.Image.URLS["table-" +
+              (osparc.theme.common.Image.URLS["table-" +
                 (states.sortedAscending ? "ascending" : "descending")
               ]) : undefined
           };
@@ -687,77 +687,77 @@ qx.Theme.define("osparc.theme.osparcdark.Appearance", {
     "treevirtual-line":
       {
         style: function(states) {
-          return {icon: osparc.theme.osparcdark.Image.URLS["treevirtual-line"]};
+          return {icon: osparc.theme.common.Image.URLS["treevirtual-line"]};
         }
       },
 
     "treevirtual-contract":
       {
         style: function(states) {
-          return {icon: osparc.theme.osparcdark.Image.URLS["tree-minus"]};
+          return {icon: osparc.theme.common.Image.URLS["tree-minus"]};
         }
       },
 
     "treevirtual-expand":
       {
         style: function(states) {
-          return {icon: osparc.theme.osparcdark.Image.URLS["tree-plus"]};
+          return {icon: osparc.theme.common.Image.URLS["tree-plus"]};
         }
       },
 
     "treevirtual-only-contract":
       {
         style: function(states) {
-          return {icon: osparc.theme.osparcdark.Image.URLS["treevirtual-minus-only"]};
+          return {icon: osparc.theme.common.Image.URLS["treevirtual-minus-only"]};
         }
       },
 
     "treevirtual-only-expand":
       {
         style: function(states) {
-          return {icon: osparc.theme.osparcdark.Image.URLS["treevirtual-plus-only"]};
+          return {icon: osparc.theme.common.Image.URLS["treevirtual-plus-only"]};
         }
       },
 
     "treevirtual-start-contract":
       {
         style: function(states) {
-          return {icon: osparc.theme.osparcdark.Image.URLS["treevirtual-minus-start"]};
+          return {icon: osparc.theme.common.Image.URLS["treevirtual-minus-start"]};
         }
       },
 
     "treevirtual-start-expand":
       {
         style: function(states) {
-          return {icon: osparc.theme.osparcdark.Image.URLS["treevirtual-plus-start"]};
+          return {icon: osparc.theme.common.Image.URLS["treevirtual-plus-start"]};
         }
       },
 
     "treevirtual-end-contract":
       {
         style: function(states) {
-          return {icon: osparc.theme.osparcdark.Image.URLS["treevirtual-minus-end"]};
+          return {icon: osparc.theme.common.Image.URLS["treevirtual-minus-end"]};
         }
       },
 
     "treevirtual-end-expand":
       {
         style: function(states) {
-          return {icon: osparc.theme.osparcdark.Image.URLS["treevirtual-plus-end"]};
+          return {icon: osparc.theme.common.Image.URLS["treevirtual-plus-end"]};
         }
       },
 
     "treevirtual-cross-contract":
       {
         style: function(states) {
-          return {icon: osparc.theme.osparcdark.Image.URLS["treevirtual-minus-cross"]};
+          return {icon: osparc.theme.common.Image.URLS["treevirtual-minus-cross"]};
         }
       },
 
     "treevirtual-cross-expand":
       {
         style: function(states) {
-          return {icon: osparc.theme.osparcdark.Image.URLS["treevirtual-plus-cross"]};
+          return {icon: osparc.theme.common.Image.URLS["treevirtual-plus-cross"]};
         }
       },
 
@@ -765,14 +765,14 @@ qx.Theme.define("osparc.theme.osparcdark.Appearance", {
     "treevirtual-end":
       {
         style: function(states) {
-          return {icon: osparc.theme.osparcdark.Image.URLS["treevirtual-end"]};
+          return {icon: osparc.theme.common.Image.URLS["treevirtual-end"]};
         }
       },
 
     "treevirtual-cross":
       {
         style: function(states) {
-          return {icon: osparc.theme.osparcdark.Image.URLS["treevirtual-cross"]};
+          return {icon: osparc.theme.common.Image.URLS["treevirtual-cross"]};
         }
       },
 
@@ -810,7 +810,7 @@ qx.Theme.define("osparc.theme.osparcdark.Appearance", {
       {
         style: function(states) {
           return {
-            source: osparc.theme.osparcdark.Image.URLS[
+            source: osparc.theme.common.Image.URLS[
               "knob-" + (states.horizontal ? "horizontal" : "vertical")
             ],
             padding: 0
@@ -885,7 +885,7 @@ qx.Theme.define("osparc.theme.osparcdark.Appearance", {
 
         style: function(states) {
           return {
-            icon: osparc.theme.osparcdark.Image.URLS[
+            icon: osparc.theme.common.Image.URLS[
               "arrow-up" + (states.hovered ? "-invert" : "")
             ]
           };
@@ -898,7 +898,7 @@ qx.Theme.define("osparc.theme.osparcdark.Appearance", {
 
         style: function(states) {
           return {
-            icon: osparc.theme.osparcdark.Image.URLS[
+            icon: osparc.theme.common.Image.URLS[
               "arrow-down" + (states.hovered ? "-invert" : "")
             ]
           };
@@ -975,7 +975,7 @@ qx.Theme.define("osparc.theme.osparcdark.Appearance", {
 
         style: function(states) {
           return {
-            source: osparc.theme.osparcdark.Image.URLS[
+            source: osparc.theme.common.Image.URLS[
               "arrow-right" + (states.selected ? "-invert" : "")
             ],
             alignY: "middle"
@@ -993,7 +993,7 @@ qx.Theme.define("osparc.theme.osparcdark.Appearance", {
           if (states.checked) {
             icon += "-checked";
           }
-          return {icon: osparc.theme.osparcdark.Image.URLS[icon]};
+          return {icon: osparc.theme.common.Image.URLS[icon]};
         }
       },
 
@@ -1007,7 +1007,7 @@ qx.Theme.define("osparc.theme.osparcdark.Appearance", {
           if (states.checked) {
             icon += "-checked";
           }
-          return {icon: osparc.theme.osparcdark.Image.URLS[icon]};
+          return {icon: osparc.theme.common.Image.URLS[icon]};
         }
       },
 
@@ -1214,11 +1214,11 @@ qx.Theme.define("osparc.theme.osparcdark.Appearance", {
           var icon;
 
           if (states.checked) {
-            icon = osparc.theme.osparcdark.Image.URLS["radiobutton-checked"];
+            icon = osparc.theme.common.Image.URLS["radiobutton-checked"];
             // Checked
           }
           else {
-            icon = osparc.theme.osparcdark.Image.URLS["radiobutton-unchecked"];
+            icon = osparc.theme.common.Image.URLS["radiobutton-unchecked"];
             // Unchecked
           }
 
@@ -1277,16 +1277,16 @@ qx.Theme.define("osparc.theme.osparcdark.Appearance", {
 
           // Checked
           if (states.checked) {
-            icon = osparc.theme.osparcdark.Image.URLS["checkbox-checked"];
+            icon = osparc.theme.common.Image.URLS["checkbox-checked"];
             // Undetermined
           }
           else if (states.undetermined) {
-            icon = osparc.theme.osparcdark.Image.URLS["checkbox-undetermined"];
+            icon = osparc.theme.common.Image.URLS["checkbox-undetermined"];
             // Unchecked
           }
           else {
             // empty icon
-            icon = osparc.theme.osparcdark.Image.URLS["checkbox-blank"];
+            icon = osparc.theme.common.Image.URLS["checkbox-blank"];
           }
 
           var textColor = "text";
@@ -1337,7 +1337,7 @@ qx.Theme.define("osparc.theme.osparcdark.Appearance", {
 
         style: function(states) {
           return {
-            icon: osparc.theme.osparcdark.Image.URLS["arrow-up-small"],
+            icon: osparc.theme.common.Image.URLS["arrow-up-small"],
             decorator: undefined,
             width: 12,
             height: 6,
@@ -1353,7 +1353,7 @@ qx.Theme.define("osparc.theme.osparcdark.Appearance", {
 
         style: function(states) {
           return {
-            icon: osparc.theme.osparcdark.Image.URLS["arrow-down-small"],
+            icon: osparc.theme.common.Image.URLS["arrow-down-small"],
             decorator: undefined,
             width: 12,
             height: 6,
@@ -1388,7 +1388,7 @@ qx.Theme.define("osparc.theme.osparcdark.Appearance", {
 
         style: function(states) {
           return {
-            source: osparc.theme.osparcdark.Image.URLS["arrow-down"],
+            source: osparc.theme.common.Image.URLS["arrow-down"],
             paddingRight: 0,
             paddingLeft: 2,
             paddingTop: -3
@@ -1427,7 +1427,7 @@ qx.Theme.define("osparc.theme.osparcdark.Appearance", {
 
           return {
             backgroundColor: undefined,
-            icon: osparc.theme.osparcdark.Image.URLS["arrow-down"],
+            icon: osparc.theme.common.Image.URLS["arrow-down"],
             decorator: decorator,
             padding: [0, 0, 0, 0]
           };
@@ -1661,8 +1661,8 @@ qx.Theme.define("osparc.theme.osparcdark.Appearance", {
         style: function(states) {
           return {
             source: states.opened ?
-              osparc.theme.osparcdark.Image.URLS["tree-minus"] :
-              osparc.theme.osparcdark.Image.URLS["tree-plus"],
+              osparc.theme.common.Image.URLS["tree-minus"] :
+              osparc.theme.common.Image.URLS["tree-plus"],
             textColor: states.selected ? "text-selected" : "text"
           };
         }
@@ -1682,11 +1682,11 @@ qx.Theme.define("osparc.theme.osparcdark.Appearance", {
           return {
             padding: [2, 8, 2, 5],
             icon: states.opened ?
-              osparc.theme.osparcdark.Image.URLS["folder-open"] :
-              osparc.theme.osparcdark.Image.URLS["folder"],
+              osparc.theme.common.Image.URLS["folder-open"] :
+              osparc.theme.common.Image.URLS["folder"],
             backgroundColor: backgroundColor,
             textColor: states.selected ? "text-selected" : "text",
-            iconOpened: osparc.theme.osparcdark.Image.URLS["folder-open"],
+            iconOpened: osparc.theme.common.Image.URLS["folder-open"],
             opacity: states.drag ? 0.5 : undefined
           };
         }
@@ -1719,7 +1719,7 @@ qx.Theme.define("osparc.theme.osparcdark.Appearance", {
         alias: "tree-folder",
 
         style: function(states) {
-          return {icon: osparc.theme.osparcdark.Image.URLS["file"]};
+          return {icon: osparc.theme.common.Image.URLS["file"]};
         }
       },
 
@@ -1805,7 +1805,7 @@ qx.Theme.define("osparc.theme.osparcdark.Appearance", {
 
         style: function(states) {
           return {
-            icon: osparc.theme.osparcdark.Image.URLS["window-minimize"]+"/18",
+            icon: osparc.theme.common.Image.URLS["window-minimize"]+"/18",
             padding: 0,
             cursor: states.disabled ? undefined : "pointer"
           };
@@ -1818,7 +1818,7 @@ qx.Theme.define("osparc.theme.osparcdark.Appearance", {
 
         style: function(states) {
           return {
-            icon: osparc.theme.osparcdark.Image.URLS["window-restore"]+"/18",
+            icon: osparc.theme.common.Image.URLS["window-restore"]+"/18",
             padding: 0,
             cursor: states.disabled ? undefined : "pointer"
           };
@@ -1831,7 +1831,7 @@ qx.Theme.define("osparc.theme.osparcdark.Appearance", {
 
         style: function(states) {
           return {
-            icon: osparc.theme.osparcdark.Image.URLS["window-maximize"]+"/18",
+            icon: osparc.theme.common.Image.URLS["window-maximize"]+"/18",
             padding: 0,
             cursor: states.disabled ? undefined : "pointer"
           };
@@ -1844,7 +1844,7 @@ qx.Theme.define("osparc.theme.osparcdark.Appearance", {
 
         style: function(states) {
           return {
-            icon: osparc.theme.osparcdark.Image.URLS["window-close"]+"/18",
+            icon: osparc.theme.common.Image.URLS["window-close"]+"/18",
             padding: 0,
             cursor: states.disabled ? undefined : "pointer"
           };
@@ -1910,16 +1910,16 @@ qx.Theme.define("osparc.theme.osparcdark.Appearance", {
           };
 
           if (states.lastYear) {
-            result.icon = osparc.theme.osparcdark.Image.URLS["arrow-rewind"];
+            result.icon = osparc.theme.common.Image.URLS["arrow-rewind"];
           }
           else if (states.lastMonth) {
-            result.icon = osparc.theme.osparcdark.Image.URLS["arrow-left"];
+            result.icon = osparc.theme.common.Image.URLS["arrow-left"];
           }
           else if (states.nextYear) {
-            result.icon = osparc.theme.osparcdark.Image.URLS["arrow-forward"];
+            result.icon = osparc.theme.common.Image.URLS["arrow-forward"];
           }
           else if (states.nextMonth) {
-            result.icon = osparc.theme.osparcdark.Image.URLS["arrow-right"];
+            result.icon = osparc.theme.common.Image.URLS["arrow-right"];
           }
 
           return result;
@@ -2098,7 +2098,7 @@ qx.Theme.define("osparc.theme.osparcdark.Appearance", {
 
         style: function(states) {
           return {
-            source: osparc.theme.osparcdark.Image.URLS["arrow-down"],
+            source: osparc.theme.common.Image.URLS["arrow-down"],
             cursor: states.disabled ? undefined : "pointer",
             padding: 0,
             textColor: "material-button-text",
@@ -2153,7 +2153,7 @@ qx.Theme.define("osparc.theme.osparcdark.Appearance", {
 
 
           return {
-            icon: osparc.theme.osparcdark.Image.URLS["arrow-down"],
+            icon: osparc.theme.common.Image.URLS["arrow-down"],
             decorator: decorator,
             margin: margin
           };
@@ -2374,7 +2374,7 @@ qx.Theme.define("osparc.theme.osparcdark.Appearance", {
         style: function(states) {
           return {
             cursor: states.disabled ? undefined : "pointer",
-            icon: osparc.theme.osparcdark.Image.URLS["tabview-close"]
+            icon: osparc.theme.common.Image.URLS["tabview-close"]
           };
         }
       },

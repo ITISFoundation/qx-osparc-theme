@@ -27,7 +27,7 @@
  * @asset(qx/decoration/Simple/*)
  * @asset(qx/static/blank.png)
  */
-qx.Class.define("osparc.theme.osparcdark.Image",
+qx.Class.define("osparc.theme.common.Image",
   {
     extend : qx.core.Object,
 

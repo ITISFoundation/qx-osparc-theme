@@ -23,6 +23,8 @@ qx.Theme.define("osparc.theme.osparcdark.Color", {
   colors: {
     // main
     "background-main": "#202020",
+    "background-main-lighter": "#303030",
+    "background-main-lighter+": "#373737",
     "light-background": "#444",
 
     // window
@@ -38,6 +40,7 @@ qx.Theme.define("osparc.theme.osparcdark.Color", {
     "material-button-background-pressed": "#505050",
     "material-button-text-disabled": "text-disabled",
     "material-button-text": "text",
+
     // material-textfield
     "material-textfield": "#808080",
     "material-textfield-focused": "#e0e0e0",
@@ -57,7 +60,7 @@ qx.Theme.define("osparc.theme.osparcdark.Color", {
     "tabview-unselected": "#ffffff",
     "tabview-button-border": "#ffffff",
     "tabview-label-active-disabled": "#d9d9d9",
-    "tabview-pane-background": "background-pane",
+    "tabview-pane-background": "background-main",
     "tabview-button-background": "transparent",
     // text colors
     "link": "#aaa",
@@ -94,12 +97,14 @@ qx.Theme.define("osparc.theme.osparcdark.Color", {
     // separator
     "border-separator": "#808080",
 
-
     // text
     "text": "#bfbfbf",
     "text-disabled": "#808080",
     "text-selected": "#f0f0f0",
-    "text-placeholder": "#404040",
+    "text-placeholder": "text-disabled",
+    "text-darker": "text-disabled",
+    "contrasted-text-dark": "#222222",
+    "contrasted-text-light": "#EEEEEE",
 
     // tooltip
     "tooltip": "#808080",
@@ -133,6 +138,27 @@ qx.Theme.define("osparc.theme.osparcdark.Color", {
     "progressive-progressbar-indicator-done": "#222",
     "progressive-progressbar-indicator-undone": "#333",
     "progressive-progressbar-percent-background": "#000",
-    "progressive-progressbar-percent-text": "#333"
+    "progressive-progressbar-percent-text": "#333",
+
+    // ----- osparc related -----
+    "workbench-edge-comp-active": "#777777",
+    "workbench-edge-api-active": "#BBBBBB",
+    "workbench-edge-selected": "#0000FF",
+    "workbench-start-hint": "#505050",
+
+    "node-selected-background": "#666666",
+
+    "logger-debug-message": "#FFFFFF",
+    "logger-info-message": "#FFFFFF",
+    "logger-warning-message": "#FFFF00",
+    "logger-error-message": "#FF0000",
+
+    "service-window-hint": "#808080",
+
+    "ready-green": "#33925A",
+    "failed-red": "#FF2D2D",
+
+    "progressbar": "#60909e"
+    // ----- osparc related -----
   }
 });

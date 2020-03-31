@@ -14,7 +14,7 @@ $ qx contrib list
 $ qx contrib install ITISFoundation/qx-osparc-theme
 ```
 
-now you just have to modify your `Manifest.json` to enable the theme:
+now you just have to modify your `compile.json` to enable the theme:
 
 ```json5
 "applications": [

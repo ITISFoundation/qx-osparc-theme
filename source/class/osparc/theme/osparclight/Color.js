@@ -141,7 +141,12 @@ qx.Theme.define("osparc.theme.osparclight.Color", {
     "progressive-progressbar-percent-background": "#FFFFFF",
     "progressive-progressbar-percent-text": "#CCCCCC",
 
-    // ----- osparc related -----
+
+    /*
+    ---------------------------------------------------------------------------
+      OSPARC RELATED
+    ---------------------------------------------------------------------------
+    */
     "workbench-edge-comp-active": "#888888",
     "workbench-edge-api-active": "#444444",
     "workbench-edge-selected": "#FFFF00",
@@ -165,6 +170,5 @@ qx.Theme.define("osparc.theme.osparclight.Color", {
     "failed-red": "#FF2D2D",
 
     "progressbar": "#9F6F61"
-    // ----- osparc related -----
   }
 });

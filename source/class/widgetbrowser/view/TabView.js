@@ -112,6 +112,12 @@ qx.Class.define("widgetbrowser.view.TabView",
       controls = {disabled: true};
       var misc = new widgetbrowser.view.TabPage("Misc", classname, controls);
       this.add(misc);
+
+      // oSparc
+      classname = "widgetbrowser.pages.OSparc";
+      controls = {};
+      var oSparc = new widgetbrowser.view.TabPage("oSparc", classname, controls);
+      this.add(oSparc);
     },
 
     __rememberCurrentTab: function(e) {

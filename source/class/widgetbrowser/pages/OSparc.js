@@ -39,28 +39,50 @@ qx.Class.define("widgetbrowser.pages.OSparc", {
     __hbox: null,
 
     initWidgets: function() {
-      // Label
-      const title = new qx.ui.basic.Label("Fonts");
-      this.add(title, {
+      const fonts = this.__initFonts();
+      this.add(fonts, {
         left: 0,
         top: 0
       });
+    },
 
-      const hbox = new qx.ui.container.Composite(new qx.ui.layout.HBox(10));
+    __initFonts: function() {
+      const vBox = new qx.ui.container.Composite(new qx.ui.layout.VBox());
+
+      // Fonts
+      const title = new qx.ui.basic.Label("Fonts:").set({
+        font: new qx.bom.Font(30)
+      });
+      vBox.add(title);
+
       [
         "nav-bar-label",
         "title-18",
-        "text-18"
+        "text-18",
+        "title-16",
+        "text-16",
+        "title-14",
+        "text-14",
+        "title-13",
+        "text-13",
+        "title-12",
+        "text-12",
+        "link-label",
+        "text-12-italic",
+        "text-11",
+        "text-10",
+        "text-9",
+        "text-8-italic",
+        "workbench-start-hint",
+        "workbench-io-label"
       ].forEach(font => {
         const lbl = new qx.ui.basic.Label(font).set({
           font
         });
-        hbox.add(lbl);
+        vBox.add(lbl);
       });
-      this.add(hbox, {
-        left: 0,
-        top: 40
-      });
+
+      return vBox;
     }
   }
 });

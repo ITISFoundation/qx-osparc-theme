@@ -48,34 +48,33 @@ qx.Class.define("widgetbrowser.pages.OSparc", {
 
     __initFonts: function() {
       const fontsGroupBox = new qx.ui.groupbox.GroupBox("Fonts");
-      fontsGroupBox.setLayout(new qx.ui.layout.VBox(5));
+      fontsGroupBox.setLayout(new qx.ui.layout.VBox(10));
 
-      [
-        "nav-bar-label",
-        "title-18",
-        "text-18",
-        "title-16",
-        "text-16",
-        "title-14",
-        "text-14",
-        "title-13",
-        "text-13",
-        "title-12",
-        "text-12",
-        "link-label",
-        "text-12-italic",
-        "text-11",
-        "text-10",
-        "text-9",
-        "text-8-italic",
-        "workbench-start-hint",
-        "workbench-io-label"
-      ].forEach(font => {
-        const lbl = new qx.ui.basic.Label(font).set({
-          font
-        });
-        fontsGroupBox.add(lbl);
+      const commonFontsGroupBox = new qx.ui.groupbox.GroupBox("Common Fonts").set({
+        layout: new qx.ui.layout.VBox(5)
       });
+      const commonFonts = osparc.theme.common.Font.fonts;
+      const commonFontsKeys = Object.keys(Object.getPrototypeOf(commonFonts));
+      commonFontsKeys.forEach(commonFont => {
+        const lbl = new qx.ui.basic.Label(commonFont).set({
+          font: commonFont
+        });
+        commonFontsGroupBox.add(lbl);
+      });
+      fontsGroupBox.add(commonFontsGroupBox);
+
+      const osparcFontsGroupBox = new qx.ui.groupbox.GroupBox("oSparc Fonts").set({
+        layout: new qx.ui.layout.VBox(5)
+      });
+      const osparcFonts = osparc.theme.osparc.Font.fonts;
+      const osparcFontsKeys = Object.keys(Object.getPrototypeOf(osparcFonts));
+      osparcFontsKeys.forEach(osparcFont => {
+        const lbl = new qx.ui.basic.Label(osparcFont).set({
+          font: osparcFont
+        });
+        osparcFontsGroupBox.add(lbl);
+      });
+      fontsGroupBox.add(osparcFontsGroupBox);
 
       return fontsGroupBox;
     }

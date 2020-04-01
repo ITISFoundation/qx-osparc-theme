@@ -95,6 +95,11 @@
           "include": [
             "widgetbrowser.pages.Misc"
           ]
+        },
+        "osparc": {
+          "include": [
+            "widgetbrowser.pages.OSparc"
+          ]
         }
       }
     }

@@ -47,13 +47,8 @@ qx.Class.define("widgetbrowser.pages.OSparc", {
     },
 
     __initFonts: function() {
-      const vBox = new qx.ui.container.Composite(new qx.ui.layout.VBox());
-
-      // Fonts
-      const title = new qx.ui.basic.Label("Fonts:").set({
-        font: new qx.bom.Font(30)
-      });
-      vBox.add(title);
+      const fontsGroupBox = new qx.ui.groupbox.GroupBox("Fonts");
+      fontsGroupBox.setLayout(new qx.ui.layout.VBox(5));
 
       [
         "nav-bar-label",
@@ -79,10 +74,10 @@ qx.Class.define("widgetbrowser.pages.OSparc", {
         const lbl = new qx.ui.basic.Label(font).set({
           font
         });
-        vBox.add(lbl);
+        fontsGroupBox.add(lbl);
       });
 
-      return vBox;
+      return fontsGroupBox;
     }
   }
 });

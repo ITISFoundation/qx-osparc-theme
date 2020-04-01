@@ -171,7 +171,7 @@ qx.Theme.define("osparc.theme.osparclight.Color", {
 
     "progressbar": "#9F6F61",
 
-    "loading-page-background-color": "#DFDFDF",
+    "loading-page-background-color": "background-main",
     "loading-page-text": "#000000",
     "loading-page-spinner": "#222222"
   }

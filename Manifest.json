@@ -11,7 +11,7 @@
         "email": "tobi@itis.swiss"
       }
     ],
-    "version": "0.5.1"
+    "version": "0.5.3"
   },
   "provides": {
     "namespace": "osparc.theme",

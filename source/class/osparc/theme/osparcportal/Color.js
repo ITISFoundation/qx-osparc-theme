@@ -20,154 +20,58 @@
  * Based on osparcdark inverted colors
  */
 qx.Theme.define("osparc.theme.osparcportal.Color", {
+  extend: osparc.theme.osparcblue.Color,
+
   colors: {
+    // ----------------- GAZELLE-CX -----------------
     // Primary Colors
-    "primary-1": "#8300BF", // Repeating major elements across the site like links and buttons
-    "primary-2": "#24245B", // Repeating major elements across the site like heros and header text
-    "primary-3": "#60626C", // Typography and icons (bug in orignal document)
+    "gzl-primary-1": "#8300BF", // Repeating major elements across the site like links and buttons
+    "gzl-primary-2": "#24245B", // Repeating major elements across the site like heros and header text
+    "gzl-primary-3": "#60626C", // Typography and icons (bug in orignal document)
 
     // Secondary Colors
-    "secondary-1": "#BC00FC", // Decorative elements such as illustrations (bug in orignal document)
-    "secondary-2": "#0026FF", // Decorative elements such as illustrations
+    "gzl-secondary-1": "#BC00FC", // Decorative elements such as illustrations (bug in orignal document)
+    "gzl-secondary-2": "#0026FF", // Decorative elements such as illustrations
 
     // Status Colors
-    "status-success": "#00E66B", // Confirmation messages
-    "status-warning": "#FF8400", // To warn users of potentially harmful situation
-    "status-error": "#b51d09", // Error messages and confirmation for deletion
+    "gzl-status-success": "#00E66B", // Confirmation messages
+    "gzl-status-warning": "#FF8400", // To warn users of potentially harmful situation
+    "gzl-status-error": "#b51d09", // Error messages and confirmation for deletion
 
     // Text Colors
-    "text-body": "#303133", // Body text
-    "text-footer": "#606266", // Footer text
-    "text-ghost": "#909399", // Labels and ghost text
+    "gzl-text-body": "#303133", // Body text
+    "gzl-text-footer": "#606266", // Footer text
+    "gzl-text-ghost": "#909399", // Labels and ghost text
 
     // Line Colors
-    "line-card": "#DCDFE6", // Cards
-    "line-dividers": "#E4E7ED", // Table dividers/breadcrumb backgrounds
+    "gzl-line-card": "#DCDFE6", // Cards
+    "gzl-line-dividers": "#E4E7ED", // Table dividers/breadcrumb backgrounds
 
     // Background Colors
-    "background": "#F5F7FA",
+    // "gzl-background": "#F5F7FA",
+    "gzl-background": "#FFFFFF",
+    // ----------------- GAZELLE-CX -----------------
 
+    "secondary-3": "#909399",
 
 
     // main
-    "background-main": "#FFFFFF",
-    "background-main-lighter": "#CFCFCF",
-    "background-main-lighter+": "#C8C8C8",
-    "light-background": "#BBBBBB",
-    "light-background+": "#AAAAAA",
-
-    // window
-    "window-caption-background": "background-main",
-    "window-caption-background-active": "light-background",
-    "window-caption-text": "text",
-    "window-caption-text-active": "text-selected",
-
-    // material-button
-    "material-button-background": "#BFBFBF",
-    "material-button-background-disabled": "#CFCFCF",
-    "material-button-background-hovered": "#AFAFAF",
-    "material-button-background-pressed": "#AFAFAF",
-    "material-button-text-disabled": "text-disabled",
-    "material-button-text": "text",
-
-    // material-textfield
-    "material-textfield": "#7F7F7F",
-    "material-textfield-focused": "#1F1F1F",
-    "material-textfield-disabled": "#AAAAAA",
-    "material-textfield-invalid": "#5FBFBF",
-    "invalid": "material-textfield-invalid",
-
-    // backgrounds
-    "background-selected": "#AAAAAA",
-    "background-selected-disabled": "#CCCCCC",
-    "background-selected-dark": "#BBBBBB",
-    "background-disabled": "background-main",
-    "background-disabled-checked": "#CCCCCC",
-    "background-pane": "#DDDDDD",
-
-    // tabview
-    "tabview-unselected": "#000000",
-    "tabview-button-border": "#000000",
-    "tabview-label-active-disabled": "#262626",
-    "tabview-pane-background": "background-main",
-    "tabview-button-background": "transparent",
-    // text colors
-    "link": "#555555",
-
-    // scrollbar
-    "scrollbar-passive": "#CCCCCC",
-    "scrollbar-active": "#BBBBBB",
-
-    // form
-    "button": "#AAAAAA",
-    "button-border": "#999999",
-    "button-border-hovered": "#777777",
-    "button-box": "#BBBBBB",
-    "button-box-pressed": "#AAAAAA",
-    "border-lead": "#777777",
-
-    // window
-    "window-border": "#BBBBBB",
-    "window-border-inner": "#DDDDDD",
-
-    // group box
-    "white-box-border": "#BFBFBF",
-
-    // shadows
-    "shadow": qx.core.Environment.get("css.rgba") ? "rgba(1.0, 1.0, 1.0, 0.4)" : "#999999",
-
-    // borders
-    // 'border-main' is an alias of 'background-selected' (compatibility reasons)
-    "border": "#B7B7B7",
-    "border-focused": "#484848",
-    "border-invalid": "material-textfield-invalid",
-    "border-disabled": "#DDDDDD",
-
-    // separator
-    "border-separator": "#7F7F7F",
-
-    // text
-    "text": "#404040",
-    "text-disabled": "#7F7F7F",
-    "text-selected": "#0F0F0F",
-    "text-placeholder": "text-disabled",
-    "text-darker": "text-disabled",
-    "contrasted-text-dark": "#DDDDDD",
-    "contrasted-text-light": "#111111",
-
-    // tooltip
-    "tooltip": "#7F7F7F",
-    "tooltip-text": "#0F0F0F",
-
-    // table
-    "table-header": "background-main",
-    "table-header-foreground": "text",
-    "table-header-border": "#777777",
-    "table-focus-indicator": "#8A8A8A",
-
-    // used in table code
-    "table-header-cell": "#DFDFDF",
-    "table-row-background-focused-selected": "#A9A9A9",
-    "table-row-background-focused": "#BABABA",
-    "table-row-background-selected": "#A9A9A9",
-    "table-row-background-even": "#DFDFDF",
-    "table-row-background-odd": "#CFCFCF",
-    // foreground
-    "table-row-selected": "#0F0F0F",
-    "table-row": "#404040",
-    // table grid color
-    "table-row-line": "#DDDDDD",
-    "table-column-line": "#DDDDDD",
-
-    // used in progressive code
-    "progressive-table-header": "#555555",
-    "progressive-table-row-background-even": "#DFDFDF",
-    "progressive-table-row-background-odd": "#CFCFCF",
-    "progressive-progressbar-background": "#FFFFFF",
-    "progressive-progressbar-indicator-done": "#DDDDDD",
-    "progressive-progressbar-indicator-undone": "#CCCCCC",
-    "progressive-progressbar-percent-background": "#FFFFFF",
-    "progressive-progressbar-percent-text": "#CCCCCC",
+    "background-main": "gzl-background",
+    "primary-color": "gzl-primary-1",
+    "primary-color-light": "gzl-primary-3",
+    "primary-color-dark": "gzl-primary-2",
+    "secondary-color": "gzl-secondary-2",
+    "secondary-color-light": "secondary-3",
+    "secondary-color-dark": "gzl-secondary-1",
+    "light-background": "gzl-background",
+    "invalid-color": "gzl-status-error",
+    "text": "gzl-text-body",
+    "text-disabled": "gzl-text-ghost",
+    "text-selected": "#FFFFFF",
+    "text-placeholder": "gzl-text-ghost",
+    "text-darker": "gzl-text-ghost",
+    "contrasted-text-dark": "gzl-line-dividers",
+    "contrasted-text-light": "gzl-text-body",
 
 
     /*
@@ -186,21 +90,21 @@ qx.Theme.define("osparc.theme.osparcportal.Color", {
 
     "logger-debug-message": "#000000",
     "logger-info-message": "#000000",
-    "logger-warning-message": "#FFFF00",
-    "logger-error-message": "#FF0000",
+    "logger-warning-message": "gzl-status-warning",
+    "logger-error-message": "gzl-status-error",
 
     "service-window-hint": "#7F7F7F",
 
     "activitytree-background-cpu": "#D38331",
     "activitytree-background-memory": "#CA7B8A",
 
-    "ready-green": "#33925A",
-    "failed-red": "#FF2D2D",
+    "ready-green": "gzl-status-success",
+    "failed-red": "gzl-status-error",
 
     "progressbar": "#9F6F61",
 
     "loading-page-background-color": "background-main",
-    "loading-page-text": "#000000",
+    "loading-page-text": "text",
     "loading-page-spinner": "#222222"
   }
 });

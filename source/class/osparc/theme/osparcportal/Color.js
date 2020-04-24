@@ -1,6 +1,6 @@
 /* ************************************************************************
 
-  OSparc Light Theme for Qooxdoo
+  Sparc Portal Theme for Qooxdoo
 
   Copyright:
      2020 IT'IS Foundation
@@ -21,6 +21,34 @@
  */
 qx.Theme.define("osparc.theme.osparcportal.Color", {
   colors: {
+    // Primary Colors
+    "primary-1": "#8300BF", // Repeating major elements across the site like links and buttons
+    "primary-2": "#24245B", // Repeating major elements across the site like heros and header text
+    "primary-3": "#60626C", // Typography and icons (bug in orignal document)
+
+    // Secondary Colors
+    "secondary-1": "#BC00FC", // Decorative elements such as illustrations (bug in orignal document)
+    "secondary-2": "#0026FF", // Decorative elements such as illustrations
+
+    // Status Colors
+    "status-success": "#00E66B", // Confirmation messages
+    "status-warning": "#FF8400", // To warn users of potentially harmful situation
+    "status-error": "#b51d09", // Error messages and confirmation for deletion
+
+    // Text Colors
+    "text-body": "#303133", // Body text
+    "text-footer": "#606266", // Footer text
+    "text-ghost": "#909399", // Labels and ghost text
+
+    // Line Colors
+    "line-card": "#DCDFE6", // Cards
+    "line-dividers": "#E4E7ED", // Table dividers/breadcrumb backgrounds
+
+    // Background Colors
+    "background": "#F5F7FA",
+
+
+
     // main
     "background-main": "#FFFFFF",
     "background-main-lighter": "#CFCFCF",

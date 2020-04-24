@@ -1,0 +1,110 @@
+/* ************************************************************************
+
+  Sparc Portal Theme for Qooxdoo
+
+  Copyright:
+     2020 IT'IS Foundation
+
+  License:
+     MIT: https://opensource.org/licenses/MIT
+     See the LICENSE file in the project's top-level directory for details.
+
+  Authors:
+    * Odei Maiz (odeimaiz)
+
+  Origin:
+    This theme is based in large parts on the the Simple
+    theme included with Qooxdoo.
+************************************************************************ */
+/**
+ * Based on osparcdark inverted colors
+ */
+qx.Theme.define("osparc.theme.osparcportal.Color", {
+  extend: osparc.theme.osparcblue.Color,
+
+  colors: {
+    // ----------------- GAZELLE-CX -----------------
+    // Primary Colors
+    "gzl-primary-1": "#8300BF", // Repeating major elements across the site like links and buttons
+    "gzl-primary-2": "#24245B", // Repeating major elements across the site like heros and header text
+    "gzl-primary-3": "#60626C", // Typography and icons (bug in orignal document)
+
+    // Secondary Colors
+    "gzl-secondary-1": "#BC00FC", // Decorative elements such as illustrations (bug in orignal document)
+    "gzl-secondary-2": "#0026FF", // Decorative elements such as illustrations
+
+    // Status Colors
+    "gzl-status-success": "#00E66B", // Confirmation messages
+    "gzl-status-warning": "#FF8400", // To warn users of potentially harmful situation
+    "gzl-status-error": "#b51d09", // Error messages and confirmation for deletion
+
+    // Text Colors
+    "gzl-text-body": "#303133", // Body text
+    "gzl-text-footer": "#606266", // Footer text
+    "gzl-text-ghost": "#909399", // Labels and ghost text
+
+    // Line Colors
+    "gzl-line-card": "#DCDFE6", // Cards
+    "gzl-line-dividers": "#E4E7ED", // Table dividers/breadcrumb backgrounds
+
+    // Background Colors
+    // "gzl-background": "#F5F7FA",
+    "gzl-background": "#FFFFFF",
+    // ----------------- GAZELLE-CX -----------------
+
+    "secondary-3": "#909399",
+
+
+    // main
+    "background-main": "gzl-background",
+    "primary-color": "gzl-primary-1",
+    "primary-color-light": "gzl-primary-3",
+    "primary-color-dark": "gzl-primary-2",
+    "secondary-color": "gzl-secondary-2",
+    "secondary-color-light": "secondary-3",
+    "secondary-color-dark": "gzl-secondary-1",
+    "light-background": "gzl-background",
+    "invalid-color": "gzl-status-error",
+    "text": "gzl-text-body",
+    "text-disabled": "gzl-text-ghost",
+    "text-selected": "#FFFFFF",
+    "text-placeholder": "gzl-text-ghost",
+    "text-darker": "gzl-text-ghost",
+    "contrasted-text-dark": "gzl-line-dividers",
+    "contrasted-text-light": "gzl-text-body",
+
+
+    /*
+    ---------------------------------------------------------------------------
+      OSPARC RELATED
+    ---------------------------------------------------------------------------
+    */
+    "workbench-edge-comp-active": "#888888",
+    "workbench-edge-api-active": "#444444",
+    "workbench-edge-selected": "#FFFF00",
+    "workbench-start-hint": "#AFAFAF",
+
+    "node-selected-background": "#999999",
+    "node-title-text": "#232323",
+    "node-port-text": "#454545",
+
+    "logger-debug-message": "#000000",
+    "logger-info-message": "#000000",
+    "logger-warning-message": "gzl-status-warning",
+    "logger-error-message": "gzl-status-error",
+
+    "service-window-hint": "#7F7F7F",
+
+    "activitytree-background-cpu": "#D38331",
+    "activitytree-background-memory": "#CA7B8A",
+
+    "ready-green": "gzl-status-success",
+    "failed-red": "gzl-status-error",
+
+    "progressbar": "#9F6F61",
+
+    "loading-page-background-color": "background-main",
+    "loading-page-text": "text",
+    "loading-page-spinner": "#222222"
+  }
+});

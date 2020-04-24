@@ -28,6 +28,7 @@
       "name": "widgetbrowser",
       "include": [
         "osparc.theme.OSparcLight",
+        "osparc.theme.OSparcPortal",
         "osparc.theme.OSparcBlue"
       ],
       "parts": {

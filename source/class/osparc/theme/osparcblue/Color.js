@@ -32,6 +32,10 @@ qx.Theme.define("osparc.theme.osparcblue.Color", {
     "secondary-color-dark": "#9ea7aa",
     "light-background": "#ffffff",
     "invalid-color": "#a04040",
+    "text": "#000000",
+    "text-disabled": "#bbb",
+    "text-selected": "secondary-color-light",
+    "text-placeholder": "#aaa",
 
     // window
     "window-caption-background": "secondary-color",
@@ -67,6 +71,7 @@ qx.Theme.define("osparc.theme.osparcblue.Color", {
     "tabview-label-active-disabled": "#D9D9D9",
     "tabview-pane-background": "background-pane",
     "tabview-button-background": "transparent",
+
     // text colors
     "link": "#aaa",
 
@@ -102,12 +107,6 @@ qx.Theme.define("osparc.theme.osparcblue.Color", {
 
     // separator
     "border-separator": "#808080",
-
-    // text
-    "text": "#000000",
-    "text-disabled": "#bbb",
-    "text-selected": "secondary-color-light",
-    "text-placeholder": "#aaa",
 
     // tooltip
     "tooltip": "primary-color-light",

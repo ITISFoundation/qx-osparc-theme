@@ -21,7 +21,7 @@
     "translation": "source/translation"
   },
   "requires": {
-    "ITISFoundation/qx-iconfont-material": "^0.1.4",
+    "ITISFoundation/qx-iconfont-material": "^0.1.7",
     "@qooxdoo/compiler": "^1.0.0-beta",
     "@qooxdoo/framework": "^6.0.0-beta"
   },

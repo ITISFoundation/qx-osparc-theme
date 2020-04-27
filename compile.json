@@ -97,6 +97,11 @@
             "widgetbrowser.pages.Misc"
           ]
         },
+        "icon": {
+          "include": [
+            "widgetbrowser.pages.Icon"
+          ]
+        },
         "osparc": {
           "include": [
             "widgetbrowser.pages.OSparc"

@@ -36,6 +36,7 @@
  * @use(widgetbrowser.pages.EmbedFrame)
  * @use(widgetbrowser.pages.Basic)
  * @use(widgetbrowser.pages.Misc)
+ * @use(widgetbrowser.pages.Icon)
  * @use(widgetbrowser.pages.OSparc)
  */
 

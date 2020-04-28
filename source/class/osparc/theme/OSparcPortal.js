@@ -20,7 +20,7 @@
  * Simple Theme
  */
 qx.Theme.define("osparc.theme.OSparcPortal", {
-  title: "OSparc Light Theme",
+  title: "OSparc Portal Theme",
   meta: {
     color: osparc.theme.osparcportal.Color,
     decoration: osparc.theme.osparc.Decoration,

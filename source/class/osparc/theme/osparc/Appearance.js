@@ -460,7 +460,7 @@ qx.Theme.define("osparc.theme.osparc.Appearance", {
       alias: "atom",
       style: state => ({
         decorator: "chip",
-        backgroundColor: "background-main-lighter",
+        backgroundColor: "red",
         padding: [3, 5]
       })
     },
@@ -472,7 +472,7 @@ qx.Theme.define("osparc.theme.osparc.Appearance", {
       })
     },
 
-    /*
+    /* --local
     ---------------------------------------------------------------------------
       Dashboard
     ---------------------------------------------------------------------------

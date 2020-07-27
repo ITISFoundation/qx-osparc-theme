@@ -24,7 +24,7 @@ qx.Theme.define("osparc.theme.OSparcDark", {
   meta: {
     color: osparc.theme.osparcdark.Color,
     decoration: osparc.theme.common.Decoration,
-    font: osparc.theme.osparc.Font,
+    font: osparc.theme.common.Font,
     appearance: osparc.theme.common.Appearance,
     icon: qx.theme.icon.Tango
   }

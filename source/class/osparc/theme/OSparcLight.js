@@ -23,9 +23,9 @@ qx.Theme.define("osparc.theme.OSparcLight", {
   title: "OSparc Light Theme",
   meta: {
     color: osparc.theme.osparclight.Color,
-    decoration: osparc.theme.osparc.Decoration,
+    decoration: osparc.theme.common.Decoration,
     font: osparc.theme.osparc.Font,
-    appearance: osparc.theme.osparc.Appearance,
+    appearance: osparc.theme.common.Appearance,
     icon: qx.theme.icon.Tango
   }
 });

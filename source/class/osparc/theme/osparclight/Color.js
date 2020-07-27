@@ -104,8 +104,8 @@ qx.Theme.define("osparc.theme.osparclight.Color", {
     "text-selected": "#0F0F0F",
     "text-placeholder": "text-disabled",
     "text-darker": "text-disabled",
-    "contrasted-text-dark": "#DDDDDD",
-    "contrasted-text-light": "#111111",
+    // "contrasted-text-dark": "#DDDDDD",
+    // "contrasted-text-light": "#111111",
 
     // tooltip
     "tooltip": "#7F7F7F",

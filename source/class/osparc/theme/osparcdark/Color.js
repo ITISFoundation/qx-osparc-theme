@@ -147,32 +147,32 @@ qx.Theme.define("osparc.theme.osparcdark.Color", {
       OSPARC RELATED
     ---------------------------------------------------------------------------
     */
-    "workbench-edge-comp-active": "#777777",
-    "workbench-edge-api-active": "#BBBBBB",
-    "workbench-edge-selected": "#0000FF",
-    "workbench-start-hint": "#505050",
+    // "workbench-edge-comp-active": "#777777",
+    // "workbench-edge-api-active": "#BBBBBB",
+    // "workbench-edge-selected": "#0000FF",
+    // "workbench-start-hint": "#505050",
 
-    "node-selected-background": "#666666",
-    "node-title-text": "#DCDCDC",
-    "node-port-text": "#BABABA",
+    // "node-selected-background": "#666666",
+    // "node-title-text": "#DCDCDC",
+    // "node-port-text": "#BABABA",
 
-    "logger-debug-message": "#FFFFFF",
-    "logger-info-message": "#FFFFFF",
-    "logger-warning-message": "#FFFF00",
-    "logger-error-message": "#FF0000",
+    // "logger-debug-message": "#FFFFFF",
+    // "logger-info-message": "#FFFFFF",
+    // "logger-warning-message": "#FFFF00",
+    // "logger-error-message": "#FF0000",
 
-    "service-window-hint": "#808080",
+    // "service-window-hint": "#808080",
 
-    "activitytree-background-cpu": "#2C7CCE",
-    "activitytree-background-memory": "#358475",
+    // "activitytree-background-cpu": "#2C7CCE",
+    // "activitytree-background-memory": "#358475",
 
-    "ready-green": "#33925A",
-    "failed-red": "#FF2D2D",
+    // "ready-green": "#33925A",
+    // "failed-red": "#FF2D2D",
 
-    "progressbar": "#60909e",
+    // "progressbar": "#60909e",
 
-    "loading-page-background-color": "#202020",
-    "loading-page-text": "#FFFFFF",
-    "loading-page-spinner": "#DDDDDD"
+    // "loading-page-background-color": "#202020",
+    // "loading-page-text": "#FFFFFF",
+    // "loading-page-spinner": "#DDDDDD"
   }
 });

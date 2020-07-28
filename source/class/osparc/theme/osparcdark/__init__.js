@@ -1,4 +1,0 @@
-/**
- * osparc.theme.osparcdark package
- *
- */

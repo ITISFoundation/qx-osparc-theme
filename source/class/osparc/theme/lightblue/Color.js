@@ -23,18 +23,27 @@ qx.Theme.define("osparc.theme.lightblue.Color", {
     "background-main": "#202020",
     "background-main-lighter": "#303030",
     "background-main-lighter+": "#373737",
-    "light-background": "#444",
-    "light-background+": "#555555",
+    "contrasted-background": "#444444",
+    "contrasted-background+": "#555555",
+
+    // text
+    "text": "#bfbfbf",
+    "text-disabled": "#808080",
+    "text-selected": "#f0f0f0",
+    "text-placeholder": "text-disabled",
+    "text-darker": "text-disabled",
+    "contrasted-text-dark": "#222222",
+    "contrasted-text-light": "#EEEEEE",
 
     // window
     "window-caption-background": "background-main",
-    "window-caption-background-active": "light-background",
+    "window-caption-background-active": "contrasted-background",
     "window-caption-text": "text",
     "window-caption-text-active": "text-selected",
 
     // material-button
     "material-button-background": "#404040",
-    "material-button-background-disabled": "#303030",
+    "material-button-background-disabled": "background-main-lighter",
     "material-button-background-hovered": "#505050",
     "material-button-background-pressed": "#505050",
     "material-button-text-disabled": "text-disabled",
@@ -43,14 +52,14 @@ qx.Theme.define("osparc.theme.lightblue.Color", {
     // material-textfield
     "material-textfield": "#808080",
     "material-textfield-focused": "#e0e0e0",
-    "material-textfield-disabled": "#555",
+    "material-textfield-disabled": "contrasted-background+",
     "material-textfield-invalid": "#a04040",
     "invalid": "material-textfield-invalid",
 
     // backgrounds
-    "background-selected": "#555",
+    "background-selected": "contrasted-background+",
     "background-selected-disabled": "#333",
-    "background-selected-dark": "#444",
+    "background-selected-dark": "contrasted-background",
     "background-disabled": "background-main",
     "background-disabled-checked": "#333",
     "background-pane": "#222",
@@ -66,18 +75,18 @@ qx.Theme.define("osparc.theme.lightblue.Color", {
 
     // scrollbar
     "scrollbar-passive": "#333",
-    "scrollbar-active": "#444",
+    "scrollbar-active": "contrasted-background",
 
     // form
-    "button": "#555",
+    "button": "contrasted-background+",
     "button-border": "#666",
     "button-border-hovered": "#888",
-    "button-box": "#444",
-    "button-box-pressed": "#555",
+    "button-box": "contrasted-background",
+    "button-box-pressed": "contrasted-background+",
     "border-lead": "#888888",
 
     // window
-    "window-border": "#444",
+    "window-border": "contrasted-background",
     "window-border-inner": "#222",
 
     // group box
@@ -96,15 +105,6 @@ qx.Theme.define("osparc.theme.lightblue.Color", {
     // separator
     "border-separator": "#808080",
 
-    // text
-    "text": "#bfbfbf",
-    "text-disabled": "#808080",
-    "text-selected": "#f0f0f0",
-    "text-placeholder": "text-disabled",
-    "text-darker": "text-disabled",
-    "contrasted-text-dark": "#222222",
-    "contrasted-text-light": "#EEEEEE",
-
     // tooltip
     "tooltip": "#808080",
     "tooltip-text": "#f0f0f0",
@@ -116,12 +116,12 @@ qx.Theme.define("osparc.theme.lightblue.Color", {
     "table-focus-indicator": "#757575",
 
     // used in table code
-    "table-header-cell": "#202020",
+    "table-header-cell": "background-main",
     "table-row-background-focused-selected": "#565656",
     "table-row-background-focused": "#454545",
     "table-row-background-selected": "#565656",
-    "table-row-background-even": "#202020",
-    "table-row-background-odd": "#303030",
+    "table-row-background-even": "background-main",
+    "table-row-background-odd": "background-main-lighter",
     // foreground
     "table-row-selected": "#f0f0f0",
     "table-row": "#bfbfbf",
@@ -131,8 +131,8 @@ qx.Theme.define("osparc.theme.lightblue.Color", {
 
     // used in progressive code
     "progressive-table-header": "#AAAAAA",
-    "progressive-table-row-background-even": "#202020",
-    "progressive-table-row-background-odd": "#303030",
+    "progressive-table-row-background-even": "background-main",
+    "progressive-table-row-background-odd": "background-main-lighter",
     "progressive-progressbar-background": "#000",
     "progressive-progressbar-indicator-done": "#222",
     "progressive-progressbar-indicator-undone": "#333",

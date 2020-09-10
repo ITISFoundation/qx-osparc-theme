@@ -113,12 +113,6 @@ qx.Class.define("widgetbrowser.view.TabView",
       var misc = new widgetbrowser.view.TabPage("Misc", classname, controls);
       this.add(misc);
 
-      // Icon
-      classname = "widgetbrowser.pages.Icon";
-      controls = {};
-      var icon = new widgetbrowser.view.TabPage("Icon", classname, controls);
-      this.add(icon);
-
       // oSparc
       classname = "widgetbrowser.pages.OSparc";
       controls = {};

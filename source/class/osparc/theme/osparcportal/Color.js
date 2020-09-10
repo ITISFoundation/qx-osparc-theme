@@ -71,40 +71,6 @@ qx.Theme.define("osparc.theme.osparcportal.Color", {
     "text-placeholder": "gzl-text-ghost",
     "text-darker": "gzl-text-ghost",
     "contrasted-text-dark": "gzl-line-dividers",
-    "contrasted-text-light": "gzl-text-body",
-
-
-    /*
-    ---------------------------------------------------------------------------
-      OSPARC RELATED
-    ---------------------------------------------------------------------------
-    */
-    "workbench-edge-comp-active": "#888888",
-    "workbench-edge-api-active": "#444444",
-    "workbench-edge-selected": "#FFFF00",
-    "workbench-start-hint": "#AFAFAF",
-
-    "node-selected-background": "#999999",
-    "node-title-text": "#232323",
-    "node-port-text": "#454545",
-
-    "logger-debug-message": "#000000",
-    "logger-info-message": "#000000",
-    "logger-warning-message": "gzl-status-warning",
-    "logger-error-message": "gzl-status-error",
-
-    "service-window-hint": "#7F7F7F",
-
-    "activitytree-background-cpu": "#D38331",
-    "activitytree-background-memory": "#CA7B8A",
-
-    "ready-green": "gzl-status-success",
-    "failed-red": "gzl-status-error",
-
-    "progressbar": "#9F6F61",
-
-    "loading-page-background-color": "background-main",
-    "loading-page-text": "text",
-    "loading-page-spinner": "#222222"
+    "contrasted-text-light": "gzl-text-body"
   }
 });

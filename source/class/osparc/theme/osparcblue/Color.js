@@ -30,7 +30,7 @@ qx.Theme.define("osparc.theme.osparcblue.Color", {
     "secondary-color": "#cfd8dc",
     "secondary-color-light": "#ffffff",
     "secondary-color-dark": "#9ea7aa",
-    "light-background": "#ffffff",
+    "contrasted-background": "#ffffff",
     "invalid-color": "#a04040",
     "text": "#000000",
     "text-disabled": "#bbb",
@@ -64,9 +64,9 @@ qx.Theme.define("osparc.theme.osparcblue.Color", {
     "background-selected": "primary-color",
     "background-selected-disabled": "secondary-color-dark",
     "background-selected-dark": "primary-color-dark",
-    "background-disabled": "light-background",
-    "background-disabled-checked": "light-background",
-    "background-pane": "light-background",
+    "background-disabled": "contrasted-background",
+    "background-disabled-checked": "contrasted-background",
+    "background-pane": "contrasted-background",
 
     // tabview
     "tabview-unselected": "#1866B5",
@@ -116,19 +116,19 @@ qx.Theme.define("osparc.theme.osparcblue.Color", {
     "tooltip-text": "#f0f0f0",
 
     // table
-    "table-header": "light-background",
+    "table-header": "contrasted-background",
     "table-header-foreground": "text",
     "table-header-border":  "primary-color-dark",
     "table-focus-indicator": "primary-color-dark",
 
     // used in table code
-    "table-header-cell": "light-background",
+    "table-header-cell": "contrasted-background",
 
     "table-row-background-focused-selected": "primary-color",
     "table-row-background-focused": "primary-color",
     "table-row-background-selected": "primary-color-light",
     "table-row-background-even": "secondary-color",
-    "table-row-background-odd": "light-background",
+    "table-row-background-odd": "contrasted-background",
     // foreground
     "table-row-selected": "#ffffff",
     "table-row": "text",
@@ -144,40 +144,6 @@ qx.Theme.define("osparc.theme.osparcblue.Color", {
     "progressive-progressbar-indicator-done": "#222",
     "progressive-progressbar-indicator-undone": "#333",
     "progressive-progressbar-percent-background": "#000",
-    "progressive-progressbar-percent-text": "#333",
-
-
-    /*
-    ---------------------------------------------------------------------------
-      OSPARC RELATED
-    ---------------------------------------------------------------------------
-    */
-    "workbench-edge-comp-active": "#888888",
-    "workbench-edge-api-active": "#444444",
-    "workbench-edge-selected": "#FFFF00",
-    "workbench-start-hint": "#AFAFAF",
-
-    "node-selected-background": "#999999",
-    "node-title-text": "#232323",
-    "node-port-text": "#454545",
-
-    "logger-debug-message": "#000000",
-    "logger-info-message": "#000000",
-    "logger-warning-message": "#FFFF00",
-    "logger-error-message": "#FF0000",
-
-    "service-window-hint": "#7F7F7F",
-
-    "activitytree-background-cpu": "#D38331",
-    "activitytree-background-memory": "#CA7B8A",
-
-    "ready-green": "#33925A",
-    "failed-red": "#FF2D2D",
-
-    "progressbar": "#9F6F61",
-
-    "loading-page-background-color": "background-main",
-    "loading-page-text": "#000000",
-    "loading-page-spinner": "#222222"
+    "progressive-progressbar-percent-text": "#333"
   }
 });

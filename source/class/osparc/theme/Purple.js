@@ -1,6 +1,6 @@
 /* ************************************************************************
 
-  OSparc Light Theme for Qooxdoo
+  OSparc Purple Theme for Qooxdoo
 
   Copyright:
      2020 IT'IS Foundation
@@ -19,12 +19,12 @@
 /**
  * Simple Theme
  */
-qx.Theme.define("osparc.theme.OSparcPortal", {
-  title: "OSparc Portal Theme",
+qx.Theme.define("osparc.theme.Purple", {
+  title: "Purple Theme",
   meta: {
-    color: osparc.theme.osparcportal.Color,
+    color: osparc.theme.purple.Color,
     decoration: osparc.theme.common.Decoration,
-    font: osparc.theme.osparcportal.Font,
+    font: osparc.theme.common.Font,
     appearance: osparc.theme.common.Appearance,
     icon: qx.theme.icon.Tango
   }

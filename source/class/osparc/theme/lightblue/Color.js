@@ -1,6 +1,6 @@
 /* ************************************************************************
 
-  OSparc Light Theme for Qooxdoo
+  Light Blue based theme for Qooxdoo
 
   Copyright:
      2020 IT'IS Foundation
@@ -17,16 +17,16 @@
     theme included with Qooxdoo.
 ************************************************************************ */
 /**
- * Based on osparcdark inverted colors
+ * Light Blue color theme based on the the light theme
  */
-qx.Theme.define("osparc.theme.osparclight.Color", {
+qx.Theme.define("osparc.theme.lightblue.Color", {
   colors: {
     // main
-    "background-main": "#FFFFFF",
-    "background-main-lighter": "#CFCFCF",
-    "background-main-lighter+": "#C8C8C8",
-    "contrasted-background": "#BBBBBB",
-    "contrasted-background+": "#AAAAAA",
+    "background-main": "#FFFFFF", // background
+    "background-main-lighter": "#D8E3F1", // navbar bg
+    "background-main-lighter+": "#BFCAD8", // dashboard button
+    "contrasted-background": "#9CAFC9", // dashboard button hovered
+    "contrasted-background+": "#8396B0", // dashboard button pressed
 
     // text
     "text": "#404040",
@@ -49,27 +49,27 @@ qx.Theme.define("osparc.theme.osparclight.Color", {
     "window-caption-text-active": "text-selected",
 
     // material-button
-    "material-button-background": "#BFBFBF",
-    "material-button-background-disabled": "#CFCFCF",
-    "material-button-background-hovered": "#AFAFAF",
-    "material-button-background-pressed": "#AFAFAF",
+    "material-button-background": "background-main-lighter+",
+    "material-button-background-disabled": "background-main-lighter",
+    "material-button-background-hovered": "contrasted-background+",
+    "material-button-background-pressed": "contrasted-background+",
     "material-button-text-disabled": "text-disabled",
     "material-button-text": "text",
 
     // material-textfield
-    "material-textfield": "#7F7F7F",
+    "material-textfield": "text-disabled",
     "material-textfield-focused": "#1F1F1F",
-    "material-textfield-disabled": "#AAAAAA",
+    "material-textfield-disabled": "contrasted-background+",
     "material-textfield-invalid": "#5FBFBF",
     "invalid": "material-textfield-invalid",
 
     // backgrounds
-    "background-selected": "#AAAAAA",
-    "background-selected-disabled": "#CCCCCC",
-    "background-selected-dark": "#BBBBBB",
+    "background-selected": "contrasted-background+",
+    "background-selected-disabled": "background-main-lighter",
+    "background-selected-dark": "contrasted-background",
     "background-disabled": "background-main",
-    "background-disabled-checked": "#CCCCCC",
-    "background-pane": "#DDDDDD",
+    "background-disabled-checked": "background-main-lighter",
+    "background-pane": "background-main",
 
     // tabview
     "tabview-unselected": "#000000",
@@ -79,20 +79,20 @@ qx.Theme.define("osparc.theme.osparclight.Color", {
     "tabview-button-background": "transparent",
 
     // scrollbar
-    "scrollbar-passive": "#CCCCCC",
-    "scrollbar-active": "#BBBBBB",
+    "scrollbar-passive": "background-main-lighter",
+    "scrollbar-active": "contrasted-background",
 
     // form
-    "button": "#AAAAAA",
+    "button": "contrasted-background+",
     "button-border": "bg-shadow",
     "button-border-hovered": "#777777",
-    "button-box": "#BBBBBB",
-    "button-box-pressed": "#AAAAAA",
+    "button-box": "contrasted-background",
+    "button-box-pressed": "contrasted-background+",
     "border-lead": "#777777",
 
     // window
-    "window-border": "#BBBBBB",
-    "window-border-inner": "#DDDDDD",
+    "window-border": "contrasted-background",
+    "window-border-inner": "background-main",
 
     // group box
     "white-box-border": "#BFBFBF",
@@ -102,14 +102,14 @@ qx.Theme.define("osparc.theme.osparclight.Color", {
     "border": "#B7B7B7",
     "border-focused": "#484848",
     "border-invalid": "material-textfield-invalid",
-    "border-disabled": "#DDDDDD",
+    "border-disabled": "background-main",
 
     // separator
-    "border-separator": "#7F7F7F",
+    "border-separator": "text-disabled",
 
     // tooltip
-    "tooltip": "#7F7F7F",
-    "tooltip-text": "#0F0F0F",
+    "tooltip": "text-disabled",
+    "tooltip-text": "text-selected",
 
     // table
     "table-header": "background-main",
@@ -118,29 +118,29 @@ qx.Theme.define("osparc.theme.osparclight.Color", {
     "table-focus-indicator": "#8A8A8A",
 
     // used in table code
-    "table-header-cell": "#DFDFDF",
+    "table-header-cell": "background-main",
     "table-row-background-focused-selected": "#A9A9A9",
     "table-row-background-focused": "#BABABA",
     "table-row-background-selected": "#A9A9A9",
-    "table-row-background-even": "#DFDFDF",
-    "table-row-background-odd": "#CFCFCF",
+    "table-row-background-even": "background-main",
+    "table-row-background-odd": "background-main-lighter",
 
     // foreground
-    "table-row-selected": "#0F0F0F",
-    "table-row": "#404040",
+    "table-row-selected": "text-selected",
+    "table-row": "text",
 
     // table grid color
-    "table-row-line": "#DDDDDD",
-    "table-column-line": "#DDDDDD",
+    "table-row-line": "background-main",
+    "table-column-line": "background-main",
 
     // used in progressive code
     "progressive-table-header": "#555555",
-    "progressive-table-row-background-even": "#DFDFDF",
-    "progressive-table-row-background-odd": "#CFCFCF",
+    "progressive-table-row-background-even": "background-main",
+    "progressive-table-row-background-odd": "background-main-lighter",
     "progressive-progressbar-background": "#FFFFFF",
-    "progressive-progressbar-indicator-done": "#DDDDDD",
-    "progressive-progressbar-indicator-undone": "#CCCCCC",
+    "progressive-progressbar-indicator-done": "background-main",
+    "progressive-progressbar-indicator-undone": "background-main-lighter",
     "progressive-progressbar-percent-background": "#FFFFFF",
-    "progressive-progressbar-percent-text": "#CCCCCC"
+    "progressive-progressbar-percent-text": "background-main-lighter"
   }
 });

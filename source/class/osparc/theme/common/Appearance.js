@@ -802,7 +802,7 @@ qx.Theme.define("osparc.theme.common.Appearance", {
     "splitpane/splitter":
       {
         style: function(states) {
-          return {backgroundColor: "light-background"};
+          return {backgroundColor: "contrasted-background"};
         }
       },
 
@@ -2596,7 +2596,7 @@ qx.Theme.define("osparc.theme.common.Appearance", {
       style: function(states) {
         return {
           padding: [0, 10, 10, 10],
-          backgroundColor: "light-background"
+          backgroundColor: "contrasted-background"
         };
       }
     }

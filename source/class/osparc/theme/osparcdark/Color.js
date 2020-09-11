@@ -25,12 +25,26 @@ qx.Theme.define("osparc.theme.osparcdark.Color", {
     "background-main": "#202020",
     "background-main-lighter": "#303030",
     "background-main-lighter+": "#373737",
-    "light-background": "#444",
-    "light-background+": "#555555",
+    "contrasted-background": "#444",
+    "contrasted-background+": "#555555",
+
+    // text
+    "text": "#bfbfbf",
+    "text-disabled": "#808080",
+    "text-selected": "#f0f0f0",
+    "text-placeholder": "text-disabled",
+    "text-darker": "text-disabled",
+    "contrasted-text-dark": "#222222",
+    "contrasted-text-light": "#EEEEEE",
+    "link": "#aaa",
+
+    // shadows
+    "bg-shadow": "#666666",
+    "shadow": qx.core.Environment.get("css.rgba") ? "rgba(0, 0, 0, 0.4)" : "bg-shadow",
 
     // window
     "window-caption-background": "background-main",
-    "window-caption-background-active": "light-background",
+    "window-caption-background-active": "contrasted-background",
     "window-caption-text": "text",
     "window-caption-text-active": "text-selected",
 
@@ -63,8 +77,6 @@ qx.Theme.define("osparc.theme.osparcdark.Color", {
     "tabview-label-active-disabled": "#d9d9d9",
     "tabview-pane-background": "background-main",
     "tabview-button-background": "transparent",
-    // text colors
-    "link": "#aaa",
 
     // scrollbar
     "scrollbar-passive": "#333",
@@ -72,7 +84,7 @@ qx.Theme.define("osparc.theme.osparcdark.Color", {
 
     // form
     "button": "#555",
-    "button-border": "#666",
+    "button-border": "bg-shadow",
     "button-border-hovered": "#888",
     "button-box": "#444",
     "button-box-pressed": "#555",
@@ -85,9 +97,6 @@ qx.Theme.define("osparc.theme.osparcdark.Color", {
     // group box
     "white-box-border": "#404040",
 
-    // shadows
-    "shadow": qx.core.Environment.get("css.rgba") ? "rgba(0, 0, 0, 0.4)" : "#666666",
-
     // borders
     // 'border-main' is an alias of 'background-selected' (compatibility reasons)
     "border": "#484848",
@@ -97,13 +106,6 @@ qx.Theme.define("osparc.theme.osparcdark.Color", {
 
     // separator
     "border-separator": "#808080",
-
-    // text
-    "text": "#bfbfbf",
-    "text-disabled": "#808080",
-    "text-selected": "#f0f0f0",
-    "text-placeholder": "text-disabled",
-    "text-darker": "text-disabled",
 
     // tooltip
     "tooltip": "#808080",
@@ -122,9 +124,11 @@ qx.Theme.define("osparc.theme.osparcdark.Color", {
     "table-row-background-selected": "#565656",
     "table-row-background-even": "#202020",
     "table-row-background-odd": "#303030",
+
     // foreground
     "table-row-selected": "#f0f0f0",
     "table-row": "#bfbfbf",
+
     // table grid color
     "table-row-line": "#222",
     "table-column-line": "#222",

@@ -29,7 +29,9 @@
       "include": [
         "osparc.theme.OSparcLight",
         "osparc.theme.OSparcPortal",
-        "osparc.theme.OSparcBlue"
+        "osparc.theme.OSparcBlue",
+        "osparc.theme.LightBlue",
+        "osparc.theme.Purple"
       ],
       "parts": {
         "boot": {

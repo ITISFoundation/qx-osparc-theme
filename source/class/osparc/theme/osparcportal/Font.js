@@ -192,14 +192,14 @@ qx.Theme.define("osparc.theme.osparcportal.Font", {
     "workbench-start-hint": {
       size: 20,
       family: ["Asap"],
-      color: "workbench-start-hint",
+      color: "text-disabled",
       bold: true
     },
 
     "workbench-io-label": {
       size: 20,
       family: ["monospace"],
-      color: "workbench-start-hint",
+      color: "text-disabled",
       bold: true
     }
   }

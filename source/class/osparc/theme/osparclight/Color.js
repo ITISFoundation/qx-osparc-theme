@@ -106,6 +106,7 @@ qx.Theme.define("osparc.theme.osparclight.Color", {
 
     // separator
     "border-separator": "#7F7F7F",
+
     // tooltip
     "tooltip": "#7F7F7F",
     "tooltip-text": "#0F0F0F",

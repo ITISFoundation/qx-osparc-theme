@@ -66,7 +66,7 @@ qx.Class.define("widgetbrowser.pages.OSparc", {
       const osparcFontsGroupBox = new qx.ui.groupbox.GroupBox("oSparc Fonts").set({
         layout: new qx.ui.layout.VBox(5)
       });
-      const osparcFonts = osparc.theme.osparc.Font.fonts;
+      const osparcFonts = osparc.theme.common.Font.fonts;
       const osparcFontsKeys = Object.keys(Object.getPrototypeOf(osparcFonts));
       osparcFontsKeys.forEach(osparcFont => {
         const lbl = new qx.ui.basic.Label(osparcFont).set({

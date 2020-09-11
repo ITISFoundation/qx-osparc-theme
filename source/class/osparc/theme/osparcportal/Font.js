@@ -18,7 +18,7 @@
 ************************************************************************ */
 
 qx.Theme.define("osparc.theme.osparcportal.Font", {
-  extend: osparc.theme.osparc.Font,
+  extend: osparc.theme.common.Font,
 
   fonts: {
     "default": {

@@ -17,7 +17,7 @@
     theme included with Qooxdoo.
 ************************************************************************ */
 /**
- * Simple color theme
+ * Light Blue color theme based on the the light theme
  */
 qx.Theme.define("osparc.theme.lightblue.Color", {
   colors: {

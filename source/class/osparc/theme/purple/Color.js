@@ -14,7 +14,7 @@
 
 ************************************************************************ */
 /**
- * Simple color theme
+ * Purple color theme based on the the dark theme
  */
 
 qx.Theme.define("osparc.theme.purple.Color", {

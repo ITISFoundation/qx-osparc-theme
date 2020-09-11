@@ -1,6 +1,6 @@
 /* ************************************************************************
 
-  OSparc Dark Theme for Qooxdoo
+  OSparc Light Blue Theme for Qooxdoo
 
   Copyright:
      2020 IT'IS Foundation
@@ -10,7 +10,7 @@
      See the LICENSE file in the project's top-level directory for details.
 
   Authors:
-    * Tobias Oetiker (oetiker)
+    * Odei Maiz (odeimaiz)
 
   Origin:
     This theme is based in large parts on the the Simple

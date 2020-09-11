@@ -12,11 +12,13 @@
   Authors:
     * Odei Maiz (odeimaiz)
 
+  Origin:
+    This theme is based in large parts on the the Simple
+    theme included with Qooxdoo.
 ************************************************************************ */
 /**
  * Simple color theme
  */
-
 qx.Theme.define("osparc.theme.lightblue.Color", {
   colors: {
     // main
@@ -56,9 +58,9 @@ qx.Theme.define("osparc.theme.lightblue.Color", {
 
     // material-textfield
     "material-textfield": "text-disabled",
-    "material-textfield-focused": "#e0e0e0",
+    "material-textfield-focused": "#1F1F1F",
     "material-textfield-disabled": "contrasted-background+",
-    "material-textfield-invalid": "#a04040",
+    "material-textfield-invalid": "#5FBFBF",
     "invalid": "material-textfield-invalid",
 
     // backgrounds
@@ -70,9 +72,9 @@ qx.Theme.define("osparc.theme.lightblue.Color", {
     "background-pane": "background-main",
 
     // tabview
-    "tabview-unselected": "#ffffff",
-    "tabview-button-border": "#ffffff",
-    "tabview-label-active-disabled": "#d9d9d9",
+    "tabview-unselected": "#000000",
+    "tabview-button-border": "#000000",
+    "tabview-label-active-disabled": "#262626",
     "tabview-pane-background": "background-main",
     "tabview-button-background": "transparent",
 
@@ -83,22 +85,22 @@ qx.Theme.define("osparc.theme.lightblue.Color", {
     // form
     "button": "contrasted-background+",
     "button-border": "bg-shadow",
-    "button-border-hovered": "#888888",
+    "button-border-hovered": "#777777",
     "button-box": "contrasted-background",
     "button-box-pressed": "contrasted-background+",
-    "border-lead": "#888888",
+    "border-lead": "#777777",
 
     // window
     "window-border": "contrasted-background",
     "window-border-inner": "background-main",
 
     // group box
-    "white-box-border": "#404040",
+    "white-box-border": "#BFBFBF",
 
     // borders
     // 'border-main' is an alias of 'background-selected' (compatibility reasons)
-    "border": "#484848",
-    "border-focused": "#B7B7B7",
+    "border": "#B7B7B7",
+    "border-focused": "#484848",
     "border-invalid": "material-textfield-invalid",
     "border-disabled": "background-main",
 
@@ -112,14 +114,14 @@ qx.Theme.define("osparc.theme.lightblue.Color", {
     // table
     "table-header": "background-main",
     "table-header-foreground": "text",
-    "table-header-border": "#888888",
-    "table-focus-indicator": "#757575",
+    "table-header-border": "#777777",
+    "table-focus-indicator": "#8A8A8A",
 
     // used in table code
     "table-header-cell": "background-main",
-    "table-row-background-focused-selected": "#565656",
-    "table-row-background-focused": "#454545",
-    "table-row-background-selected": "#565656",
+    "table-row-background-focused-selected": "#A9A9A9",
+    "table-row-background-focused": "#BABABA",
+    "table-row-background-selected": "#A9A9A9",
     "table-row-background-even": "background-main",
     "table-row-background-odd": "background-main-lighter",
 
@@ -132,13 +134,13 @@ qx.Theme.define("osparc.theme.lightblue.Color", {
     "table-column-line": "background-main",
 
     // used in progressive code
-    "progressive-table-header": "#aaaaaa",
+    "progressive-table-header": "#555555",
     "progressive-table-row-background-even": "background-main",
     "progressive-table-row-background-odd": "background-main-lighter",
-    "progressive-progressbar-background": "#000000",
+    "progressive-progressbar-background": "#FFFFFF",
     "progressive-progressbar-indicator-done": "background-main",
     "progressive-progressbar-indicator-undone": "background-main-lighter",
-    "progressive-progressbar-percent-background": "#000000",
+    "progressive-progressbar-percent-background": "#FFFFFF",
     "progressive-progressbar-percent-text": "background-main-lighter"
   }
 });

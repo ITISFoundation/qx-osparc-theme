@@ -135,14 +135,14 @@ qx.Theme.define("osparc.theme.osparc.Font", {
     "workbench-start-hint": {
       size: 20,
       family: ["Roboto"],
-      color: "workbench-start-hint",
+      color: "text-disabled",
       bold: true
     },
 
     "workbench-io-label": {
       size: 20,
       family: ["monospace"],
-      color: "workbench-start-hint",
+      color: "text-disabled",
       bold: true
     }
   }

@@ -1,0 +1,35 @@
+{
+  "version": 3,
+  "sources": [
+    "/home/travis/build/ITISFoundation/qx-osparc-theme/source/class/osparc/theme/LightBlue.js"
+  ],
+  "names": [
+    "qx",
+    "Bootstrap",
+    "executePendingDefers",
+    "$$dbClassInfo",
+    "Theme",
+    "define",
+    "title",
+    "meta",
+    "color",
+    "osparc",
+    "theme",
+    "lightblue",
+    "Color",
+    "decoration",
+    "common",
+    "Decoration",
+    "font",
+    "Font",
+    "appearance",
+    "Appearance",
+    "icon",
+    "Tango",
+    "LightBlue"
+  ],
+  "mappings": ";;;;;;;;;;;;;;;;;;;;;;;;AAAAA,EAAAA,EAAE,CAACC,SAAH,CAAaC,oBAAb,CAAkCC,aAAlC;;AAAA;;;;;;;;;;;;;;;;;;;AAkBA;;;AAGAH,EAAAA,EAAE,CAACI,KAAH,CAASC,MAAT,CAAgB,wBAAhB,EAA0C;AACxCC,IAAAA,KAAK,EAAE,kBADiC;AAExCC,IAAAA,IAAI,EAAE;AACJC,MAAAA,KAAK,EAAEC,MAAM,CAACC,KAAP,CAAaC,SAAb,CAAuBC,KAD1B;AAEJC,MAAAA,UAAU,EAAEJ,MAAM,CAACC,KAAP,CAAaI,MAAb,CAAoBC,UAF5B;AAGJC,MAAAA,IAAI,EAAEP,MAAM,CAACC,KAAP,CAAaI,MAAb,CAAoBG,IAHtB;AAIJC,MAAAA,UAAU,EAAET,MAAM,CAACC,KAAP,CAAaI,MAAb,CAAoBK,UAJ5B;AAKJC,MAAAA,IAAI,EAAEpB,EAAE,CAACU,KAAH,CAASU,IAAT,CAAcC;AALhB;AAFkC,GAA1C;AArBAZ,EAAAA,MAAM,CAACC,KAAP,CAAaY,SAAb,CAAuBnB,aAAvB,GAAuCA,aAAvC",
+  "sourcesContent": [
+    "/* ************************************************************************\n\n  OSparc Light Blue Theme for Qooxdoo\n\n  Copyright:\n     2020 IT'IS Foundation\n\n  License:\n     MIT: https://opensource.org/licenses/MIT\n     See the LICENSE file in the project's top-level directory for details.\n\n  Authors:\n    * Odei Maiz (odeimaiz)\n\n  Origin:\n    This theme is based in large parts on the the Simple\n    theme included with Qooxdoo.\n************************************************************************ */\n/**\n * Simple Theme\n */\nqx.Theme.define(\"osparc.theme.LightBlue\", {\n  title: \"Light Blue Theme\",\n  meta: {\n    color: osparc.theme.lightblue.Color,\n    decoration: osparc.theme.common.Decoration,\n    font: osparc.theme.common.Font,\n    appearance: osparc.theme.common.Appearance,\n    icon: qx.theme.icon.Tango\n  }\n});\n"
+  ]
+}

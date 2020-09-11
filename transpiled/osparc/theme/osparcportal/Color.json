@@ -1,0 +1,35 @@
+{
+  "className": "osparc.theme.osparcportal.Color",
+  "packageName": "osparc.theme.osparcportal",
+  "name": "Color",
+  "superClass": "osparc.theme.osparcblue.Color",
+  "interfaces": [],
+  "mixins": [],
+  "functionName": null,
+  "clazz": {
+    "location": {
+      "start": {
+        "line": 22,
+        "column": 0
+      },
+      "end": {
+        "line": 76,
+        "column": 3
+      }
+    },
+    "jsdoc": {
+      "@description": [
+        {
+          "name": "@description",
+          "body": "<pre><code>*****************************************************************\n</code></pre>\n<p>Sparc Portal Theme for Qooxdoo\n  Copyright:\n     2020 IT'IS Foundation\n  License:\n     MIT: https://opensource.org/licenses/MIT\n     See the LICENSE file in the project's top-level directory for details.\n  Authors:\n Odei Maiz (odeimaiz)\n  Origin:\n    This theme is based in large parts on the the Simple\n    theme included with Qooxdoo.\n    <strong><em><em></em></strong><strong><em></em></em></strong><strong><em><em></em></strong><strong><em></em></em></strong><strong><em><em></em></strong><strong><em></em></em></strong><strong><em><em></em></strong><strong><em></em></em></strong><strong><em><em></em></strong></em>*</p>"
+        },
+        {
+          "name": "@description",
+          "body": "<p>Based on osparcdark inverted colors</p>"
+        }
+      ]
+    }
+  },
+  "type": "theme",
+  "descendants": []
+}

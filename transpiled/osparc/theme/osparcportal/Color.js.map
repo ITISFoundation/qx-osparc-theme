@@ -1,0 +1,25 @@
+{
+  "version": 3,
+  "sources": [
+    "/home/travis/build/ITISFoundation/qx-osparc-theme/source/class/osparc/theme/osparcportal/Color.js"
+  ],
+  "names": [
+    "qx",
+    "Bootstrap",
+    "executePendingDefers",
+    "$$dbClassInfo",
+    "Theme",
+    "define",
+    "extend",
+    "osparc",
+    "theme",
+    "osparcblue",
+    "Color",
+    "colors",
+    "osparcportal"
+  ],
+  "mappings": ";;;;;;;;;;;;AAAAA,EAAAA,EAAE,CAACC,SAAH,CAAaC,oBAAb,CAAkCC,aAAlC;;AAAA;;;;;;;;;;;;;;;;;;;AAkBA;;;AAGAH,EAAAA,EAAE,CAACI,KAAH,CAASC,MAAT,CAAgB,iCAAhB,EAAmD;AACjDC,IAAAA,MAAM,EAAEC,MAAM,CAACC,KAAP,CAAaC,UAAb,CAAwBC,KADiB;AAGjDC,IAAAA,MAAM,EAAE;AACN;AACA;AACA,uBAAiB,SAHX;AAGsB;AAC5B,uBAAiB,SAJX;AAIsB;AAC5B,uBAAiB,SALX;AAKsB;AAE5B;AACA,yBAAmB,SARb;AAQwB;AAC9B,yBAAmB,SATb;AASwB;AAE9B;AACA,4BAAsB,SAZhB;AAY2B;AACjC,4BAAsB,SAbhB;AAa2B;AACjC,0BAAoB,SAdd;AAcyB;AAE/B;AACA,uBAAiB,SAjBX;AAiBsB;AAC5B,yBAAmB,SAlBb;AAkBwB;AAC9B,wBAAkB,SAnBZ;AAmBuB;AAE7B;AACA,uBAAiB,SAtBX;AAsBsB;AAC5B,2BAAqB,SAvBf;AAuB0B;AAEhC;AACA;AACA,wBAAkB,SA3BZ;AA4BN;AAEA,qBAAe,SA9BT;AAiCN;AACA,yBAAmB,gBAlCb;AAmCN,uBAAiB,eAnCX;AAoCN,6BAAuB,eApCjB;AAqCN,4BAAsB,eArChB;AAsCN,yBAAmB,iBAtCb;AAuCN,+BAAyB,aAvCnB;AAwCN,8BAAwB,iBAxClB;AAyCN,+BAAyB,gBAzCnB;AA0CN,uBAAiB,kBA1CX;AA2CN,cAAQ,eA3CF;AA4CN,uBAAiB,gBA5CX;AA6CN,uBAAiB,SA7CX;AA8CN,0BAAoB,gBA9Cd;AA+CN,qBAAe,gBA/CT;AAgDN,8BAAwB,mBAhDlB;AAiDN,+BAAyB;AAjDnB;AAHyC,GAAnD;AArBAJ,EAAAA,MAAM,CAACC,KAAP,CAAaI,YAAb,CAA0BF,KAA1B,CAAgCP,aAAhC,GAAgDA,aAAhD",
+  "sourcesContent": [
+    "/* ************************************************************************\n\n  Sparc Portal Theme for Qooxdoo\n\n  Copyright:\n     2020 IT'IS Foundation\n\n  License:\n     MIT: https://opensource.org/licenses/MIT\n     See the LICENSE file in the project's top-level directory for details.\n\n  Authors:\n    * Odei Maiz (odeimaiz)\n\n  Origin:\n    This theme is based in large parts on the the Simple\n    theme included with Qooxdoo.\n************************************************************************ */\n/**\n * Based on osparcdark inverted colors\n */\nqx.Theme.define(\"osparc.theme.osparcportal.Color\", {\n  extend: osparc.theme.osparcblue.Color,\n\n  colors: {\n    // ----------------- GAZELLE-CX -----------------\n    // Primary Colors\n    \"gzl-primary-1\": \"#8300BF\", // Repeating major elements across the site like links and buttons\n    \"gzl-primary-2\": \"#24245B\", // Repeating major elements across the site like heros and header text\n    \"gzl-primary-3\": \"#60626C\", // Typography and icons (bug in orignal document)\n\n    // Secondary Colors\n    \"gzl-secondary-1\": \"#BC00FC\", // Decorative elements such as illustrations (bug in orignal document)\n    \"gzl-secondary-2\": \"#0026FF\", // Decorative elements such as illustrations\n\n    // Status Colors\n    \"gzl-status-success\": \"#00E66B\", // Confirmation messages\n    \"gzl-status-warning\": \"#FF8400\", // To warn users of potentially harmful situation\n    \"gzl-status-error\": \"#b51d09\", // Error messages and confirmation for deletion\n\n    // Text Colors\n    \"gzl-text-body\": \"#303133\", // Body text\n    \"gzl-text-footer\": \"#606266\", // Footer text\n    \"gzl-text-ghost\": \"#909399\", // Labels and ghost text\n\n    // Line Colors\n    \"gzl-line-card\": \"#DCDFE6\", // Cards\n    \"gzl-line-dividers\": \"#E4E7ED\", // Table dividers/breadcrumb backgrounds\n\n    // Background Colors\n    // \"gzl-background\": \"#F5F7FA\",\n    \"gzl-background\": \"#FFFFFF\",\n    // ----------------- GAZELLE-CX -----------------\n\n    \"secondary-3\": \"#909399\",\n\n\n    // main\n    \"background-main\": \"gzl-background\",\n    \"primary-color\": \"gzl-primary-1\",\n    \"primary-color-light\": \"gzl-primary-3\",\n    \"primary-color-dark\": \"gzl-primary-2\",\n    \"secondary-color\": \"gzl-secondary-2\",\n    \"secondary-color-light\": \"secondary-3\",\n    \"secondary-color-dark\": \"gzl-secondary-1\",\n    \"contrasted-background\": \"gzl-background\",\n    \"invalid-color\": \"gzl-status-error\",\n    \"text\": \"gzl-text-body\",\n    \"text-disabled\": \"gzl-text-ghost\",\n    \"text-selected\": \"#FFFFFF\",\n    \"text-placeholder\": \"gzl-text-ghost\",\n    \"text-darker\": \"gzl-text-ghost\",\n    \"contrasted-text-dark\": \"gzl-line-dividers\",\n    \"contrasted-text-light\": \"gzl-text-body\"\n  }\n});\n"
+  ]
+}

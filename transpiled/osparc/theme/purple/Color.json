@@ -1,0 +1,35 @@
+{
+  "className": "osparc.theme.purple.Color",
+  "packageName": "osparc.theme.purple",
+  "name": "Color",
+  "superClass": null,
+  "interfaces": [],
+  "mixins": [],
+  "functionName": null,
+  "clazz": {
+    "location": {
+      "start": {
+        "line": 20,
+        "column": 0
+      },
+      "end": {
+        "line": 144,
+        "column": 3
+      }
+    },
+    "jsdoc": {
+      "@description": [
+        {
+          "name": "@description",
+          "body": "<pre><code>*****************************************************************\n</code></pre>\n<p>Purple based theme for Qooxdoo\n  Copyright:\n     2020 IT'IS Foundation\n  License:\n     MIT: https://opensource.org/licenses/MIT\n     See the LICENSE file in the project's top-level directory for details.\n  Authors:\n Odei Maiz (odeimaiz)\n    <strong><em><em></em></strong><strong><em></em></em></strong><strong><em><em></em></strong><strong><em></em></em></strong><strong><em><em></em></strong><strong><em></em></em></strong><strong><em><em></em></strong><strong><em></em></em></strong><strong><em><em></em></strong></em>*</p>"
+        },
+        {
+          "name": "@description",
+          "body": "<p>Purple color theme based on the the dark theme</p>"
+        }
+      ]
+    }
+  },
+  "type": "theme",
+  "descendants": []
+}

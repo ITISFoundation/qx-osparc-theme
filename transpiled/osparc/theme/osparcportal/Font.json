@@ -1,0 +1,31 @@
+{
+  "className": "osparc.theme.osparcportal.Font",
+  "packageName": "osparc.theme.osparcportal",
+  "name": "Font",
+  "superClass": "osparc.theme.common.Font",
+  "interfaces": [],
+  "mixins": [],
+  "functionName": null,
+  "clazz": {
+    "location": {
+      "start": {
+        "line": 20,
+        "column": 0
+      },
+      "end": {
+        "line": 206,
+        "column": 3
+      }
+    },
+    "jsdoc": {
+      "@description": [
+        {
+          "name": "@description",
+          "body": "<pre><code>*****************************************************************\n</code></pre>\n<p>osparc - the simcore frontend\n   https://osparc.io\n   Copyright:\n     2018 IT'IS Foundation, https://itis.swiss\n   License:\n     MIT: https://opensource.org/licenses/MIT\n   Authors:\n Tobias Oetiker (oetiker)\n Odei Maiz (odeimaiz)\n Ignacio Pascual (ignapas)\n    <strong><em><em></em></strong><strong><em></em></em></strong><strong><em><em></em></strong><strong><em></em></em></strong><strong><em><em></em></strong><strong><em></em></em></strong><strong><em><em></em></strong><strong><em></em></em></strong><strong><em><em></em></strong></em>*</p>"
+        }
+      ]
+    }
+  },
+  "type": "theme",
+  "descendants": []
+}

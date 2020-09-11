@@ -22,11 +22,11 @@
 qx.Theme.define("osparc.theme.lightblue.Color", {
   colors: {
     // main
-    "background-main": "#FFFFFF",
-    "background-main-lighter": "#CFCFCF",
-    "background-main-lighter+": "#C8C8C8",
-    "contrasted-background": "#BBBBBB",
-    "contrasted-background+": "#AAAAAA",
+    "background-main": "#FFFFFF", // background
+    "background-main-lighter": "#D8E3F1", // navbar bg
+    "background-main-lighter+": "#BFCAD8", // dashboard button
+    "contrasted-background": "#9CAFC9", // dashboard button hovered
+    "contrasted-background+": "#8396B0", // dashboard button pressed
 
     // text
     "text": "#404040",
@@ -49,7 +49,7 @@ qx.Theme.define("osparc.theme.lightblue.Color", {
     "window-caption-text-active": "text-selected",
 
     // material-button
-    "material-button-background": "contrasted-background",
+    "material-button-background": "background-main-lighter+",
     "material-button-background-disabled": "background-main-lighter",
     "material-button-background-hovered": "contrasted-background+",
     "material-button-background-pressed": "contrasted-background+",

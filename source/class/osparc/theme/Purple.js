@@ -23,9 +23,9 @@ qx.Theme.define("osparc.theme.Purple", {
   title: "Purple Theme",
   meta: {
     color: osparc.theme.purple.Color,
-    decoration: osparc.theme.osparc.Decoration,
-    font: osparc.theme.osparc.Font,
-    appearance: osparc.theme.osparc.Appearance,
+    decoration: osparc.theme.common.Decoration,
+    font: osparc.theme.common.Font,
+    appearance: osparc.theme.common.Appearance,
     icon: qx.theme.icon.Tango
   }
 });

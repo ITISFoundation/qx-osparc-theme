@@ -124,9 +124,11 @@ qx.Theme.define("osparc.theme.osparcdark.Color", {
     "table-row-background-selected": "#565656",
     "table-row-background-even": "#202020",
     "table-row-background-odd": "#303030",
+
     // foreground
     "table-row-selected": "#f0f0f0",
     "table-row": "#bfbfbf",
+
     // table grid color
     "table-row-line": "#222",
     "table-column-line": "#222",

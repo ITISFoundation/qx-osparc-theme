@@ -38,6 +38,10 @@ qx.Theme.define("osparc.theme.osparcdark.Color", {
     "contrasted-text-light": "#EEEEEE",
     "link": "#aaa",
 
+    // shadows
+    "bg-shadow": "#666666",
+    "shadow": qx.core.Environment.get("css.rgba") ? "rgba(0, 0, 0, 0.4)" : "bg-shadow",
+
     // window
     "window-caption-background": "background-main",
     "window-caption-background-active": "light-background",
@@ -80,7 +84,7 @@ qx.Theme.define("osparc.theme.osparcdark.Color", {
 
     // form
     "button": "#555",
-    "button-border": "#666",
+    "button-border": "bg-shadow",
     "button-border-hovered": "#888",
     "button-box": "#444",
     "button-box-pressed": "#555",
@@ -92,9 +96,6 @@ qx.Theme.define("osparc.theme.osparcdark.Color", {
 
     // group box
     "white-box-border": "#404040",
-
-    // shadows
-    "shadow": qx.core.Environment.get("css.rgba") ? "rgba(0, 0, 0, 0.4)" : "#666666",
 
     // borders
     // 'border-main' is an alias of 'background-selected' (compatibility reasons)

@@ -32,8 +32,8 @@ qx.Theme.define("osparc.theme.purple.Color", {
     "text-selected": "#f0f0f0",
     "text-placeholder": "text-disabled",
     "text-darker": "text-disabled",
-    "contrasted-text-dark": "#DDDDDD",
-    "contrasted-text-light": "#111111",
+    "contrasted-text-dark": "#222222",
+    "contrasted-text-light": "#EEEEEE",
     "link": "#aaaaaa",
 
     // shadows

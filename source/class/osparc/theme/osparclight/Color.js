@@ -25,8 +25,8 @@ qx.Theme.define("osparc.theme.osparclight.Color", {
     "background-main": "#FFFFFF",
     "background-main-lighter": "#CFCFCF",
     "background-main-lighter+": "#C8C8C8",
-    "light-background": "#BBBBBB",
-    "light-background+": "#AAAAAA",
+    "contrasted-background": "#BBBBBB",
+    "contrasted-background+": "#AAAAAA",
 
     // text
     "text": "#404040",
@@ -44,7 +44,7 @@ qx.Theme.define("osparc.theme.osparclight.Color", {
 
     // window
     "window-caption-background": "background-main",
-    "window-caption-background-active": "light-background",
+    "window-caption-background-active": "contrasted-background",
     "window-caption-text": "text",
     "window-caption-text-active": "text-selected",
 

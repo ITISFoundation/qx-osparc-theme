@@ -30,7 +30,7 @@ qx.Theme.define("osparc.theme.osparcblue.Color", {
     "secondary-color": "#cfd8dc",
     "secondary-color-light": "#ffffff",
     "secondary-color-dark": "#9ea7aa",
-    "light-background": "#ffffff",
+    "contrasted-background": "#ffffff",
     "invalid-color": "#a04040",
     "text": "#000000",
     "text-disabled": "#bbb",
@@ -64,9 +64,9 @@ qx.Theme.define("osparc.theme.osparcblue.Color", {
     "background-selected": "primary-color",
     "background-selected-disabled": "secondary-color-dark",
     "background-selected-dark": "primary-color-dark",
-    "background-disabled": "light-background",
-    "background-disabled-checked": "light-background",
-    "background-pane": "light-background",
+    "background-disabled": "contrasted-background",
+    "background-disabled-checked": "contrasted-background",
+    "background-pane": "contrasted-background",
 
     // tabview
     "tabview-unselected": "#1866B5",
@@ -116,19 +116,19 @@ qx.Theme.define("osparc.theme.osparcblue.Color", {
     "tooltip-text": "#f0f0f0",
 
     // table
-    "table-header": "light-background",
+    "table-header": "contrasted-background",
     "table-header-foreground": "text",
     "table-header-border":  "primary-color-dark",
     "table-focus-indicator": "primary-color-dark",
 
     // used in table code
-    "table-header-cell": "light-background",
+    "table-header-cell": "contrasted-background",
 
     "table-row-background-focused-selected": "primary-color",
     "table-row-background-focused": "primary-color",
     "table-row-background-selected": "primary-color-light",
     "table-row-background-even": "secondary-color",
-    "table-row-background-odd": "light-background",
+    "table-row-background-odd": "contrasted-background",
     // foreground
     "table-row-selected": "#ffffff",
     "table-row": "text",

@@ -23,12 +23,12 @@ qx.Theme.define("osparc.theme.purple.Color", {
     "background-main": "#202020",
     "background-main-lighter": "#303030",
     "background-main-lighter+": "#373737",
-    "light-background": "#444",
-    "light-background+": "#555555",
+    "contrasted-background": "#444",
+    "contrasted-background+": "#555555",
 
     // window
     "window-caption-background": "background-main",
-    "window-caption-background-active": "light-background",
+    "window-caption-background-active": "contrasted-background",
     "window-caption-text": "text",
     "window-caption-text-active": "text-selected",
 

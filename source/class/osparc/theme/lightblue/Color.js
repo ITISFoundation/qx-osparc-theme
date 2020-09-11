@@ -20,20 +20,25 @@
 qx.Theme.define("osparc.theme.lightblue.Color", {
   colors: {
     // main
-    "background-main": "#202020",
-    "background-main-lighter": "#303030",
-    "background-main-lighter+": "#373737",
-    "contrasted-background": "#444444",
-    "contrasted-background+": "#555555",
+    "background-main": "#FFFFFF",
+    "background-main-lighter": "#CFCFCF",
+    "background-main-lighter+": "#C8C8C8",
+    "contrasted-background": "#BBBBBB",
+    "contrasted-background+": "#AAAAAA",
 
     // text
-    "text": "#bfbfbf",
-    "text-disabled": "#808080",
-    "text-selected": "#f0f0f0",
+    "text": "#404040",
+    "text-disabled": "#7F7F7F",
+    "text-selected": "#0F0F0F",
     "text-placeholder": "text-disabled",
     "text-darker": "text-disabled",
-    "contrasted-text-dark": "#222222",
-    "contrasted-text-light": "#EEEEEE",
+    "contrasted-text-dark": "#DDDDDD",
+    "contrasted-text-light": "#111111",
+    "link": "#555555",
+
+    // shadows
+    "bg-shadow": "#999999",
+    "shadow": qx.core.Environment.get("css.rgba") ? "rgba(1.0, 1.0, 1.0, 0.4)" : "bg-shadow",
 
     // window
     "window-caption-background": "background-main",
@@ -42,15 +47,15 @@ qx.Theme.define("osparc.theme.lightblue.Color", {
     "window-caption-text-active": "text-selected",
 
     // material-button
-    "material-button-background": "#404040",
+    "material-button-background": "contrasted-background",
     "material-button-background-disabled": "background-main-lighter",
-    "material-button-background-hovered": "#505050",
-    "material-button-background-pressed": "#505050",
+    "material-button-background-hovered": "contrasted-background+",
+    "material-button-background-pressed": "contrasted-background+",
     "material-button-text-disabled": "text-disabled",
     "material-button-text": "text",
 
     // material-textfield
-    "material-textfield": "#808080",
+    "material-textfield": "text-disabled",
     "material-textfield-focused": "#e0e0e0",
     "material-textfield-disabled": "contrasted-background+",
     "material-textfield-invalid": "#a04040",
@@ -58,11 +63,11 @@ qx.Theme.define("osparc.theme.lightblue.Color", {
 
     // backgrounds
     "background-selected": "contrasted-background+",
-    "background-selected-disabled": "#333",
+    "background-selected-disabled": "background-main-lighter",
     "background-selected-dark": "contrasted-background",
     "background-disabled": "background-main",
-    "background-disabled-checked": "#333",
-    "background-pane": "#222",
+    "background-disabled-checked": "background-main-lighter",
+    "background-pane": "background-main",
 
     // tabview
     "tabview-unselected": "#ffffff",
@@ -70,49 +75,44 @@ qx.Theme.define("osparc.theme.lightblue.Color", {
     "tabview-label-active-disabled": "#d9d9d9",
     "tabview-pane-background": "background-main",
     "tabview-button-background": "transparent",
-    // text colors
-    "link": "#aaa",
 
     // scrollbar
-    "scrollbar-passive": "#333",
+    "scrollbar-passive": "background-main-lighter",
     "scrollbar-active": "contrasted-background",
 
     // form
     "button": "contrasted-background+",
-    "button-border": "#666",
-    "button-border-hovered": "#888",
+    "button-border": "bg-shadow",
+    "button-border-hovered": "#888888",
     "button-box": "contrasted-background",
     "button-box-pressed": "contrasted-background+",
     "border-lead": "#888888",
 
     // window
     "window-border": "contrasted-background",
-    "window-border-inner": "#222",
+    "window-border-inner": "background-main",
 
     // group box
     "white-box-border": "#404040",
-
-    // shadows
-    "shadow": qx.core.Environment.get("css.rgba") ? "rgba(0, 0, 0, 0.4)" : "#666666",
 
     // borders
     // 'border-main' is an alias of 'background-selected' (compatibility reasons)
     "border": "#484848",
     "border-focused": "#B7B7B7",
     "border-invalid": "material-textfield-invalid",
-    "border-disabled": "#222",
+    "border-disabled": "background-main",
 
     // separator
-    "border-separator": "#808080",
+    "border-separator": "text-disabled",
 
     // tooltip
-    "tooltip": "#808080",
-    "tooltip-text": "#f0f0f0",
+    "tooltip": "text-disabled",
+    "tooltip-text": "text-selected",
 
     // table
     "table-header": "background-main",
     "table-header-foreground": "text",
-    "table-header-border": "#888",
+    "table-header-border": "#888888",
     "table-focus-indicator": "#757575",
 
     // used in table code
@@ -122,21 +122,23 @@ qx.Theme.define("osparc.theme.lightblue.Color", {
     "table-row-background-selected": "#565656",
     "table-row-background-even": "background-main",
     "table-row-background-odd": "background-main-lighter",
+
     // foreground
-    "table-row-selected": "#f0f0f0",
-    "table-row": "#bfbfbf",
+    "table-row-selected": "text-selected",
+    "table-row": "text",
+
     // table grid color
-    "table-row-line": "#222",
-    "table-column-line": "#222",
+    "table-row-line": "background-main",
+    "table-column-line": "background-main",
 
     // used in progressive code
-    "progressive-table-header": "#AAAAAA",
+    "progressive-table-header": "#aaaaaa",
     "progressive-table-row-background-even": "background-main",
     "progressive-table-row-background-odd": "background-main-lighter",
-    "progressive-progressbar-background": "#000",
-    "progressive-progressbar-indicator-done": "#222",
-    "progressive-progressbar-indicator-undone": "#333",
-    "progressive-progressbar-percent-background": "#000",
-    "progressive-progressbar-percent-text": "#333"
+    "progressive-progressbar-background": "#000000",
+    "progressive-progressbar-indicator-done": "background-main",
+    "progressive-progressbar-indicator-undone": "background-main-lighter",
+    "progressive-progressbar-percent-background": "#000000",
+    "progressive-progressbar-percent-text": "background-main-lighter"
   }
 });

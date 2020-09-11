@@ -63,7 +63,7 @@ qx.Theme.define("osparc.theme.osparcportal.Color", {
     "secondary-color": "gzl-secondary-2",
     "secondary-color-light": "secondary-3",
     "secondary-color-dark": "gzl-secondary-1",
-    "light-background": "gzl-background",
+    "contrasted-background": "gzl-background",
     "invalid-color": "gzl-status-error",
     "text": "gzl-text-body",
     "text-disabled": "gzl-text-ghost",

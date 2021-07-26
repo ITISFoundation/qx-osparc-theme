@@ -1,16 +1,16 @@
 /* ************************************************************************
 
-  OSparc Dark Theme for Qooxdoo
+  OSparc Purple Theme for Qooxdoo
 
   Copyright:
-     2018 IT'IS Foundation
+     2020 IT'IS Foundation
 
   License:
      MIT: https://opensource.org/licenses/MIT
      See the LICENSE file in the project's top-level directory for details.
 
   Authors:
-    * Tobias Oetiker (oetiker)
+    * Odei Maiz (odeimaiz)
 
   Origin:
     This theme is based in large parts on the the Simple

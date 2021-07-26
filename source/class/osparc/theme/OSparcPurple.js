@@ -20,9 +20,9 @@
  * Simple Theme
  */
 qx.Theme.define("osparc.theme.OSparcPurple", {
-  title: "OSparc Blue Theme",
+  title: "OSparc Purple Theme",
   meta: {
-    color: osparc.theme.osparcblue.Purple,
+    color: osparc.theme.osparcpurple.Color,
     decoration: osparc.theme.common.Decoration,
     font: osparc.theme.common.Font,
     appearance: osparc.theme.common.Appearance,

@@ -14,10 +14,10 @@
 
 ************************************************************************ */
 /**
- * Purple color theme based on the the dark theme
+ * Purple color theme based on the dark theme
  */
 
-qx.Theme.define("osparc.theme.purple.Color", {
+qx.Theme.define("osparc.theme.osparcpurple.Color", {
   colors: {
     "c00": "#000000", // L=00
     "c01": "#202020", // L=13

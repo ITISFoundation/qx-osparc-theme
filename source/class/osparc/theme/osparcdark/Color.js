@@ -21,20 +21,21 @@
  */
 qx.Theme.define("osparc.theme.osparcdark.Color", {
   colors: {
-    "c00": "#000000",
-    "c01": "#202020",
-    "c02": "#303030",
-    "c03": "#404040",
-    "c04": "#505050",
-    "c05": "#606060",
-    "c06": "#707070",
-    "c07": "#808080",
-    "c08": "#909090",
-    "c09": "#A0A0A0",
-    "c10": "#B0B0B0",
-    "c11": "#C0C0C0",
-    "c12": "#D0D0D0",
-    "c13": "#FFFFFF",
+    "c00": "#000000", // L=00
+    "c01": "#202020", // L=13
+    "c02": "#303030", // L=19
+    "c03": "#404040", // L=25
+    "c04": "#505050", // L=31
+    "c05": "#606060", // L=38
+    "c06": "#707070", // L=44
+    "c07": "#808080", // L=50
+    "c08": "#909090", // L=56
+    "c09": "#A0A0A0", // L=63
+    "c10": "#B0B0B0", // L=69
+    "c11": "#C0C0C0", // L=75
+    "c12": "#D0D0D0", // L=82
+    "c13": "#EFEFEF", // L=88
+    "c14": "#FFFFFF", // L=100
 
     "a-bit-transparent": "rgba(0, 0, 0, 0.4)",
     "invalid-red": "#a04040",
@@ -92,8 +93,8 @@ qx.Theme.define("osparc.theme.osparcdark.Color", {
     "background-pane": "c01",
 
     // tabview
-    "tabview-unselected": "c13",
-    "tabview-button-border": "c13",
+    "tabview-unselected": "c14",
+    "tabview-button-border": "c14",
     "tabview-label-active-disabled": "c10",
     "tabview-pane-background": "c01",
     "tabview-button-background": "transparent",

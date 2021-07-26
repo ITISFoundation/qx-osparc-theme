@@ -70,7 +70,7 @@ qx.Theme.define("osparc.theme.osparcdark.Color", {
 
     // material-button
     "material-button-background": "c03",
-    "material-button-background-disabled": "c01",
+    "material-button-background-disabled": "c02",
     "material-button-background-hovered": "c05",
     "material-button-background-pressed": "c05",
     "material-button-text-disabled": "c07",

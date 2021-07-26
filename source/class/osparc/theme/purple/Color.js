@@ -19,126 +19,146 @@
 
 qx.Theme.define("osparc.theme.purple.Color", {
   colors: {
+    "c00": "#000000",
+    "c01": "#202020",
+    "c02": "#24517b",
+    "c03": "#315E88",
+    "c04": "#3E6B95",
+    "c05": "#4A77A1",
+    "c06": "#707070",
+    "c07": "#808080",
+    "c08": "#909090",
+    "c09": "#A0A0A0",
+    "c10": "#B0B0B0",
+    "c11": "#C0C0C0",
+    "c12": "#D0D0D0",
+    "c13": "#FFFFFF",
+
+    "a-bit-transparent": "rgba(0, 0, 0, 0.4)",
+    "invalid-red": "#a04040",
+
+
     // main
-    "background-main": "#202020", // background
-    "background-main-lighter": "#24517b", // navbar bg
-    "background-main-lighter+": "#315E88", // dashboard button
-    "contrasted-background": "#3E6B95", // dashboard button hovered
-    "contrasted-background+": "#4A77A1", // dashboard button pressed
+    "background-main": "c01",
+    "background-main-lighter": "c02",
+    "background-main-lighter+": "c03",
+    "contrasted-background": "c04",
+    "contrasted-background+": "c05",
+    "contrasted-background++": "c06",
 
     // text
-    "text": "#bfbfbf",
-    "text-disabled": "#808080",
-    "text-selected": "#f0f0f0",
-    "text-placeholder": "text-disabled",
-    "text-darker": "text-disabled",
-    "contrasted-text-dark": "#222222",
-    "contrasted-text-light": "#EEEEEE",
-    "link": "#aaaaaa",
+    "text": "c11",
+    "text-disabled": "c07",
+    "text-selected": "c12",
+    "text-placeholder": "c07",
+    "text-darker": "c07",
+    "contrasted-text-dark": "c01",
+    "contrasted-text-light": "c12",
+    "link": "c08",
 
     // shadows
-    "bg-shadow": "#666666",
-    "shadow": qx.core.Environment.get("css.rgba") ? "rgba(1.0, 1.0, 1.0, 0.4)" : "bg-shadow",
+    "bg-shadow": "c06",
+    "shadow": qx.core.Environment.get("css.rgba") ? "a-bit-transparent" : "bg-shadow",
 
     // window
-    "window-caption-background": "background-main",
-    "window-caption-background-active": "contrasted-background",
-    "window-caption-text": "text",
-    "window-caption-text-active": "text-selected",
+    "window-caption-background": "c01",
+    "window-caption-background-active": "c04",
+    "window-caption-text": "c11",
+    "window-caption-text-active": "c12",
 
     // material-button
-    "material-button-background": "background-main-lighter+",
-    "material-button-background-disabled": "background-main-lighter",
-    "material-button-background-hovered": "contrasted-background+",
-    "material-button-background-pressed": "contrasted-background+",
-    "material-button-text-disabled": "text-disabled",
-    "material-button-text": "text",
+    "material-button-background": "c03",
+    "material-button-background-disabled": "c02",
+    "material-button-background-hovered": "c05",
+    "material-button-background-pressed": "c05",
+    "material-button-text-disabled": "c07",
+    "material-button-text": "c11",
 
     // material-textfield
-    "material-textfield": "text-disabled",
-    "material-textfield-focused": "#e0e0e0",
-    "material-textfield-disabled": "contrasted-background+",
-    "material-textfield-invalid": "#a04040",
-    "invalid": "material-textfield-invalid",
+    "material-textfield": "c07",
+    "material-textfield-focused": "c11",
+    "material-textfield-disabled": "c05",
+    "material-textfield-invalid": "invalid-red",
+    "invalid": "invalid-red",
 
     // backgrounds
-    "background-selected": "contrasted-background+",
-    "background-selected-disabled": "background-main-lighter",
-    "background-selected-dark": "contrasted-background",
-    "background-disabled": "background-main",
-    "background-disabled-checked": "background-main-lighter",
-    "background-pane": "background-main",
+    "background-selected": "c05",
+    "background-selected-disabled": "c02",
+    "background-selected-dark": "c04",
+    "background-disabled": "c01",
+    "background-disabled-checked": "c02",
+    "background-pane": "c01",
 
     // tabview
-    "tabview-unselected": "#ffffff",
-    "tabview-button-border": "#ffffff",
-    "tabview-label-active-disabled": "#d9d9d9",
-    "tabview-pane-background": "background-main",
+    "tabview-unselected": "c13",
+    "tabview-button-border": "c13",
+    "tabview-label-active-disabled": "c10",
+    "tabview-pane-background": "c01",
     "tabview-button-background": "transparent",
 
     // scrollbar
-    "scrollbar-passive": "background-main-lighter",
-    "scrollbar-active": "contrasted-background",
+    "scrollbar-passive": "c02",
+    "scrollbar-active": "c04",
 
     // form
-    "button": "contrasted-background+",
-    "button-border": "bg-shadow",
-    "button-border-hovered": "#888888",
-    "button-box": "contrasted-background",
-    "button-box-pressed": "contrasted-background+",
-    "border-lead": "#888888",
+    "button": "c05",
+    "button-border": "c06",
+    "button-border-hovered": "c07",
+    "button-box": "c04",
+    "button-box-pressed": "c05",
+    "border-lead": "c07",
 
     // window
-    "window-border": "contrasted-background",
-    "window-border-inner": "background-main",
+    "window-border": "c04",
+    "window-border-inner": "c01",
 
     // group box
-    "white-box-border": "#404040",
+    "white-box-border": "c03",
 
     // borders
     // 'border-main' is an alias of 'background-selected' (compatibility reasons)
-    "border": "#484848",
-    "border-focused": "#B7B7B7",
-    "border-invalid": "material-textfield-invalid",
-    "border-disabled": "background-main",
+    "border": "c04",
+    "border-focused": "c09",
+    "border-invalid": "invalid-red",
+    "border-disabled": "c01",
 
     // separator
-    "border-separator": "text-disabled",
+    "border-separator": "c07",
 
     // tooltip
-    "tooltip": "text-disabled",
-    "tooltip-text": "text-selected",
+    "tooltip": "c07",
+    "tooltip-text": "c12",
 
     // table
-    "table-header": "background-main",
-    "table-header-foreground": "text",
-    "table-header-border": "#888888",
-    "table-focus-indicator": "#757575",
+    "table-header": "c01",
+    "table-header-foreground": "c09",
+    "table-header-border": "c07",
+    "table-focus-indicator": "c06",
 
     // used in table code
-    "table-header-cell": "background-main",
-    "table-row-background-focused-selected": "#565656",
-    "table-row-background-focused": "#454545",
-    "table-row-background-selected": "#565656",
-    "table-row-background-even": "background-main",
-    "table-row-background-odd": "background-main-lighter",
+    "table-header-cell": "c01",
+    "table-row-background-focused-selected": "c05",
+    "table-row-background-focused": "c04",
+    "table-row-background-selected": "c05",
+    "table-row-background-even": "c01",
+    "table-row-background-odd": "c01",
 
     // foreground
-    "table-row-selected": "text-selected",
-    "table-row": "text",
+    "table-row-selected": "c12",
+    "table-row": "c09",
 
     // table grid color
-    "table-row-line": "background-main",
-    "table-column-line": "background-main",
+    "table-row-line": "c01",
+    "table-column-line": "c01",
 
     // used in progressive code
-    "progressive-table-header": "#AAAAAA",
-    "progressive-table-row-background-even": "background-main",
-    "progressive-table-row-background-odd": "background-main-lighter",
-    "progressive-progressbar-background": "#000000",
-    "progressive-progressbar-indicator-done": "background-main",
-    "progressive-progressbar-indicator-undone": "background-main-lighter",
-    "progressive-progressbar-percent-background": "#000000",
-    "progressive-progressbar-percent-text": "background-main-lighter"
+    "progressive-table-header": "c08",
+    "progressive-table-row-background-even": "c01",
+    "progressive-table-row-background-odd": "c01",
+    "progressive-progressbar-background": "c00",
+    "progressive-progressbar-indicator-done": "c01",
+    "progressive-progressbar-indicator-undone": "c02",
+    "progressive-progressbar-percent-background": "c00",
+    "progressive-progressbar-percent-text": "c02"
   }
 });

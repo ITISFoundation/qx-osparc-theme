@@ -10,34 +10,35 @@
      See the LICENSE file in the project's top-level directory for details.
 
   Authors:
-    * Tobias Oetiker (oetiker)
+    * Odei Maiz (odeimaiz)
 
   Origin:
     This theme is based in large parts on the the Simple
     theme included with Qooxdoo.
 ************************************************************************ */
 /**
- * Simple color theme
+ * Light Blue color theme based on the light theme
  */
-qx.Theme.define("osparc.theme.osparcdark.Color", {
-  colors: {
-    "c00": "#000000", // L=00
-    "c01": "#202020", // L=13
-    "c02": "#303030", // L=19
-    "c03": "#404040", // L=25
-    "c04": "#505050", // L=31
-    "c05": "#606060", // L=38
-    "c06": "#707070", // L=44
-    "c07": "#808080", // L=50
-    "c08": "#909090", // L=56
-    "c09": "#A0A0A0", // L=63
-    "c10": "#B0B0B0", // L=69
-    "c11": "#C0C0C0", // L=75
-    "c12": "#D0D0D0", // L=82
-    "c13": "#EFEFEF", // L=88
-    "c14": "#FFFFFF", // L=100
 
-    "a-bit-transparent": "rgba(0, 0, 0, 0.4)",
+qx.Theme.define("osparc.theme.osparclightblue.Color", {
+  colors: {
+    "c00": "#FFFFFF", // L=100
+    "c01": "#EFEFEF", // L=94
+    "c02": "#7AE6FF", // L=75
+    "c03": "#60CCFF", // L=69
+    "c04": "#51BDF0", // L=63
+    "c05": "#41ADE0", // L=56
+    "c06": "#808080", // L=50
+    "c07": "#707070", // L=44
+    "c08": "#606060", // L=38
+    "c09": "#505050", // L=31
+    "c10": "#404040", // L=25
+    "c11": "#303030", // L=19
+    "c12": "#202020", // L=13
+    "c13": "#101010", // L=06
+    "c14": "#000000", // L=00
+
+    "a-bit-transparent": "rgba(255, 255, 255, 0.4)",
     "invalid-red": "#a04040",
 
 

@@ -1,9 +1,9 @@
 /* ************************************************************************
 
-  OSparc Light Theme for Qooxdoo
+  OSparc Light Blue Theme for Qooxdoo
 
   Copyright:
-     2020 IT'IS Foundation
+     2021 IT'IS Foundation
 
   License:
      MIT: https://opensource.org/licenses/MIT
@@ -19,12 +19,12 @@
 /**
  * Simple Theme
  */
-qx.Theme.define("osparc.theme.OSparcPortal", {
-  title: "OSparc Portal Theme",
+qx.Theme.define("osparc.theme.OSparcLightBlue", {
+  title: "OSparc Light Blue Theme",
   meta: {
-    color: osparc.theme.osparcportal.Color,
+    color: osparc.theme.osparclightblue.Color,
     decoration: osparc.theme.common.Decoration,
-    font: osparc.theme.osparcportal.Font,
+    font: osparc.theme.common.Font,
     appearance: osparc.theme.common.Appearance,
     icon: qx.theme.icon.Tango
   }

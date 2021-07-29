@@ -28,10 +28,10 @@
       "name": "widgetbrowser",
       "include": [
         "osparc.theme.OSparcLight",
-        "osparc.theme.OSparcPortal",
         "osparc.theme.OSparcBlue",
-        "osparc.theme.LightBlue",
-        "osparc.theme.Purple"
+        "osparc.theme.OSparcLightBlue",
+        "osparc.theme.OSparcPurple",
+        "osparc.theme.LightBlue"
       ],
       "parts": {
         "boot": {

@@ -21,126 +21,147 @@
  */
 qx.Theme.define("osparc.theme.osparclight.Color", {
   colors: {
+    "c00": "#FFFFFF", // L=100
+    "c01": "#EFEFEF", // L=94
+    "c02": "#C0C0C0", // L=75
+    "c03": "#B0B0B0", // L=69
+    "c04": "#A0A0A0", // L=63
+    "c05": "#909090", // L=56
+    "c06": "#808080", // L=50
+    "c07": "#707070", // L=44
+    "c08": "#606060", // L=38
+    "c09": "#505050", // L=31
+    "c10": "#404040", // L=25
+    "c11": "#303030", // L=19
+    "c12": "#202020", // L=13
+    "c13": "#101010", // L=06
+    "c14": "#000000", // L=00
+
+    "a-bit-transparent": "rgba(255, 255, 255, 0.4)",
+    "invalid-red": "#a04040",
+
+
     // main
-    "background-main": "#FFFFFF",
-    "background-main-lighter": "#CFCFCF",
-    "background-main-lighter+": "#C8C8C8",
-    "contrasted-background": "#BBBBBB",
-    "contrasted-background+": "#AAAAAA",
+    "background-main": "c01",
+    "background-main-lighter": "c02",
+    "background-main-lighter+": "c03",
+    "contrasted-background": "c04",
+    "contrasted-background+": "c05",
+    "contrasted-background++": "c06",
 
     // text
-    "text": "#404040",
-    "text-disabled": "#7F7F7F",
-    "text-selected": "#0F0F0F",
-    "text-placeholder": "text-disabled",
-    "text-darker": "text-disabled",
-    "contrasted-text-dark": "#DDDDDD",
-    "contrasted-text-light": "#111111",
-    "link": "#555555",
+    "text": "c11",
+    "text-disabled": "c07",
+    "text-selected": "c12",
+    "text-placeholder": "c07",
+    "text-darker": "c07",
+    "contrasted-text-dark": "c01",
+    "contrasted-text-light": "c12",
+    "link": "c08",
 
     // shadows
-    "bg-shadow": "#999999",
-    "shadow": qx.core.Environment.get("css.rgba") ? "rgba(1.0, 1.0, 1.0, 0.4)" : "bg-shadow",
+    "bg-shadow": "c06",
+    "shadow": qx.core.Environment.get("css.rgba") ? "a-bit-transparent" : "bg-shadow",
 
     // window
-    "window-caption-background": "background-main",
-    "window-caption-background-active": "contrasted-background",
-    "window-caption-text": "text",
-    "window-caption-text-active": "text-selected",
+    "window-caption-background": "c01",
+    "window-caption-background-active": "c04",
+    "window-caption-text": "c11",
+    "window-caption-text-active": "c12",
 
     // material-button
-    "material-button-background": "#BFBFBF",
-    "material-button-background-disabled": "#CFCFCF",
-    "material-button-background-hovered": "#AFAFAF",
-    "material-button-background-pressed": "#AFAFAF",
-    "material-button-text-disabled": "text-disabled",
-    "material-button-text": "text",
+    "material-button-background": "c03",
+    "material-button-background-disabled": "c02",
+    "material-button-background-hovered": "c05",
+    "material-button-background-pressed": "c05",
+    "material-button-text-disabled": "c07",
+    "material-button-text": "c11",
 
     // material-textfield
-    "material-textfield": "#7F7F7F",
-    "material-textfield-focused": "#1F1F1F",
-    "material-textfield-disabled": "#AAAAAA",
-    "material-textfield-invalid": "#5FBFBF",
-    "invalid": "material-textfield-invalid",
+    "material-textfield": "c07",
+    "material-textfield-focused": "c11",
+    "material-textfield-disabled": "c05",
+    "material-textfield-invalid": "invalid-red",
+    "invalid": "invalid-red",
 
     // backgrounds
-    "background-selected": "#AAAAAA",
-    "background-selected-disabled": "#CCCCCC",
-    "background-selected-dark": "#BBBBBB",
-    "background-disabled": "background-main",
-    "background-disabled-checked": "#CCCCCC",
-    "background-pane": "#DDDDDD",
+    "background-selected": "c05",
+    "background-selected-disabled": "c02",
+    "background-selected-dark": "c04",
+    "background-disabled": "c01",
+    "background-disabled-checked": "c02",
+    "background-pane": "c01",
 
     // tabview
-    "tabview-unselected": "#000000",
-    "tabview-button-border": "#000000",
-    "tabview-label-active-disabled": "#262626",
-    "tabview-pane-background": "background-main",
+    "tabview-unselected": "c14",
+    "tabview-button-border": "c14",
+    "tabview-label-active-disabled": "c10",
+    "tabview-pane-background": "c01",
     "tabview-button-background": "transparent",
 
     // scrollbar
-    "scrollbar-passive": "#CCCCCC",
-    "scrollbar-active": "#BBBBBB",
+    "scrollbar-passive": "c02",
+    "scrollbar-active": "c04",
 
     // form
-    "button": "#AAAAAA",
-    "button-border": "bg-shadow",
-    "button-border-hovered": "#777777",
-    "button-box": "#BBBBBB",
-    "button-box-pressed": "#AAAAAA",
-    "border-lead": "#777777",
+    "button": "c05",
+    "button-border": "c06",
+    "button-border-hovered": "c07",
+    "button-box": "c04",
+    "button-box-pressed": "c05",
+    "border-lead": "c07",
 
     // window
-    "window-border": "#BBBBBB",
-    "window-border-inner": "#DDDDDD",
+    "window-border": "c04",
+    "window-border-inner": "c01",
 
     // group box
-    "white-box-border": "#BFBFBF",
+    "white-box-border": "c03",
 
     // borders
     // 'border-main' is an alias of 'background-selected' (compatibility reasons)
-    "border": "#B7B7B7",
-    "border-focused": "#484848",
-    "border-invalid": "material-textfield-invalid",
-    "border-disabled": "#DDDDDD",
+    "border": "c04",
+    "border-focused": "c09",
+    "border-invalid": "invalid-red",
+    "border-disabled": "c01",
 
     // separator
-    "border-separator": "#7F7F7F",
+    "border-separator": "c07",
 
     // tooltip
-    "tooltip": "#7F7F7F",
-    "tooltip-text": "#0F0F0F",
+    "tooltip": "c07",
+    "tooltip-text": "c12",
 
     // table
-    "table-header": "background-main",
-    "table-header-foreground": "text",
-    "table-header-border": "#777777",
-    "table-focus-indicator": "#8A8A8A",
+    "table-header": "c01",
+    "table-header-foreground": "c09",
+    "table-header-border": "c07",
+    "table-focus-indicator": "c06",
 
     // used in table code
-    "table-header-cell": "#DFDFDF",
-    "table-row-background-focused-selected": "#A9A9A9",
-    "table-row-background-focused": "#BABABA",
-    "table-row-background-selected": "#A9A9A9",
-    "table-row-background-even": "#DFDFDF",
-    "table-row-background-odd": "#CFCFCF",
+    "table-header-cell": "c01",
+    "table-row-background-focused-selected": "c05",
+    "table-row-background-focused": "c04",
+    "table-row-background-selected": "c05",
+    "table-row-background-even": "c01",
+    "table-row-background-odd": "c01",
 
     // foreground
-    "table-row-selected": "#0F0F0F",
-    "table-row": "#404040",
+    "table-row-selected": "c12",
+    "table-row": "c09",
 
     // table grid color
-    "table-row-line": "#DDDDDD",
-    "table-column-line": "#DDDDDD",
+    "table-row-line": "c01",
+    "table-column-line": "c01",
 
     // used in progressive code
-    "progressive-table-header": "#555555",
-    "progressive-table-row-background-even": "#DFDFDF",
-    "progressive-table-row-background-odd": "#CFCFCF",
-    "progressive-progressbar-background": "#FFFFFF",
-    "progressive-progressbar-indicator-done": "#DDDDDD",
-    "progressive-progressbar-indicator-undone": "#CCCCCC",
-    "progressive-progressbar-percent-background": "#FFFFFF",
-    "progressive-progressbar-percent-text": "#CCCCCC"
+    "progressive-table-header": "c08",
+    "progressive-table-row-background-even": "c01",
+    "progressive-table-row-background-odd": "c01",
+    "progressive-progressbar-background": "c00",
+    "progressive-progressbar-indicator-done": "c01",
+    "progressive-progressbar-indicator-undone": "c02",
+    "progressive-progressbar-percent-background": "c00",
+    "progressive-progressbar-percent-text": "c02"
   }
 });
